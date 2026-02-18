@@ -1,0 +1,56 @@
+id: notion
+type: tool
+title: Notion
+tagline: All-in-one workspace for notes, documentation, and project management.
+description: >-
+  Notion is a versatile all-in-one workspace that combines note-taking, document
+  creation, knowledge management, and project management into a single platform.
+  Teams can collaboratively build wikis, manage tasks with kanban boards and
+  databases, and create shared documentation with rich formatting and embedded
+  content. Notion supports real-time editing and commenting, making it suitable
+  for both synchronous and asynchronous collaboration. Its flexible block-based
+  architecture allows users to customize pages and workflows to fit a wide
+  variety of organizational needs.
+domains:
+  - business
+  - education
+  - software-engineering
+collaboration_type:
+  - distributed
+  - co-creation
+scale:
+  - small-team
+  - organization
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+website_url: https://notion.so
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+  - iOS
+  - Android
+external_links:
+  - type: website
+    url: https://notion.so
+    title: Notion Official Website
+  - type: documentation
+    url: https://www.notion.so/help
+    title: Notion Help & Support
+related_entries:
+  - slack
+  - google-docs
+tags:
+  - wiki
+  - knowledge-management
+  - project-management
+  - documentation

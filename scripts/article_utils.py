@@ -11,7 +11,7 @@ import requests
 import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
-ARTICLES_FILE = ROOT / "data" / "research-articles.yaml"
+ARTICLES_FILE = ROOT / "data" / "research_articles.yaml"
 
 CROSSREF_URL = "https://api.crossref.org/works/{doi}"
 CROSSREF_SEARCH_URL = "https://api.crossref.org/works"

@@ -1,0 +1,56 @@
+id: google-docs
+type: tool
+title: Google Docs
+tagline: Real-time collaborative document editing and authoring platform.
+description: >-
+  Google Docs is a cloud-based document editing platform that enables multiple
+  users to create, edit, and collaborate on documents simultaneously in real
+  time. It provides features such as inline commenting, suggestion mode, version
+  history, and sharing controls that support a range of collaborative writing
+  workflows. Google Docs is widely used in education, business, and research
+  settings for co-authoring papers, drafting proposals, and managing shared
+  documentation. As part of the Google Workspace suite, it integrates seamlessly
+  with Google Sheets, Slides, Drive, and other productivity tools.
+domains:
+  - education
+  - business
+  - social-sciences
+collaboration_type:
+  - co-creation
+  - distributed
+  - participatory
+scale:
+  - pair
+  - small-team
+  - organization
+  - community
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+website_url: https://docs.google.com
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - iOS
+  - Android
+external_links:
+  - type: website
+    url: https://docs.google.com
+    title: Google Docs
+  - type: documentation
+    url: https://support.google.com/docs
+    title: Google Docs Help
+related_entries:
+  - notion
+  - zotero
+tags:
+  - document-editing
+  - real-time-collaboration
+  - cloud-based

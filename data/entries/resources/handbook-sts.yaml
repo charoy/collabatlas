@@ -1,0 +1,55 @@
+id: handbook-sts
+type: resource
+title: "The Handbook of Science and Technology Studies"
+tagline: Comprehensive reference work covering key theories, methods, and topics in STS including co-production of knowledge, technology governance, and innovation studies.
+description: >-
+  The Handbook of Science and Technology Studies is a definitive reference volume that
+  provides comprehensive coverage of the field of STS, encompassing the social study
+  of science, technology, and medicine. Now in its fourth edition, the handbook brings
+  together leading scholars to address foundational concepts such as the co-production
+  of knowledge and social order, the politics of expertise, and the governance of
+  emerging technologies. It covers methodological approaches including laboratory
+  studies, actor-network theory, and feminist technoscience. The work serves as an
+  essential resource for researchers, graduate students, and practitioners seeking to
+  understand how scientific knowledge and technological systems are shaped by and
+  shape social, political, and cultural contexts.
+domains:
+  - social-sciences
+  - public-policy
+  - software-engineering
+collaboration_type:
+  - interdisciplinary
+  - transdisciplinary
+scale:
+  - organization
+  - multi-org
+modality:
+  - in-person
+  - remote
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+resource_type: book
+authors:
+  - Ulrike Felt
+  - Rayvon Fouche
+  - Clark A. Miller
+  - Laurel Smith-Doerr
+year: 2017
+doi: "10.7551/mitpress/12236.001.0001"
+access: paid
+external_links:
+  - type: book
+    url: https://mitpress.mit.edu/9780262035682/the-handbook-of-science-and-technology-studies/
+    title: MIT Press
+related_entries:
+  - activity-theory
+  - cscw-framework
+tags:
+  - sts
+  - sociology-of-science
+  - technology-studies
+  - reference

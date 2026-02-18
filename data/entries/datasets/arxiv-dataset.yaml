@@ -1,0 +1,55 @@
+id: arxiv-dataset
+type: dataset
+title: "arXiv Bulk Access Dataset"
+tagline: Complete metadata and full-text corpus of over 2 million scientific preprints across physics, mathematics, computer science, and other fields.
+description: >-
+  The arXiv Bulk Access Dataset provides comprehensive metadata and full-text access
+  to over 2 million scientific preprints hosted on arXiv.org, the pioneering open-access
+  preprint repository founded in 1991. The dataset spans physics, mathematics, computer
+  science, quantitative biology, quantitative finance, statistics, and electrical
+  engineering. It is widely used for bibliometric analysis, scientometric research,
+  natural language processing, and studies of scientific collaboration networks.
+  The availability of both structured metadata and source documents makes it an
+  invaluable resource for understanding patterns of knowledge production, citation
+  dynamics, and the evolution of scientific disciplines over more than three decades.
+domains:
+  - software-engineering
+  - social-sciences
+  - citizen-science
+  - education
+collaboration_type:
+  - open-source
+  - distributed
+scale:
+  - community
+modality:
+  - remote
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - mixed-methods
+source_url: https://info.arxiv.org/help/bulk_data.html
+format: XML metadata, PDF/LaTeX source
+size: "~1.5 TB (full text)"
+license: Various (per-article)
+temporal_coverage: "1991-present"
+platform: kaggle
+platform_id: Cornell-University/arxiv
+external_links:
+  - type: website
+    url: https://arxiv.org
+    title: arXiv.org
+  - type: documentation
+    url: https://info.arxiv.org/help/bulk_data.html
+    title: arXiv Bulk Access
+related_entries:
+  - cscw-proceedings-corpus
+tags:
+  - preprints
+  - scientific-publishing
+  - open-access
+  - bibliometrics

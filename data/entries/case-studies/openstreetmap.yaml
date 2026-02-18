@@ -1,0 +1,59 @@
+id: openstreetmap
+type: case-study
+title: "OpenStreetMap"
+tagline: Volunteer-driven open geographic data project creating a free editable map of the world through mass collaboration.
+description: >-
+  OpenStreetMap (OSM) is a collaborative project to create a free, editable map of the
+  entire world, built primarily by volunteers using GPS devices, aerial imagery, and
+  local knowledge. Founded in 2004, it has grown into one of the largest and most
+  successful crowdsourcing initiatives in history, with millions of contributors
+  mapping roads, buildings, land use, and points of interest across every country.
+  The project operates under open-data principles, making its geographic database
+  freely available for any use. OSM data underpins applications ranging from humanitarian
+  disaster response to commercial navigation and urban planning analysis.
+domains:
+  - citizen-science
+  - urban-planning
+  - software-engineering
+collaboration_type:
+  - crowdsourcing
+  - community-based
+  - open-source
+scale:
+  - community
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - case-study
+organization: "OpenStreetMap Foundation"
+year: 2004
+outcomes: >-
+  Over 10 million registered contributors have created the most comprehensive open
+  geographic database, used by organizations worldwide including humanitarian response,
+  urban planning, and navigation applications.
+methods_used:
+  - participatory-design
+tools_used:
+  - github
+related_entries:
+  - wikipedia-collaborative-editing
+  - linux-kernel-development
+external_links:
+  - type: website
+    url: https://www.openstreetmap.org
+    title: OpenStreetMap
+  - type: website
+    url: https://wiki.openstreetmap.org
+    title: OSM Wiki
+tags:
+  - mapping
+  - crowdsourcing
+  - open-data
+  - geographic-information

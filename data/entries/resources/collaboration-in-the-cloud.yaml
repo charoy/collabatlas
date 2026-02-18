@@ -1,0 +1,55 @@
+id: collaboration-in-the-cloud
+type: resource
+title: "Collaboration in the Cloud: How Cross-Boundary Collaboration Is Transforming Business"
+tagline: Research-based guide to cross-boundary collaboration enabled by cloud technologies and digital platforms.
+description: >-
+  This book by Mark McDonald and Günter Müller-Stewens examines how digital
+  platforms and cloud technologies are enabling new forms of cross-boundary
+  collaboration between organizations, teams, and individuals. Drawing on
+  extensive case research, it provides frameworks for understanding and designing
+  effective collaborative arrangements in distributed, multi-organizational
+  contexts. Topics include platform governance, trust in virtual teams, knowledge
+  sharing across organizational boundaries, and the management of collaborative
+  ecosystems.
+domains:
+  - business
+  - software-engineering
+  - public-policy
+collaboration_type:
+  - distributed
+  - co-production
+  - interdisciplinary
+scale:
+  - organization
+  - multi-org
+modality:
+  - remote
+  - hybrid
+maturity: established
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-10"
+last_reviewed: "2025-06-01"
+research_method:
+  - case-study
+  - mixed-methods
+resource_type: book
+authors:
+  - Mark McDonald
+  - Günter Müller-Stewens
+year: 2012
+access: paid
+external_links:
+  - type: book
+    url: https://www.wiley.com/en-us/Collaboration+in+the+Cloud-p-9780470912058
+    title: "Collaboration in the Cloud (Wiley)"
+related_entries:
+  - cscw-framework
+  - open-innovation
+  - slack
+tags:
+  - digital-collaboration
+  - cloud-computing
+  - cross-boundary
+  - organizational-design

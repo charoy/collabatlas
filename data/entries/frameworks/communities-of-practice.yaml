@@ -1,0 +1,67 @@
+id: communities-of-practice
+type: framework
+title: Communities of Practice
+tagline: Framework for understanding how groups with shared concerns develop knowledge through regular interaction.
+description: >-
+  Communities of Practice (CoP) is a social learning framework developed by
+  Etienne Wenger and Jean Lave that describes how groups of people who share
+  a concern or passion for something learn to do it better through regular
+  interaction. The framework identifies three essential dimensions of a
+  community of practice: a shared domain of interest, the community itself
+  as a social structure for learning, and the shared practice — the body of
+  knowledge, methods, and resources that members develop together. Originally
+  grounded in studies of apprenticeship and situated learning, CoP has become
+  a foundational concept in knowledge management, organizational learning,
+  education, and professional development.
+domains:
+  - education
+  - business
+  - social-sciences
+  - healthcare
+collaboration_type:
+  - community-based
+  - co-creation
+  - participatory
+scale:
+  - small-team
+  - organization
+  - community
+modality:
+  - in-person
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - ethnography
+  - case-study
+key_concepts:
+  - Domain
+  - Community
+  - Practice
+  - Legitimate peripheral participation
+  - Situated learning
+  - Identity
+seminal_works:
+  - title: "Communities of Practice: Learning, Meaning, and Identity"
+    authors: ["Etienne Wenger"]
+    year: 1998
+    url: https://doi.org/10.1017/CBO9780511803932
+  - title: "Situated Learning: Legitimate Peripheral Participation"
+    authors: ["Jean Lave", "Etienne Wenger"]
+    year: 1991
+external_links:
+  - type: article
+    url: https://doi.org/10.1177/135050840072002
+    title: "Communities of Practice and Social Learning Systems (Wenger, 2000)"
+related_entries:
+  - cscw-framework
+  - action-research
+tags:
+  - knowledge-sharing
+  - learning
+  - social-learning

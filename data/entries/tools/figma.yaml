@@ -1,0 +1,56 @@
+id: figma
+type: tool
+title: Figma
+tagline: Collaborative interface design tool for teams to create, prototype, and iterate together.
+description: >-
+  Figma is a cloud-based collaborative design tool that allows teams to create
+  user interfaces, prototypes, and design systems in real time. Multiple
+  designers and stakeholders can work simultaneously on the same file, with
+  changes visible instantly to all participants. Figma supports the full design
+  workflow from wireframing to high-fidelity prototyping, and includes features
+  like shared component libraries, design tokens, and developer handoff tools.
+  It integrates with popular platforms such as Slack, Jira, and Miro to
+  streamline the product design process.
+domains:
+  - design
+  - software-engineering
+  - education
+collaboration_type:
+  - co-design
+  - co-creation
+  - distributed
+scale:
+  - pair
+  - small-team
+  - organization
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+website_url: https://figma.com
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+external_links:
+  - type: website
+    url: https://figma.com
+    title: Figma Official Website
+  - type: documentation
+    url: https://help.figma.com
+    title: Figma Help Center
+related_entries:
+  - miro
+  - design-sprint
+tags:
+  - design
+  - prototyping
+  - ui-ux
+  - real-time-collaboration

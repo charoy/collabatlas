@@ -1,0 +1,331 @@
+- title: Groupware and social dynamics
+  authors: Jonathan Grudin
+  journal: Communications of the ACM
+  year: 1994
+  doi: 10.1145/175222.175230
+  url: https://doi.org/10.1145/175222.175230
+  access: paid
+  abstract: 'Computer support has focused on organizations and individuals. Groups
+    are different. Repeated, expensive groupware failures result from not meeting
+    the challenges in design and evaluation that arise from these differences. l Many
+    expensive failures in developing and marketing software that is designed to support
+    groups are not due to technical problems. They result from not understanding the
+    unique demands this class of software imposes on developers and users. This article
+    briefly outlines the origins of groupware, describes eight specific problem areas,
+    and finally examines groupware successes in search of better approaches to supporting
+    work in group settings. l Desktop conferencing, videoconferencing, coauthoring
+    features and applications, email and bulletin boards (b-boards), meeting support
+    systems, voice applications, workflow systems, and group calendars are key examples
+    of groupware. Labels vary: groupware, collaborative computing, Workgroup computing,
+    multiuser applications, computer-supported cooperative work (CSCW) applications.
+    What is included? Not everyone agrees. Begin by asking, “Was this software designed
+    to support groups? Is it being used to support groups?” Email and b-boards are
+    well known, but few other groupware prototypes and products have done as well
+    despite considerable effort. Successes exist, but progress is slow and can lead
+    in unanticipated'
+  citation_count: 93
+  openalex_id: https://openalex.org/W54955629
+  id: grudin-1994
+  domains:
+  - software-engineering
+  - social-sciences
+  tags:
+  - CSCW
+  - groupware
+  - adoption
+- title: Governing the Commons
+  authors: Элинор Остром
+  journal: Cambridge University Press eBooks
+  year: 1990
+  doi: 10.1017/CBO9780511807763
+  url: https://doi.org/10.1017/CBO9780511807763
+  access: paid
+  abstract: The governance of natural resources used by many individuals in common
+    is an issue of increasing concern to policy analysts. Both state control and privatisation
+    of resources have been advocated, but neither the state nor the market have been
+    uniformly successful in solving common pool resource problems. Offering a critique
+    of the foundations of policy analysis as applied to natural resources, Elinor
+    Ostrom here provides a unique body of empirical data to explore conditions under
+    which common pool resource problems have been satisfactorily or unsatisfactorily
+    solved. Dr Ostrom first describes three models most frequently used as the foundation
+    for recommending state or market solutions. She then outlines theoretical and
+    empirical alternatives to these models in order to illustrate the diversity of
+    possible solutions. In the following chapters she uses institutional analysis
+    to examine different ways - both successful and unsuccessful - of governing the
+    commons. In contrast to the proposition of the tragedy of the commons argument,
+    common pool problems sometimes are solved by voluntary organisations rather than
+    by a coercive state. Among the cases considered are communal tenure in meadows
+    and forests, irrigation communities and other water rights, and fisheries.
+  citation_count: 18113
+  openalex_id: https://openalex.org/W4233654598
+  id: ostrom-1990
+  domains:
+  - public-policy
+  - environmental-science
+  - social-sciences
+  tags:
+  - commons
+  - governance
+  - collective-action
+- id: chesbrough-2003
+  title: 'Open Innovation: The New Imperative for Creating and Profiting from Technology'
+  authors: Henry Chesbrough
+  journal: Harvard Business School Press
+  year: 2003
+  url: https://hbsp.harvard.edu/product/4211E-HBK-ENG
+  access: paid
+  domains:
+  - business
+  - software-engineering
+  tags:
+  - open-innovation
+  - R&D
+  - strategy
+- title: The Ethnography of Infrastructure
+  authors: Susan Leigh Star
+  journal: American Behavioral Scientist
+  year: 1999
+  doi: 10.1177/00027649921955326
+  url: https://doi.org/10.1177/00027649921955326
+  access: paid
+  abstract: This article asks methodological questions about studying infrastructure
+    with some of the tools and perspectives of ethnography. Infrastructure is both
+    relational and ecological—it means different things to different groups and it
+    is part of the balance of action, tools, and the built environment, inseparable
+    from them. It also is frequently mundane to the point of boredom, involving things
+    such as plugs, standards, and bureaucratic forms. Some of the difficulties of
+    studying infrastructure are how to scale up from traditional ethnographic sites,
+    how to manage large quantities of data such as those produced by transaction logs,
+    and how to understand the interplay of online and offline behavior. Some of the
+    tricks of the trade involved in meeting these challenges include studying the
+    design of infrastructure, understanding the paradoxes of infrastructure as both
+    transparent and opaque, including invisible work in the ecological analysis, and
+    pinpointing the epistemological status of indictors.
+  citation_count: 3943
+  openalex_id: https://openalex.org/W2014831132
+  id: star-1999
+  domains:
+  - social-sciences
+  - software-engineering
+  tags:
+  - infrastructure
+  - ethnography
+  - CSCW
+- id: von-hippel-2005
+  title: Democratizing Innovation
+  authors: Eric von Hippel
+  journal: MIT Press
+  year: 2005
+  url: https://mitpress.mit.edu/9780262720472/democratizing-innovation/
+  access: open
+  domains:
+  - business
+  - design
+  - citizen-science
+  tags:
+  - user-innovation
+  - open-source
+  - co-design
+- id: benkler-2006
+  title: 'The Wealth of Networks: How Social Production Transforms Markets and Freedom'
+  authors: Yochai Benkler
+  journal: Yale University Press
+  year: 2006
+  url: https://cyber.harvard.edu/wealth_of_networks/Main_Page
+  access: open
+  domains:
+  - social-sciences
+  - software-engineering
+  - public-policy
+  tags:
+  - commons
+  - peer-production
+  - networks
+- title: Taking CSCW seriously
+  authors: Kjeld Schmidt, Liam J. Bannon
+  journal: Computer Supported Cooperative Work (CSCW)
+  year: 1992
+  doi: 10.1007/BF00752449
+  url: https://doi.org/10.1007/BF00752449
+  access: paid
+  citation_count: 962
+  openalex_id: https://openalex.org/W2396614874
+  id: schmidt-bannon-1992
+  domains:
+  - software-engineering
+  - social-sciences
+  tags:
+  - CSCW
+  - articulation-work
+  - coordination
+- id: raymond-1999
+  title: The Cathedral and the Bazaar
+  authors: Eric S. Raymond
+  journal: O'Reilly Media
+  year: 1999
+  url: http://www.catb.org/~esr/writings/cathedral-bazaar/
+  access: open
+  domains:
+  - software-engineering
+  tags:
+  - open-source
+  - governance
+  - peer-production
+- id: olson-2000
+  title: Distance Matters
+  authors: Gary M. Olson, Judith S. Olson
+  journal: Human-Computer Interaction
+  year: 2000
+  doi: 10.1207/s15327051hci1523_4
+  url: https://doi.org/10.1207/s15327051hci1523_4
+  access: paid
+  abstract: 'Giant strides in information technology at the turn of the century may
+    have unleashed unreachable goals. With the invention of groupware, people expect
+    to communicate easily with each other and accomplish difficult work even though
+    they are remotely located or rarely overlap in time. Major corporations launch
+    global teams, expecting that technology will make "virtual collocation" possible.
+    Federal research money encourages global science through the establishment of
+    "collaboratories. " We review over 10 years of field and laboratory investigations
+    of collocated and noncollocated synchronous group collaborations. In particular,
+    we compare collocated work with remote work as it is possible today and comment
+    on the promise of remote work tomorrow. We focus on the sociotechnical conditions
+    required for effective distance work and bring together the results with four
+    key concepts: common ground, coupling of work, collaboration readiness, and collaboration
+    technology readiness. Groups with high common ground and loosely coupled work,
+    with readiness both for collaboration and collaboration technology, have a chance
+    at succeeding with remote work. Deviations from each of these create strain on
+    the relationships among teammates and require changes in the work or processes
+    of collaboration to succeed. Often they do not succeed because distance still
+    matters.'
+  citation_count: 1892
+  openalex_id: https://openalex.org/W2911311425
+- id: kittur-2013
+  title: The future of crowd work
+  authors: Aniket Kittur, Jeffrey V. Nickerson, Michael S. Bernstein, Elizabeth M.
+    Gerber, Aaron Shaw, John Zimmerman, Matthew Lease, John J. Horton
+  journal: Proceedings of the ACM Conference on CSCW
+  year: 2013
+  doi: 10.1145/2441776.2441923
+  url: https://doi.org/10.1145/2441776.2441923
+  access: paid
+  abstract: 'Paid crowd work offers remarkable opportunities for improving productivity,
+    social mobility, and the global economy by engaging a geographically distributed
+    workforce to complete complex tasks on demand and at scale. But it is also possible
+    that crowd work will fail to achieve its potential, focusing on assembly-line
+    piecework. Can we foresee a future crowd workplace in which we would want our
+    children to participate? This paper frames the major challenges that stand in
+    the way of this goal. Drawing on theory from organizational behavior and distributed
+    computing, as well as direct feedback from workers, we outline a framework that
+    will enable crowd work that is complex, collaborative, and sustainable. The framework
+    lays out research challenges in twelve major areas: workflow, task assignment,
+    hierarchy, real-time response, synchronous collaboration, quality control, crowds
+    guiding AIs, AIs guiding crowds, platforms, job design, reputation, and motivation.'
+  citation_count: 15
+  openalex_id: https://openalex.org/W2146286563
+- id: dabbish-2012
+  title: Social coding in GitHub
+  authors: Laura Dabbish, Colleen Stuart, Jason Tsay, Jim Herbsleb
+  journal: Proceedings of the ACM Conference on CSCW
+  year: 2012
+  doi: 10.1145/2145204.2145396
+  url: https://doi.org/10.1145/2145204.2145396
+  access: paid
+  abstract: Social applications on the web let users track and follow the activities
+    of a large number of others regardless of location or affiliation. There is a
+    potential for this transparency to radically improve collaboration and learning
+    in complex knowledge-based activities. Based on a series of in-depth interviews
+    with central and peripheral GitHub users, we examined the value of transparency
+    for large-scale distributed collaborations and communities of practice. We find
+    that people make a surprisingly rich set of social inferences from the networked
+    activity information in GitHub, such as inferring someone else's technical goals
+    and vision when they edit code, or guessing which of several similar projects
+    has the best chance of thriving in the long term. Users combine these inferences
+    into effective strategies for coordinating work, advancing technical skills and
+    managing their reputation.
+  citation_count: 951
+  openalex_id: https://openalex.org/W2124100711
+- id: howison-2014
+  title: 'Collaboration Through Open Superposition: A Theory of the Open Source Way1'
+  authors: James Howison, Kevin Crowston
+  journal: MIS Quarterly
+  year: 2014
+  doi: 10.25300/misq/2014/38.1.02
+  url: https://doi.org/10.25300/misq/2014/38.1.02
+  access: paid
+  abstract: 'This paper develops and illustrates the theory of collaboration through
+    open superposition: the process of depositing motivationally independent layers
+    of work on top of each other over time. The theory is developed in a study of
+    community-based free and open source software (FLOSS) development, through a research
+    arc of discovery (participant observation), replication (two archival case studies),
+    and theorization. The theory explains two key findings: (1) the overwhelming majority
+    of work is accomplished with only a single programmer working on any one task,
+    and (2) tasks that appear too large for any one individual are more likely to
+    be deferred until they are easier rather than being undertaken through structured
+    team work. Moreover, the theory explains how working through open superposition
+    can lead to the discovery of a work breakdown that results in complex, functionally
+    interdependent, work being accomplished without crippling search costs. We identify
+    a set of socio-technical contingencies under which collaboration through open
+    superposition is likely to be effective, including characteristics of artifacts
+    made from information as the objects being worked on. We demonstrate the usefulness
+    of the theory by using it to analyze difficulties in learning from FLOSS in other
+    domains of work and in the IS function of for-profit organizations.'
+  citation_count: 158
+  openalex_id: https://openalex.org/W24762504
+- id: wenger-1998
+  title: Communities of Practice
+  authors: Étienne Wenger
+  journal: Cambridge University Press eBooks
+  year: 1998
+  doi: 10.1017/cbo9780511803932
+  url: https://doi.org/10.1017/cbo9780511803932
+  access: paid
+  abstract: This book presents a theory of learning that starts with the assumption
+    that engagement in social practice is the fundamental process by which we get
+    to know what we know and by which we become who we are. The primary unit of analysis
+    of this process is neither the individual nor social institutions, but the informal
+    'communities of practice' that people form as they pursue shared enterprises over
+    time. To give a social account of learning, the theory explores in a systematic
+    way the intersection of issues of community, social practice, meaning, and identity.
+    The result is a broad framework for thinking about learning as a process of social
+    participation. This ambitious but thoroughly accessible framework has relevance
+    for the practitioner as well as the theoretician, presented with all the breadth,
+    depth, and rigor necessary to address such a complex and yet profoundly human
+    topic.
+  citation_count: 21283
+  openalex_id: https://openalex.org/W4210702550
+- id: latour-2005
+  title: Reassembling the Social
+  authors: Bruno Latour
+  journal: Oxford University Press
+  year: 2005
+  doi: 10.1093/oso/9780199256044.001.0001
+  url: https://doi.org/10.1093/oso/9780199256044.001.0001
+  access: paid
+  abstract: 'Abstract Reassembling the Social is a fundamental challenge from one
+    of the world’s leading social theorists to how we understand society and the ‘social
+    ‘. Bruno Latour’s contention is that the word ‘social’, as used by Social Scientists,
+    has become laden with assumptions to the point where it has become misnomer. When
+    the adjective is applied to a phenomenon, it is used to indicate a stablilized
+    state of affairs, a bundle of ties that in due course may be used to account for
+    another phenomenon. But Latour also finds the word used as if it described a type
+    of material, in a comparable way to an adjective such as ‘wooden’ or ‘steely ‘.
+    Rather than simply indicating what is already assembled together, it is now used
+    in a way that makes assumptions about the nature of what is assembled. It has
+    become a word that designates two distinct things: a process of assembling; and
+    a type of material, distinct from others. Latour shows why ‘the social’ cannot
+    be thought of as a kind of material or domain, and disputes attempts to provide
+    a ‘social explanations’ of other states of affairs. While these attempts have
+    been productive (and probably necessary) in the past, the very success of the
+    social sciences mean that they are largely no longer so. At the present stage
+    it is no longer possible to inspect the precise constituents entering the social
+    domain. Latour returns to the original meaning of ‘the social’ to redefine the
+    notion, and allow it to trace connections again. It will then be possible to resume
+    the traditional goal of the social sciences, but using more refined tools. Drawing
+    on his extensive work examining the ‘assemblages’ of nature, Latour finds it necessary
+    to scrutinize thoroughly the exact content of what is assembled under the umbrella
+    of Society. This approach, a ‘sociology of associations’, has become known as
+    Actor-Network-Theory, and this book is an essential introduction both for those
+    seeking to understand Actor-Network Theory, or the ideas of one of its most influential
+    proponents.'
+  citation_count: 14692
+  openalex_id: https://openalex.org/W4388174267

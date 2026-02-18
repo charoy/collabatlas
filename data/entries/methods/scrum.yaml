@@ -1,0 +1,63 @@
+id: scrum
+type: method
+title: Scrum
+tagline: Agile framework for iterative project management in cross-functional teams using time-boxed sprints.
+description: >-
+  Scrum is an agile project management framework that enables cross-functional
+  teams to deliver complex products through iterative, incremental cycles called
+  sprints. Originally developed by Jeff Sutherland and Ken Schwaber in the early
+  1990s, Scrum defines a set of roles (Product Owner, Scrum Master, Development
+  Team), artifacts (Product Backlog, Sprint Backlog, Increment), and ceremonies
+  (Sprint Planning, Daily Standup, Sprint Review, Sprint Retrospective). The
+  framework emphasizes transparency, inspection, and adaptation, making it one of
+  the most widely adopted collaborative work methodologies in software engineering
+  and beyond.
+domains:
+  - software-engineering
+  - business
+collaboration_type:
+  - co-creation
+  - distributed
+scale:
+  - small-team
+  - organization
+modality:
+  - in-person
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - action-research
+  - case-study
+when_to_use: >-
+  Use Scrum when your team needs to deliver complex products iteratively, when
+  requirements are likely to evolve, or when cross-functional collaboration and
+  rapid feedback loops are essential for success. It works best with dedicated
+  teams of 5-9 members working toward a shared product goal.
+limitations: >-
+  Scrum can be difficult to scale across large organizations without additional
+  frameworks (e.g., SAFe, LeSS). It assumes a stable, dedicated team and may
+  struggle with projects requiring heavy upfront design. The framework's
+  prescribed roles and ceremonies can feel rigid in some organizational cultures.
+steps:
+  - "Sprint Planning: the team selects items from the product backlog and defines the sprint goal and sprint backlog."
+  - "Daily Standup: a brief daily meeting where team members synchronize work and identify impediments."
+  - "Sprint Execution: the team works collaboratively to complete the sprint backlog items within the time-box."
+  - "Sprint Review: the team demonstrates the completed increment to stakeholders and gathers feedback."
+  - "Sprint Retrospective: the team reflects on the sprint process and identifies improvements for the next iteration."
+external_links:
+  - type: website
+    url: https://scrumguides.org/
+    title: "The Scrum Guide (Schwaber & Sutherland)"
+related_entries:
+  - design-sprint
+tags:
+  - agile
+  - sprints
+  - iterative
+  - product-development

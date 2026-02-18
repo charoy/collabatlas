@@ -482,9 +482,12 @@ main {
 /* ─── Homepage Hero ─────────────────────────────────────────────── */
 
 .home-hero {
-  background: linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0fdf4 100%);
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(8,145,178,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(79,70,229,0.1) 0%, transparent 50%),
+    linear-gradient(135deg, #f8faff 0%, #eef2ff 50%, #f0fdf4 100%);
   border-bottom: 1px solid var(--color-border);
-  padding: 5rem 2rem 4.5rem;
+  padding: 6rem 2rem 5rem;
 }
 
 .home-hero-inner {
@@ -520,14 +523,35 @@ main {
 .home-hero-title em {
   font-style: italic;
   color: var(--color-primary);
+  position: relative;
+}
+
+.home-hero-title em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.05em;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 2px;
+  opacity: 0.5;
 }
 
 .home-hero-lead {
   font-size: 1.15rem;
   color: var(--color-text-muted);
   max-width: 52ch;
-  margin: 0 auto 2.25rem;
+  margin: 0 auto 1.25rem;
   line-height: 1.7;
+}
+
+.home-hero-metric {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 auto 2rem;
+  letter-spacing: 0.02em;
 }
 
 .hero-actions {
@@ -568,7 +592,7 @@ main {
   flex-wrap: wrap;
   gap: 0;
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-bg);
+  background: linear-gradient(180deg, var(--color-bg-alt) 0%, var(--color-bg) 100%);
 }
 
 .home-stats .stat {
@@ -577,6 +601,11 @@ main {
   border-right: 1px solid var(--color-border);
   flex: 1;
   min-width: 7rem;
+  transition: background 0.2s;
+}
+
+.home-stats .stat:hover {
+  background: var(--color-primary-light);
 }
 
 .home-stats .stat:last-child { border-right: none; }
@@ -703,6 +732,7 @@ main {
   gap: 1rem;
   padding: 1.25rem 1.5rem;
   border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border);
   border-radius: var(--radius);
   background: var(--color-bg);
   box-shadow: var(--shadow-sm);
@@ -710,6 +740,13 @@ main {
   color: var(--color-text);
   transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
 }
+
+.catalogue-tile[href*="/tools/"]        { border-left-color: #059669; }
+.catalogue-tile[href*="/methods/"]      { border-left-color: #7c3aed; }
+.catalogue-tile[href*="/frameworks/"]   { border-left-color: #ea580c; }
+.catalogue-tile[href*="/case-studies/"] { border-left-color: #0891b2; }
+.catalogue-tile[href*="/datasets/"]     { border-left-color: #ca8a04; }
+.catalogue-tile[href*="/resources/"]    { border-left-color: #2563eb; }
 
 .catalogue-tile:hover {
   box-shadow: var(--shadow-md);
@@ -915,7 +952,13 @@ main {
 .feature-icon {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.625rem;
+  background: var(--color-primary-light);
 }
 
 /* ─── Buttons ───────────────────────────────────────────────────── */
@@ -1052,6 +1095,19 @@ main {
   margin: 0.25rem 0 1.25rem;
   font-weight: 400;
   line-height: 1.5;
+}
+
+.entry-source-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.article-citations {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
 /* ─── Filter helpers ────────────────────────────────────────────── */

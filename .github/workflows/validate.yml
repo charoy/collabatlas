@@ -4,7 +4,7 @@ on:
   pull_request:
     paths:
       - 'data/entries/**'
-      - 'data/research-articles.yaml'
+      - 'data/research_articles.yaml'
       - 'schemas/**'
       - 'data/taxonomies/**'
 

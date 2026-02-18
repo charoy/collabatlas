@@ -112,8 +112,8 @@ def check_references(all_entries: dict[str, dict]) -> list[str]:
 
 
 def validate_research_articles(taxonomies: dict) -> tuple[int, int, dict]:
-    """Validate data/research-articles.yaml against its schema."""
-    articles_file = ROOT / "data" / "research-articles.yaml"
+    """Validate data/research_articles.yaml against its schema."""
+    articles_file = ROOT / "data" / "research_articles.yaml"
     schema_file = SCHEMAS_DIR / "research-article.schema.json"
     errors = 0
     count = 0
@@ -164,11 +164,11 @@ def validate_research_articles(taxonomies: dict) -> tuple[int, int, dict]:
 
         if art_errors:
             errors += len(art_errors)
-            print(f"\n  FAIL: research-articles.yaml [{art_id}]")
+            print(f"\n  FAIL: research_articles.yaml [{art_id}]")
             for err in art_errors:
                 print(f"    - {err}")
         else:
-            print(f"  OK: research-articles.yaml [{art_id}]")
+            print(f"  OK: research_articles.yaml [{art_id}]")
 
     return count, errors, articles_by_id
 

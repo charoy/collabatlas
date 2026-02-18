@@ -1,19 +1,28 @@
 {{ define "main" }}
 
-{{ $allEntries := where .Site.Pages "Section" "catalogue" }}
-{{ $tools      := where .Site.Pages "Section" "tools" }}
-{{ $methods    := where .Site.Pages "Section" "methods" }}
-{{ $frameworks := where .Site.Pages "Section" "frameworks" }}
-{{ $caseStudies:= where .Site.Pages "Section" "case-studies" }}
-{{ $datasets   := where .Site.Pages "Section" "datasets" }}
-{{ $resources  := where .Site.Pages "Section" "resources" }}
-{{ $posts      := where .Site.Pages "Section" "blog" }}
+{{ $cataloguePage := .Site.GetPage "catalogue" }}
+{{ $toolsPage     := .Site.GetPage "catalogue/tools" }}
+{{ $methodsPage   := .Site.GetPage "catalogue/methods" }}
+{{ $frameworksPage:= .Site.GetPage "catalogue/frameworks" }}
+{{ $casesPage     := .Site.GetPage "catalogue/case-studies" }}
+{{ $datasetsPage  := .Site.GetPage "catalogue/datasets" }}
+{{ $resourcesPage := .Site.GetPage "catalogue/resources" }}
+
+{{ $allEntries  := $cataloguePage.RegularPagesRecursive }}
+{{ $tools       := $toolsPage.Pages }}
+{{ $methods     := $methodsPage.Pages }}
+{{ $frameworks  := $frameworksPage.Pages }}
+{{ $caseStudies := $casesPage.Pages }}
+{{ $datasets    := $datasetsPage.Pages }}
+{{ $resources   := $resourcesPage.Pages }}
+{{ $posts       := where .Site.RegularPages "Section" "blog" }}
 
 <section class="home-hero">
   <div class="home-hero-inner">
     <div class="home-hero-badge">Open Knowledge Platform</div>
     <h1 class="home-hero-title">Navigate the landscape<br>of <em>collaborative</em> research</h1>
     <p class="home-hero-lead">CollabAtlas catalogues tools, methods, frameworks, case studies, datasets and resources — connected across domains, scales, and modalities.</p>
+    <p class="home-hero-metric">{{ len $allEntries }} entries across {{ len (.Site.Data.taxonomies.domains) }} domains</p>
     <div class="hero-actions">
       <a href="{{ "/catalogue/" | relURL }}" class="btn btn-primary">Browse the Catalogue</a>
       <a href="{{ "/guides/find-your-method/" | relURL }}" class="btn btn-secondary">Find Your Method →</a>
@@ -74,6 +83,7 @@
           {{ with .journal }}<span class="article-sep">·</span><span class="article-journal">{{ . }}</span>{{ end }}
           {{ with .year }}<span class="article-sep">·</span><span class="article-year">{{ . }}</span>{{ end }}
           {{ with .doi }}<span class="article-sep">·</span><span class="article-doi">DOI: {{ . }}</span>{{ end }}
+          {{ with .citation_count }}<span class="article-sep">·</span><span class="article-citations">{{ . }} citations</span>{{ end }}
         </div>
         <div class="article-tags">
           {{ range .domains }}<span class="badge scale">{{ . }}</span>{{ end }}

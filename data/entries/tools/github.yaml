@@ -1,0 +1,57 @@
+id: github
+type: tool
+title: GitHub
+tagline: Web-based platform for version control and collaborative software development.
+description: >-
+  GitHub is a web-based platform built on Git that provides version control,
+  code hosting, and collaborative software development features. It enables
+  developers to work together on projects through pull requests, code reviews,
+  issue tracking, and continuous integration workflows. GitHub supports both
+  public open-source repositories and private projects, making it a central hub
+  for millions of developers and organizations worldwide. Its ecosystem includes
+  GitHub Actions for automation, GitHub Pages for documentation hosting, and
+  integrations with a wide range of development tools.
+domains:
+  - software-engineering
+  - citizen-science
+collaboration_type:
+  - open-source
+  - distributed
+  - co-creation
+scale:
+  - pair
+  - small-team
+  - organization
+  - community
+modality:
+  - remote
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+website_url: https://github.com
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+  - iOS
+  - Android
+external_links:
+  - type: website
+    url: https://github.com
+    title: GitHub Official Website
+  - type: documentation
+    url: https://docs.github.com
+    title: GitHub Documentation
+related_entries:
+  - linux-kernel-development
+  - cscw-framework
+tags:
+  - version-control
+  - code-review
+  - open-source
+  - git

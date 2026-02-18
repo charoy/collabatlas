@@ -1,0 +1,55 @@
+id: wikipedia-edit-history
+type: dataset
+title: "Wikipedia Edit History Dumps"
+tagline: Complete revision history of all Wikimedia projects, enabling analysis of collaborative knowledge production at scale.
+description: >-
+  The Wikipedia Edit History Dumps provide the complete revision history of all
+  Wikimedia projects, including every edit made to every article since Wikipedia's
+  founding in 2001. The dumps include article text, edit metadata, editor information,
+  talk page discussions, and administrative actions. This dataset is one of the most
+  extensively studied resources in computational social science, enabling research
+  on collaborative knowledge production, conflict resolution, consensus formation,
+  and the dynamics of volunteer-driven online communities. The sheer scale of the
+  data — encompassing billions of edits across hundreds of language editions — makes
+  it a unique resource for understanding large-scale human collaboration.
+domains:
+  - citizen-science
+  - social-sciences
+  - education
+collaboration_type:
+  - crowdsourcing
+  - community-based
+  - open-source
+scale:
+  - community
+modality:
+  - remote
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - mixed-methods
+source_url: https://dumps.wikimedia.org
+format: XML, SQL dumps
+size: "~20 TB (full history)"
+license: CC BY-SA 4.0
+temporal_coverage: "2001-present"
+platform: other
+external_links:
+  - type: website
+    url: https://dumps.wikimedia.org
+    title: Wikimedia Downloads
+  - type: documentation
+    url: https://meta.wikimedia.org/wiki/Data_dumps
+    title: Data Dumps Documentation
+related_entries:
+  - wikipedia-collaborative-editing
+  - github-archive
+tags:
+  - wiki
+  - collaborative-editing
+  - knowledge-production
+  - edit-history

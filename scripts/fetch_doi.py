@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 fetch_doi.py — Fetch article metadata from CrossRef or OpenAlex by DOI
-and upsert into data/research-articles.yaml.
+and upsert into data/research_articles.yaml.
 
 Usage:
     python scripts/fetch_doi.py 10.1145/175222.175230
@@ -114,7 +114,7 @@ def lookup_missing_dois():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Fetch DOI metadata into research-articles.yaml"
+        description="Fetch DOI metadata into research_articles.yaml"
     )
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("doi", nargs="?", help="Single DOI to fetch")

@@ -21,6 +21,17 @@
   </div>
   {{ end }}
 
+  {{ if or $merged.website_url $merged.source_url }}
+  <div class="entry-source-link">
+    {{ with $merged.website_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website ↗</a>
+    {{ end }}
+    {{ if and $merged.source_url (ne ($merged.source_url | default "") ($merged.website_url | default "")) }}
+      <a href="{{ $merged.source_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View Source ↗</a>
+    {{ end }}
+  </div>
+  {{ end }}
+
   {{ if eq .Section "datasets" }}
     {{ with $merged.platform }}
     <div class="dataset-source">

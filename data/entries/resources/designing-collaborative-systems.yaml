@@ -1,0 +1,52 @@
+id: designing-collaborative-systems
+type: resource
+title: "Designing Collaborative Systems: A Practical Guide to Ethnography"
+tagline: A practical guide to using ethnographic methods for designing collaborative work systems.
+description: >-
+  This book by Andy Crabtree provides a practical introduction to ethnography as
+  a design resource for collaborative systems. It bridges the gap between
+  ethnographic fieldwork and the design of computer-supported cooperative work
+  systems. The book covers core ethnographic concepts, fieldwork methods, and
+  techniques for translating ethnographic findings into design requirements.
+  It is widely used in HCI and CSCW courses and by practitioners designing
+  sociotechnical systems.
+domains:
+  - software-engineering
+  - social-sciences
+  - education
+collaboration_type:
+  - co-design
+  - interdisciplinary
+scale:
+  - small-team
+  - organization
+modality:
+  - in-person
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - ethnography
+  - design-science
+resource_type: book
+authors:
+  - Andy Crabtree
+year: 2003
+access: paid
+external_links:
+  - type: book
+    url: https://www.springer.com/gp/book/9781852337407
+    title: "Designing Collaborative Systems (Springer)"
+related_entries:
+  - cscw-framework
+  - activity-theory
+  - participatory-design
+tags:
+  - ethnography
+  - CSCW
+  - design-methods
+  - sociotechnical
