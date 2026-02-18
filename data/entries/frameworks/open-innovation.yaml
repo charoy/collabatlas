@@ -1,0 +1,64 @@
+id: open-innovation
+type: framework
+title: Open Innovation
+tagline: A distributed innovation model where organizations use external knowledge flows alongside internal R&D.
+description: >-
+  Open Innovation, coined by Henry Chesbrough in 2003, is a paradigm that assumes
+  firms can and should use external ideas as well as internal ideas, and internal
+  and external paths to market, as they advance their technology. It contrasts with
+  the traditional closed innovation model where R&D is conducted entirely in-house.
+  Open Innovation encompasses practices such as technology licensing, spin-offs,
+  corporate venturing, crowdsourcing, and open-source collaboration. It is widely
+  applied in technology industries, pharmaceuticals, and public sector innovation.
+domains:
+  - business
+  - software-engineering
+  - public-policy
+  - manufacturing
+collaboration_type:
+  - open-source
+  - crowdsourcing
+  - co-creation
+  - interdisciplinary
+scale:
+  - organization
+  - multi-org
+  - community
+modality:
+  - remote
+  - hybrid
+  - in-person
+maturity: established
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - case-study
+  - survey
+  - mixed-methods
+key_concepts:
+  - Knowledge spillovers
+  - Technology licensing
+  - Innovation funnel
+  - Absorptive capacity
+  - Ecosystem thinking
+seminal_works:
+  - title: "Open Innovation: The New Imperative for Creating and Profiting from Technology"
+    authors: ["Henry Chesbrough"]
+    year: 2003
+  - title: "Open Innovation: Researching a New Paradigm"
+    authors: ["Henry Chesbrough", "Wim Vanhaverbeke", "Joel West"]
+    year: 2006
+external_links:
+  - type: book
+    url: https://www.hbs.edu/faculty/Pages/item.aspx?num=13798
+    title: "Open Innovation (Chesbrough, 2003)"
+related_entries:
+  - cscw-framework
+tags:
+  - innovation
+  - R&D
+  - knowledge-management
+  - ecosystem

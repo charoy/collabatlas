@@ -1,0 +1,70 @@
+id: cscw-framework
+type: framework
+title: Computer-Supported Cooperative Work (CSCW)
+tagline: A research field and design framework examining how technology supports group work and collaboration.
+description: >-
+  Computer-Supported Cooperative Work (CSCW) is both a research field and a design
+  framework concerned with understanding how people work together and how technology
+  can support collaborative activities. The field draws on sociology, organizational
+  theory, HCI, and systems design. Key analytical tools include the time-space matrix
+  (same/different time and place), awareness mechanisms, and articulation work.
+  CSCW research informs the design of groupware, collaborative platforms, and
+  sociotechnical systems across domains from healthcare to software engineering.
+domains:
+  - software-engineering
+  - healthcare
+  - education
+  - business
+collaboration_type:
+  - distributed
+  - co-production
+  - interdisciplinary
+scale:
+  - pair
+  - small-team
+  - organization
+  - multi-org
+modality:
+  - remote
+  - hybrid
+  - in-person
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-01-20"
+last_reviewed: "2025-06-01"
+research_method:
+  - ethnography
+  - design-science
+  - case-study
+key_concepts:
+  - Time-space matrix
+  - Awareness
+  - Articulation work
+  - Groupware
+  - Coordination mechanisms
+seminal_works:
+  - title: "How People Write Together"
+    authors: ["Irene Greif", "Sunil Sarin"]
+    year: 1987
+  - title: "CSCW: Four Characters in Search of a Context"
+    authors: ["Jonathan Grudin"]
+    year: 1988
+  - title: "Groupware and Social Dynamics"
+    authors: ["Jonathan Grudin"]
+    year: 1994
+    url: https://doi.org/10.1145/175222.175230
+external_links:
+  - type: website
+    url: https://cscw.acm.org
+    title: ACM CSCW Conference
+related_entries:
+  - activity-theory
+  - miro
+  - slack
+tags:
+  - groupware
+  - sociotechnical
+  - HCI
+  - distributed-work

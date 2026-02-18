@@ -1,0 +1,17 @@
+- id: in-person
+  label: In-Person
+  description: >-
+    Collaboration conducted primarily through face-to-face interaction in
+    shared physical spaces.
+
+- id: remote
+  label: Remote
+  description: >-
+    Collaboration conducted entirely through digital communication tools
+    with no requirement for physical co-location.
+
+- id: hybrid
+  label: Hybrid
+  description: >-
+    Collaboration that blends in-person and remote participation, requiring
+    deliberate design to ensure equitable engagement across modalities.

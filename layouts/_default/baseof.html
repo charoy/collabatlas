@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">
+        <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      </h1>
+      <p class="site-tagline">{{ .Site.Params.tagline }}</p>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main{{ if .IsHome }} site-main--home{{ end }}">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>{{ .Site.Title }} — {{ .Site.Params.description }}</p>
+      <p>
+        <a href="{{ .Site.Params.github_repo }}" target="_blank" rel="noopener">GitHub</a>
+        &middot; Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+      </p>
+    </div>
+  </footer>
+
+  {{ if resources.Get "js/catalogue-filter.js" }}
+  {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ end }}
+  {{ if eq .RelPermalink "/guides/find-your-method/" }}
+  {{ if resources.Get "js/wizard.js" }}
+  {{ $wjs := resources.Get "js/wizard.js" | minify | fingerprint }}
+  <script src="{{ $wjs.RelPermalink }}" integrity="{{ $wjs.Data.Integrity }}"></script>
+  {{ end }}
+  {{ end }}
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="blog-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="post-grid">
+    {{ range .Pages.ByDate.Reverse }}
+    <article class="post-card">
+      <div class="post-card-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ with .Params.category }}<span class="post-category">{{ . }}</span>{{ end }}
+      </div>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      {{ with .Params.summary }}<p class="post-summary">{{ . }}</p>{{ end }}
+      <div class="post-card-footer">
+        {{ with .Params.author }}<span class="post-author">{{ . }}</span>{{ end }}
+        {{ range .Params.related_entries }}
+        <span class="badge tool">{{ . }}</span>
+        {{ end }}
+        <a href="{{ .Permalink }}" class="post-read-more">Read →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

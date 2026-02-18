@@ -1,0 +1,47 @@
+baseURL = 'https://charoy.github.io/collabatlas/'
+languageCode = 'en-us'
+title = 'CollabAtlas'
+
+[params]
+  description = 'An open, community-governed knowledge platform for collaborative solutions'
+  tagline = 'Navigate the landscape of collaboration'
+  github_repo = 'https://github.com/charoy/collabatlas'
+
+[taxonomies]
+  domain = 'domains'
+  collaboration_type = 'collaboration-types'
+  scale = 'scales'
+  research_method = 'research-methods'
+  maturity = 'maturity-levels'
+  modality = 'modalities'
+
+[menu]
+  [[menu.main]]
+    name = 'Catalogue'
+    url = '/catalogue/'
+    weight = 1
+  [[menu.main]]
+    name = 'Guides'
+    url = '/guides/'
+    weight = 2
+  [[menu.main]]
+    name = 'Governance'
+    url = '/governance/'
+    weight = 3
+  [[menu.main]]
+    name = 'Research'
+    url = '/research/'
+    weight = 4
+  [[menu.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 5
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 6
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{ $data := dict }}
+{{ with .Params.data_id }}
+  {{ $id := . }}
+  {{ $section := $.Section }}
+  {{ $entries := index $.Site.Data "entries" | default dict }}
+  {{ $sectionData := index $entries $section | default dict }}
+  {{ $data = index $sectionData $id | default dict }}
+{{ end }}
+{{ $merged := merge .Params $data }}
+
+<article class="catalogue-entry">
+  <header class="entry-header">
+    <h1>{{ .Title }}</h1>
+    {{ with $merged.tagline }}<p class="entry-tagline">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ if $merged.description }}
+  <div class="entry-description">
+    <p>{{ $merged.description }}</p>
+  </div>
+  {{ end }}
+
+  {{ if eq .Section "datasets" }}
+    {{ with $merged.platform }}
+    <div class="dataset-source">
+      <span class="platform-badge platform-{{ . }}">{{ . | upper }}</span>
+      {{ with $merged.source_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View on platform →</a>
+      {{ end }}
+      {{ with $merged.platform_id }}<code class="platform-id">{{ . }}</code>{{ end }}
+    </div>
+    {{ end }}
+  {{ end }}
+
+  {{ partial "metadata-table.html" . }}
+
+  {{ partial "taxonomy-badges.html" . }}
+
+  {{ with $merged.when_to_use }}
+  <section class="entry-section">
+    <h2>When to Use</h2>
+    <p>{{ . }}</p>
+  </section>
+  {{ end }}
+
+  {{ with $merged.limitations }}
+  <section class="entry-section">
+    <h2>Limitations</h2>
+    <p>{{ . }}</p>
+  </section>
+  {{ end }}
+
+  {{ with $merged.key_concepts }}
+  <section class="entry-section">
+    <h2>Key Concepts</h2>
+    <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  </section>
+  {{ end }}
+
+  {{ with $merged.seminal_works }}
+  <section class="entry-section">
+    <h2>Seminal Works</h2>
+    <ul>
+      {{ range . }}
+      <li>
+        {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
+        <strong>{{ .title }}</strong>
+        {{ with .url }}</a>{{ end }}
+        — {{ delimit .authors ", " }} ({{ .year }})
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+  {{ with $merged.outcomes }}
+  <section class="entry-section">
+    <h2>Outcomes</h2>
+    <p>{{ . }}</p>
+  </section>
+  {{ end }}
+
+  {{ with $merged.steps }}
+  <section class="entry-section">
+    <h2>Steps</h2>
+    <ol>{{ range . }}<li>{{ . }}</li>{{ end }}</ol>
+  </section>
+  {{ end }}
+
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+  {{ partial "external-links.html" (dict "Params" $merged) }}
+
+  {{ partial "related-entries.html" (dict "Params" $merged) }}
+</article>
+{{ end }}

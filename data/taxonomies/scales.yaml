@@ -1,0 +1,29 @@
+- id: pair
+  label: Pair
+  description: >-
+    Two individuals collaborating directly, such as a mentor-mentee dyad
+    or a pair-programming partnership.
+
+- id: small-team
+  label: Small Team (3-10)
+  description: >-
+    A small group of 3 to 10 people working together with direct communication
+    channels among all members.
+
+- id: organization
+  label: Organization (11-100)
+  description: >-
+    Collaboration within or across units of a single organization, involving
+    11 to 100 participants with defined roles and structures.
+
+- id: multi-org
+  label: Multi-Organization
+  description: >-
+    Collaboration spanning multiple organizations, requiring cross-institutional
+    coordination, shared governance, and boundary negotiation.
+
+- id: community
+  label: Community (100+)
+  description: >-
+    Large-scale or open collaboration involving over 100 participants, often
+    with fluid membership and emergent coordination mechanisms.

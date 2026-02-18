@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="single-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.tagline }}<p class="page-tagline">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ partial "metadata-table.html" . }}
+
+  <div class="page-content">
+    {{ .Content }}
+  </div>
+
+  {{ partial "related-entries.html" . }}
+  {{ partial "external-links.html" . }}
+</article>
+{{ end }}

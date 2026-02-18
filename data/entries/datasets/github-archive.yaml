@@ -1,0 +1,54 @@
+id: github-archive
+type: dataset
+title: GH Archive
+tagline: Public dataset of GitHub activity events for studying open-source collaboration at scale.
+description: >-
+  GH Archive is a project that records the public GitHub timeline and makes it
+  available for further analysis. It captures all public GitHub events — including
+  commits, pull requests, issues, forks, stars, and comments — and archives them
+  as compressed JSON files. The dataset is widely used in empirical software
+  engineering research to study collaboration patterns, contributor dynamics,
+  project health, and open-source ecosystem evolution. It is available via Google
+  BigQuery for large-scale analysis.
+domains:
+  - software-engineering
+  - citizen-science
+collaboration_type:
+  - open-source
+  - distributed
+scale:
+  - community
+  - multi-org
+modality:
+  - remote
+maturity: established
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-02-01"
+last_reviewed: "2025-06-01"
+research_method:
+  - mixed-methods
+  - experimental
+source_url: https://www.gharchive.org
+format: JSON (gzip compressed)
+size: "~3 TB (full archive)"
+license: CC0
+temporal_coverage: "2011–present"
+platform: google-bigquery
+platform_id: bigquery-public-data.github_repos
+external_links:
+  - type: website
+    url: https://www.gharchive.org
+    title: GH Archive
+  - type: documentation
+    url: https://cloud.google.com/bigquery/public-data/github
+    title: GitHub on BigQuery
+related_entries:
+  - linux-kernel-development
+  - cscw-framework
+tags:
+  - open-source
+  - empirical-software-engineering
+  - collaboration-data
+  - big-data

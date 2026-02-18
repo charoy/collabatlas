@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://collabatlas.org/schemas/research-article.schema.json",
+  "title": "CollabAtlas Research Article",
+  "description": "Schema for entries in data/research-articles.yaml",
+  "type": "object",
+  "required": ["id", "title"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$",
+      "description": "Unique identifier (author-year format)"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full article title"
+    },
+    "authors": {
+      "type": "string",
+      "description": "Comma-separated list of authors"
+    },
+    "journal": {
+      "type": "string",
+      "description": "Journal, conference, or publisher name"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900,
+      "maximum": 2100,
+      "description": "Publication year"
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to access the article"
+    },
+    "access": {
+      "type": "string",
+      "enum": ["open", "paid", "unknown"],
+      "description": "Access type"
+    },
+    "abstract": {
+      "type": ["string", "null"],
+      "description": "Article abstract"
+    },
+    "citation_count": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Number of citations (from OpenAlex/CrossRef)"
+    },
+    "openalex_id": {
+      "type": "string",
+      "description": "OpenAlex work identifier URL"
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Relevant CollabAtlas domains"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Descriptive tags"
+    },
+    "related_entries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Cross-references to catalogue entry IDs"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Editorial notes"
+    }
+  }
+}

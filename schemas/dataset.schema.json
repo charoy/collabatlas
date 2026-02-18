@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://collabatlas.org/schemas/dataset.schema.json",
+  "title": "CollabAtlas Dataset Entry",
+  "description": "Schema for validating dataset entries in the CollabAtlas collaborative solutions knowledge platform.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "tagline",
+    "description",
+    "domains",
+    "collaboration_type",
+    "scale",
+    "modality",
+    "maturity",
+    "contributors",
+    "status",
+    "source_url",
+    "platform"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier for the entry, lowercase alphanumeric with hyphens."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["dataset"],
+      "description": "Entry type discriminator."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the dataset."
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Short summary of the dataset, max 200 characters."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the dataset."
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Domains or fields where this dataset is relevant."
+    },
+    "collaboration_type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Types of collaboration this dataset relates to."
+    },
+    "scale": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["pair", "small-team", "organization", "multi-org", "community"]
+      },
+      "minItems": 1,
+      "description": "Scales at which this dataset is applicable."
+    },
+    "modality": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["in-person", "remote", "hybrid"]
+      },
+      "minItems": 1,
+      "description": "Modalities covered by this dataset."
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["emerging", "established", "well-documented"],
+      "description": "Maturity level of the dataset."
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "url", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "description": "External links related to the dataset."
+    },
+    "related_entries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "IDs of related entries in the atlas."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Freeform tags for categorization."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was created (ISO 8601 date)."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was last reviewed (ISO 8601 date)."
+    },
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of contributors who authored or reviewed this entry."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "description": "Publication status of the entry."
+    },
+    "research_method": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Research methods associated with this dataset."
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL where the dataset can be accessed or downloaded."
+    },
+    "format": {
+      "type": "string",
+      "description": "File format of the dataset (e.g., CSV, JSON, Parquet)."
+    },
+    "size": {
+      "type": "string",
+      "description": "Size of the dataset (e.g., '2.5 GB', '10,000 records')."
+    },
+    "license": {
+      "type": "string",
+      "description": "License under which the dataset is distributed."
+    },
+    "temporal_coverage": {
+      "type": "string",
+      "description": "Time period covered by the dataset (e.g., '2015-2023')."
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["zenodo", "kaggle", "figshare", "dataverse", "dryad", "osf", "huggingface", "google-bigquery", "acm-dl", "other"],
+      "description": "Hosting platform for the dataset."
+    },
+    "platform_id": {
+      "type": "string",
+      "description": "Platform-specific identifier (e.g., Zenodo DOI, Kaggle slug, Figshare article ID)."
+    }
+  }
+}

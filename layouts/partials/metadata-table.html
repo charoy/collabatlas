@@ -1,0 +1,52 @@
+{{ if or .Params.type .Params.maturity .Params.scale .Params.modality .Params.status .Params.date_created .Params.last_reviewed .Params.contributors }}
+<section class="metadata-table">
+  <h2>Metadata</h2>
+  <dl>
+    {{ with .Params.type }}
+    <dt>Type</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+
+    {{ with .Params.maturity }}
+    <dt>Maturity</dt>
+    <dd><span class="badge maturity-{{ . }}">{{ . }}</span></dd>
+    {{ end }}
+
+    {{ with .Params.scale }}
+    <dt>Scale</dt>
+    <dd>{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}</dd>
+    {{ end }}
+
+    {{ with .Params.modality }}
+    <dt>Modality</dt>
+    <dd>{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}</dd>
+    {{ end }}
+
+    {{ with .Params.status }}
+    <dt>Status</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+
+    {{ with .Params.date_created }}
+    <dt>Created</dt>
+    <dd><time datetime="{{ . }}">{{ . }}</time></dd>
+    {{ end }}
+
+    {{ with .Params.last_reviewed }}
+    <dt>Last reviewed</dt>
+    <dd><time datetime="{{ . }}">{{ . }}</time></dd>
+    {{ end }}
+
+    {{ with .Params.contributors }}
+    <dt>Contributors</dt>
+    <dd>
+      <ul class="contributor-list">
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+    </dd>
+    {{ end }}
+  </dl>
+</section>
+{{ end }}

@@ -1,0 +1,59 @@
+- id: co-design
+  label: Co-Design
+  description: >-
+    Stakeholders jointly define problems and shape solutions from the earliest
+    stages of the design process.
+
+- id: co-creation
+  label: Co-Creation
+  description: >-
+    Multiple actors collectively generate new knowledge, products, or services
+    through shared creative effort.
+
+- id: co-production
+  label: Co-Production
+  description: >-
+    Practitioners and researchers jointly produce outcomes, sharing responsibility
+    for both process and results.
+
+- id: participatory
+  label: Participatory
+  description: >-
+    Affected communities actively engage in decision-making rather than serving
+    solely as subjects or recipients.
+
+- id: distributed
+  label: Distributed
+  description: >-
+    Collaboration spread across geographic locations and time zones, relying on
+    coordination mechanisms to maintain coherence.
+
+- id: crowdsourcing
+  label: Crowdsourcing
+  description: >-
+    Tasks or problems are distributed to a large, often open group of contributors
+    who self-select their involvement.
+
+- id: open-source
+  label: Open Source
+  description: >-
+    Collaboration organized around publicly accessible artifacts with transparent
+    processes and open contribution models.
+
+- id: interdisciplinary
+  label: Interdisciplinary
+  description: >-
+    Researchers from distinct academic disciplines integrate methods and perspectives
+    to address shared questions.
+
+- id: transdisciplinary
+  label: Transdisciplinary
+  description: >-
+    Collaboration that transcends disciplinary boundaries by involving non-academic
+    stakeholders in knowledge production.
+
+- id: community-based
+  label: Community-Based
+  description: >-
+    Collaboration rooted in a specific community, centering local knowledge, needs,
+    and governance in the research process.

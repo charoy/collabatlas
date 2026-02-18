@@ -1,0 +1,13 @@
+{{ with .Params.external_links }}
+<section class="external-links">
+  <h2>External Links</h2>
+  <ul>
+    {{ range . }}
+    <li>
+      <span class="link-type">{{ .type }}</span>
+      <a href="{{ .url }}" target="_blank" rel="noopener">{{ with .title }}{{ . }}{{ else }}{{ .url }}{{ end }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

@@ -1,0 +1,56 @@
+id: jupyter
+type: tool
+title: Jupyter Notebook
+tagline: Interactive computing environment for collaborative data science and reproducible research.
+description: >-
+  Jupyter Notebook is an open-source web application that allows researchers and
+  data scientists to create and share documents containing live code, equations,
+  visualizations, and narrative text. It is widely used for collaborative data
+  analysis, scientific computing, and reproducible research workflows. JupyterHub
+  extends this to multi-user environments, enabling team-based collaboration on
+  shared infrastructure.
+domains:
+  - environmental-science
+  - social-sciences
+  - education
+  - citizen-science
+  - software-engineering
+collaboration_type:
+  - co-production
+  - open-source
+  - distributed
+scale:
+  - pair
+  - small-team
+  - organization
+modality:
+  - remote
+  - hybrid
+  - in-person
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-01-15"
+last_reviewed: "2025-06-01"
+website_url: https://jupyter.org
+license: BSD-3-Clause
+open_source: true
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+  - Linux
+external_links:
+  - type: website
+    url: https://jupyter.org
+    title: Project Jupyter
+  - type: documentation
+    url: https://docs.jupyter.org
+    title: Jupyter Documentation
+related_entries: []
+tags:
+  - data-science
+  - reproducible-research
+  - computational-notebooks
+  - open-source

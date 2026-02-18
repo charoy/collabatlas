@@ -1,0 +1,18 @@
+{{ with .Params.related_entries }}
+<section class="related-entries">
+  <h2>Related Entries</h2>
+  <ul class="related-list">
+    {{ range . }}
+    {{ $id := . }}
+    {{ $found := false }}
+    {{ range $.Site.Pages }}
+      {{ if and (not $found) .File (eq .File.ContentBaseName $id) }}
+        {{ $found = true }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Params.tagline }} — <span class="related-tagline">{{ . }}</span>{{ end }}</li>
+      {{ end }}
+    {{ end }}
+    {{ if not $found }}<li>{{ $id }}</li>{{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

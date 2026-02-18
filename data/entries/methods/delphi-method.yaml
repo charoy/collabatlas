@@ -1,0 +1,55 @@
+id: delphi-method
+type: method
+title: Delphi Method
+tagline: Structured expert consultation technique using iterative questionnaire rounds to build consensus.
+description: >-
+  The Delphi Method is a structured communication technique that relies on a panel
+  of experts who respond to questionnaires in multiple rounds. After each round,
+  a facilitator provides an anonymized summary of the experts' forecasts and the
+  reasons they provided. Experts are encouraged to revise their earlier answers
+  in light of the replies of other members. The process stops when a predefined
+  consensus criterion is reached. It is widely used in policy research, healthcare
+  priority-setting, technology forecasting, and curriculum design.
+domains:
+  - public-policy
+  - healthcare
+  - education
+  - business
+collaboration_type:
+  - interdisciplinary
+  - distributed
+scale:
+  - small-team
+  - organization
+  - multi-org
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-01-20"
+last_reviewed: "2025-06-01"
+research_method:
+  - survey
+  - mixed-methods
+when_to_use: >-
+  Use the Delphi Method when expert consensus is needed on complex or uncertain
+  topics, when face-to-face meetings are impractical, or when anonymity is
+  desirable to prevent dominant voices from skewing results.
+limitations: >-
+  The method can be slow and may suppress minority viewpoints through pressure
+  toward consensus. The quality of results depends heavily on the selection of
+  appropriate experts and the skill of the facilitator.
+external_links:
+  - type: article
+    url: https://www.rand.org/pubs/research_memoranda/RM5888.html
+    title: "An Experimental Application of the Delphi Method (Dalkey & Helmer, 1963)"
+related_entries:
+  - activity-theory
+tags:
+  - expert-consensus
+  - forecasting
+  - policy-research
+  - structured-communication

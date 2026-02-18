@@ -1,0 +1,66 @@
+id: activity-theory
+type: framework
+title: Activity Theory
+tagline: A conceptual framework for analyzing human activities as socially situated, tool-mediated, and goal-directed systems.
+description: >-
+  Activity Theory (AT) is a psychological and philosophical framework originating
+  from the work of Vygotsky, Leont'ev, and later Engeström. It conceptualizes
+  human activity as a hierarchical system composed of activities (driven by motives),
+  actions (directed at goals), and operations (automated routines). Engeström's
+  third-generation AT introduces the concept of an activity system — a collective
+  unit of analysis comprising subject, object, tools, rules, community, and division
+  of labor. AT is widely used in CSCW, HCI, organizational learning, and educational
+  research to analyze collaborative work practices and contradictions within systems.
+domains:
+  - education
+  - software-engineering
+  - social-sciences
+  - healthcare
+collaboration_type:
+  - co-production
+  - interdisciplinary
+  - community-based
+scale:
+  - small-team
+  - organization
+  - community
+modality:
+  - in-person
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-01-15"
+last_reviewed: "2025-06-01"
+research_method:
+  - ethnography
+  - action-research
+  - case-study
+key_concepts:
+  - Activity system
+  - Mediation
+  - Zone of proximal development
+  - Contradictions
+  - Expansive learning
+seminal_works:
+  - title: "Mind in Society: The Development of Higher Psychological Processes"
+    authors: ["Lev Vygotsky"]
+    year: 1978
+  - title: "Expansive Learning at Work: Toward an Activity Theoretical Reconceptualization"
+    authors: ["Yrjö Engeström"]
+    year: 2001
+    url: https://doi.org/10.1080/13639080020028747
+external_links:
+  - type: article
+    url: https://doi.org/10.1207/s15327884mca0301_2
+    title: "Learning by Expanding (Engeström, 1987)"
+related_entries:
+  - cscw-framework
+  - participatory-design
+tags:
+  - CSCW
+  - HCI
+  - organizational-learning
+  - sociotechnical-systems

@@ -1,0 +1,176 @@
+{{ define "main" }}
+
+{{ $allEntries := where .Site.Pages "Section" "catalogue" }}
+{{ $tools      := where .Site.Pages "Section" "tools" }}
+{{ $methods    := where .Site.Pages "Section" "methods" }}
+{{ $frameworks := where .Site.Pages "Section" "frameworks" }}
+{{ $caseStudies:= where .Site.Pages "Section" "case-studies" }}
+{{ $datasets   := where .Site.Pages "Section" "datasets" }}
+{{ $resources  := where .Site.Pages "Section" "resources" }}
+{{ $posts      := where .Site.Pages "Section" "blog" }}
+
+<section class="home-hero">
+  <div class="home-hero-inner">
+    <div class="home-hero-badge">Open Knowledge Platform</div>
+    <h1 class="home-hero-title">Navigate the landscape<br>of <em>collaborative</em> research</h1>
+    <p class="home-hero-lead">CollabAtlas catalogues tools, methods, frameworks, case studies, datasets and resources — connected across domains, scales, and modalities.</p>
+    <div class="hero-actions">
+      <a href="{{ "/catalogue/" | relURL }}" class="btn btn-primary">Browse the Catalogue</a>
+      <a href="{{ "/guides/find-your-method/" | relURL }}" class="btn btn-secondary">Find Your Method →</a>
+    </div>
+  </div>
+</section>
+
+<div class="home-stats">
+  <div class="stat"><span class="stat-number">{{ len $tools }}</span><span class="stat-label">Tools</span></div>
+  <div class="stat"><span class="stat-number">{{ len $methods }}</span><span class="stat-label">Methods</span></div>
+  <div class="stat"><span class="stat-number">{{ len $frameworks }}</span><span class="stat-label">Frameworks</span></div>
+  <div class="stat"><span class="stat-number">{{ len $caseStudies }}</span><span class="stat-label">Case Studies</span></div>
+  <div class="stat"><span class="stat-number">{{ len $datasets }}</span><span class="stat-label">Datasets</span></div>
+  <div class="stat"><span class="stat-number">{{ len $resources }}</span><span class="stat-label">Resources</span></div>
+</div>
+
+{{ $domains := .Site.Data.taxonomies.domains }}
+{{ $articles := .Site.Data.research_articles }}
+
+{{ if $domains }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Browse by Domain</h2>
+    <a href="{{ "/catalogue/" | relURL }}" class="home-section-link">Full catalogue →</a>
+  </div>
+  <div class="domain-grid">
+    {{ range $domains }}
+    {{ $domainId := .id }}
+    {{ $count := 0 }}
+    {{ range $allEntries }}
+      {{ range .Params.domains }}
+        {{ if eq . $domainId }}{{ $count = add $count 1 }}{{ end }}
+      {{ end }}
+    {{ end }}
+    <a href="{{ printf "/catalogue/?domain=%s" .id | relURL }}" class="domain-tile">
+      <strong class="domain-tile-name">{{ .label }}</strong>
+      {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
+      <p class="domain-tile-desc">{{ .description }}</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ if $articles }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Key Research Articles</h2>
+    <a href="{{ "/research/" | relURL }}" class="home-section-link">All {{ len $articles }} articles →</a>
+  </div>
+  <div class="articles-list">
+    {{ range first 4 $articles }}
+    <article class="article-row">
+      <div class="article-row-main">
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="article-title">{{ .title }}</a>
+        <div class="article-meta">
+          {{ with .authors }}<span class="article-authors">{{ . }}</span>{{ end }}
+          {{ with .journal }}<span class="article-sep">·</span><span class="article-journal">{{ . }}</span>{{ end }}
+          {{ with .year }}<span class="article-sep">·</span><span class="article-year">{{ . }}</span>{{ end }}
+          {{ with .doi }}<span class="article-sep">·</span><span class="article-doi">DOI: {{ . }}</span>{{ end }}
+        </div>
+        <div class="article-tags">
+          {{ range .domains }}<span class="badge scale">{{ . }}</span>{{ end }}
+          {{ range .tags }}<span class="badge scale">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      <div class="article-row-aside">
+        {{ if eq .access "open" }}
+        <span class="access-badge access-open">Open Access</span>
+        {{ else }}
+        <span class="access-badge access-paid">Subscription</span>
+        {{ end }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="article-link-btn">Read →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ if $posts }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Latest from the Blog</h2>
+    <a href="{{ "/blog/" | relURL }}" class="home-section-link">All posts →</a>
+  </div>
+  <div class="home-posts">
+    {{ range first 3 ($posts.ByDate.Reverse) }}
+    <article class="home-post-card">
+      <div class="post-card-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        {{ with .Params.category }}<span class="post-category">{{ . }}</span>{{ end }}
+      </div>
+      <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+      {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      <div class="home-post-assets">
+        {{ range first 3 (.Params.related_entries | default slice) }}<span class="badge scale">{{ . }}</span>{{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Explore the Catalogue</h2>
+    <a href="{{ "/catalogue/" | relURL }}" class="home-section-link">Full catalogue →</a>
+  </div>
+  <div class="home-catalogue-grid">
+    {{ $sections := slice
+      (dict "name" "Tools"        "slug" "tools"        "icon" "⚙" "desc" "Software and platforms that support collaborative work" "pages" $tools)
+      (dict "name" "Methods"      "slug" "methods"      "icon" "◎" "desc" "Structured approaches to organising collaboration" "pages" $methods)
+      (dict "name" "Frameworks"   "slug" "frameworks"   "icon" "⬡" "desc" "Theoretical lenses for analysing collaborative systems" "pages" $frameworks)
+      (dict "name" "Case Studies" "slug" "case-studies" "icon" "◈" "desc" "Real-world examples of collaboration in practice" "pages" $caseStudies)
+      (dict "name" "Datasets"     "slug" "datasets"     "icon" "▦" "desc" "Empirical data for collaboration research" "pages" $datasets)
+      (dict "name" "Resources"    "slug" "resources"    "icon" "◉" "desc" "Books, articles, and reference materials" "pages" $resources)
+    }}
+    {{ range $sections }}
+    <a href="{{ printf "/catalogue/%s/" .slug | relURL }}" class="catalogue-tile">
+      <span class="catalogue-tile-icon">{{ .icon }}</span>
+      <div class="catalogue-tile-body">
+        <strong>{{ .name }}</strong>
+        <span class="catalogue-tile-count">{{ len .pages }} entries</span>
+        <p>{{ .desc }}</p>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<section class="home-section home-features">
+  <div class="home-section-header">
+    <h2 class="home-section-title">How It Works</h2>
+  </div>
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🔍</div>
+      <h3>Multi-Dimensional Discovery</h3>
+      <p>Filter by domain, collaboration type, scale, modality, and research method to find exactly what you need.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧭</div>
+      <h3>Decision Wizard</h3>
+      <p>Answer a few questions and get a personalised shortlist of methods and tools suited to your context.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔗</div>
+      <h3>Connected Entries</h3>
+      <p>Every entry links to related tools, methods, and case studies — follow the threads across the catalogue.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✍️</div>
+      <h3>Community Governed</h3>
+      <p>Maintained by an editorial board of domain experts. Contribute through structured, peer-reviewed processes.</p>
+    </div>
+  </div>
+</section>
+
+{{ end }}

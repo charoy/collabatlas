@@ -1,0 +1,31 @@
+name: Freshness Report
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'  # First of every month at 9am UTC
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Run freshness report
+        run: python scripts/freshness-report.py
+
+      - name: Create issue if stale entries found
+        uses: peter-evans/create-issue-from-file@v5
+        if: hashFiles('freshness-report.md') != ''
+        with:
+          title: 'Monthly Freshness Report'
+          content-filepath: freshness-report.md
+          labels: maintenance, freshness

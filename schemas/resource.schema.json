@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://collabatlas.org/schemas/resource.schema.json",
+  "title": "CollabAtlas Resource Entry",
+  "description": "Schema for validating resource entries in the CollabAtlas collaborative solutions knowledge platform.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "tagline",
+    "description",
+    "domains",
+    "collaboration_type",
+    "scale",
+    "modality",
+    "maturity",
+    "contributors",
+    "status",
+    "resource_type"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier for the entry, lowercase alphanumeric with hyphens."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["resource"],
+      "description": "Entry type discriminator."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the resource."
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Short summary of the resource, max 200 characters."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the resource."
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Domains or fields where this resource is relevant."
+    },
+    "collaboration_type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Types of collaboration this resource covers."
+    },
+    "scale": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["pair", "small-team", "organization", "multi-org", "community"]
+      },
+      "minItems": 1,
+      "description": "Scales at which this resource is applicable."
+    },
+    "modality": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["in-person", "remote", "hybrid"]
+      },
+      "minItems": 1,
+      "description": "Modalities covered by this resource."
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["emerging", "established", "well-documented"],
+      "description": "Maturity level of the resource."
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "url", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "description": "External links related to the resource."
+    },
+    "related_entries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "IDs of related entries in the atlas."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Freeform tags for categorization."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was created (ISO 8601 date)."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was last reviewed (ISO 8601 date)."
+    },
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of contributors who authored or reviewed this entry."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "description": "Publication status of the entry."
+    },
+    "research_method": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Research methods associated with this resource."
+    },
+    "resource_type": {
+      "type": "string",
+      "enum": ["article", "book", "course", "video", "tutorial", "report"],
+      "description": "Category of the resource."
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Authors of the resource."
+    },
+    "year": {
+      "type": "integer",
+      "description": "Publication year of the resource."
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier for the resource."
+    },
+    "access": {
+      "type": "string",
+      "enum": ["open", "restricted", "paid"],
+      "description": "Access level required to obtain the resource."
+    }
+  }
+}

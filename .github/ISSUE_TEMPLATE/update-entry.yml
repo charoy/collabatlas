@@ -1,0 +1,32 @@
+name: Update Entry
+description: Suggest an update to an existing catalogue entry.
+title: "[Update] "
+labels: ["update", "triage"]
+body:
+  - type: input
+    id: entry-id
+    attributes:
+      label: Entry ID
+      description: "The ID of the entry to update (e.g., miro, participatory-design)."
+      placeholder: "e.g., miro"
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: What should be updated?
+      description: "Describe the changes you'd like to see."
+      placeholder: |
+        - Description needs updating because...
+        - New external link to add: ...
+        - Maturity level should change to...
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources / Evidence
+      description: "Provide links or references supporting the proposed changes."
+      placeholder: "Links to papers, official documentation, or other evidence."

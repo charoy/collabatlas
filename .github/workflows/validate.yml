@@ -1,0 +1,29 @@
+name: Validate Entries
+
+on:
+  pull_request:
+    paths:
+      - 'data/entries/**'
+      - 'data/research-articles.yaml'
+      - 'schemas/**'
+      - 'data/taxonomies/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Validate YAML entries against schemas
+        run: python scripts/validate.py
+
+      - name: Check for broken internal references
+        run: python scripts/validate.py --check-refs

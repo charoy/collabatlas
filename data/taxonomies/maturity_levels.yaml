@@ -1,0 +1,17 @@
+- id: emerging
+  label: Emerging
+  description: >-
+    The collaboration pattern is newly identified with limited empirical evidence,
+    few documented instances, and evolving definitions.
+
+- id: established
+  label: Established
+  description: >-
+    The collaboration pattern is recognized in practice and literature with
+    a growing body of evidence and some agreed-upon frameworks.
+
+- id: well-documented
+  label: Well-Documented
+  description: >-
+    The collaboration pattern has extensive empirical support, mature theoretical
+    foundations, and widely adopted best practices.

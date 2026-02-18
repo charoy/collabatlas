@@ -1,0 +1,50 @@
+{{ define "main" }}
+<article class="blog-post">
+  <header class="post-header">
+    <div class="post-header-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.category }}<span class="post-category">{{ . }}</span>{{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="post-lead">{{ . }}</p>{{ end }}
+    <div class="post-byline">
+      {{ with .Params.author }}<span class="post-author">By {{ . }}</span>{{ end }}
+    </div>
+  </header>
+
+  {{ with .Params.related_entries }}
+  <aside class="post-assets-sidebar">
+    <h3>Assets Referenced</h3>
+    <ul class="post-assets-list">
+      {{ range . }}
+      {{ $id := . }}
+      {{ $found := false }}
+      {{ range $.Site.Pages }}
+        {{ if and (not $found) .File (eq .File.ContentBaseName $id) }}
+          {{ $found = true }}
+          <li class="post-asset-item">
+            <span class="badge {{ .Section }}">{{ .Section }}</span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ with .Params.tagline }}<p class="post-asset-tagline">{{ . }}</p>{{ end }}
+          </li>
+        {{ end }}
+      {{ end }}
+      {{ if not $found }}<li>{{ $id }}</li>{{ end }}
+      {{ end }}
+    </ul>
+  </aside>
+  {{ end }}
+
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+
+  {{ with .Params.tags }}
+  <footer class="post-footer">
+    <div class="post-tags">
+      {{ range . }}<span class="badge scale">{{ . }}</span>{{ end }}
+    </div>
+  </footer>
+  {{ end }}
+</article>
+{{ end }}

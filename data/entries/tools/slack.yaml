@@ -1,0 +1,56 @@
+id: slack
+type: tool
+title: Slack
+tagline: Channel-based messaging platform for team communication and distributed collaboration.
+description: >-
+  Slack is a cloud-based team communication platform organized around channels,
+  direct messages, and integrations. It enables persistent, searchable
+  conversations across distributed teams and integrates with hundreds of
+  third-party tools. Slack is widely adopted in software engineering, business,
+  and research organizations for coordinating asynchronous and synchronous
+  collaboration across time zones.
+domains:
+  - software-engineering
+  - business
+  - education
+  - design
+collaboration_type:
+  - distributed
+  - co-production
+  - open-source
+scale:
+  - small-team
+  - organization
+  - multi-org
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2025-01-20"
+last_reviewed: "2025-06-01"
+website_url: https://slack.com
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+  - iOS
+  - Android
+external_links:
+  - type: website
+    url: https://slack.com
+    title: Slack Official Website
+  - type: documentation
+    url: https://slack.com/help
+    title: Slack Help Center
+related_entries:
+  - miro
+tags:
+  - messaging
+  - team-communication
+  - async-collaboration
+  - remote-work

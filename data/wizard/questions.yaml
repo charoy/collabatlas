@@ -1,0 +1,60 @@
+- id: goal
+  question: "What is your primary goal?"
+  options:
+    - id: design-solution
+      label: "Design a solution or product"
+      tags: [co-design, co-creation, design-science]
+    - id: build-consensus
+      label: "Build consensus or make a decision"
+      tags: [interdisciplinary, transdisciplinary, distributed]
+    - id: produce-knowledge
+      label: "Produce or synthesize knowledge"
+      tags: [co-production, action-research, systematic-review]
+    - id: engage-community
+      label: "Engage a community or stakeholders"
+      tags: [participatory, community-based, crowdsourcing]
+
+- id: scale
+  question: "How many people are involved?"
+  options:
+    - id: pair
+      label: "2–5 people (pair or small group)"
+      tags: [pair, small-team]
+    - id: team
+      label: "6–30 people (team or department)"
+      tags: [small-team, organization]
+    - id: org
+      label: "30–500 people (organization)"
+      tags: [organization, multi-org]
+    - id: community
+      label: "500+ people (large community)"
+      tags: [community, multi-org]
+
+- id: modality
+  question: "How will people collaborate?"
+  options:
+    - id: in-person
+      label: "In person"
+      tags: [in-person]
+    - id: remote
+      label: "Fully remote"
+      tags: [remote]
+    - id: hybrid
+      label: "Mix of in-person and remote"
+      tags: [hybrid]
+
+- id: domain
+  question: "Which domain best describes your context?"
+  options:
+    - id: tech
+      label: "Technology / Software"
+      tags: [software-engineering, design]
+    - id: social
+      label: "Social sciences / Policy"
+      tags: [social-sciences, public-policy, education]
+    - id: health
+      label: "Health / Environment"
+      tags: [healthcare, environmental-science]
+    - id: community
+      label: "Community / Urban"
+      tags: [urban-planning, citizen-science, arts-culture]

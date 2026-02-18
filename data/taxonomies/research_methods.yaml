@@ -1,0 +1,59 @@
+- id: action-research
+  label: Action Research
+  description: >-
+    Iterative cycles of planning, acting, observing, and reflecting conducted
+    collaboratively with practitioners to solve real-world problems.
+
+- id: ethnography
+  label: Ethnography
+  description: >-
+    Immersive, long-term observation and participation in a community or setting
+    to understand collaborative practices in context.
+
+- id: experimental
+  label: Experimental
+  description: >-
+    Controlled studies that manipulate variables to test causal hypotheses about
+    collaboration processes or outcomes.
+
+- id: survey
+  label: Survey
+  description: >-
+    Structured data collection from a sample population using questionnaires
+    to measure attitudes, behaviors, or outcomes at scale.
+
+- id: case-study
+  label: Case Study
+  description: >-
+    In-depth investigation of a specific collaboration instance or bounded system
+    using multiple sources of evidence.
+
+- id: design-science
+  label: Design Science
+  description: >-
+    Creation and evaluation of novel artifacts, frameworks, or interventions
+    intended to improve collaborative practice.
+
+- id: mixed-methods
+  label: Mixed Methods
+  description: >-
+    Integration of qualitative and quantitative approaches within a single study
+    to provide complementary perspectives on collaboration.
+
+- id: systematic-review
+  label: Systematic Review
+  description: >-
+    Rigorous, reproducible synthesis of existing literature on a collaboration
+    topic using predefined search and inclusion criteria.
+
+- id: grounded-theory
+  label: Grounded Theory
+  description: >-
+    Inductive theory-building from qualitative data through iterative coding
+    and constant comparison of collaborative phenomena.
+
+- id: participatory-action-research
+  label: Participatory Action Research
+  description: >-
+    Community members serve as co-researchers throughout the inquiry process,
+    combining investigation with social action for change.

@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="catalogue">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ .Content }}
+
+  {{ if .Pages }}
+  <div class="filters" aria-label="Filter entries">
+    <!-- Populated by catalogue-filter.js -->
+  </div>
+  <div class="entry-grid">
+    {{ range .Pages }}
+      {{ partial "entry-card.html" . }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ range .Sections }}
+  <div class="type-section">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    {{ with .Params.description }}<p class="section-description">{{ . }}</p>{{ end }}
+    <div class="entry-grid">
+      {{ range .Pages }}
+        {{ partial "entry-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</section>
+{{ end }}

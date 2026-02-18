@@ -1,0 +1,132 @@
+{{ define "main" }}
+{{ $articles := .Site.Data.research_articles }}
+{{ $domains  := .Site.Data.taxonomies.domains }}
+
+<section class="research-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ if $articles }}
+  <div class="research-toolbar" id="research-toolbar">
+    <div class="filter-label">
+      <span>Domain</span>
+      <select id="filter-domain">
+        <option value="">All domains</option>
+        {{ range $domains }}
+        <option value="{{ .id }}">{{ .label }}</option>
+        {{ end }}
+      </select>
+    </div>
+    <div class="filter-label">
+      <span>Access</span>
+      <select id="filter-access">
+        <option value="">All</option>
+        <option value="open">Open Access</option>
+        <option value="paid">Subscription</option>
+      </select>
+    </div>
+    <div class="filter-label">
+      <span>Search</span>
+      <input type="search" id="filter-search" placeholder="Title, author, keyword…">
+    </div>
+    <span class="filter-count" id="research-count">{{ len $articles }} articles</span>
+  </div>
+
+  <div class="research-list" id="research-list">
+    {{ range $articles }}
+    <article class="research-card"
+      data-domains="{{ range .domains }}{{ . }} {{ end }}"
+      data-access="{{ .access }}"
+      data-text="{{ lower .title }} {{ lower (.authors | default "") }} {{ range .tags }}{{ lower . }} {{ end }}">
+
+      <div class="research-card-main">
+        <div class="research-card-header">
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="research-title">{{ .title }}</a>
+          {{ if eq .access "open" }}
+          <span class="access-badge access-open">Open Access</span>
+          {{ else if eq .access "paid" }}
+          <span class="access-badge access-paid">Subscription</span>
+          {{ else }}
+          <span class="access-badge access-paid">{{ .access }}</span>
+          {{ end }}
+        </div>
+
+        <div class="research-meta">
+          {{ with .authors }}<span class="research-authors">{{ . }}</span>{{ end }}
+          {{ with .journal }}<span class="research-sep">·</span><span class="research-journal">{{ . }}</span>{{ end }}
+          {{ with .year }}<span class="research-sep">·</span><span class="research-year">{{ . }}</span>{{ end }}
+          {{ with .doi }}
+          <span class="research-sep">·</span>
+          <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" class="research-doi">DOI: {{ . }}</a>
+          {{ end }}
+          {{ with .citation_count }}
+          <span class="research-sep">·</span>
+          <span class="research-citations">{{ . }} citations</span>
+          {{ end }}
+        </div>
+
+        {{ with .abstract }}
+        <p class="research-abstract">{{ . }}</p>
+        {{ end }}
+
+        <div class="research-tags">
+          {{ range .domains }}<span class="badge domain">{{ . }}</span>{{ end }}
+          {{ range .tags }}<span class="badge scale">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+
+      <div class="research-card-actions">
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Read →</a>
+        {{ with .doi }}
+        <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" class="research-doi-btn">DOI</a>
+        {{ end }}
+        {{ with .openalex_id }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="research-oa-btn">OpenAlex</a>
+        {{ end }}
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+  <p class="research-empty" id="research-empty" style="display:none">No articles match your filters.</p>
+
+  {{ else }}
+  <p class="page-description">No articles yet. Add entries to <code>data/research-articles.yaml</code> or run <code>python scripts/fetch_doi.py &lt;DOI&gt;</code>.</p>
+  {{ end }}
+</section>
+
+<script>
+(function() {
+  const list    = document.getElementById('research-list');
+  const empty   = document.getElementById('research-empty');
+  const count   = document.getElementById('research-count');
+  const fDomain = document.getElementById('filter-domain');
+  const fAccess = document.getElementById('filter-access');
+  const fSearch = document.getElementById('filter-search');
+  if (!list) return;
+
+  function filter() {
+    const domain = fDomain.value;
+    const access = fAccess.value;
+    const q      = fSearch.value.toLowerCase().trim();
+    let visible  = 0;
+    list.querySelectorAll('.research-card').forEach(card => {
+      const matchDomain = !domain || card.dataset.domains.includes(domain);
+      const matchAccess = !access || card.dataset.access === access;
+      const matchSearch = !q || card.dataset.text.includes(q);
+      const show = matchDomain && matchAccess && matchSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    count.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
+    empty.style.display = visible === 0 ? '' : 'none';
+  }
+
+  fDomain.addEventListener('change', filter);
+  fAccess.addEventListener('change', filter);
+  fSearch.addEventListener('input', filter);
+})();
+</script>
+{{ end }}

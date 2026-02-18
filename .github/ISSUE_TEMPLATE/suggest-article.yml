@@ -1,0 +1,65 @@
+name: Suggest Research Article
+description: Propose a research article to be added to the CollabAtlas research collection.
+title: "[Article] "
+labels: ["article", "triage"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Article Title
+      placeholder: "Full title of the article"
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      description: "If available, the DOI allows us to automatically fetch metadata."
+      placeholder: "e.g., 10.1145/175222.175230"
+
+  - type: input
+    id: authors
+    attributes:
+      label: Authors
+      placeholder: "e.g., Jane Doe, John Smith"
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "e.g., 2024"
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: Why is this relevant to CollabAtlas?
+      description: "Explain how this article relates to collaborative methods, tools, or practices."
+      placeholder: "This article is relevant because..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: domains
+    attributes:
+      label: Suggested Domains
+      description: "Select all that apply."
+      options:
+        - label: Healthcare
+        - label: Education
+        - label: Urban Planning
+        - label: Software Engineering
+        - label: Design
+        - label: Environmental Science
+        - label: Social Sciences
+        - label: Public Policy
+        - label: Business
+        - label: Arts & Culture
+        - label: Disaster Response
+        - label: Citizen Science
+
+  - type: input
+    id: tags
+    attributes:
+      label: Suggested Tags
+      placeholder: "e.g., CSCW, open-source, governance (comma-separated)"

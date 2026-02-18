@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://collabatlas.org/schemas/framework.schema.json",
+  "title": "CollabAtlas Framework Entry",
+  "description": "Schema for validating framework entries in the CollabAtlas collaborative solutions knowledge platform.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "tagline",
+    "description",
+    "domains",
+    "collaboration_type",
+    "scale",
+    "modality",
+    "maturity",
+    "contributors",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier for the entry, lowercase alphanumeric with hyphens."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["framework"],
+      "description": "Entry type discriminator."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the framework."
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Short summary of the framework, max 200 characters."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the framework."
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Domains or fields where this framework is applicable."
+    },
+    "collaboration_type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Types of collaboration this framework supports."
+    },
+    "scale": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["pair", "small-team", "organization", "multi-org", "community"]
+      },
+      "minItems": 1,
+      "description": "Scales at which this framework operates."
+    },
+    "modality": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["in-person", "remote", "hybrid"]
+      },
+      "minItems": 1,
+      "description": "Modalities supported by this framework."
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["emerging", "established", "well-documented"],
+      "description": "Maturity level of the framework."
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "url", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "description": "External links related to the framework."
+    },
+    "related_entries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "IDs of related entries in the atlas."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Freeform tags for categorization."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was created (ISO 8601 date)."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was last reviewed (ISO 8601 date)."
+    },
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of contributors who authored or reviewed this entry."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "description": "Publication status of the entry."
+    },
+    "research_method": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Research methods associated with this framework."
+    },
+    "key_concepts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Core concepts that constitute the framework."
+    },
+    "seminal_works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "authors", "year"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the seminal work."
+          },
+          "authors": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Authors of the work."
+          },
+          "year": {
+            "type": "integer",
+            "description": "Publication year."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the work, if available."
+          }
+        }
+      },
+      "description": "Foundational publications for this framework."
+    }
+  }
+}

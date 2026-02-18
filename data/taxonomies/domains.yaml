@@ -1,0 +1,83 @@
+- id: healthcare
+  label: Healthcare
+  description: >-
+    Collaborative practices in clinical care, public health, and biomedical research
+    involving patients, providers, and health systems.
+
+- id: education
+  label: Education
+  description: >-
+    Collaboration in teaching, learning design, and educational research across
+    institutional and informal settings.
+
+- id: urban-planning
+  label: Urban Planning
+  description: >-
+    Participatory and multi-stakeholder approaches to designing and governing
+    urban spaces and infrastructure.
+
+- id: software-engineering
+  label: Software Engineering
+  description: >-
+    Collaborative software development practices including open-source, agile teams,
+    and distributed engineering efforts.
+
+- id: design
+  label: Design
+  description: >-
+    Co-design and collaborative design processes spanning product, service, interaction,
+    and systems design.
+
+- id: environmental-science
+  label: Environmental Science
+  description: >-
+    Collaborative research and action addressing ecological systems, climate change,
+    and natural resource management.
+
+- id: social-sciences
+  label: Social Sciences
+  description: >-
+    Collaborative inquiry in sociology, psychology, anthropology, and related fields
+    studying human behavior and social structures.
+
+- id: public-policy
+  label: Public Policy
+  description: >-
+    Multi-actor collaboration in policy design, analysis, implementation, and
+    evaluation at local, national, or international levels.
+
+- id: business
+  label: Business
+  description: >-
+    Collaborative practices in organizational management, entrepreneurship,
+    innovation strategy, and cross-firm partnerships.
+
+- id: arts-culture
+  label: Arts & Culture
+  description: >-
+    Collaborative artistic production, cultural preservation, and creative practice
+    across disciplines and communities.
+
+- id: disaster-response
+  label: Disaster Response
+  description: >-
+    Coordination and collaboration in emergency management, humanitarian aid,
+    and community resilience efforts.
+
+- id: citizen-science
+  label: Citizen Science
+  description: >-
+    Public participation in scientific research through data collection, analysis,
+    or problem formulation.
+
+- id: manufacturing
+  label: Manufacturing
+  description: >-
+    Collaborative approaches in production systems, supply chain coordination,
+    and industrial process innovation.
+
+- id: agriculture
+  label: Agriculture
+  description: >-
+    Collaborative practices in farming, food systems, and agricultural research
+    involving producers, researchers, and communities.

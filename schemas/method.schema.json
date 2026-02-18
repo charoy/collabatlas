@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://collabatlas.org/schemas/method.schema.json",
+  "title": "CollabAtlas Method Entry",
+  "description": "Schema for validating method entries in the CollabAtlas collaborative solutions knowledge platform.",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "title",
+    "tagline",
+    "description",
+    "domains",
+    "collaboration_type",
+    "scale",
+    "modality",
+    "maturity",
+    "contributors",
+    "status"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Unique identifier for the entry, lowercase alphanumeric with hyphens."
+    },
+    "type": {
+      "type": "string",
+      "enum": ["method"],
+      "description": "Entry type discriminator."
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title of the method."
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Short summary of the method, max 200 characters."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the method."
+    },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Domains or fields where this method is applicable."
+    },
+    "collaboration_type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "Types of collaboration this method supports."
+    },
+    "scale": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["pair", "small-team", "organization", "multi-org", "community"]
+      },
+      "minItems": 1,
+      "description": "Scales at which this method operates."
+    },
+    "modality": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["in-person", "remote", "hybrid"]
+      },
+      "minItems": 1,
+      "description": "Modalities supported by this method."
+    },
+    "maturity": {
+      "type": "string",
+      "enum": ["emerging", "established", "well-documented"],
+      "description": "Maturity level of the method."
+    },
+    "external_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "url", "title"],
+        "additionalProperties": false,
+        "properties": {
+          "type": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "description": "External links related to the method."
+    },
+    "related_entries": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "IDs of related entries in the atlas."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Freeform tags for categorization."
+    },
+    "created": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was created (ISO 8601 date)."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the entry was last reviewed (ISO 8601 date)."
+    },
+    "contributors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "description": "List of contributors who authored or reviewed this entry."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "published", "archived"],
+      "description": "Publication status of the entry."
+    },
+    "research_method": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Research methods associated with this method."
+    },
+    "steps": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Ordered list of steps describing how to execute the method."
+    },
+    "when_to_use": {
+      "type": "string",
+      "description": "Guidance on when this method is most appropriate."
+    },
+    "limitations": {
+      "type": "string",
+      "description": "Known limitations or caveats of the method."
+    }
+  }
+}
