@@ -1,10 +1,10 @@
 {{ define "main" }}
 {{ $data := dict }}
+{{ $subsection := path.Base (path.Dir .File.Path) }}
 {{ with .Params.data_id }}
   {{ $id := . }}
-  {{ $section := $.Section }}
   {{ $entries := index $.Site.Data "entries" | default dict }}
-  {{ $sectionData := index $entries $section | default dict }}
+  {{ $sectionData := index $entries $subsection | default dict }}
   {{ $data = index $sectionData $id | default dict }}
 {{ end }}
 {{ $merged := merge .Params $data }}
@@ -40,7 +40,7 @@
   </div>
   {{ end }}
 
-  {{ if eq .Section "datasets" }}
+  {{ if eq $subsection "datasets" }}
     {{ with $merged.platform }}
     <div class="dataset-source">
       <span class="platform-badge platform-{{ . }}">{{ . | upper }}</span>
