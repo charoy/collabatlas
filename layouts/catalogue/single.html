@@ -21,13 +21,21 @@
   </div>
   {{ end }}
 
-  {{ if or $merged.website_url $merged.source_url }}
+  {{ if or $merged.website_url $merged.source_url $merged.doi $merged.external_links }}
   <div class="entry-source-link">
     {{ with $merged.website_url }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website ↗</a>
     {{ end }}
     {{ if and $merged.source_url (ne ($merged.source_url | default "") ($merged.website_url | default "")) }}
       <a href="{{ $merged.source_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View Source ↗</a>
+    {{ end }}
+    {{ if and $merged.doi (not $merged.website_url) (not $merged.source_url) }}
+      <a href="https://doi.org/{{ $merged.doi }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">DOI ↗</a>
+    {{ end }}
+    {{ if and (not $merged.website_url) (not $merged.source_url) (not $merged.doi) $merged.external_links }}
+      {{ with index $merged.external_links 0 }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">{{ .title }} ↗</a>
+      {{ end }}
     {{ end }}
   </div>
   {{ end }}
