@@ -1,36 +1,37 @@
+{{ $base := site.Home.RelPermalink }}
 <div class="taxonomy-badges">
   {{ with .Params.domains }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Domains:</span>
-    {{ range . }}<a href="{{ "/domains/" | relURL }}{{ . | urlize }}/" class="badge domain">{{ . }}</a>{{ end }}
+    {{ range . }}<a href="{{ $base }}domains/{{ . | urlize }}/" class="badge domain">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
   {{ with .Params.collaboration_type }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Collaboration types:</span>
-    {{ range . }}<a href="{{ "/collaboration-types/" | relURL }}{{ . | urlize }}/" class="badge collaboration-type">{{ . }}</a>{{ end }}
+    {{ range . }}<a href="{{ $base }}collaboration-types/{{ . | urlize }}/" class="badge collaboration-type">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
   {{ with .Params.scale }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Scale:</span>
-    {{ range . }}<a href="{{ "/scales/" | relURL }}{{ . | urlize }}/" class="badge scale">{{ . }}</a>{{ end }}
+    {{ range . }}<a href="{{ $base }}scales/{{ . | urlize }}/" class="badge scale">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
   {{ with .Params.modality }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Modality:</span>
-    {{ range . }}<a href="{{ "/modalities/" | relURL }}{{ . | urlize }}/" class="badge modality">{{ . }}</a>{{ end }}
+    {{ range . }}<a href="{{ $base }}modalities/{{ . | urlize }}/" class="badge modality">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
   {{ with .Params.research_method }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Research methods:</span>
-    {{ range . }}<a href="{{ "/research-methods/" | relURL }}{{ . | urlize }}/" class="badge research-method">{{ . }}</a>{{ end }}
+    {{ range . }}<a href="{{ $base }}research-methods/{{ . | urlize }}/" class="badge research-method">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 </div>

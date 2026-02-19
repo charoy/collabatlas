@@ -17,6 +17,10 @@
 {{ $resources   := $resourcesPage.Pages }}
 {{ $posts       := where .Site.RegularPages "Section" "blog" }}
 
+{{ $blogPage    := .Site.GetPage "blog" }}
+{{ $researchPage:= .Site.GetPage "research" }}
+{{ $wizardPage  := .Site.GetPage "guides/find-your-method" }}
+
 <section class="home-hero">
   <div class="home-hero-inner">
     <div class="home-hero-badge">Open Knowledge Platform</div>
@@ -24,8 +28,8 @@
     <p class="home-hero-lead">CollabAtlas catalogues tools, methods, frameworks, case studies, datasets and resources — connected across domains, scales, and modalities.</p>
     <p class="home-hero-metric">{{ len $allEntries }} entries across {{ len (.Site.Data.taxonomies.domains) }} domains</p>
     <div class="hero-actions">
-      <a href="{{ "/catalogue/" | relURL }}" class="btn btn-primary">Browse the Catalogue</a>
-      <a href="{{ "/guides/find-your-method/" | relURL }}" class="btn btn-secondary">Find Your Method →</a>
+      <a href="{{ $cataloguePage.RelPermalink }}" class="btn btn-primary">Browse the Catalogue</a>
+      <a href="{{ $wizardPage.RelPermalink }}" class="btn btn-secondary">Find Your Method →</a>
     </div>
   </div>
 </section>
@@ -46,7 +50,7 @@
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Browse by Domain</h2>
-    <a href="{{ "/catalogue/" | relURL }}" class="home-section-link">Full catalogue →</a>
+    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
   </div>
   <div class="domain-grid">
     {{ range $domains }}
@@ -57,7 +61,7 @@
         {{ if eq . $domainId }}{{ $count = add $count 1 }}{{ end }}
       {{ end }}
     {{ end }}
-    <a href="{{ printf "/catalogue/?domain=%s" .id | relURL }}" class="domain-tile">
+    <a href="{{ $cataloguePage.RelPermalink }}?domain={{ .id }}" class="domain-tile">
       <strong class="domain-tile-name">{{ .label }}</strong>
       {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
       <p class="domain-tile-desc">{{ .description }}</p>
@@ -71,7 +75,7 @@
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Key Research Articles</h2>
-    <a href="{{ "/research/" | relURL }}" class="home-section-link">All {{ len $articles }} articles →</a>
+    <a href="{{ $researchPage.RelPermalink }}" class="home-section-link">All {{ len $articles }} articles →</a>
   </div>
   <div class="articles-list">
     {{ range first 4 $articles }}
@@ -108,7 +112,7 @@
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Latest from the Blog</h2>
-    <a href="{{ "/blog/" | relURL }}" class="home-section-link">All posts →</a>
+    <a href="{{ $blogPage.RelPermalink }}" class="home-section-link">All posts →</a>
   </div>
   <div class="home-posts">
     {{ range first 3 ($posts.ByDate.Reverse) }}
@@ -131,19 +135,19 @@
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Explore the Catalogue</h2>
-    <a href="{{ "/catalogue/" | relURL }}" class="home-section-link">Full catalogue →</a>
+    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
   </div>
   <div class="home-catalogue-grid">
     {{ $sections := slice
-      (dict "name" "Tools"        "slug" "tools"        "icon" "⚙" "desc" "Software and platforms that support collaborative work" "pages" $tools)
-      (dict "name" "Methods"      "slug" "methods"      "icon" "◎" "desc" "Structured approaches to organising collaboration" "pages" $methods)
-      (dict "name" "Frameworks"   "slug" "frameworks"   "icon" "⬡" "desc" "Theoretical lenses for analysing collaborative systems" "pages" $frameworks)
-      (dict "name" "Case Studies" "slug" "case-studies" "icon" "◈" "desc" "Real-world examples of collaboration in practice" "pages" $caseStudies)
-      (dict "name" "Datasets"     "slug" "datasets"     "icon" "▦" "desc" "Empirical data for collaboration research" "pages" $datasets)
-      (dict "name" "Resources"    "slug" "resources"    "icon" "◉" "desc" "Books, articles, and reference materials" "pages" $resources)
+      (dict "name" "Tools"        "page" $toolsPage      "icon" "⚙" "desc" "Software and platforms that support collaborative work" "pages" $tools)
+      (dict "name" "Methods"      "page" $methodsPage    "icon" "◎" "desc" "Structured approaches to organising collaboration" "pages" $methods)
+      (dict "name" "Frameworks"   "page" $frameworksPage "icon" "⬡" "desc" "Theoretical lenses for analysing collaborative systems" "pages" $frameworks)
+      (dict "name" "Case Studies" "page" $casesPage      "icon" "◈" "desc" "Real-world examples of collaboration in practice" "pages" $caseStudies)
+      (dict "name" "Datasets"     "page" $datasetsPage   "icon" "▦" "desc" "Empirical data for collaboration research" "pages" $datasets)
+      (dict "name" "Resources"    "page" $resourcesPage  "icon" "◉" "desc" "Books, articles, and reference materials" "pages" $resources)
     }}
     {{ range $sections }}
-    <a href="{{ printf "/catalogue/%s/" .slug | relURL }}" class="catalogue-tile">
+    <a href="{{ .page.RelPermalink }}" class="catalogue-tile">
       <span class="catalogue-tile-icon">{{ .icon }}</span>
       <div class="catalogue-tile-body">
         <strong>{{ .name }}</strong>

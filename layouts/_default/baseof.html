@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="header-inner">
       <h1 class="site-title">
-        <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+        <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
       </h1>
       <p class="site-tagline">{{ .Site.Params.tagline }}</p>
       <nav class="site-nav" aria-label="Main navigation">
@@ -49,7 +49,8 @@
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ end }}
-  {{ if eq .RelPermalink "/guides/find-your-method/" }}
+  {{ $wizardPage := site.GetPage "guides/find-your-method" }}
+  {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}
   {{ if resources.Get "js/wizard.js" }}
   {{ $wjs := resources.Get "js/wizard.js" | minify | fingerprint }}
   <script src="{{ $wjs.RelPermalink }}" integrity="{{ $wjs.Data.Integrity }}"></script>
