@@ -36,7 +36,7 @@ CollabAtlas organizes entries into six types. Pick the one that best fits your c
 | **Dataset** | Data sources for studying collaboration | GH Archive, Stack Overflow Survey |
 | **Resource** | Books, handbooks, reference materials | Handbook of STS, The Open Source Way |
 
-See the [Entry Types Reference](/guides/entry-types/) for detailed field descriptions.
+See the [Entry Types Reference]({{< relref "/guides/entry-types" >}}) for detailed field descriptions.
 
 ## Step 3 — Create the YAML Data File
 
@@ -82,7 +82,7 @@ tags:
 - `title` — display name
 - `tagline` — one sentence summary
 - `description` — paragraph-length explanation
-- `domains` — at least one domain from the [taxonomy](/governance/)
+- `domains` — at least one domain from the [taxonomy]({{< relref "/governance" >}})
 - `collaboration_type` — at least one type
 - `scale` — at least one scale level
 - `modality` — at least one modality
@@ -157,7 +157,7 @@ In your pull request description, briefly explain:
 3. After approval, a maintainer **merges** your contribution
 4. Your entry appears on the site within minutes
 
-See the [Review Process](/governance/review-process/) for full details.
+See the [Review Process]({{< relref "/governance/review-process" >}}) for full details.
 
 ## Other Ways to Contribute
 

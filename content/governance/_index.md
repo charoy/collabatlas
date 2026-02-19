@@ -17,4 +17,4 @@ CollabAtlas is governed by an editorial board model with automated quality check
 2. **Editorial review** by the relevant domain editor
 3. **Monthly freshness reports** flag entries not reviewed in 12+ months
 
-See the [editorial board](/governance/editorial-board/) and [review process](/governance/review-process/) for details.
+See the [editorial board]({{< relref "/governance/editorial-board" >}}) and [review process]({{< relref "/governance/review-process" >}}) for details.

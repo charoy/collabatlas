@@ -33,7 +33,7 @@ Key features that support PD workflows:
 Start with a shared "context board": each participant adds photos, screenshots, or quotes from their own experience of the problem space. Use the **Miro image upload** and sticky note clustering to build a shared understanding before any solution framing.
 
 ### Session 2 — Ideation sprint (120 min)
-Combine the [Design Sprint](/catalogue/methods/design-sprint/) "Crazy 8s" technique with Miro's drawing tools. Each participant sketches 8 rough ideas in 8 minutes on their own frame, then the group tours each frame and votes with emoji reactions.
+Combine the [Design Sprint]({{< relref "/catalogue/methods/design-sprint" >}}) "Crazy 8s" technique with Miro's drawing tools. Each participant sketches 8 rough ideas in 8 minutes on their own frame, then the group tours each frame and votes with emoji reactions.
 
 ### Session 3 — Prototype feedback (90 min)
 Import low-fidelity wireframes or photos of paper prototypes into Miro. Use the **comment thread** feature to collect structured feedback against predefined criteria (usability, desirability, feasibility).
@@ -49,4 +49,4 @@ Import low-fidelity wireframes or photos of paper prototypes into Miro. Use the 
 
 Miro works best with groups of 4–12. Beyond that, the canvas becomes hard to navigate and facilitation overhead increases significantly. For larger groups, consider splitting into breakout boards and synthesising results in a plenary board.
 
-For a deeper theoretical grounding, the [Activity Theory](/catalogue/frameworks/activity-theory/) framework offers a useful lens for analysing how tool-mediated actions in Miro relate to the broader collaborative activity system.
+For a deeper theoretical grounding, the [Activity Theory]({{< relref "/catalogue/frameworks/activity-theory" >}}) framework offers a useful lens for analysing how tool-mediated actions in Miro relate to the broader collaborative activity system.

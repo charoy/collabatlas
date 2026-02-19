@@ -7,9 +7,9 @@ Use these guides to navigate the CollabAtlas catalogue, contribute new entries, 
 
 ### For Contributors
 
-- [How to Contribute](/guides/contributing/) — Step-by-step guide for adding or improving catalogue entries
-- [Entry Types Reference](/guides/entry-types/) — Detailed field reference for each entry type
+- [How to Contribute]({{< relref "/guides/contributing" >}}) — Step-by-step guide for adding or improving catalogue entries
+- [Entry Types Reference]({{< relref "/guides/entry-types" >}}) — Detailed field reference for each entry type
 
 ### For Users
 
-- [Find Your Method](/guides/find-your-method/) — Interactive decision wizard to match methods to your context
+- [Find Your Method]({{< relref "/guides/find-your-method" >}}) — Interactive decision wizard to match methods to your context

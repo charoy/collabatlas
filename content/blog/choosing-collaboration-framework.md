@@ -21,9 +21,9 @@ Choosing a theoretical framework is one of the most consequential early decision
 
 | Framework | Core question | Unit of analysis |
 |-----------|--------------|-----------------|
-| [CSCW](/catalogue/frameworks/cscw-framework/) | How does technology mediate group work? | The sociotechnical system |
-| [Activity Theory](/catalogue/frameworks/activity-theory/) | How do tools shape goal-directed human activity? | The activity system |
-| [Open Innovation](/catalogue/frameworks/open-innovation/) | How do organisations leverage external knowledge flows? | The innovation ecosystem |
+| [CSCW]({{< relref "/catalogue/frameworks/cscw-framework" >}}) | How does technology mediate group work? | The sociotechnical system |
+| [Activity Theory]({{< relref "/catalogue/frameworks/activity-theory" >}}) | How do tools shape goal-directed human activity? | The activity system |
+| [Open Innovation]({{< relref "/catalogue/frameworks/open-innovation" >}}) | How do organisations leverage external knowledge flows? | The innovation ecosystem |
 
 ## When to use CSCW
 
@@ -43,7 +43,7 @@ Use Activity Theory if you are:
 - Analysing how a new tool disrupts existing work practices
 - Conducting longitudinal ethnographic research
 
-The [Participatory Design](/catalogue/methods/participatory-design/) method pairs especially well with Activity Theory — PD surfaces the contradictions that AT then helps to theorise.
+The [Participatory Design]({{< relref "/catalogue/methods/participatory-design" >}}) method pairs especially well with Activity Theory — PD surfaces the contradictions that AT then helps to theorise.
 
 ## When to use Open Innovation
 
@@ -62,8 +62,8 @@ If you are unsure, ask: **what is the primary output of the collaboration you ar
 - A transformed practice or understanding → **Activity Theory**
 - A new product, service, or market → **Open Innovation**
 
-When the answer is genuinely ambiguous, the [Delphi Method](/catalogue/methods/delphi-method/) can help you build expert consensus on which framing is most appropriate for your specific context before committing to a full study design.
+When the answer is genuinely ambiguous, the [Delphi Method]({{< relref "/catalogue/methods/delphi-method" >}}) can help you build expert consensus on which framing is most appropriate for your specific context before committing to a full study design.
 
 ## Further reading
 
-All three frameworks have extensive seminal literature. The [Designing Collaborative Systems](/catalogue/resources/designing-collaborative-systems/) resource provides a practical ethnographic grounding that complements any of the three theoretical lenses.
+All three frameworks have extensive seminal literature. The [Designing Collaborative Systems]({{< relref "/catalogue/resources/designing-collaborative-systems" >}}) resource provides a practical ethnographic grounding that complements any of the three theoretical lenses.

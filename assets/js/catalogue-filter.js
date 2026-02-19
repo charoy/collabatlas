@@ -122,6 +122,19 @@
       if (modalitySelect) modalitySelect.value = '';
       applyFilters();
     });
+
+    // Pre-select filters from URL query parameters (e.g. ?domain=software-engineering)
+    const params = new URLSearchParams(window.location.search);
+    const urlDomain = params.get('domain');
+    if (urlDomain && domainSelect) {
+      for (let i = 0; i < domainSelect.options.length; i++) {
+        if (domainSelect.options[i].value === urlDomain) {
+          domainSelect.value = domainSelect.options[i].value;
+          break;
+        }
+      }
+      applyFilters();
+    }
   }
 
   function capitalize(str) {

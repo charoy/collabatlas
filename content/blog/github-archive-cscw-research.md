@@ -19,14 +19,14 @@ Two of the richest publicly available resources for studying computer-supported 
 
 ## The datasets at a glance
 
-The [GH Archive](/catalogue/datasets/github-archive/) captures structured event data: push events, pull request reviews, issue comments, fork actions. At scale it reveals the rhythms of distributed collaboration — who reviews whom, how quickly patches are merged, how contributor networks evolve over time.
+The [GH Archive]({{< relref "/catalogue/datasets/github-archive" >}}) captures structured event data: push events, pull request reviews, issue comments, fork actions. At scale it reveals the rhythms of distributed collaboration — who reviews whom, how quickly patches are merged, how contributor networks evolve over time.
 
-The [ACM CSCW Proceedings Corpus](/catalogue/datasets/cscw-proceedings-corpus/) provides the conceptual vocabulary: what researchers have *said* about collaboration, which constructs have gained traction, and how the field's attention has shifted from synchronous groupware to asynchronous platforms.
+The [ACM CSCW Proceedings Corpus]({{< relref "/catalogue/datasets/cscw-proceedings-corpus" >}}) provides the conceptual vocabulary: what researchers have *said* about collaboration, which constructs have gained traction, and how the field's attention has shifted from synchronous groupware to asynchronous platforms.
 
 ## A combined research design
 
 ### Step 1 — Select a phenomenon
-Choose a collaboration pattern visible in both datasets. For example: **code review norms in large open-source projects**. The [Linux Kernel Development](/catalogue/case-studies/linux-kernel-development/) case study is a natural anchor — it is both extensively documented in CSCW literature and richly represented in GH Archive data.
+Choose a collaboration pattern visible in both datasets. For example: **code review norms in large open-source projects**. The [Linux Kernel Development]({{< relref "/catalogue/case-studies/linux-kernel-development" >}}) case study is a natural anchor — it is both extensively documented in CSCW literature and richly represented in GH Archive data.
 
 ### Step 2 — Quantitative layer (GH Archive)
 Use BigQuery to extract pull request review events for a set of target repositories over a defined time window. Key metrics:
@@ -34,7 +34,7 @@ Use BigQuery to extract pull request review events for a set of target repositor
 - Reviewer diversity (number of unique reviewers per contributor)
 - Comment-to-merge ratio
 
-[Jupyter Notebook](/catalogue/tools/jupyter/) is the ideal environment for this analysis — BigQuery integrates via `google-cloud-bigquery`, and the results can be visualised inline with `matplotlib` or `altair`.
+[Jupyter Notebook]({{< relref "/catalogue/tools/jupyter" >}}) is the ideal environment for this analysis — BigQuery integrates via `google-cloud-bigquery`, and the results can be visualised inline with `matplotlib` or `altair`.
 
 ### Step 3 — Qualitative layer (CSCW Corpus)
 Run a topic model (LDA or BERTopic) over CSCW abstracts filtered to papers about code review or patch submission. Map the evolution of dominant topics across conference years to contextualise the quantitative trends.
