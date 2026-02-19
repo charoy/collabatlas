@@ -329,3 +329,60 @@
     proponents.'
   citation_count: 14692
   openalex_id: https://openalex.org/W4388174267
+- id: li-2021
+  title: "E-Portfolio: value tensions encountered in documenting design case studies"
+  authors: Qinyu Li, Peter Tolmie, Anne Weibert, Marén Schorch, Claudia Müller, Volker Wulf
+  journal: Ethics and Information Technology
+  year: 2021
+  doi: 10.1007/s10676-020-09533-3
+  url: https://doi.org/10.1007/s10676-020-09533-3
+  access: paid
+  domains:
+    - design
+    - education
+    - social-sciences
+  tags:
+    - design-case-studies
+    - e-portfolio
+    - ethics
+    - practice-based-computing
+  related_entries:
+    - practice-based-computing
+    - participatory-design
+- id: randall-2018
+  title: "Research into design-research practices: Supporting an agenda towards self-reflectivity and transferability"
+  authors: Dave Randall, Tobias Dyrks, Bernhard Nett, Volkmar Pipek, Leonardo Ramirez, Gunnar Stevens, Volker Wulf
+  journal: "Socio-Informatics: A Practice-based Perspective on the Design and Use of IT Artefacts (Oxford University Press)"
+  year: 2018
+  access: paid
+  domains:
+    - software-engineering
+    - social-sciences
+    - design
+  tags:
+    - design-research
+    - socio-informatics
+    - practice-based-computing
+    - CSCW
+  related_entries:
+    - practice-based-computing
+    - cscw-framework
+- id: wulf-2015
+  title: "Practice-based computing: Empirically grounded conceptualizations derived from design case studies"
+  authors: Volker Wulf, Claudia Müller, Volkmar Pipek, David Randall, Markus Rohde, Gunnar Stevens
+  journal: "Designing Socially Embedded Technologies in the Real-World (Springer)"
+  year: 2015
+  access: paid
+  domains:
+    - software-engineering
+    - social-sciences
+    - design
+  tags:
+    - practice-based-computing
+    - design-case-studies
+    - sensitizing-concepts
+    - CSCW
+  related_entries:
+    - practice-based-computing
+    - cscw-framework
+    - socio-technical-systems

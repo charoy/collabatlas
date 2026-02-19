@@ -1,0 +1,55 @@
+id: recherche-data-gouv
+type: dataset
+title: Recherche Data Gouv
+tagline: French national research data repository for open science and collaborative data sharing.
+description: >-
+  Recherche Data Gouv is France's national federated research data repository,
+  operated as part of the country's open science policy. It provides researchers
+  with infrastructure for depositing, describing, sharing, and preserving research
+  datasets across all disciplines. Built on the Dataverse platform, it supports
+  FAIR data principles (Findable, Accessible, Interoperable, Reusable) and offers
+  institutional and thematic data spaces. The platform facilitates collaborative
+  data sharing between research teams and institutions, addressing governance and
+  sustainability challenges in long-term data stewardship. It serves as a key
+  element of the French research infrastructure ecosystem alongside HAL (for
+  publications) and Software Heritage (for source code).
+domains:
+  - social-sciences
+  - education
+collaboration_type:
+  - open-source
+  - distributed
+  - interdisciplinary
+scale:
+  - multi-org
+  - community
+modality:
+  - remote
+maturity: established
+status: published
+contributors:
+  - collabatlas-team
+created: "2026-02-19"
+last_reviewed: "2026-02-19"
+research_method:
+  - mixed-methods
+source_url: https://recherche.data.gouv.fr
+format: "Multiple (varies by dataset)"
+license: "Varies by dataset (CC-BY, CC0, etc.)"
+platform: other
+external_links:
+  - type: website
+    url: https://recherche.data.gouv.fr
+    title: Recherche Data Gouv
+  - type: documentation
+    url: https://recherche.data.gouv.fr/en
+    title: Recherche Data Gouv (English)
+related_entries:
+  - arxiv-dataset
+  - pilot-long-term-collaboration
+tags:
+  - open-science
+  - FAIR-data
+  - research-infrastructure
+  - French-research
+  - data-governance

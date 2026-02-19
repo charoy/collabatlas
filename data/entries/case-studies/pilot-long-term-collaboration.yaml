@@ -1,0 +1,80 @@
+id: pilot-long-term-collaboration
+type: case-study
+title: "PILOT: Technologies for Long-Term Collaboration"
+tagline: French PEPR research project developing technologies, visions, and guidelines for sustaining long-term distributed collaboration.
+description: >-
+  PILOT is a research project within the French PEPR (Programmes et Equipements
+  Prioritaires de Recherche) initiative focused on providing technologies, visions,
+  and guidelines that promote better collaboration in the long run while preserving
+  participants' interests and enforcing their specific requirements. The project
+  addresses the fundamental challenge that there is no one-size-fits-all solution
+  for collaboration, and provides tailored approaches meeting different domains'
+  constraints. PILOT aims to build a repository that becomes a national and
+  international reference point for individuals and organizations seeking resources
+  to support long-term distributed collaboration, encompassing all dimensions of the
+  collaborative socio-technical stack including technology, use cases, demonstrators,
+  guidelines, and visions. The project spans domains including civil security (crisis
+  management), education, publishing, and web development, applying practice-based
+  computing approaches to understand and support collaboration in these varied
+  contexts.
+domains:
+  - software-engineering
+  - education
+  - social-sciences
+  - publishing
+  - disaster-response
+collaboration_type:
+  - interdisciplinary
+  - co-design
+  - co-production
+scale:
+  - multi-org
+modality:
+  - hybrid
+maturity: emerging
+status: published
+contributors:
+  - collabatlas-team
+created: "2026-02-19"
+last_reviewed: "2026-02-19"
+research_method:
+  - action-research
+  - case-study
+  - design-science
+  - ethnography
+organization: "PEPR / French multi-institutional research consortium"
+year: 2023
+outcomes: >-
+  The project aims to deliver: (1) a repository of up-to-date analyses, use cases
+  and reports about emerging forms of long-term collaboration; (2) new conceptual
+  constructs for modelling and designing socio-technical collaboration systems;
+  (3) foundational technology components for safe, sustainable and secure
+  collaborative services; (4) actionable visions, guidelines and patterns to lower
+  the barriers to effective long-term inter-organizational collaboration.
+key_concepts:
+  - "Collaborative socio-technical stack — technology, use cases, demonstrators, guidelines, and visions"
+  - "Repository as portal — pointing to sustainable platforms (Zenodo for data, HAL for publications, Software Heritage for code)"
+  - "Domain-specific tailoring of collaboration guidelines"
+  - "Governance models for collaborative repositories"
+methods_used:
+  - participatory-design
+  - action-research
+tools_used:
+  - xwiki
+related_entries:
+  - practice-based-computing
+  - cscw-framework
+  - socio-technical-systems
+  - xwiki
+  - recherche-data-gouv
+external_links:
+  - type: website
+    url: https://recherche.data.gouv.fr
+    title: Recherche Data Gouv (data infrastructure)
+tags:
+  - long-term-collaboration
+  - sustainability
+  - governance
+  - PEPR
+  - French-research
+  - repository

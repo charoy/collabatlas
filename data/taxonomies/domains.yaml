@@ -81,3 +81,9 @@
   description: >-
     Collaborative practices in farming, food systems, and agricultural research
     involving producers, researchers, and communities.
+
+- id: publishing
+  label: Publishing
+  description: >-
+    Collaborative practices in publishing workflows including editorial processes,
+    content management, independent publishing, and digital-first production systems.

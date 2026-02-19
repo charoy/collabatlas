@@ -149,6 +149,11 @@
       "type": "array",
       "items": { "type": "string" },
       "description": "IDs of tool entries used in this case study."
+    },
+    "key_concepts": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Core concepts or themes explored in the case study."
     }
   }
 }

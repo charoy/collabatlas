@@ -1,0 +1,59 @@
+id: xwiki
+type: tool
+title: XWiki
+tagline: Open-source collaborative wiki platform for knowledge management and structured collaboration.
+description: >-
+  XWiki is an open-source wiki platform written in Java that enables organizations
+  to create collaborative workspaces for knowledge management, documentation, and
+  structured data applications. Unlike simple wikis, XWiki provides a full application
+  development platform with scripting capabilities, structured data support, and
+  extension mechanisms. It supports real-time collaborative editing, version control,
+  access control, and can be extended through a rich ecosystem of extensions. XWiki
+  has been adopted by organizations ranging from small teams to large enterprises and
+  research institutions, and serves as a platform for building custom collaborative
+  applications.
+domains:
+  - software-engineering
+  - education
+  - business
+collaboration_type:
+  - co-creation
+  - distributed
+  - community-based
+scale:
+  - small-team
+  - organization
+  - multi-org
+modality:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2026-02-19"
+last_reviewed: "2026-02-19"
+website_url: https://www.xwiki.org
+license: LGPL 2.1
+open_source: true
+supported_platforms:
+  - Web
+external_links:
+  - type: website
+    url: https://www.xwiki.org
+    title: XWiki Official Website
+  - type: documentation
+    url: https://www.xwiki.org/xwiki/bin/view/Documentation/
+    title: XWiki Documentation
+  - type: repository
+    url: https://github.com/xwiki/xwiki-platform
+    title: XWiki GitHub Repository
+related_entries:
+  - google-docs
+  - notion
+  - cscw-framework
+tags:
+  - wiki
+  - knowledge-management
+  - open-source
+  - collaborative-editing

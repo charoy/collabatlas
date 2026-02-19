@@ -161,6 +161,10 @@
         }
       },
       "description": "Foundational publications for this framework."
+    },
+    "limitations": {
+      "type": "string",
+      "description": "Known limitations, challenges, or critiques of the framework."
     }
   }
 }
