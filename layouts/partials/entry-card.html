@@ -1,4 +1,4 @@
-<article class="entry-card" data-type="{{ .Section }}">
+<article class="entry-card" data-type="{{ path.Base (path.Dir .File.Path) }}">
   <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
   {{ with .Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
   <div class="card-meta">

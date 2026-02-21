@@ -7,14 +7,9 @@
 
   {{ .Content }}
 
-  {{ if .Pages }}
+  {{ if .RegularPagesRecursive }}
   <div class="filters" aria-label="Filter entries">
     <!-- Populated by catalogue-filter.js -->
-  </div>
-  <div class="entry-grid">
-    {{ range .Pages }}
-      {{ partial "entry-card.html" . }}
-    {{ end }}
   </div>
   {{ end }}
 
