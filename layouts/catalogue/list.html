@@ -7,11 +7,9 @@
 
   {{ .Content }}
 
-  {{ if .RegularPagesRecursive }}
   <div class="filters" aria-label="Filter entries">
     <!-- Populated by catalogue-filter.js -->
   </div>
-  {{ end }}
 
   {{ range .Sections }}
   <div class="type-section">

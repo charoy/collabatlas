@@ -7,10 +7,11 @@
 
   {{ .Content }}
 
-  {{ if .RegularPages }}
   <div class="filters" aria-label="Filter entries">
     <!-- Populated by catalogue-filter.js -->
   </div>
+
+  {{ if .RegularPages }}
   <div class="entry-grid">
     {{ range .RegularPages }}
       {{ partial "entry-card.html" . }}
