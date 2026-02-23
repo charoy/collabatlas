@@ -1,0 +1,161 @@
+name: "Propose New Tool"
+description: "Suggest a software tool or platform for the CollabAtlas catalogue."
+title: "[New Tool] "
+labels: ["new-entry", "tool", "triage"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "e.g., Miro, Participatory Design, Activity Theory"
+    validations:
+      required: true
+
+  - type: input
+    id: tagline
+    attributes:
+      label: Tagline
+      description: "One-sentence summary (max 200 characters)."
+      placeholder: "Online collaborative whiteboard platform for visual teamwork."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Full Description
+      description: "2-5 sentences explaining what it is, how it supports collaboration, and why it matters."
+    validations:
+      required: true
+
+  - type: input
+    id: website-url
+    attributes:
+      label: Website URL
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: open-source
+    attributes:
+      label: Is it open source?
+      options:
+        - "Yes"
+        - "No"
+        - "Partially (open-core)"
+
+  - type: input
+    id: license
+    attributes:
+      label: License
+      placeholder: "e.g., MIT, Apache 2.0, GPL, Proprietary"
+
+  - type: input
+    id: supported-platforms
+    attributes:
+      label: Supported Platforms (comma-separated)
+      placeholder: "e.g., Web, macOS, Windows, iOS, Android, Linux"
+
+  - type: checkboxes
+    id: domains
+    attributes:
+      label: Relevant Domains (select all that apply)
+      options:
+        - label: Healthcare
+        - label: Education
+        - label: Urban Planning
+        - label: Software Engineering
+        - label: Design
+        - label: Environmental Science
+        - label: Social Sciences
+        - label: Public Policy
+        - label: Business
+        - label: Arts & Culture
+        - label: Disaster Response
+        - label: Citizen Science
+        - label: Manufacturing
+        - label: Agriculture
+        - label: Publishing
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: collaboration-type
+    attributes:
+      label: Collaboration Types (select all that apply)
+      options:
+        - label: Co-Design
+        - label: Co-Creation
+        - label: Co-Production
+        - label: Participatory
+        - label: Distributed
+        - label: Crowdsourcing
+        - label: Open Source
+        - label: Interdisciplinary
+        - label: Transdisciplinary
+        - label: Community-Based
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scale
+    attributes:
+      label: Scale (select all that apply)
+      options:
+        - label: "Pair"
+        - label: "Small Team (3-10)"
+        - label: "Organization (11-100)"
+        - label: "Multi-Organization"
+        - label: "Community (100+)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: modality
+    attributes:
+      label: Modality (select all that apply)
+      options:
+        - label: In-Person
+        - label: Remote
+        - label: Hybrid
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maturity
+    attributes:
+      label: Maturity Level
+      options:
+        - Emerging
+        - Established
+        - Well-Documented
+    validations:
+      required: true
+
+  - type: textarea
+    id: external-links
+    attributes:
+      label: External Links
+      description: "One link per line. Format: type | URL | title"
+      placeholder: |
+        website | https://example.com | Official Website
+        paper | https://doi.org/10.xxxx | Key Paper Title
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (comma-separated)
+      placeholder: "e.g., real-time, visual-collaboration, brainstorming"
+
+  - type: input
+    id: related-entries
+    attributes:
+      label: Related CollabAtlas Entries (comma-separated IDs)
+      placeholder: "e.g., miro, participatory-design, cscw-framework"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      placeholder: "Any other information that would help the editorial team."

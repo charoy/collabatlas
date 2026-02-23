@@ -5,7 +5,44 @@ description: "Step-by-step guide for adding new entries, improving existing ones
 
 CollabAtlas is built by its community. Whether you want to add a new tool, document a method, or share a case study, this guide walks you through the process.
 
-## Before You Start
+## Quick Contribution (No Git Required)
+
+The easiest way to contribute is through our **GitHub Issue forms**. You only need a free [GitHub account](https://github.com/signup) — no Git knowledge, no local setup, no coding.
+
+### Propose a new catalogue entry
+
+1. Go to the [New Issue](https://github.com/charoy/collabatlas/issues/new/choose) page
+2. Choose the template matching your entry type:
+   - [New Tool](https://github.com/charoy/collabatlas/issues/new?template=new-tool.yml) — Software, platforms, instruments
+   - [New Method](https://github.com/charoy/collabatlas/issues/new?template=new-method.yml) — Structured approaches and processes
+   - [New Framework](https://github.com/charoy/collabatlas/issues/new?template=new-framework.yml) — Theoretical or analytical models
+   - [New Case Study](https://github.com/charoy/collabatlas/issues/new?template=new-case-study.yml) — Real-world examples
+   - [New Dataset](https://github.com/charoy/collabatlas/issues/new?template=new-dataset.yml) — Data for collaboration research
+   - [New Resource](https://github.com/charoy/collabatlas/issues/new?template=new-resource.yml) — Books, articles, reference materials
+3. Fill in the form fields (required fields are marked)
+4. Submit the issue
+
+A bot will **automatically create a Pull Request** from your submission. A maintainer will review it, may suggest edits, and publish it to the site.
+
+### Suggest a research article
+
+1. Go to [Suggest Research Article](https://github.com/charoy/collabatlas/issues/new?template=suggest-article.yml)
+2. Fill in the title, DOI (if available), authors, and relevance
+3. Submit — a PR will be created automatically
+
+### Propose an update to an existing entry
+
+1. Go to [Update Entry](https://github.com/charoy/collabatlas/issues/new?template=update-entry.yml)
+2. Provide the entry ID and describe what should change
+3. A maintainer will review and implement the update
+
+---
+
+## Advanced Contribution (via Git)
+
+For contributors comfortable with Git and YAML, you can create entries directly and submit Pull Requests.
+
+### Before You Start
 
 Each catalogue entry consists of **two files**:
 
@@ -14,7 +51,7 @@ Each catalogue entry consists of **two files**:
 
 The `{type}` corresponds to the entry category: `tools`, `methods`, `frameworks`, `case-studies`, `datasets`, or `resources`.
 
-## Step 1 — Fork and Clone
+### Step 1 — Fork and Clone
 
 Fork the [CollabAtlas repository](https://github.com/charoy/collabatlas) on GitHub and clone it locally:
 
@@ -23,7 +60,7 @@ git clone https://github.com/YOUR-USERNAME/collabatlas.git
 cd collabatlas
 ```
 
-## Step 2 — Choose Your Entry Type
+### Step 2 — Choose Your Entry Type
 
 CollabAtlas organizes entries into six types. Pick the one that best fits your contribution:
 
@@ -38,7 +75,7 @@ CollabAtlas organizes entries into six types. Pick the one that best fits your c
 
 See the [Entry Types Reference]({{< relref "/guides/entry-types" >}}) for detailed field descriptions.
 
-## Step 3 — Create the YAML Data File
+### Step 3 — Create the YAML Data File
 
 Create a new file at `data/entries/{type}/{your-id}.yaml`. Use a short, URL-friendly identifier (lowercase, hyphens, no spaces).
 
@@ -75,7 +112,7 @@ tags:
   - relevant-tag
 ```
 
-### Required Fields (All Types)
+#### Required Fields (All Types)
 
 - `id` — unique identifier matching the filename
 - `type` — one of: `tool`, `method`, `framework`, `case-study`, `dataset`, `resource`
@@ -92,7 +129,7 @@ tags:
 - `created` — date in YYYY-MM-DD format
 - `last_reviewed` — date in YYYY-MM-DD format
 
-### Type-Specific Fields
+#### Type-Specific Fields
 
 - **Tools**: `website_url`, `license`, `open_source`, `supported_platforms`
 - **Methods**: `when_to_use`, `limitations`, `steps`, `research_method`
@@ -101,7 +138,7 @@ tags:
 - **Datasets**: `source_url`, `format`, `size`, `license`, `temporal_coverage`, `platform`, `platform_id`
 - **Resources**: `resource_type`, `authors`, `year`, `doi`, `access`
 
-## Step 4 — Create the Markdown Content File
+### Step 4 — Create the Markdown Content File
 
 Create a matching file at `content/catalogue/{type}/{your-id}.md`:
 
@@ -124,7 +161,7 @@ usage notes, screenshots, or comparison with related tools.
 
 The `data_id` field **must match** the `id` in your YAML file. Taxonomy values in the front matter should mirror those in the YAML.
 
-## Step 5 — Preview Locally
+### Step 5 — Preview Locally
 
 Install [Hugo Extended](https://gohugo.io/installation/) and run the development server:
 
@@ -134,7 +171,7 @@ hugo server -D
 
 Navigate to your new entry at `http://localhost:1313/collabatlas/catalogue/{type}/{your-id}/` to verify it renders correctly.
 
-## Step 6 — Submit a Pull Request
+### Step 6 — Submit a Pull Request
 
 Create a branch, commit your files, and open a pull request:
 
@@ -162,6 +199,4 @@ See the [Review Process]({{< relref "/governance/review-process" >}}) for full d
 ## Other Ways to Contribute
 
 - **Improve an existing entry** — Fix errors, update links, add missing fields
-- **Suggest an entry** — [Open an issue](https://github.com/charoy/collabatlas/issues) describing the entry you'd like to see
-- **Add a research article** — Use the DOI import script: `python scripts/fetch_doi.py 10.xxxx/xxxxx`
-- **Report a problem** — File an issue for broken links, outdated content, or missing features
+- **Report a problem** — [Open an issue](https://github.com/charoy/collabatlas/issues) for broken links, outdated content, or missing features

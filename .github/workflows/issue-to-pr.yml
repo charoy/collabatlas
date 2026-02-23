@@ -1,0 +1,91 @@
+name: Issue to PR
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  convert:
+    if: >
+      contains(github.event.issue.labels.*.name, 'new-entry') ||
+      contains(github.event.issue.labels.*.name, 'article')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Parse issue and generate files
+        id: generate
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+        run: python scripts/issue_to_entry.py
+
+      - name: Create branch and PR
+        if: steps.generate.outputs.entry_id != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ENTRY_ID: ${{ steps.generate.outputs.entry_id }}
+          ENTRY_TYPE: ${{ steps.generate.outputs.entry_type }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          BRANCH="entry/${ENTRY_TYPE}/${ENTRY_ID}"
+          git config user.name "collabatlas-bot"
+          git config user.email "bot@collabatlas.org"
+          git checkout -b "$BRANCH"
+          git add data/ content/
+          git commit -m "Add ${ENTRY_TYPE} entry: ${ENTRY_ID}
+
+          Auto-generated from issue #${ISSUE_NUMBER}"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Add ${ENTRY_TYPE}: ${ENTRY_ID} (from issue #${ISSUE_NUMBER})" \
+            --body "$(cat <<'PREOF'
+          Auto-generated from #${{ github.event.issue.number }} by the issue-to-PR bot.
+
+          ## Review checklist
+          - [ ] Entry content is accurate and relevant
+          - [ ] Taxonomy values are appropriate
+          - [ ] Description is clear and well-written
+          - [ ] External links are valid
+          - [ ] CI validation passes
+
+          Closes #${{ github.event.issue.number }}
+          PREOF
+          )" \
+            --label "auto-generated,review-needed" \
+            --base main
+
+      - name: Comment on issue (success)
+        if: steps.generate.outputs.entry_id != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "🎉 Thank you for your contribution! A pull request has been automatically created from this issue. A maintainer will review it shortly.
+
+          You can track progress in the linked pull request above."
+
+      - name: Comment on issue (failure)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body "⚠️ The automatic conversion encountered an error. A maintainer will process this issue manually. Thank you for your patience!"

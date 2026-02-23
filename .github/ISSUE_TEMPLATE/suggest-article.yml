@@ -30,6 +30,21 @@ body:
       label: Year
       placeholder: "e.g., 2024"
 
+  - type: input
+    id: journal
+    attributes:
+      label: Journal / Conference
+      placeholder: "e.g., CSCW, CHI, Nature, Journal of Collaborative Computing"
+
+  - type: dropdown
+    id: access
+    attributes:
+      label: Access Type
+      options:
+        - Open
+        - Paid
+        - Unknown
+
   - type: textarea
     id: relevance
     attributes:
@@ -38,6 +53,12 @@ body:
       placeholder: "This article is relevant because..."
     validations:
       required: true
+
+  - type: textarea
+    id: abstract
+    attributes:
+      label: Abstract (optional)
+      description: "Paste the abstract if available."
 
   - type: checkboxes
     id: domains
@@ -57,9 +78,18 @@ body:
         - label: Arts & Culture
         - label: Disaster Response
         - label: Citizen Science
+        - label: Manufacturing
+        - label: Agriculture
+        - label: Publishing
 
   - type: input
     id: tags
     attributes:
       label: Suggested Tags
       placeholder: "e.g., CSCW, open-source, governance (comma-separated)"
+
+  - type: input
+    id: related-entries
+    attributes:
+      label: Related CollabAtlas Entries (comma-separated IDs)
+      placeholder: "e.g., cscw-framework, participatory-design"

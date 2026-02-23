@@ -1,0 +1,184 @@
+name: "Propose New Case Study"
+description: "Document a real-world example of collaboration for the CollabAtlas catalogue."
+title: "[New Case Study] "
+labels: ["new-entry", "case-study", "triage"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "e.g., Miro, Participatory Design, Activity Theory"
+    validations:
+      required: true
+
+  - type: input
+    id: tagline
+    attributes:
+      label: Tagline
+      description: "One-sentence summary (max 200 characters)."
+      placeholder: "Online collaborative whiteboard platform for visual teamwork."
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Full Description
+      description: "2-5 sentences explaining what it is, how it supports collaboration, and why it matters."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: research-method
+    attributes:
+      label: Associated Research Methods
+      options:
+        - label: Action Research
+        - label: Ethnography
+        - label: Experimental
+        - label: Survey
+        - label: Case Study
+        - label: Design Science
+        - label: Mixed Methods
+        - label: Systematic Review
+        - label: Grounded Theory
+        - label: Participatory Action Research
+
+  - type: input
+    id: organization
+    attributes:
+      label: Organization
+      placeholder: "Organization(s) where this took place"
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "e.g., 2023"
+
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Outcomes
+      placeholder: "Summary of results, findings, and impacts."
+
+  - type: input
+    id: key-concepts
+    attributes:
+      label: Key Concepts (comma-separated)
+      placeholder: "e.g., distributed teams, governance, open data"
+
+  - type: input
+    id: methods-used
+    attributes:
+      label: Methods Used (CollabAtlas IDs, comma-separated)
+      placeholder: "e.g., participatory-design, action-research"
+
+  - type: input
+    id: tools-used
+    attributes:
+      label: Tools Used (CollabAtlas IDs, comma-separated)
+      placeholder: "e.g., miro, github, jupyter"
+
+  - type: checkboxes
+    id: domains
+    attributes:
+      label: Relevant Domains (select all that apply)
+      options:
+        - label: Healthcare
+        - label: Education
+        - label: Urban Planning
+        - label: Software Engineering
+        - label: Design
+        - label: Environmental Science
+        - label: Social Sciences
+        - label: Public Policy
+        - label: Business
+        - label: Arts & Culture
+        - label: Disaster Response
+        - label: Citizen Science
+        - label: Manufacturing
+        - label: Agriculture
+        - label: Publishing
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: collaboration-type
+    attributes:
+      label: Collaboration Types (select all that apply)
+      options:
+        - label: Co-Design
+        - label: Co-Creation
+        - label: Co-Production
+        - label: Participatory
+        - label: Distributed
+        - label: Crowdsourcing
+        - label: Open Source
+        - label: Interdisciplinary
+        - label: Transdisciplinary
+        - label: Community-Based
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: scale
+    attributes:
+      label: Scale (select all that apply)
+      options:
+        - label: "Pair"
+        - label: "Small Team (3-10)"
+        - label: "Organization (11-100)"
+        - label: "Multi-Organization"
+        - label: "Community (100+)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: modality
+    attributes:
+      label: Modality (select all that apply)
+      options:
+        - label: In-Person
+        - label: Remote
+        - label: Hybrid
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maturity
+    attributes:
+      label: Maturity Level
+      options:
+        - Emerging
+        - Established
+        - Well-Documented
+    validations:
+      required: true
+
+  - type: textarea
+    id: external-links
+    attributes:
+      label: External Links
+      description: "One link per line. Format: type | URL | title"
+      placeholder: |
+        website | https://example.com | Official Website
+        paper | https://doi.org/10.xxxx | Key Paper Title
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (comma-separated)
+      placeholder: "e.g., real-time, visual-collaboration, brainstorming"
+
+  - type: input
+    id: related-entries
+    attributes:
+      label: Related CollabAtlas Entries (comma-separated IDs)
+      placeholder: "e.g., miro, participatory-design, cscw-framework"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      placeholder: "Any other information that would help the editorial team."
