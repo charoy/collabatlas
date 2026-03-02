@@ -49,5 +49,5 @@ CollabAtlas is a collaborative project about collaboration. We welcome contribut
 
 <div class="hero-actions" style="margin-top: 1.5rem;">
   <a href="/governance/" class="btn btn-secondary">How We Govern</a>
-  <a href="https://github.com/collabatlas/collabatlas" class="btn btn-secondary">Contribute on GitHub</a>
+  <a href="https://github.com/charoy/collabatlas" class="btn btn-secondary">Contribute on GitHub</a>
 </div>
