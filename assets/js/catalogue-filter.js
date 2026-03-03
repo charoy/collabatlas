@@ -13,6 +13,7 @@
     // Collect unique values from cards
     const domains = new Set();
     const types = new Set();
+    const collabTypes = new Set();
     const modalities = new Set();
     const scales = new Set();
 
@@ -21,6 +22,7 @@
       if (type) types.add(type);
 
       card.querySelectorAll('.badge.domain').forEach(b => domains.add(b.textContent.trim()));
+      card.querySelectorAll('.badge.collaboration-type').forEach(b => collabTypes.add(b.textContent.trim()));
       card.querySelectorAll('.badge.modality').forEach(b => modalities.add(b.textContent.trim()));
       card.querySelectorAll('.badge.scale').forEach(b => scales.add(b.textContent.trim()));
     });
@@ -47,6 +49,22 @@
           ${[...domains].sort().map(d => `<option value="${d}">${d}</option>`).join('')}
         </select>
       </label>` : ''}
+      ${collabTypes.size ? `
+      <label class="filter-label">
+        <span>Collaboration</span>
+        <select id="filter-collaboration-type" aria-label="Filter by collaboration type">
+          <option value="">All collaboration types</option>
+          ${[...collabTypes].sort().map(c => `<option value="${c}">${capitalize(c)}</option>`).join('')}
+        </select>
+      </label>` : ''}
+      ${scales.size ? `
+      <label class="filter-label">
+        <span>Scale</span>
+        <select id="filter-scale" aria-label="Filter by scale">
+          <option value="">All scales</option>
+          ${[...scales].sort().map(s => `<option value="${s}">${capitalize(s)}</option>`).join('')}
+        </select>
+      </label>` : ''}
       ${modalities.size ? `
       <label class="filter-label">
         <span>Modality</span>
@@ -62,6 +80,8 @@
     const searchInput = document.getElementById('filter-search');
     const typeSelect = document.getElementById('filter-type');
     const domainSelect = document.getElementById('filter-domain');
+    const collabTypeSelect = document.getElementById('filter-collaboration-type');
+    const scaleSelect = document.getElementById('filter-scale');
     const modalitySelect = document.getElementById('filter-modality');
     const resetBtn = document.getElementById('filter-reset');
     const countSpan = document.getElementById('filter-count');
@@ -71,13 +91,15 @@
         search: searchInput ? searchInput.value.trim().toLowerCase() : '',
         type: typeSelect ? typeSelect.value : '',
         domain: domainSelect ? domainSelect.value : '',
+        collabType: collabTypeSelect ? collabTypeSelect.value : '',
+        scale: scaleSelect ? scaleSelect.value : '',
         modality: modalitySelect ? modalitySelect.value : '',
       };
     }
 
     function applyFilters() {
       const f = getFilters();
-      const hasFilter = f.search || f.type || f.domain || f.modality;
+      const hasFilter = f.search || f.type || f.domain || f.collabType || f.scale || f.modality;
       resetBtn.style.display = hasFilter ? '' : 'none';
 
       let visible = 0;
@@ -92,6 +114,14 @@
         if (f.domain) {
           const cardDomains = [...card.querySelectorAll('.badge.domain')].map(b => b.textContent.trim());
           if (!cardDomains.includes(f.domain)) show = false;
+        }
+        if (f.collabType) {
+          const cardCollabTypes = [...card.querySelectorAll('.badge.collaboration-type')].map(b => b.textContent.trim());
+          if (!cardCollabTypes.includes(f.collabType)) show = false;
+        }
+        if (f.scale) {
+          const cardScales = [...card.querySelectorAll('.badge.scale')].map(b => b.textContent.trim());
+          if (!cardScales.includes(f.scale)) show = false;
         }
         if (f.modality) {
           const cardModalities = [...card.querySelectorAll('.badge.modality')].map(b => b.textContent.trim());
@@ -111,7 +141,7 @@
       countSpan.textContent = hasFilter ? `${visible} result${visible !== 1 ? 's' : ''}` : '';
     }
 
-    [searchInput, typeSelect, domainSelect, modalitySelect].forEach(el => {
+    [searchInput, typeSelect, domainSelect, collabTypeSelect, scaleSelect, modalitySelect].forEach(el => {
       if (el) el.addEventListener('input', applyFilters);
     });
 
@@ -119,20 +149,35 @@
       if (searchInput) searchInput.value = '';
       if (typeSelect) typeSelect.value = '';
       if (domainSelect) domainSelect.value = '';
+      if (collabTypeSelect) collabTypeSelect.value = '';
+      if (scaleSelect) scaleSelect.value = '';
       if (modalitySelect) modalitySelect.value = '';
       applyFilters();
     });
 
-    // Pre-select filters from URL query parameters (e.g. ?domain=software-engineering)
+    // Pre-select filters from URL query parameters
     const params = new URLSearchParams(window.location.search);
-    const urlDomain = params.get('domain');
-    if (urlDomain && domainSelect) {
-      for (let i = 0; i < domainSelect.options.length; i++) {
-        if (domainSelect.options[i].value === urlDomain) {
-          domainSelect.value = domainSelect.options[i].value;
-          break;
+
+    function preselectFilter(selectEl, paramName) {
+      const val = params.get(paramName);
+      if (!val || !selectEl) return false;
+      for (let i = 0; i < selectEl.options.length; i++) {
+        if (selectEl.options[i].value === val) {
+          selectEl.value = selectEl.options[i].value;
+          return true;
         }
       }
+      return false;
+    }
+
+    let hasUrlFilter = false;
+    hasUrlFilter = preselectFilter(domainSelect, 'domain') || hasUrlFilter;
+    hasUrlFilter = preselectFilter(collabTypeSelect, 'collaboration_type') || hasUrlFilter;
+    hasUrlFilter = preselectFilter(scaleSelect, 'scale') || hasUrlFilter;
+    hasUrlFilter = preselectFilter(modalitySelect, 'modality') || hasUrlFilter;
+    hasUrlFilter = preselectFilter(typeSelect, 'type') || hasUrlFilter;
+
+    if (hasUrlFilter) {
       applyFilters();
     }
   }

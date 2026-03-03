@@ -71,6 +71,83 @@
 </section>
 {{ end }}
 
+{{ $collabTypes := .Site.Data.taxonomies.collaboration_types }}
+{{ if $collabTypes }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Browse by Collaboration Type</h2>
+    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
+  </div>
+  <div class="domain-grid">
+    {{ range $collabTypes }}
+    {{ $ctId := .id }}
+    {{ $count := 0 }}
+    {{ range $allEntries }}
+      {{ range .Params.collaboration_type }}
+        {{ if eq . $ctId }}{{ $count = add $count 1 }}{{ end }}
+      {{ end }}
+    {{ end }}
+    <a href="{{ $cataloguePage.RelPermalink }}?collaboration_type={{ .id }}" class="domain-tile collab-tile">
+      <strong class="domain-tile-name">{{ .label }}</strong>
+      {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
+      <p class="domain-tile-desc">{{ .description }}</p>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{ $scales := .Site.Data.taxonomies.scales }}
+{{ $modalities := .Site.Data.taxonomies.modalities }}
+{{ if or $scales $modalities }}
+<section class="home-section">
+  <div class="taxonomy-row">
+    {{ if $scales }}
+    <div class="taxonomy-col">
+      <h2 class="home-section-title">Browse by Scale</h2>
+      <div class="taxonomy-compact-grid">
+        {{ range $scales }}
+        {{ $scId := .id }}
+        {{ $count := 0 }}
+        {{ range $allEntries }}
+          {{ range .Params.scale }}
+            {{ if eq . $scId }}{{ $count = add $count 1 }}{{ end }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $cataloguePage.RelPermalink }}?scale={{ .id }}" class="domain-tile scale-tile">
+          <strong class="domain-tile-name">{{ .label }}</strong>
+          {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
+          <p class="domain-tile-desc">{{ .description }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    {{ if $modalities }}
+    <div class="taxonomy-col">
+      <h2 class="home-section-title">Browse by Modality</h2>
+      <div class="taxonomy-compact-grid">
+        {{ range $modalities }}
+        {{ $modId := .id }}
+        {{ $count := 0 }}
+        {{ range $allEntries }}
+          {{ range .Params.modality }}
+            {{ if eq . $modId }}{{ $count = add $count 1 }}{{ end }}
+          {{ end }}
+        {{ end }}
+        <a href="{{ $cataloguePage.RelPermalink }}?modality={{ .id }}" class="domain-tile modality-tile">
+          <strong class="domain-tile-name">{{ .label }}</strong>
+          {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
+          <p class="domain-tile-desc">{{ .description }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{ if $articles }}
 <section class="home-section">
   <div class="home-section-header">

@@ -846,6 +846,41 @@ main {
   overflow: hidden;
 }
 
+/* Taxonomy tile colour variants */
+.collab-tile:hover {
+  border-color: var(--color-success);
+  background: var(--color-success-light);
+}
+.collab-tile:hover .domain-tile-count { color: var(--color-success); }
+
+.scale-tile:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+.scale-tile:hover .domain-tile-count { color: var(--color-accent); }
+
+.modality-tile:hover {
+  border-color: var(--color-warning);
+  background: var(--color-warning-light);
+}
+.modality-tile:hover .domain-tile-count { color: var(--color-warning); }
+
+/* Side-by-side layout for Scale + Modality */
+.taxonomy-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 48rem) {
+  .taxonomy-row { grid-template-columns: 1fr; }
+}
+.taxonomy-col h2 { margin-top: 0; }
+.taxonomy-compact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
 /* ─── Research Articles ──────────────────────────────────────────── */
 
 .articles-list {
