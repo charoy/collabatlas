@@ -11,9 +11,9 @@
     "tagline",
     "description",
     "domains",
-    "collaboration_type",
-    "scale",
-    "modality",
+    "collaboration-types",
+    "scales",
+    "modalities",
     "maturity",
     "contributors",
     "status"
@@ -49,13 +49,13 @@
       "minItems": 1,
       "description": "Domains or fields where this framework is applicable."
     },
-    "collaboration_type": {
+    "collaboration-types": {
       "type": "array",
       "items": { "type": "string" },
       "minItems": 1,
       "description": "Types of collaboration this framework supports."
     },
-    "scale": {
+    "scales": {
       "type": "array",
       "items": {
         "type": "string",
@@ -64,7 +64,7 @@
       "minItems": 1,
       "description": "Scales at which this framework operates."
     },
-    "modality": {
+    "modalities": {
       "type": "array",
       "items": {
         "type": "string",
@@ -123,7 +123,7 @@
       "enum": ["draft", "published", "archived"],
       "description": "Publication status of the entry."
     },
-    "research_method": {
+    "research_methods": {
       "type": "array",
       "items": { "type": "string" },
       "description": "Research methods associated with this framework."

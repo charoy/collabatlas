@@ -67,10 +67,10 @@ def validate_entry(filepath: Path, schema: dict, taxonomies: dict) -> list[str]:
     # Taxonomy validation
     tax_field_map = {
         "domains": "domains",
-        "collaboration_type": "collaboration_types",
-        "scale": "scales",
-        "research_method": "research_methods",
-        "modality": "modalities",
+        "collaboration-types": "collaboration_types",
+        "scales": "scales",
+        "research_methods": "research_methods",
+        "modalities": "modalities",
         "maturity": "maturity_levels",
     }
     for field, tax_key in tax_field_map.items():
