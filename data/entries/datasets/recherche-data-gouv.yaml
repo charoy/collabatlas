@@ -16,14 +16,14 @@ description: >-
 domains:
   - social-sciences
   - education
-collaboration_type:
+collaboration-types:
   - open-source
   - distributed
   - interdisciplinary
-scale:
+scales:
   - multi-org
   - community
-modality:
+modalities:
   - remote
 maturity: established
 status: published
@@ -31,7 +31,7 @@ contributors:
   - collabatlas-team
 created: "2026-02-19"
 last_reviewed: "2026-02-19"
-research_method:
+research_methods:
   - mixed-methods
 source_url: https://recherche.data.gouv.fr
 format: "Multiple (varies by dataset)"

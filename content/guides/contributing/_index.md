@@ -91,11 +91,11 @@ description: >-
   and why it is relevant to collaborative work.
 domains:
   - software-engineering
-collaboration_type:
+collaboration_types:
   - distributed
-scale:
+scales:
   - small-team
-modality:
+modalities:
   - remote
 maturity: well-documented
 status: published
@@ -120,9 +120,9 @@ tags:
 - `tagline` — one sentence summary
 - `description` — paragraph-length explanation
 - `domains` — at least one domain from the [taxonomy]({{< relref "/governance" >}})
-- `collaboration_type` — at least one type
-- `scale` — at least one scale level
-- `modality` — at least one modality
+- `collaboration_types` — at least one type
+- `scales` — at least one scale level
+- `modalities` — at least one modality
 - `maturity` — one of: `emerging`, `well-documented`, `established`
 - `status` — use `published`
 - `contributors` — list of contributor identifiers
@@ -132,7 +132,7 @@ tags:
 #### Type-Specific Fields
 
 - **Tools**: `website_url`, `license`, `open_source`, `supported_platforms`
-- **Methods**: `when_to_use`, `limitations`, `steps`, `research_method`
+- **Methods**: `when_to_use`, `limitations`, `steps`, `research_methods`
 - **Frameworks**: `key_concepts`, `seminal_works`, `limitations`
 - **Case Studies**: `outcomes`, `key_concepts`, `limitations`
 - **Datasets**: `source_url`, `format`, `size`, `license`, `temporal_coverage`, `platform`, `platform_id`
@@ -148,9 +148,9 @@ title: "My Tool"
 tagline: "A short one-line description of the tool."
 data_id: "my-tool"
 domains: ["software-engineering"]
-collaboration_type: ["distributed"]
-scale: ["small-team"]
-modality: ["remote"]
+collaboration_types: ["distributed"]
+scales: ["small-team"]
+modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
 ---

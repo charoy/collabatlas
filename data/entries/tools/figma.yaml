@@ -15,15 +15,15 @@ domains:
   - design
   - software-engineering
   - education
-collaboration_type:
+collaboration-types:
   - co-design
   - co-creation
   - distributed
-scale:
+scales:
   - pair
   - small-team
   - organization
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented

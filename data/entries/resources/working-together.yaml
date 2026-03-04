@@ -17,14 +17,14 @@ domains:
   - software-engineering
   - business
   - social-sciences
-collaboration_type:
+collaboration-types:
   - distributed
   - co-creation
-scale:
+scales:
   - small-team
   - organization
   - multi-org
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented

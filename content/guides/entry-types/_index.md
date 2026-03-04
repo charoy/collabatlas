@@ -17,9 +17,9 @@ Every entry, regardless of type, includes these fields:
 | `tagline` | Yes | One-sentence summary |
 | `description` | Yes | Paragraph-length explanation |
 | `domains` | Yes | List of domains from the taxonomy |
-| `collaboration_type` | Yes | List of collaboration types |
-| `scale` | Yes | List of scale levels |
-| `modality` | Yes | List of modalities |
+| `collaboration_types` | Yes | List of collaboration types |
+| `scales` | Yes | List of scale levels |
+| `modalities` | Yes | List of modalities |
 | `maturity` | Yes | One of: `emerging`, `well-documented`, `established` |
 | `status` | Yes | One of: `published`, `draft`, `archived` |
 | `contributors` | Yes | List of contributor identifiers |
@@ -74,7 +74,7 @@ Structured approaches and processes for collaborative work.
 | `when_to_use` | Recommended | Guidance on when this method is appropriate |
 | `limitations` | Recommended | Known constraints or challenges |
 | `steps` | Recommended | Ordered list of steps in the method |
-| `research_method` | No | Associated research methodologies |
+| `research_methods` | No | Associated research methodologies |
 
 ### Example
 

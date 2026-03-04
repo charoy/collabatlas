@@ -7,28 +7,28 @@
   </div>
   {{ end }}
 
-  {{ with .Params.collaboration_type }}
+  {{ with index .Params "collaboration-types" }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Collaboration types:</span>
     {{ range . }}<a href="{{ $base }}collaboration-types/{{ . | urlize }}/" class="badge collaboration-type">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
-  {{ with .Params.scale }}
+  {{ with .Params.scales }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Scale:</span>
     {{ range . }}<a href="{{ $base }}scales/{{ . | urlize }}/" class="badge scale">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
-  {{ with .Params.modality }}
+  {{ with .Params.modalities }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Modality:</span>
     {{ range . }}<a href="{{ $base }}modalities/{{ . | urlize }}/" class="badge modality">{{ . }}</a>{{ end }}
   </div>
   {{ end }}
 
-  {{ with .Params.research_method }}
+  {{ with .Params.research_methods }}
   <div class="taxonomy-group">
     <span class="taxonomy-label">Research methods:</span>
     {{ range . }}<a href="{{ $base }}research-methods/{{ . | urlize }}/" class="badge research-method">{{ . }}</a>{{ end }}

@@ -46,14 +46,21 @@
 {{ $domains := .Site.Data.taxonomies.domains }}
 {{ $articles := .Site.Data.research_articles }}
 
+{{ $maxTiles := 6 }}
+
 {{ if $domains }}
+{{ $totalDomains := len $domains }}
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Browse by Domain</h2>
+    {{ if gt $totalDomains $maxTiles }}
+    <a href="{{ "domains" | relURL }}/" class="home-section-link">All {{ $totalDomains }} domains →</a>
+    {{ else }}
     <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
+    {{ end }}
   </div>
   <div class="domain-grid">
-    {{ range $domains }}
+    {{ range first $maxTiles $domains }}
     {{ $domainId := .id }}
     {{ $count := 0 }}
     {{ range $allEntries }}
@@ -67,23 +74,34 @@
       <p class="domain-tile-desc">{{ .description }}</p>
     </a>
     {{ end }}
+    {{ if gt $totalDomains $maxTiles }}
+    <a href="{{ "domains" | relURL }}/" class="domain-tile see-all-tile">
+      <strong class="domain-tile-name">+{{ sub $totalDomains $maxTiles }} more</strong>
+      <p class="domain-tile-desc">See all {{ $totalDomains }} domains</p>
+    </a>
+    {{ end }}
   </div>
 </section>
 {{ end }}
 
 {{ $collabTypes := .Site.Data.taxonomies.collaboration_types }}
 {{ if $collabTypes }}
+{{ $totalCollab := len $collabTypes }}
 <section class="home-section">
   <div class="home-section-header">
     <h2 class="home-section-title">Browse by Collaboration Type</h2>
+    {{ if gt $totalCollab $maxTiles }}
+    <a href="{{ "collaboration-types" | relURL }}/" class="home-section-link">All {{ $totalCollab }} types →</a>
+    {{ else }}
     <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
+    {{ end }}
   </div>
   <div class="domain-grid">
-    {{ range $collabTypes }}
+    {{ range first $maxTiles $collabTypes }}
     {{ $ctId := .id }}
     {{ $count := 0 }}
     {{ range $allEntries }}
-      {{ range .Params.collaboration_type }}
+      {{ range index .Params "collaboration-types" }}
         {{ if eq . $ctId }}{{ $count = add $count 1 }}{{ end }}
       {{ end }}
     {{ end }}
@@ -91,6 +109,12 @@
       <strong class="domain-tile-name">{{ .label }}</strong>
       {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
       <p class="domain-tile-desc">{{ .description }}</p>
+    </a>
+    {{ end }}
+    {{ if gt $totalCollab $maxTiles }}
+    <a href="{{ "collaboration-types" | relURL }}/" class="domain-tile collab-tile see-all-tile">
+      <strong class="domain-tile-name">+{{ sub $totalCollab $maxTiles }} more</strong>
+      <p class="domain-tile-desc">See all {{ $totalCollab }} collaboration types</p>
     </a>
     {{ end }}
   </div>
@@ -103,14 +127,15 @@
 <section class="home-section">
   <div class="taxonomy-row">
     {{ if $scales }}
+    {{ $totalScales := len $scales }}
     <div class="taxonomy-col">
       <h2 class="home-section-title">Browse by Scale</h2>
       <div class="taxonomy-compact-grid">
-        {{ range $scales }}
+        {{ range first $maxTiles $scales }}
         {{ $scId := .id }}
         {{ $count := 0 }}
         {{ range $allEntries }}
-          {{ range .Params.scale }}
+          {{ range .Params.scales }}
             {{ if eq . $scId }}{{ $count = add $count 1 }}{{ end }}
           {{ end }}
         {{ end }}
@@ -120,18 +145,25 @@
           <p class="domain-tile-desc">{{ .description }}</p>
         </a>
         {{ end }}
+        {{ if gt $totalScales $maxTiles }}
+        <a href="{{ "scales" | relURL }}/" class="domain-tile scale-tile see-all-tile">
+          <strong class="domain-tile-name">+{{ sub $totalScales $maxTiles }} more</strong>
+          <p class="domain-tile-desc">See all {{ $totalScales }} scales</p>
+        </a>
+        {{ end }}
       </div>
     </div>
     {{ end }}
     {{ if $modalities }}
+    {{ $totalModalities := len $modalities }}
     <div class="taxonomy-col">
       <h2 class="home-section-title">Browse by Modality</h2>
       <div class="taxonomy-compact-grid">
-        {{ range $modalities }}
+        {{ range first $maxTiles $modalities }}
         {{ $modId := .id }}
         {{ $count := 0 }}
         {{ range $allEntries }}
-          {{ range .Params.modality }}
+          {{ range .Params.modalities }}
             {{ if eq . $modId }}{{ $count = add $count 1 }}{{ end }}
           {{ end }}
         {{ end }}
@@ -139,6 +171,12 @@
           <strong class="domain-tile-name">{{ .label }}</strong>
           {{ if gt $count 0 }}<span class="domain-tile-count">{{ $count }} {{ if eq $count 1 }}entry{{ else }}entries{{ end }}</span>{{ end }}
           <p class="domain-tile-desc">{{ .description }}</p>
+        </a>
+        {{ end }}
+        {{ if gt $totalModalities $maxTiles }}
+        <a href="{{ "modalities" | relURL }}/" class="domain-tile modality-tile see-all-tile">
+          <strong class="domain-tile-name">+{{ sub $totalModalities $maxTiles }} more</strong>
+          <p class="domain-tile-desc">See all {{ $totalModalities }} modalities</p>
         </a>
         {{ end }}
       </div>

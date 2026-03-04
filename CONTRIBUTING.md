@@ -41,9 +41,9 @@ description: >
   A longer description explaining the tool, its purpose,
   and how it supports collaborative work.
 domains: [education, design]
-collaboration_type: [co-design, distributed]
-scale: [small-team, organization]
-modality: [remote, hybrid]
+collaboration_types: [co-design, distributed]
+scales: [small-team, organization]
+modalities: [remote, hybrid]
 maturity: established
 website_url: https://my-tool.example.com
 open_source: true
@@ -72,9 +72,9 @@ title: "My Tool"
 tagline: "A short description of what this tool does"
 type: tool
 domains: [education, design]
-collaboration_type: [co-design, distributed]
-scale: [small-team, organization]
-modality: [remote, hybrid]
+collaboration_types: [co-design, distributed]
+scales: [small-team, organization]
+modalities: [remote, hybrid]
 maturity: established
 status: published
 ---

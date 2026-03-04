@@ -16,15 +16,15 @@ domains:
   - healthcare
   - social-sciences
   - public-policy
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - transdisciplinary
   - distributed
   - open-source
-scale:
+scales:
   - multi-org
   - community
-modality:
+modalities:
   - remote
 maturity: established
 status: published
@@ -32,7 +32,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
 organization: "Multiple (WHO, NIH, Wellcome Trust, etc.)"
 year: 2020

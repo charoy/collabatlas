@@ -15,16 +15,16 @@ domains:
   - software-engineering
   - public-policy
   - manufacturing
-collaboration_type:
+collaboration-types:
   - open-source
   - crowdsourcing
   - co-creation
   - interdisciplinary
-scale:
+scales:
   - organization
   - multi-org
   - community
-modality:
+modalities:
   - remote
   - hybrid
   - in-person
@@ -34,7 +34,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
   - survey
   - mixed-methods

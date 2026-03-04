@@ -16,14 +16,14 @@ domains:
   - software-engineering
   - citizen-science
   - business
-collaboration_type:
+collaboration-types:
   - open-source
   - community-based
   - distributed
-scale:
+scales:
   - organization
   - community
-modality:
+modalities:
   - remote
 maturity: established
 status: published

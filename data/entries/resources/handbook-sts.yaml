@@ -17,13 +17,13 @@ domains:
   - social-sciences
   - public-policy
   - software-engineering
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - transdisciplinary
-scale:
+scales:
   - organization
   - multi-org
-modality:
+modalities:
   - in-person
   - remote
 maturity: well-documented

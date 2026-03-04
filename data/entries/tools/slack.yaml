@@ -14,15 +14,15 @@ domains:
   - business
   - education
   - design
-collaboration_type:
+collaboration-types:
   - distributed
   - co-production
   - open-source
-scale:
+scales:
   - small-team
   - organization
   - multi-org
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented

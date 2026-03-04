@@ -4,8 +4,8 @@
   <div class="card-meta">
     {{ with .Params.maturity }}<span class="badge maturity-{{ . }}">{{ . }}</span>{{ end }}
     {{ range .Params.domains }}<span class="badge domain">{{ . }}</span>{{ end }}
-    {{ range .Params.collaboration_type }}<span class="badge collaboration-type" style="display:none">{{ . }}</span>{{ end }}
-    {{ range .Params.modality }}<span class="badge modality" style="display:none">{{ . }}</span>{{ end }}
-    {{ range .Params.scale }}<span class="badge scale" style="display:none">{{ . }}</span>{{ end }}
+    {{ range index .Params "collaboration-types" }}<span class="badge collaboration-type" style="display:none">{{ . }}</span>{{ end }}
+    {{ range .Params.modalities }}<span class="badge modality" style="display:none">{{ . }}</span>{{ end }}
+    {{ range .Params.scales }}<span class="badge scale" style="display:none">{{ . }}</span>{{ end }}
   </div>
 </article>

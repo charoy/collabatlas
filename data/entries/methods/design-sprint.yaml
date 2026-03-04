@@ -13,12 +13,12 @@ domains:
   - software-engineering
   - design
   - business
-collaboration_type:
+collaboration-types:
   - co-design
   - co-creation
-scale:
+scales:
   - small-team
-modality:
+modalities:
   - in-person
   - hybrid
   - remote
@@ -28,7 +28,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - design-science
   - experimental
 when_to_use: >-

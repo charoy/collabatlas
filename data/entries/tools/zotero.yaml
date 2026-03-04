@@ -14,15 +14,15 @@ domains:
   - social-sciences
   - healthcare
   - environmental-science
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - co-production
   - distributed
-scale:
+scales:
   - pair
   - small-team
   - organization
-modality:
+modalities:
   - remote
   - hybrid
   - in-person

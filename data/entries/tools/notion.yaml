@@ -15,13 +15,13 @@ domains:
   - business
   - education
   - software-engineering
-collaboration_type:
+collaboration-types:
   - distributed
   - co-creation
-scale:
+scales:
   - small-team
   - organization
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented

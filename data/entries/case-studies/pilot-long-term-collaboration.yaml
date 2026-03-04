@@ -23,13 +23,13 @@ domains:
   - social-sciences
   - publishing
   - disaster-response
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - co-design
   - co-production
-scale:
+scales:
   - multi-org
-modality:
+modalities:
   - hybrid
 maturity: emerging
 status: published
@@ -37,7 +37,7 @@ contributors:
   - collabatlas-team
 created: "2026-02-19"
 last_reviewed: "2026-02-19"
-research_method:
+research_methods:
   - action-research
   - case-study
   - design-science

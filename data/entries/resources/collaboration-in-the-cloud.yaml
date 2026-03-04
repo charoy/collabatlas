@@ -15,14 +15,14 @@ domains:
   - business
   - software-engineering
   - public-policy
-collaboration_type:
+collaboration-types:
   - distributed
   - co-production
   - interdisciplinary
-scale:
+scales:
   - organization
   - multi-org
-modality:
+modalities:
   - remote
   - hybrid
 maturity: established
@@ -31,7 +31,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-10"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
   - mixed-methods
 resource_type: book

@@ -12,7 +12,7 @@ Every catalogue entry must pass these checks before merging:
 
 - [ ] **Schema valid** — passes `python scripts/validate.py` without errors
 - [ ] **Required fields complete** — all fields marked required in the schema are present and non-empty
-- [ ] **Taxonomy values valid** — all domain, scale, modality, collaboration_type, and research_method values exist in `data/taxonomies/`
+- [ ] **Taxonomy values valid** — all domains, scales, modalities, collaboration_types, and research_methods values exist in `data/taxonomies/`
 - [ ] **ID format correct** — lowercase, hyphenated, unique (e.g., `participatory-design`)
 - [ ] **Description is accurate** — factual, not marketing copy, not copied from the source website
 - [ ] **Tagline is concise** — under 200 characters, describes the entry clearly

@@ -15,16 +15,16 @@ domains:
   - education
   - business
   - social-sciences
-collaboration_type:
+collaboration-types:
   - co-creation
   - distributed
   - participatory
-scale:
+scales:
   - pair
   - small-team
   - organization
   - community
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented

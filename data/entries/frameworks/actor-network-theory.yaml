@@ -17,14 +17,14 @@ domains:
   - social-sciences
   - software-engineering
   - design
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - transdisciplinary
-scale:
+scales:
   - organization
   - multi-org
   - community
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -34,7 +34,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - ethnography
   - case-study
 key_concepts:

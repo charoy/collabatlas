@@ -14,13 +14,13 @@ domains:
   - software-engineering
   - social-sciences
   - education
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - distributed
-scale:
+scales:
   - community
   - multi-org
-modality:
+modalities:
   - remote
   - in-person
 maturity: well-documented
@@ -29,7 +29,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-10"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - systematic-review
   - mixed-methods
 source_url: https://dl.acm.org/conference/cscw

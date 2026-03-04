@@ -16,15 +16,15 @@ domains:
   - education
   - social-sciences
   - healthcare
-collaboration_type:
+collaboration-types:
   - participatory
   - co-design
   - interdisciplinary
-scale:
+scales:
   - small-team
   - organization
   - community
-modality:
+modalities:
   - in-person
   - hybrid
 maturity: well-documented
@@ -33,7 +33,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - action-research
   - mixed-methods
 when_to_use: >-

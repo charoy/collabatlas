@@ -16,13 +16,13 @@ domains:
   - citizen-science
   - social-sciences
   - education
-collaboration_type:
+collaboration-types:
   - crowdsourcing
   - community-based
   - open-source
-scale:
+scales:
   - community
-modality:
+modalities:
   - remote
 maturity: well-documented
 status: published
@@ -30,7 +30,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - mixed-methods
 source_url: https://dumps.wikimedia.org
 format: XML, SQL dumps

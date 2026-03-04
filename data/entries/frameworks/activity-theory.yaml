@@ -16,15 +16,15 @@ domains:
   - software-engineering
   - social-sciences
   - healthcare
-collaboration_type:
+collaboration-types:
   - co-production
   - interdisciplinary
   - community-based
-scale:
+scales:
   - small-team
   - organization
   - community
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -34,7 +34,7 @@ contributors:
   - collabatlas-team
 created: "2025-01-15"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - ethnography
   - action-research
   - case-study

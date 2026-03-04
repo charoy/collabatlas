@@ -13,13 +13,13 @@ description: >-
 domains:
   - software-engineering
   - citizen-science
-collaboration_type:
+collaboration-types:
   - open-source
   - distributed
-scale:
+scales:
   - community
   - multi-org
-modality:
+modalities:
   - remote
 maturity: established
 status: published
@@ -27,7 +27,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - mixed-methods
   - experimental
 source_url: https://www.gharchive.org

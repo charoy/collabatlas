@@ -18,13 +18,13 @@ domains:
   - business
   - manufacturing
   - healthcare
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - co-design
-scale:
+scales:
   - organization
   - multi-org
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -34,7 +34,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - design-science
   - case-study
 key_concepts:

@@ -16,13 +16,13 @@ domains:
   - business
   - public-policy
   - education
-collaboration_type:
+collaboration-types:
   - participatory
   - community-based
-scale:
+scales:
   - organization
   - community
-modality:
+modalities:
   - in-person
   - hybrid
 maturity: established
@@ -31,7 +31,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - action-research
 when_to_use: >-
   Use Open Space Technology when a diverse group of people must address a complex

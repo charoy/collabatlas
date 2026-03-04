@@ -18,15 +18,15 @@ domains:
   - business
   - social-sciences
   - healthcare
-collaboration_type:
+collaboration-types:
   - community-based
   - co-creation
   - participatory
-scale:
+scales:
   - small-team
   - organization
   - community
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -36,7 +36,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - ethnography
   - case-study
 key_concepts:

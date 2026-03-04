@@ -15,14 +15,14 @@ domains:
   - urban-planning
   - design
   - public-policy
-collaboration_type:
+collaboration-types:
   - participatory
   - co-design
   - community-based
-scale:
+scales:
   - community
   - multi-org
-modality:
+modalities:
   - in-person
   - hybrid
 maturity: established
@@ -31,7 +31,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
   - participatory-action-research
   - ethnography

@@ -14,16 +14,16 @@ description: >-
 domains:
   - software-engineering
   - citizen-science
-collaboration_type:
+collaboration-types:
   - open-source
   - distributed
   - co-creation
-scale:
+scales:
   - pair
   - small-team
   - organization
   - community
-modality:
+modalities:
   - remote
 maturity: well-documented
 status: published

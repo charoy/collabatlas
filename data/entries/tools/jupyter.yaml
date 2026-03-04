@@ -15,15 +15,15 @@ domains:
   - education
   - citizen-science
   - software-engineering
-collaboration_type:
+collaboration-types:
   - co-production
   - open-source
   - distributed
-scale:
+scales:
   - pair
   - small-team
   - organization
-modality:
+modalities:
   - remote
   - hybrid
   - in-person

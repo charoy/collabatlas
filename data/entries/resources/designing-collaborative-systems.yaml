@@ -14,13 +14,13 @@ domains:
   - software-engineering
   - social-sciences
   - education
-collaboration_type:
+collaboration-types:
   - co-design
   - interdisciplinary
-scale:
+scales:
   - small-team
   - organization
-modality:
+modalities:
   - in-person
   - hybrid
 maturity: well-documented
@@ -29,7 +29,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - ethnography
   - design-science
 resource_type: book

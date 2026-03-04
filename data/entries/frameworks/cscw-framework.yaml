@@ -15,16 +15,16 @@ domains:
   - healthcare
   - education
   - business
-collaboration_type:
+collaboration-types:
   - distributed
   - co-production
   - interdisciplinary
-scale:
+scales:
   - pair
   - small-team
   - organization
   - multi-org
-modality:
+modalities:
   - remote
   - hybrid
   - in-person
@@ -34,7 +34,7 @@ contributors:
   - collabatlas-team
 created: "2025-01-20"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - ethnography
   - design-science
   - case-study

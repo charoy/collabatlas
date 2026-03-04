@@ -16,13 +16,13 @@ domains:
   - citizen-science
   - education
   - social-sciences
-collaboration_type:
+collaboration-types:
   - crowdsourcing
   - open-source
   - community-based
-scale:
+scales:
   - community
-modality:
+modalities:
   - remote
 maturity: well-documented
 status: published
@@ -30,7 +30,7 @@ contributors:
   - collabatlas-team
 created: "2025-01-15"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
   - ethnography
   - mixed-methods

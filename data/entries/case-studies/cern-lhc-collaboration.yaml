@@ -16,14 +16,14 @@ domains:
   - environmental-science
   - software-engineering
   - public-policy
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - distributed
   - co-production
-scale:
+scales:
   - multi-org
   - community
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -33,7 +33,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
 organization: "CERN"
 year: 2008

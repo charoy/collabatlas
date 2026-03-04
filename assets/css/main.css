@@ -865,6 +865,25 @@ main {
 }
 .modality-tile:hover .domain-tile-count { color: var(--color-warning); }
 
+/* "See all" overflow tile */
+.see-all-tile {
+  border-style: dashed;
+  background: var(--color-bg-alt);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.see-all-tile .domain-tile-name {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+.see-all-tile .domain-tile-desc {
+  color: var(--color-text-muted);
+}
+.see-all-tile:hover {
+  border-style: solid;
+}
+
 /* Side-by-side layout for Scale + Modality */
 .taxonomy-row {
   display: grid;

@@ -15,13 +15,13 @@ domains:
   - citizen-science
   - urban-planning
   - software-engineering
-collaboration_type:
+collaboration-types:
   - crowdsourcing
   - community-based
   - open-source
-scale:
+scales:
   - community
-modality:
+modalities:
   - remote
   - hybrid
 maturity: well-documented
@@ -30,7 +30,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
 organization: "OpenStreetMap Foundation"
 year: 2004

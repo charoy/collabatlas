@@ -16,13 +16,13 @@ domains:
   - environmental-science
   - manufacturing
   - public-policy
-collaboration_type:
+collaboration-types:
   - interdisciplinary
   - co-production
   - transdisciplinary
-scale:
+scales:
   - multi-org
-modality:
+modalities:
   - in-person
   - remote
   - hybrid
@@ -32,7 +32,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
 organization: "NASA, ESA, JAXA, Roscosmos, CSA"
 year: 1998

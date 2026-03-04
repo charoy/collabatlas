@@ -13,14 +13,14 @@ description: >-
   and tooling (Git) enable massive distributed collaboration without central control.
 domains:
   - software-engineering
-collaboration_type:
+collaboration-types:
   - open-source
   - distributed
   - crowdsourcing
-scale:
+scales:
   - community
   - multi-org
-modality:
+modalities:
   - remote
 maturity: well-documented
 status: published
@@ -28,7 +28,7 @@ contributors:
   - collabatlas-team
 created: "2025-02-01"
 last_reviewed: "2025-06-01"
-research_method:
+research_methods:
   - case-study
   - ethnography
   - mixed-methods

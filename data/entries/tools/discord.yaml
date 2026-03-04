@@ -17,14 +17,14 @@ domains:
   - citizen-science
   - arts-culture
   - education
-collaboration_type:
+collaboration-types:
   - community-based
   - distributed
   - open-source
-scale:
+scales:
   - small-team
   - community
-modality:
+modalities:
   - remote
 maturity: established
 status: published

@@ -1,4 +1,4 @@
-{{ if or .Params.type .Params.maturity .Params.scale .Params.modality .Params.status .Params.date_created .Params.last_reviewed .Params.contributors }}
+{{ if or .Params.type .Params.maturity .Params.scales .Params.modalities .Params.status .Params.date_created .Params.last_reviewed .Params.contributors }}
 <section class="metadata-table">
   <h2>Metadata</h2>
   <dl>
@@ -12,12 +12,12 @@
     <dd><span class="badge maturity-{{ . }}">{{ . }}</span></dd>
     {{ end }}
 
-    {{ with .Params.scale }}
+    {{ with .Params.scales }}
     <dt>Scale</dt>
     <dd>{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}</dd>
     {{ end }}
 
-    {{ with .Params.modality }}
+    {{ with .Params.modalities }}
     <dt>Modality</dt>
     <dd>{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}</dd>
     {{ end }}
