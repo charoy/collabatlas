@@ -51,6 +51,38 @@
   {{ end }}
   {{ $wizardPage := site.GetPage "guides/find-your-method" }}
   {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}
+  {{ $catalogueEntries := slice }}
+  {{ $cataloguePage := site.GetPage "catalogue" }}
+  {{ $entriesData := index site.Data "entries" | default dict }}
+  {{ with $cataloguePage }}
+    {{ range .RegularPagesRecursive }}
+      {{ $subsection := path.Base (path.Dir .File.Path) }}
+      {{ $entryData := dict }}
+      {{ with .Params.data_id }}
+        {{ $sectionData := index $entriesData $subsection | default dict }}
+        {{ $entryData = index $sectionData . | default dict }}
+      {{ end }}
+      {{ $merged := merge $entryData .Params }}
+      {{ $tags := slice }}
+      {{ with index $merged "collaboration-types" }}{{ $tags = union $tags . }}{{ end }}
+      {{ with $merged.domains }}{{ $tags = union $tags . }}{{ end }}
+      {{ with $merged.scales }}{{ $tags = union $tags . }}{{ end }}
+      {{ with $merged.modalities }}{{ $tags = union $tags . }}{{ end }}
+      {{ with $merged.research_methods }}{{ $tags = union $tags . }}{{ end }}
+      {{ with $merged.tags }}{{ $tags = union $tags . }}{{ end }}
+      {{ $catalogueEntries = $catalogueEntries | append (dict
+        "id" (.Params.data_id | default .File.ContentBaseName)
+        "title" .Title
+        "tagline" ($merged.tagline | default "")
+        "url" .RelPermalink
+        "type" ($merged.type | default $subsection)
+        "tags" $tags
+        "maturity" ($merged.maturity | default "")
+      ) }}
+    {{ end }}
+  {{ end }}
+  {{ $wizardPayload := dict "questions" site.Data.wizard.questions "catalogue" $catalogueEntries }}
+  <script id="wizard-data" type="application/json">{{ $wizardPayload | jsonify }}</script>
   {{ if resources.Get "js/wizard.js" }}
   {{ $wjs := resources.Get "js/wizard.js" | minify | fingerprint }}
   <script src="{{ $wjs.RelPermalink }}" integrity="{{ $wjs.Data.Integrity }}"></script>

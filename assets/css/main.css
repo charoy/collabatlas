@@ -1264,6 +1264,56 @@ main {
   align-items: center;
 }
 
+.wizard-results-hint {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  max-width: 56rem;
+  margin-bottom: 1.25rem;
+}
+
+.wizard-context-summary {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-alt);
+}
+
+.wizard-context-summary h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.wizard-context-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.wizard-context-list li + li {
+  margin-top: 0.35rem;
+}
+
+.wizard-results-actions {
+  display: flex;
+  gap: 0.875rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.wizard-share-feedback {
+  min-height: 1.2rem;
+  margin-top: 0.875rem;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.wizard-match-score {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
 /* ─── Research Page ─────────────────────────────────────────────── */
 
 .research-toolbar {

@@ -1,0 +1,33 @@
+<div id="wizard" class="wizard">
+  <div id="wizard-intro" class="wizard-step active">
+    <h2>Find Your Collaborative Method</h2>
+    <p>Answer a few questions about your context and goals, and we'll suggest the most relevant collaborative approaches from the CollabAtlas catalogue.</p>
+    <button class="btn btn-primary" onclick="wizardStart()">Get Started</button>
+  </div>
+
+  <div id="wizard-questions" class="wizard-step" hidden>
+    <div id="wizard-progress" class="wizard-progress"></div>
+    <div id="wizard-question-area"></div>
+    <div class="wizard-nav">
+      <button class="btn btn-secondary" id="wizard-back" onclick="wizardBack()" hidden>← Back</button>
+      <button class="btn btn-primary" id="wizard-next" onclick="wizardNext()" disabled>Next →</button>
+    </div>
+  </div>
+
+  <div id="wizard-results" class="wizard-step" hidden>
+    <h2>Recommended Approaches</h2>
+    <p id="wizard-results-summary"></p>
+    <p id="wizard-results-hint" class="wizard-results-hint"></p>
+    <div class="wizard-context-summary">
+      <h3>Your context</h3>
+      <ul id="wizard-selected-context" class="wizard-context-list"></ul>
+    </div>
+    <div id="wizard-results-list" class="entry-grid"></div>
+    <div class="wizard-results-actions">
+      <button class="btn btn-primary" onclick="copyWizardShareLink()">Copy Share Link</button>
+      <button class="btn btn-secondary" onclick="wizardReset()">Start Over</button>
+      <a href="/catalogue/" class="btn btn-secondary">Browse Full Catalogue</a>
+    </div>
+    <p id="wizard-share-feedback" class="wizard-share-feedback" aria-live="polite"></p>
+  </div>
+</div>
