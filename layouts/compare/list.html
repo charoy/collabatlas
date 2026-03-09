@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ $cataloguePage := .Site.GetPage "catalogue" }}
+<section class="compare-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="compare-page-actions">
+    <span class="filter-count" id="compare-page-count" aria-live="polite">No entries selected.</span>
+    <div class="filter-actions">
+      <button type="button" class="btn btn-secondary" id="compare-page-copy" hidden>Copy Share Link</button>
+      <button type="button" class="btn btn-secondary" id="compare-page-clear" hidden>Clear Comparison</button>
+      <a href="{{ if $cataloguePage }}{{ $cataloguePage.RelPermalink }}{{ else }}/catalogue/{{ end }}" class="btn btn-primary">Browse the Catalogue</a>
+    </div>
+  </div>
+
+  <p class="compare-share-feedback" id="compare-share-feedback" aria-live="polite"></p>
+
+  <div class="compare-empty" id="compare-empty">
+    <h2>Build your comparison</h2>
+    <p>Select 2 to 4 entries from the catalogue to compare them side by side.</p>
+  </div>
+
+  <div class="compare-table-wrap" id="compare-table-wrap" hidden>
+    <table class="compare-table" id="compare-table">
+      <thead id="compare-table-head"></thead>
+      <tbody id="compare-table-body"></tbody>
+    </table>
+  </div>
+</section>
+{{ end }}

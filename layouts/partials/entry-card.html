@@ -6,6 +6,7 @@
 {{ $researchMethods := .Params.research_methods | default (slice) }}
 <article
   class="entry-card"
+  data-entry-id="{{ .Params.data_id | default .File.ContentBaseName }}"
   data-type="{{ $type }}"
   data-search-text="{{ lower (printf "%s %s %s %s %s %s %s" .Title (.Params.tagline | default "") (delimit $domains " ") (delimit $collaborationTypes " ") (delimit $modalities " ") (delimit $scales " ") (delimit $researchMethods " ")) }}"
   data-domains="{{ delimit $domains "|" }}"
@@ -20,5 +21,8 @@
     {{ range $collaborationTypes }}<span class="badge collaboration-type" hidden>{{ . }}</span>{{ end }}
     {{ range $modalities }}<span class="badge modality" hidden>{{ . }}</span>{{ end }}
     {{ range $scales }}<span class="badge scale" hidden>{{ . }}</span>{{ end }}
+  </div>
+  <div class="entry-card-actions">
+    <button type="button" class="btn btn-secondary btn-sm compare-toggle" data-compare-id="{{ .Params.data_id | default .File.ContentBaseName }}" aria-pressed="false">Add to compare</button>
   </div>
 </article>

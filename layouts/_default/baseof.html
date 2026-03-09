@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>
 <body>
+  {{ $comparePage := site.GetPage "compare" }}
 
   <header class="site-header">
     <div class="header-inner">
@@ -48,6 +49,18 @@
       </p>
     </div>
   </footer>
+
+  <aside class="compare-dock" id="compare-dock" data-compare-page="{{ if $comparePage }}{{ $comparePage.RelPermalink }}{{ else }}/compare/{{ end }}" hidden>
+    <div class="compare-dock-text">
+      <p class="compare-dock-title">Comparison list</p>
+      <p class="compare-dock-summary" id="compare-dock-summary">No entries selected.</p>
+      <p class="compare-dock-feedback" id="compare-dock-feedback" aria-live="polite"></p>
+    </div>
+    <div class="compare-dock-actions">
+      <button type="button" class="btn btn-secondary" id="compare-dock-clear">Clear</button>
+      <a class="btn btn-primary" id="compare-dock-open" href="{{ if $comparePage }}{{ $comparePage.RelPermalink }}{{ else }}/compare/{{ end }}">Compare selected</a>
+    </div>
+  </aside>
 
   {{ $searchItems := slice }}
   {{ range site.RegularPages }}
@@ -113,6 +126,36 @@
   {{ end }}
   <script id="site-search-index" type="application/json">{{ $searchItems | jsonify | safeJS }}</script>
 
+  {{ $compareEntries := slice }}
+  {{ $cataloguePage := site.GetPage "catalogue" }}
+  {{ $entriesData := index site.Data "entries" | default dict }}
+  {{ with $cataloguePage }}
+    {{ range .RegularPagesRecursive }}
+      {{ $subsection := path.Base (path.Dir .File.Path) }}
+      {{ $entryData := dict }}
+      {{ with .Params.data_id }}
+        {{ $sectionData := index $entriesData $subsection | default dict }}
+        {{ $entryData = index $sectionData . | default dict }}
+      {{ end }}
+      {{ $merged := merge $entryData .Params }}
+      {{ $compareEntries = $compareEntries | append (dict
+        "id" (.Params.data_id | default .File.ContentBaseName)
+        "title" .Title
+        "url" .RelPermalink
+        "type" ($merged.type | default $subsection)
+        "tagline" ($merged.tagline | default "")
+        "maturity" ($merged.maturity | default "")
+        "domains" ($merged.domains | default (slice))
+        "collaborationTypes" (index $merged "collaboration-types" | default (slice))
+        "modalities" ($merged.modalities | default (slice))
+        "scales" ($merged.scales | default (slice))
+        "whenToUse" ($merged.when_to_use | default "")
+        "limitations" ($merged.limitations | default "")
+      ) }}
+    {{ end }}
+  {{ end }}
+  <script id="compare-data" type="application/json">{{ $compareEntries | jsonify | safeJS }}</script>
+
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
@@ -129,11 +172,13 @@
   {{ $researchJs := resources.Get "js/research-filter.js" | minify | fingerprint }}
   <script src="{{ $researchJs.RelPermalink }}" integrity="{{ $researchJs.Data.Integrity }}" defer></script>
   {{ end }}
+  {{ if resources.Get "js/entry-compare.js" }}
+  {{ $compareJs := resources.Get "js/entry-compare.js" | minify | fingerprint }}
+  <script src="{{ $compareJs.RelPermalink }}" integrity="{{ $compareJs.Data.Integrity }}" defer></script>
+  {{ end }}
   {{ $wizardPage := site.GetPage "guides/find-your-method" }}
   {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}
   {{ $catalogueEntries := slice }}
-  {{ $cataloguePage := site.GetPage "catalogue" }}
-  {{ $entriesData := index site.Data "entries" | default dict }}
   {{ with $cataloguePage }}
     {{ range .RegularPagesRecursive }}
       {{ $subsection := path.Base (path.Dir .File.Path) }}
