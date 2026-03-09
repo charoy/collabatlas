@@ -12,7 +12,7 @@
   <div class="research-toolbar" id="research-toolbar">
     <div class="filter-label">
       <span>Domain</span>
-      <select id="filter-domain">
+      <select id="filter-domain" title="Filter by domain" aria-label="Filter by domain">
         <option value="">All domains</option>
         {{ range $domains }}
         <option value="{{ .id }}">{{ .label }}</option>
@@ -21,7 +21,7 @@
     </div>
     <div class="filter-label">
       <span>Access</span>
-      <select id="filter-access">
+      <select id="filter-access" title="Filter by access" aria-label="Filter by access">
         <option value="">All</option>
         <option value="open">Open Access</option>
         <option value="paid">Subscription</option>
@@ -31,15 +31,19 @@
       <span>Search</span>
       <input type="search" id="filter-search" placeholder="Title, author, keyword…">
     </div>
-    <span class="filter-count" id="research-count">{{ len $articles }} articles</span>
+    <div class="filter-actions">
+      <button id="research-reset" type="button" class="btn btn-secondary filter-reset" hidden>Clear filters</button>
+      <span class="filter-count" id="research-count">{{ len $articles }} articles</span>
+    </div>
+    <div id="research-filter-chips" class="filter-chips" hidden aria-live="polite"></div>
   </div>
 
   <div class="research-list" id="research-list">
     {{ range $articles }}
     <article class="research-card"
-      data-domains="{{ range .domains }}{{ . }} {{ end }}"
+      data-domains="{{ delimit (.domains | default (slice)) "|" }}"
       data-access="{{ .access }}"
-      data-text="{{ lower .title }} {{ lower (.authors | default "") }} {{ range .tags }}{{ lower . }} {{ end }}">
+      data-text="{{ lower (printf "%s %s %s %s" .title (.authors | default "") (.abstract | default "") (delimit (.tags | default (slice)) " ")) }}">
 
       <div class="research-card-main">
         <div class="research-card-header">
@@ -90,43 +94,11 @@
     {{ end }}
   </div>
 
-  <p class="research-empty" id="research-empty" style="display:none">No articles match your filters.</p>
+  <p class="research-empty" id="research-empty" hidden>No articles match your filters.</p>
 
   {{ else }}
   <p class="page-description">No articles yet. Add entries to <code>data/research_articles.yaml</code> or run <code>python scripts/fetch_doi.py &lt;DOI&gt;</code>.</p>
   {{ end }}
 </section>
 
-<script>
-(function() {
-  const list    = document.getElementById('research-list');
-  const empty   = document.getElementById('research-empty');
-  const count   = document.getElementById('research-count');
-  const fDomain = document.getElementById('filter-domain');
-  const fAccess = document.getElementById('filter-access');
-  const fSearch = document.getElementById('filter-search');
-  if (!list) return;
-
-  function filter() {
-    const domain = fDomain.value;
-    const access = fAccess.value;
-    const q      = fSearch.value.toLowerCase().trim();
-    let visible  = 0;
-    list.querySelectorAll('.research-card').forEach(card => {
-      const matchDomain = !domain || card.dataset.domains.includes(domain);
-      const matchAccess = !access || card.dataset.access === access;
-      const matchSearch = !q || card.dataset.text.includes(q);
-      const show = matchDomain && matchAccess && matchSearch;
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    count.textContent = visible + ' article' + (visible !== 1 ? 's' : '');
-    empty.style.display = visible === 0 ? '' : 'none';
-  }
-
-  fDomain.addEventListener('change', filter);
-  fAccess.addEventListener('change', filter);
-  fSearch.addEventListener('input', filter);
-})();
-</script>
 {{ end }}

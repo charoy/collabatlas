@@ -1,11 +1,24 @@
-<article class="entry-card" data-type="{{ path.Base (path.Dir .File.Path) }}">
+{{ $type := path.Base (path.Dir .File.Path) }}
+{{ $domains := .Params.domains | default (slice) }}
+{{ $collaborationTypes := index .Params "collaboration-types" | default (slice) }}
+{{ $modalities := .Params.modalities | default (slice) }}
+{{ $scales := .Params.scales | default (slice) }}
+{{ $researchMethods := .Params.research_methods | default (slice) }}
+<article
+  class="entry-card"
+  data-type="{{ $type }}"
+  data-search-text="{{ lower (printf "%s %s %s %s %s %s %s" .Title (.Params.tagline | default "") (delimit $domains " ") (delimit $collaborationTypes " ") (delimit $modalities " ") (delimit $scales " ") (delimit $researchMethods " ")) }}"
+  data-domains="{{ delimit $domains "|" }}"
+  data-collaboration-types="{{ delimit $collaborationTypes "|" }}"
+  data-modalities="{{ delimit $modalities "|" }}"
+  data-scales="{{ delimit $scales "|" }}">
   <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
   {{ with .Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
   <div class="card-meta">
     {{ with .Params.maturity }}<span class="badge maturity-{{ . }}">{{ . }}</span>{{ end }}
-    {{ range .Params.domains }}<span class="badge domain">{{ . }}</span>{{ end }}
-    {{ range index .Params "collaboration-types" }}<span class="badge collaboration-type" style="display:none">{{ . }}</span>{{ end }}
-    {{ range .Params.modalities }}<span class="badge modality" style="display:none">{{ . }}</span>{{ end }}
-    {{ range .Params.scales }}<span class="badge scale" style="display:none">{{ . }}</span>{{ end }}
+    {{ range $domains }}<span class="badge domain">{{ . }}</span>{{ end }}
+    {{ range $collaborationTypes }}<span class="badge collaboration-type" hidden>{{ . }}</span>{{ end }}
+    {{ range $modalities }}<span class="badge modality" hidden>{{ . }}</span>{{ end }}
+    {{ range $scales }}<span class="badge scale" hidden>{{ . }}</span>{{ end }}
   </div>
 </article>

@@ -3,12 +3,96 @@
 (function () {
   'use strict';
 
+  const FILTER_FIELDS = [
+    { key: 'search', param: 'search', label: 'Search' },
+    { key: 'type', param: 'type', label: 'Type' },
+    { key: 'domain', param: 'domain', label: 'Domain' },
+    { key: 'collabType', param: 'collaboration_type', label: 'Collaboration' },
+    { key: 'scale', param: 'scale', label: 'Scale' },
+    { key: 'modality', param: 'modality', label: 'Modality' }
+  ];
+
+  function splitValues(raw) {
+    return raw ? raw.split('|').filter(Boolean) : [];
+  }
+
+  function updateUrl(filters) {
+    const url = new URL(window.location.href);
+
+    FILTER_FIELDS.forEach(field => {
+      const value = filters[field.key];
+      if (value) {
+        url.searchParams.set(field.param, value);
+      } else {
+        url.searchParams.delete(field.param);
+      }
+    });
+
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  function renderChips(container, filters, onRemove) {
+    const activeFilters = FILTER_FIELDS.filter(field => filters[field.key]);
+    if (!container) {
+      return;
+    }
+
+    if (!activeFilters.length) {
+      container.hidden = true;
+      container.innerHTML = '';
+      return;
+    }
+
+    container.hidden = false;
+    container.innerHTML = activeFilters.map(field => {
+      const value = filters[field.key];
+      return '<button type="button" class="filter-chip" data-filter-key="' + field.key + '">' +
+        '<span class="filter-chip-label">' + field.label + ':</span> ' +
+        '<span class="filter-chip-value">' + escapeHtml(String(value)) + '</span>' +
+        '<span class="filter-chip-remove" aria-hidden="true">×</span>' +
+      '</button>';
+    }).join('');
+
+    container.querySelectorAll('.filter-chip').forEach(button => {
+      button.addEventListener('click', () => onRemove(button.dataset.filterKey));
+    });
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   function init() {
     const filterBar = document.querySelector('.filters');
     if (!filterBar) return;
 
     const cards = Array.from(document.querySelectorAll('.entry-card'));
     if (!cards.length) return;
+    const sections = Array.from(document.querySelectorAll('.type-section'));
+
+    let emptyMessage = document.querySelector('.filter-empty');
+    if (!emptyMessage) {
+      emptyMessage = document.createElement('p');
+      emptyMessage.className = 'filter-empty';
+      emptyMessage.hidden = true;
+      emptyMessage.textContent = 'No entries match your filters. Try clearing one or more filters.';
+      filterBar.insertAdjacentElement('afterend', emptyMessage);
+    }
+
+    const cardIndex = cards.map(card => ({
+      element: card,
+      type: card.dataset.type || '',
+      text: card.dataset.searchText || card.textContent.toLowerCase(),
+      domains: splitValues(card.dataset.domains),
+      collaborationTypes: splitValues(card.dataset.collaborationTypes),
+      scales: splitValues(card.dataset.scales),
+      modalities: splitValues(card.dataset.modalities)
+    }));
 
     // Collect unique values from cards
     const domains = new Set();
@@ -17,14 +101,14 @@
     const modalities = new Set();
     const scales = new Set();
 
-    cards.forEach(card => {
-      const type = card.dataset.type;
+    cardIndex.forEach(card => {
+      const type = card.type;
       if (type) types.add(type);
 
-      card.querySelectorAll('.badge.domain').forEach(b => domains.add(b.textContent.trim()));
-      card.querySelectorAll('.badge.collaboration-type').forEach(b => collabTypes.add(b.textContent.trim()));
-      card.querySelectorAll('.badge.modality').forEach(b => modalities.add(b.textContent.trim()));
-      card.querySelectorAll('.badge.scale').forEach(b => scales.add(b.textContent.trim()));
+      card.domains.forEach(value => domains.add(value));
+      card.collaborationTypes.forEach(value => collabTypes.add(value));
+      card.modalities.forEach(value => modalities.add(value));
+      card.scales.forEach(value => scales.add(value));
     });
 
     // Build filter controls
@@ -73,8 +157,11 @@
           ${[...modalities].sort().map(m => `<option value="${m}">${capitalize(m)}</option>`).join('')}
         </select>
       </label>` : ''}
-      <button id="filter-reset" class="btn btn-secondary filter-reset" style="display:none">Clear filters</button>
-      <span id="filter-count" class="filter-count" aria-live="polite"></span>
+      <div class="filter-actions">
+        <button id="filter-reset" type="button" class="btn btn-secondary filter-reset" hidden>Clear filters</button>
+        <span id="filter-count" class="filter-count" aria-live="polite"></span>
+      </div>
+      <div id="filter-chips" class="filter-chips" hidden aria-live="polite"></div>
     `;
 
     const searchInput = document.getElementById('filter-search');
@@ -85,6 +172,16 @@
     const modalitySelect = document.getElementById('filter-modality');
     const resetBtn = document.getElementById('filter-reset');
     const countSpan = document.getElementById('filter-count');
+    const chips = document.getElementById('filter-chips');
+
+    const controls = {
+      search: searchInput,
+      type: typeSelect,
+      domain: domainSelect,
+      collabType: collabTypeSelect,
+      scale: scaleSelect,
+      modality: modalitySelect
+    };
 
     function getFilters() {
       return {
@@ -97,52 +194,54 @@
       };
     }
 
+    function setFilterValue(key, value) {
+      const control = controls[key];
+      if (!control) return;
+      control.value = value;
+    }
+
     function applyFilters() {
       const f = getFilters();
       const hasFilter = f.search || f.type || f.domain || f.collabType || f.scale || f.modality;
-      resetBtn.style.display = hasFilter ? '' : 'none';
+      resetBtn.hidden = !hasFilter;
 
       let visible = 0;
-      cards.forEach(card => {
+      cardIndex.forEach(card => {
         let show = true;
 
         if (f.search) {
-          const text = card.textContent.toLowerCase();
-          if (!text.includes(f.search)) show = false;
+          if (!card.text.includes(f.search)) show = false;
         }
-        if (f.type && card.dataset.type !== f.type) show = false;
-        if (f.domain) {
-          const cardDomains = [...card.querySelectorAll('.badge.domain')].map(b => b.textContent.trim());
-          if (!cardDomains.includes(f.domain)) show = false;
-        }
-        if (f.collabType) {
-          const cardCollabTypes = [...card.querySelectorAll('.badge.collaboration-type')].map(b => b.textContent.trim());
-          if (!cardCollabTypes.includes(f.collabType)) show = false;
-        }
-        if (f.scale) {
-          const cardScales = [...card.querySelectorAll('.badge.scale')].map(b => b.textContent.trim());
-          if (!cardScales.includes(f.scale)) show = false;
-        }
-        if (f.modality) {
-          const cardModalities = [...card.querySelectorAll('.badge.modality')].map(b => b.textContent.trim());
-          if (!cardModalities.includes(f.modality)) show = false;
-        }
+        if (f.type && card.type !== f.type) show = false;
+        if (f.domain && !card.domains.includes(f.domain)) show = false;
+        if (f.collabType && !card.collaborationTypes.includes(f.collabType)) show = false;
+        if (f.scale && !card.scales.includes(f.scale)) show = false;
+        if (f.modality && !card.modalities.includes(f.modality)) show = false;
 
-        card.style.display = show ? '' : 'none';
+        card.element.hidden = !show;
         if (show) visible++;
       });
 
-      // Show/hide empty-section messages
-      document.querySelectorAll('.type-section').forEach(section => {
-        const visibleCards = section.querySelectorAll('.entry-card:not([style*="display: none"])');
-        section.style.display = visibleCards.length === 0 ? 'none' : '';
+      sections.forEach(section => {
+        const visibleCards = section.querySelectorAll('.entry-card:not([hidden])');
+        section.hidden = visibleCards.length === 0;
       });
 
-      countSpan.textContent = hasFilter ? `${visible} result${visible !== 1 ? 's' : ''}` : '';
+      countSpan.textContent = hasFilter
+        ? `${visible} result${visible !== 1 ? 's' : ''}`
+        : `${visible} entr${visible !== 1 ? 'ies' : 'y'}`;
+      emptyMessage.hidden = visible !== 0;
+
+      renderChips(chips, f, key => {
+        setFilterValue(key, '');
+        applyFilters();
+      });
+      updateUrl(f);
     }
 
-    [searchInput, typeSelect, domainSelect, collabTypeSelect, scaleSelect, modalitySelect].forEach(el => {
-      if (el) el.addEventListener('input', applyFilters);
+    if (searchInput) searchInput.addEventListener('input', applyFilters);
+    [typeSelect, domainSelect, collabTypeSelect, scaleSelect, modalitySelect].forEach(el => {
+      if (el) el.addEventListener('change', applyFilters);
     });
 
     resetBtn.addEventListener('click', () => {
@@ -171,15 +270,17 @@
     }
 
     let hasUrlFilter = false;
+    if (searchInput && params.get('search')) {
+      searchInput.value = params.get('search');
+      hasUrlFilter = true;
+    }
     hasUrlFilter = preselectFilter(domainSelect, 'domain') || hasUrlFilter;
     hasUrlFilter = preselectFilter(collabTypeSelect, 'collaboration_type') || hasUrlFilter;
     hasUrlFilter = preselectFilter(scaleSelect, 'scale') || hasUrlFilter;
     hasUrlFilter = preselectFilter(modalitySelect, 'modality') || hasUrlFilter;
     hasUrlFilter = preselectFilter(typeSelect, 'type') || hasUrlFilter;
 
-    if (hasUrlFilter) {
-      applyFilters();
-    }
+    applyFilters();
   }
 
   function capitalize(str) {

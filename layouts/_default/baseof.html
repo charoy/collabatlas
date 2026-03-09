@@ -19,14 +19,18 @@
         <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
       </h1>
       <p class="site-tagline">{{ .Site.Params.tagline }}</p>
+      {{ $searchPage := site.GetPage "search" }}
+      <div class="site-search" id="site-search" data-search-page="{{ if $searchPage }}{{ $searchPage.RelPermalink }}{{ else }}/search/{{ end }}">
+        <label class="visually-hidden" for="site-search-input">Search the site</label>
+        <input id="site-search-input" class="site-search-input" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false" aria-controls="site-search-results">
+        <div class="site-search-panel" id="site-search-panel" hidden>
+          <p class="site-search-status" id="site-search-status">Type at least 2 characters to search.</p>
+          <ul class="site-search-results" id="site-search-results"></ul>
+          <a class="site-search-more" id="site-search-more" href="{{ if $searchPage }}{{ $searchPage.RelPermalink }}{{ else }}/search/{{ end }}">View all search results →</a>
+        </div>
+      </div>
       <nav class="site-nav" aria-label="Main navigation">
-        <ul>
-          {{ range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>
-          </li>
-          {{ end }}
-        </ul>
+        {{- range .Site.Menus.main -}}<a href="{{ .URL | relURL }}"{{ if $.IsMenuCurrent "main" . }} aria-current="page"{{ end }}>{{ .Name }}</a>{{- end -}}
       </nav>
     </div>
   </header>
@@ -45,9 +49,85 @@
     </div>
   </footer>
 
+  {{ $searchItems := slice }}
+  {{ range site.RegularPages }}
+    {{ $summary := .Params.description | default .Params.tagline | default (.Summary | plainify) }}
+    {{ $keywords := slice }}
+    {{ with .Params.domains }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with index .Params "collaboration-types" }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with .Params.modalities }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with .Params.scales }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with .Params.research_methods }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with .Params.tags }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ with .Params.categories }}{{ $keywords = union $keywords . }}{{ end }}
+    {{ $typeLabel := "page" }}
+    {{ if eq .Section "catalogue" }}
+      {{ $typeLabel = path.Base (path.Dir .File.Path) }}
+    {{ else if eq .Section "blog" }}
+      {{ $typeLabel = "blog post" }}
+    {{ else if eq .Section "guides" }}
+      {{ $typeLabel = "guide" }}
+    {{ else if eq .Section "research" }}
+      {{ $typeLabel = "research" }}
+    {{ else if eq .Section "governance" }}
+      {{ $typeLabel = "governance" }}
+    {{ else if eq .Section "about" }}
+      {{ $typeLabel = "about" }}
+    {{ end }}
+    {{ $searchItems = $searchItems | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "type" $typeLabel
+      "summary" ($summary | plainify | truncate 180)
+      "text" (lower (printf "%s %s %s" .Title ($summary | plainify) (delimit $keywords " ")))
+      "external" false
+    ) }}
+  {{ end }}
+  {{ range slice "catalogue" "guides" "governance" "research" "blog" "about" }}
+    {{ with site.GetPage . }}
+      {{ $summary := .Params.description | default (.Summary | plainify) }}
+      {{ $searchItems = $searchItems | append (dict
+        "title" .Title
+        "url" .RelPermalink
+        "type" "section"
+        "summary" ($summary | plainify | truncate 180)
+        "text" (lower (printf "%s %s" .Title ($summary | plainify)))
+        "external" false
+      ) }}
+    {{ end }}
+  {{ end }}
+  {{ with site.Data.research_articles }}
+    {{ range . }}
+      {{ $articleKeywords := slice }}
+      {{ with .domains }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
+      {{ with .tags }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
+      {{ $searchItems = $searchItems | append (dict
+        "title" .title
+        "url" .url
+        "type" "research article"
+        "summary" ((printf "%s %s" (.authors | default "") (.journal | default "")) | plainify | truncate 180)
+        "text" (lower (printf "%s %s %s %s %s" .title (.authors | default "") (.journal | default "") (.abstract | default "") (delimit $articleKeywords " ")))
+        "external" true
+      ) }}
+    {{ end }}
+  {{ end }}
+  <script id="site-search-index" type="application/json">{{ $searchItems | jsonify }}</script>
+
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ end }}
+  {{ if resources.Get "js/site-search.js" }}
+  {{ $searchJs := resources.Get "js/site-search.js" | minify | fingerprint }}
+  <script src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}" defer></script>
+  {{ end }}
+  {{ if resources.Get "js/search-page.js" }}
+  {{ $searchPageJs := resources.Get "js/search-page.js" | minify | fingerprint }}
+  <script src="{{ $searchPageJs.RelPermalink }}" integrity="{{ $searchPageJs.Data.Integrity }}" defer></script>
+  {{ end }}
+  {{ if resources.Get "js/research-filter.js" }}
+  {{ $researchJs := resources.Get "js/research-filter.js" | minify | fingerprint }}
+  <script src="{{ $researchJs.RelPermalink }}" integrity="{{ $researchJs.Data.Integrity }}" defer></script>
   {{ end }}
   {{ $wizardPage := site.GetPage "guides/find-your-method" }}
   {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}

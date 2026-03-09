@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="search-page">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="search-results-toolbar">
+    <label class="filter-label" for="search-page-input">
+      <span>Search</span>
+      <input id="search-page-input" type="search" placeholder="Search the atlas…" autocomplete="off" spellcheck="false">
+    </label>
+    <div class="filter-actions">
+      <button id="search-page-reset" type="button" class="btn btn-secondary filter-reset" hidden>Clear search</button>
+      <span id="search-page-count" class="filter-count" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <p id="search-page-hint" class="search-page-hint">Search by title, taxonomy, keywords, authors, or summary.</p>
+  <div id="search-page-results" class="search-page-results"></div>
+  <p id="search-page-empty" class="filter-empty" hidden>No results match this query. Try another keyword or browse the catalogue directly.</p>
+</section>
+{{ end }}
