@@ -1,0 +1,42 @@
+id: cocco-2-dataset-and-analyses
+type: dataset
+title: COCCO 2 dataset and analyses
+tagline: Dataset and analyss of the COCCO 2 experiment
+description: Dataset and analyss of the COCCO 2 experiment
+source_url: https://zenodo.org/records/16522610
+format: CSV, CSV, CSV, RMD
+size: 774.3 KB across 4 files
+license: cc-by-4.0
+temporal_coverage: null
+platform: zenodo
+platform_id: 10.5281/zenodo.16522610
+doi: 10.5281/zenodo.16522610
+version: null
+tags: []
+external_links:
+- type: doi
+  url: https://doi.org/10.5281/zenodo.16522610
+  title: Zenodo DOI
+- type: website
+  url: https://zenodo.org/records/16522610
+  title: Zenodo record
+source_services:
+- zenodo
+fetched_at: '2026-03-09T15:11:30Z'
+last_reviewed: '2026-03-09'
+created: '2025-07-28'
+domains:
+- education
+collaboration-types:
+- distributed
+- co-production
+scales:
+- small-team
+modalities:
+- remote
+maturity: established
+contributors:
+- collabatlas-team
+status: published
+research_methods:
+- experimental

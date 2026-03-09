@@ -58,6 +58,27 @@
       "type": "string",
       "description": "OpenAlex work identifier URL"
     },
+    "orcid_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https://orcid\\.org/[0-9X-]+$"
+      },
+      "description": "Author ORCID profile URLs discovered during enrichment"
+    },
+    "source_services": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["openalex", "crossref", "orcid", "zotero", "zenodo", "github"]
+      },
+      "description": "External services used to enrich or import the record"
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the last automatic enrichment refresh"
+    },
     "domains": {
       "type": "array",
       "items": { "type": "string" },

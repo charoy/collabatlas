@@ -17,16 +17,15 @@ This backlog captures the main remaining work for the site after the first round
 
 ### Still open
 
-- Entry comparison is not yet available.
 - Data visualizations are not yet available.
-- External knowledge sources are not yet integrated.
+- External knowledge sources are only partially integrated.
 - Some documentation still needs contributor-oriented technical details.
 
 ---
 
 ## Priority 1 — Improve discovery
 
-### Status
+### Current integration status
 
 Core discovery improvements are now implemented.
 
@@ -111,6 +110,8 @@ Definition of done:
 
 - Users can compare multiple candidate approaches before deciding.
 
+**Status:** implemented in first version.
+
 ---
 
 ## Priority 3 — Enrich content and trust signals
@@ -152,6 +153,13 @@ Definition of done:
 ### 7. Connect bibliographic and research APIs
 
 **Goal:** enrich entries and research references automatically.
+
+### Status
+
+First iteration now supports merged OpenAlex + Crossref enrichment, ORCID capture
+from available author metadata, Zotero library / CSL-JSON imports for research
+articles, and Zenodo-based dataset creation / refresh. GitHub API and broader
+catalogue-entry enrichment remain open.
 
 Candidates:
 

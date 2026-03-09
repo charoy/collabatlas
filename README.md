@@ -31,14 +31,13 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Dedicated search page at `/search/`
 - Shareable filtered views for catalogue and research pages
 - Interactive wizard for finding relevant methods and tools
+- Side-by-side comparison for 2–4 catalogue entries
 - Data-driven Hugo build with validation and import scripts
 
 ### Planned next
 
-- Side-by-side entry comparison
-- Richer wizard scoring and explanations
 - Visual exploration components
-- External metadata enrichment from research and repository APIs
+- External metadata enrichment beyond the first OpenAlex, Crossref, Zotero, and Zenodo integrations
 
 See [BACKLOG.md](BACKLOG.md) for the current roadmap.
 
@@ -96,7 +95,9 @@ You can then test:
 - `/catalogue/?domain=education` for shareable catalogue filters
 - `/research/?access=open` for shareable research filters
 
-### Importing Research Articles
+### Importing External Metadata
+
+#### Research articles
 
 CollabAtlas supports multiple import methods for research articles:
 
@@ -116,12 +117,49 @@ python scripts/fetch_doi.py --openalex W54955629
 # Batch import from a file of OpenAlex IDs
 python scripts/import_references.py --openalex-ids ids.txt
 
+# Import from a public Zotero library
+python scripts/import_references.py --zotero-library groups/123456 --enrich
+
+# Import from a Zotero CSL-JSON export
+python scripts/import_references.py --zotero-json zotero-export.json --enrich
+
 # Enrich existing articles (fill missing abstracts, citations, OpenAlex IDs)
 python scripts/fetch_doi.py --enrich-missing
 
 # Look up DOIs for articles that don't have one
 python scripts/fetch_doi.py --lookup-doi
+
 ```
+
+When a DOI is available, enrichment now merges OpenAlex and Crossref metadata,
+records the contributing `source_services`, and stores author ORCID profile URLs
+when those services expose them.
+
+#### Datasets from Zenodo
+
+Zenodo support is currently available as a maintenance/import script rather than
+as a visible site button. It can create a new dataset entry or refresh an
+existing one from a Zenodo record ID, DOI, or record URL.
+
+```bash
+# Start the interactive Zenodo import assistant
+python scripts/fetch_zenodo.py
+
+# Create or refresh a dataset entry from Zenodo
+python scripts/fetch_zenodo.py 14839172 --entry-id my-dataset --domains software-engineering --collaboration-types open-source distributed --scales community --modalities remote
+
+# Preview a Zenodo import without writing files
+python scripts/fetch_zenodo.py https://doi.org/10.5281/zenodo.14839172 --entry-id my-dataset --dry-run
+
+# List accepted taxonomy IDs before creating a dataset
+python scripts/fetch_zenodo.py --list-taxonomies
+```
+
+Zenodo imports can create new dataset entries or refresh existing dataset YAML +
+content files while preserving CollabAtlas-specific taxonomy and editorial fields.
+Running the script with no arguments now starts an interactive assistant that
+prompts for the Zenodo identifier, target entry ID, taxonomy mapping, and write
+mode.
 
 ### Project Structure
 

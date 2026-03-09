@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """Shared utilities for CollabAtlas research article management."""
 
+from __future__ import annotations
+
 import re
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Optional
+from typing import Any
 
 import requests
 import yaml
@@ -17,6 +20,7 @@ CROSSREF_URL = "https://api.crossref.org/works/{doi}"
 CROSSREF_SEARCH_URL = "https://api.crossref.org/works"
 OPENALEX_URL = "https://api.openalex.org/works/doi:{doi}"
 OPENALEX_ID_URL = "https://api.openalex.org/works/{openalex_id}"
+ZOTERO_API_ROOT = "https://api.zotero.org"
 HEADERS = {"User-Agent": "CollabAtlas/1.0 (mailto:admin@collabatlas.org)"}
 RATE_LIMIT = 0.5  # seconds between API calls
 
@@ -68,6 +72,83 @@ def generate_id(
 PRESERVED_FIELDS = ("id", "domains", "tags", "related_entries", "notes")
 
 
+def _merge_unique_str_list(*values: list[str] | None) -> list[str]:
+    """Merge multiple string lists while preserving order and uniqueness."""
+    merged = []
+    for items in values:
+        for item in items or []:
+            if item and item not in merged:
+                merged.append(item)
+    return merged
+
+
+def _normalize_orcid(value: str | None) -> str | None:
+    """Normalise an ORCID value to the canonical HTTPS URL form."""
+    if not value:
+        return None
+
+    value = value.strip()
+    if not value:
+        return None
+
+    value = value.replace("http://orcid.org/", "")
+    value = value.replace("https://orcid.org/", "")
+    value = value.replace("orcid.org/", "")
+
+    if re.fullmatch(r"\d{4}-\d{4}-\d{4}-[\dX]{4}", value, re.I):
+        return f"https://orcid.org/{value.upper()}"
+    return None
+
+
+def _merge_metadata(primary: dict | None, secondary: dict | None) -> dict:
+    """Merge two metadata dictionaries, preferring richer primary values."""
+    primary = dict(primary or {})
+    secondary = dict(secondary or {})
+    merged = dict(secondary)
+    merged.update(primary)
+
+    merged["source_services"] = _merge_unique_str_list(
+        secondary.get("source_services"), primary.get("source_services")
+    )
+    merged["orcid_ids"] = _merge_unique_str_list(
+        secondary.get("orcid_ids"), primary.get("orcid_ids")
+    )
+
+    if primary.get("citation_count") is not None or secondary.get("citation_count") is not None:
+        merged["citation_count"] = max(
+            [
+                value
+                for value in (
+                    primary.get("citation_count"),
+                    secondary.get("citation_count"),
+                )
+                if value is not None
+            ],
+            default=None,
+        )
+
+    if "open" in {primary.get("access"), secondary.get("access")}:
+        merged["access"] = "open"
+    elif primary.get("access") or secondary.get("access"):
+        merged["access"] = primary.get("access") or secondary.get("access")
+
+    for key in ("title", "authors", "journal", "year", "doi", "url", "abstract"):
+        if not merged.get(key):
+            merged[key] = primary.get(key) or secondary.get(key)
+
+    return {k: v for k, v in merged.items() if v not in (None, [], "")}
+
+
+def _current_timestamp() -> str:
+    """Return a UTC timestamp suitable for persisted enrichment metadata."""
+    return (
+        datetime.now(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
 def upsert(articles: list, doi: str | None, meta: dict) -> list:
     """Update existing entry or append new one, preserving manual fields."""
     if doi:
@@ -77,7 +158,7 @@ def upsert(articles: list, doi: str | None, meta: dict) -> list:
                 preserved = {
                     k: v for k, v in art.items() if k in PRESERVED_FIELDS
                 }
-                articles[i] = {**meta, **preserved}
+                articles[i] = _merge_metadata({**meta, **preserved}, art)
                 print(f"  Updated: {meta.get('title', doi)[:70]}")
                 return articles
 
@@ -89,7 +170,7 @@ def upsert(articles: list, doi: str | None, meta: dict) -> list:
                 preserved = {
                     k: v for k, v in art.items() if k in PRESERVED_FIELDS
                 }
-                articles[i] = {**meta, **preserved}
+                articles[i] = _merge_metadata({**meta, **preserved}, art)
                 print(f"  Updated (title match): {meta.get('title', '')[:70]}")
                 return articles
 
@@ -116,11 +197,15 @@ def fetch_crossref(doi: str) -> dict | None:
         return None
 
     authors = []
+    orcid_ids = []
     for a in data.get("author", []):
         given = a.get("given", "")
         family = a.get("family", "")
         if family:
             authors.append(f"{given} {family}".strip())
+        orcid = _normalize_orcid(a.get("ORCID"))
+        if orcid:
+            orcid_ids.append(orcid)
 
     container = (
         data.get("container-title", [None])[0]
@@ -148,6 +233,8 @@ def fetch_crossref(doi: str) -> dict | None:
         "access": access,
         "abstract": abstract or None,
         "citation_count": data.get("is-referenced-by-count"),
+        "orcid_ids": _merge_unique_str_list(orcid_ids),
+        "source_services": ["crossref"],
     }
 
 
@@ -157,10 +244,15 @@ def fetch_crossref(doi: str) -> dict | None:
 def _parse_openalex_response(data: dict) -> dict:
     """Parse an OpenAlex Work response into a normalised article dict."""
     authors = []
+    orcid_ids = []
     for a in data.get("authorships", []):
-        name = a.get("author", {}).get("display_name")
+        author = a.get("author", {})
+        name = author.get("display_name")
         if name:
             authors.append(name)
+        orcid = _normalize_orcid(author.get("orcid"))
+        if orcid:
+            orcid_ids.append(orcid)
 
     venue = data.get("primary_location", {}) or {}
     source = venue.get("source") or {}
@@ -196,6 +288,8 @@ def _parse_openalex_response(data: dict) -> dict:
         "abstract": abstract,
         "citation_count": data.get("cited_by_count"),
         "openalex_id": data.get("id"),
+        "orcid_ids": _merge_unique_str_list(orcid_ids),
+        "source_services": ["openalex"],
     }
 
 
@@ -231,7 +325,10 @@ def fetch_by_openalex_id(openalex_id: str) -> dict | None:
         print(f"  OpenAlex error for {openalex_id}: {e}", file=sys.stderr)
         return None
 
-    return _parse_openalex_response(data)
+    result = _parse_openalex_response(data)
+    if result:
+        result["fetched_at"] = _current_timestamp()
+    return result
 
 
 def _reconstruct_abstract(inv_index: dict) -> str:
@@ -247,13 +344,123 @@ def _reconstruct_abstract(inv_index: dict) -> str:
 
 
 def fetch_metadata(doi: str) -> dict | None:
-    """Try OpenAlex first (richer OA info), fall back to CrossRef."""
+    """Merge OpenAlex and CrossRef metadata for richer enrichment."""
     print(f"  Fetching {doi} via OpenAlex...")
-    meta = fetch_openalex(doi)
-    if not meta or not meta.get("title"):
-        print(f"  Falling back to CrossRef...")
-        meta = fetch_crossref(doi)
+    openalex_meta = fetch_openalex(doi)
+
+    print(f"  Fetching {doi} via CrossRef...")
+    crossref_meta = fetch_crossref(doi)
+
+    if not openalex_meta and not crossref_meta:
+        return None
+
+    meta = _merge_metadata(openalex_meta, crossref_meta)
+    meta["fetched_at"] = _current_timestamp()
     return meta
+
+
+def _extract_csl_year(item: dict) -> int | None:
+    """Extract a publication year from CSL JSON date fields."""
+    for field in ("issued", "published-print", "published-online"):
+        date_info = item.get(field) or {}
+        date_parts = date_info.get("date-parts") or []
+        if date_parts and date_parts[0]:
+            year = date_parts[0][0]
+            if isinstance(year, int):
+                return year
+            try:
+                return int(year)
+            except (TypeError, ValueError):
+                return None
+    return None
+
+
+def parse_csl_json_items(
+    items: list[dict[str, Any]], source_service: str = "zotero"
+) -> list[dict]:
+    """Parse CSL JSON items into normalised article dictionaries."""
+    parsed = []
+    for item in items:
+        author_names = []
+        orcid_ids = []
+        for author in item.get("author", []):
+            literal = (author.get("literal") or "").strip()
+            if literal:
+                author_names.append(literal)
+            else:
+                given = (author.get("given") or "").strip()
+                family = (author.get("family") or "").strip()
+                full_name = " ".join(part for part in (given, family) if part)
+                if full_name:
+                    author_names.append(full_name)
+
+            orcid = _normalize_orcid(
+                author.get("ORCID") or author.get("orcid")
+            )
+            if orcid:
+                orcid_ids.append(orcid)
+
+        doi = (item.get("DOI") or "").strip() or None
+        url = (item.get("URL") or "").strip() or None
+        if doi and not url:
+            url = f"https://doi.org/{doi}"
+
+        parsed.append(
+            {
+                "title": (item.get("title") or "").strip(),
+                "authors": ", ".join(author_names) if author_names else None,
+                "journal": (
+                    item.get("container-title")
+                    or item.get("publisher")
+                    or item.get("collection-title")
+                ),
+                "year": _extract_csl_year(item),
+                "doi": doi,
+                "url": url,
+                "abstract": item.get("abstract") or None,
+                "access": "unknown",
+                "orcid_ids": _merge_unique_str_list(orcid_ids),
+                "source_services": [source_service],
+                "fetched_at": _current_timestamp(),
+            }
+        )
+
+    return parsed
+
+
+def fetch_zotero_library(
+    library: str,
+    api_key: str | None = None,
+    tag: str | None = None,
+    limit: int = 100,
+) -> list[dict]:
+    """Fetch items from a Zotero library using its public API."""
+    parts = [part.strip() for part in library.split("/") if part.strip()]
+    if len(parts) != 2 or parts[0] not in {"users", "groups"}:
+        raise ValueError(
+            "Zotero library must look like 'users/<id>' or 'groups/<id>'"
+        )
+
+    headers = dict(HEADERS)
+    if api_key:
+        headers["Zotero-API-Key"] = api_key
+
+    params = {
+        "format": "csljson",
+        "itemType": "-attachment",
+        "limit": limit,
+    }
+    if tag:
+        params["tag"] = tag
+
+    url = f"{ZOTERO_API_ROOT}/{parts[0]}/{parts[1]}/items"
+    response = requests.get(url, params=params, headers=headers, timeout=15)
+    response.raise_for_status()
+    items = response.json()
+    if not isinstance(items, list):
+        raise ValueError("Unexpected Zotero API response format")
+
+    return parse_csl_json_items(items, source_service="zotero")
 
 
 # ── DOI Lookup ───────────────────────────────────────────────────────────────

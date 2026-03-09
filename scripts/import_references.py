@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 import_references.py — Import research articles from BibTeX, RIS, or
-OpenAlex ID files.
+OpenAlex / Zotero sources.
 
 Usage:
     python scripts/import_references.py --bibtex refs.bib
@@ -9,6 +9,7 @@ Usage:
     python scripts/import_references.py --bibtex refs.bib --enrich
     python scripts/import_references.py --bibtex refs.bib --dry-run
     python scripts/import_references.py --openalex-ids ids.txt
+    python scripts/import_references.py --zotero-library groups/123456
 """
 
 import argparse
@@ -18,16 +19,48 @@ from pathlib import Path
 
 from article_utils import (
     RATE_LIMIT,
+    fetch_zotero_library,
     fetch_by_openalex_id,
     fetch_metadata,
     load_articles,
     lookup_doi_by_title,
+    parse_csl_json_items,
     save_articles,
     upsert,
 )
 
 
 # ── Parsers ──────────────────────────────────────────────────────────────────
+
+
+def merge_enriched_fields(entry: dict, enriched: dict) -> None:
+    """Merge enrichment data into an imported entry without losing provenance."""
+    for key, val in enriched.items():
+        if val is None:
+            continue
+
+        if key in {"source_services", "orcid_ids"}:
+            merged = []
+            for item in (entry.get(key) or []) + (val or []):
+                if item and item not in merged:
+                    merged.append(item)
+            if merged:
+                entry[key] = merged
+            continue
+
+        if key == "citation_count":
+            current = entry.get(key)
+            if current is None or val > current:
+                entry[key] = val
+            continue
+
+        if key == "access":
+            if val == "open" or not entry.get(key) or entry.get(key) == "unknown":
+                entry[key] = val
+            continue
+
+        if key == "fetched_at" or not entry.get(key):
+            entry[key] = val
 
 
 def parse_bibtex(filepath: Path) -> list[dict]:
@@ -133,6 +166,19 @@ def parse_ris(filepath: Path) -> list[dict]:
     return articles
 
 
+def parse_zotero_json(filepath: Path) -> list[dict]:
+    """Parse a Zotero CSL JSON export file into normalised article dicts."""
+    import json
+
+    with open(filepath, encoding="utf-8") as f:
+        items = json.load(f)
+
+    if not isinstance(items, list):
+        raise ValueError("Zotero JSON export must contain a list of items")
+
+    return parse_csl_json_items(items, source_service="zotero")
+
+
 # ── OpenAlex ID Import ────────────────────────────────────────────────────────
 
 
@@ -190,7 +236,7 @@ def import_openalex_ids(filepath: Path, dry_run: bool = False):
 def main():
     parser = argparse.ArgumentParser(
         description=(
-            "Import research articles from BibTeX or RIS files "
+            "Import research articles from BibTeX, RIS, Zotero, or OpenAlex "
             "into CollabAtlas"
         ),
     )
@@ -206,6 +252,15 @@ def main():
         "-o",
         type=Path,
         help="Text file with one OpenAlex Work ID per line",
+    )
+    input_group.add_argument(
+        "--zotero-json",
+        type=Path,
+        help="Zotero CSL JSON export file to import",
+    )
+    input_group.add_argument(
+        "--zotero-library",
+        help="Zotero library identifier like groups/123456 or users/123456",
     )
 
     parser.add_argument(
@@ -223,6 +278,20 @@ def main():
         action="store_true",
         help="Preview changes without writing to the articles file",
     )
+    parser.add_argument(
+        "--zotero-api-key",
+        help="Optional Zotero API key for private libraries or higher limits",
+    )
+    parser.add_argument(
+        "--zotero-tag",
+        help="Optional Zotero tag filter when using --zotero-library",
+    )
+    parser.add_argument(
+        "--zotero-limit",
+        type=int,
+        default=100,
+        help="Maximum number of items to request from a Zotero library",
+    )
     args = parser.parse_args()
 
     # ── Parse input file ─────────────────────────────────────────────────
@@ -233,7 +302,29 @@ def main():
         import_openalex_ids(args.openalex_ids, dry_run=args.dry_run)
         return
 
-    if args.bibtex:
+    if args.zotero_library:
+        print(f"Fetching Zotero library: {args.zotero_library}")
+        try:
+            parsed = fetch_zotero_library(
+                args.zotero_library,
+                api_key=args.zotero_api_key,
+                tag=args.zotero_tag,
+                limit=args.zotero_limit,
+            )
+        except Exception as exc:
+            print(f"Zotero import failed: {exc}", file=sys.stderr)
+            sys.exit(1)
+    elif args.zotero_json:
+        if not args.zotero_json.exists():
+            print(f"File not found: {args.zotero_json}", file=sys.stderr)
+            sys.exit(1)
+        print(f"Parsing Zotero JSON: {args.zotero_json}")
+        try:
+            parsed = parse_zotero_json(args.zotero_json)
+        except Exception as exc:
+            print(f"Invalid Zotero JSON: {exc}", file=sys.stderr)
+            sys.exit(1)
+    elif args.bibtex:
         if not args.bibtex.exists():
             print(f"File not found: {args.bibtex}", file=sys.stderr)
             sys.exit(1)
@@ -268,9 +359,7 @@ def main():
                 print(f"\nEnriching: {title[:60]}...")
                 enriched = fetch_metadata(doi)
                 if enriched:
-                    for key, val in enriched.items():
-                        if val is not None and not entry.get(key):
-                            entry[key] = val
+                    merge_enriched_fields(entry, enriched)
                     stats["enriched"] += 1
                 time.sleep(RATE_LIMIT)
             else:
@@ -281,9 +370,7 @@ def main():
                     entry["doi"] = found_doi
                     enriched = fetch_metadata(found_doi)
                     if enriched:
-                        for key, val in enriched.items():
-                            if val is not None and not entry.get(key):
-                                entry[key] = val
+                        merge_enriched_fields(entry, enriched)
                         stats["enriched"] += 1
                 else:
                     print("  No DOI found")
@@ -295,6 +382,8 @@ def main():
         if not entry.get("title"):
             stats["skipped"] += 1
             continue
+
+        doi = entry.get("doi")
 
         before_len = len(articles)
         articles = upsert(articles, doi, entry)

@@ -135,6 +135,10 @@
       "format": "uri",
       "description": "URL where the dataset can be accessed or downloaded."
     },
+    "doi": {
+      "type": "string",
+      "description": "DOI associated with the dataset record when available."
+    },
     "format": {
       "type": "string",
       "description": "File format of the dataset (e.g., CSV, JSON, Parquet)."
@@ -159,6 +163,23 @@
     "platform_id": {
       "type": "string",
       "description": "Platform-specific identifier (e.g., Zenodo DOI, Kaggle slug, Figshare article ID)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Dataset version when provided by the hosting platform."
+    },
+    "source_services": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["zenodo", "kaggle", "figshare", "dataverse", "dryad", "osf", "huggingface", "google-bigquery", "acm-dl", "other"]
+      },
+      "description": "External services used to enrich or import the dataset metadata."
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the last automatic enrichment refresh."
     }
   }
 }
