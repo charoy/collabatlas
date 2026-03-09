@@ -10,7 +10,12 @@
     }
 
     try {
-      return JSON.parse(dataElement.textContent);
+      var payload = JSON.parse(dataElement.textContent);
+      if (typeof payload === 'string') {
+        payload = JSON.parse(payload);
+      }
+
+      return payload;
     } catch (error) {
       console.error('Unable to parse wizard data.', error);
       return { catalogue: [], questions: [] };
@@ -85,6 +90,95 @@
     });
 
     return tags;
+  }
+
+  function getQuestionWeight(question) {
+    var weight = Number(question && question.weight);
+    return Number.isFinite(weight) && weight > 0 ? weight : 1;
+  }
+
+  function getEntryFieldValues(entry, fieldName) {
+    if (!entry || !fieldName) {
+      return [];
+    }
+
+    if (fieldName === 'type') {
+      return entry.type ? [entry.type] : [];
+    }
+
+    var value = entry[fieldName];
+    if (Array.isArray(value)) {
+      return value;
+    }
+
+    return value ? [value] : [];
+  }
+
+  function buildReasonLabel(questionId, matchedTags) {
+    var tags = matchedTags.slice(0, 3).join(', ');
+
+    if (questionId === 'goal') {
+      return 'Supports your goal through: ' + tags;
+    }
+
+    if (questionId === 'domain') {
+      return 'Relevant to your domain: ' + tags;
+    }
+
+    if (questionId === 'modality') {
+      return 'Works for your collaboration mode: ' + tags;
+    }
+
+    if (questionId === 'scale') {
+      return 'Fits your collaboration scale: ' + tags;
+    }
+
+    return 'Matches your context on: ' + tags;
+  }
+
+  function scoreEntry(entry) {
+    var totalWeight = 0;
+    var score = 0;
+    var matchedTags = [];
+    var reasons = [];
+
+    QUESTIONS.forEach(function (question) {
+      var option = getAnswerOption(question, answers[question.id]);
+      if (!option) {
+        return;
+      }
+
+      var weight = getQuestionWeight(question);
+      var entryValues = getEntryFieldValues(entry, question.match_field || 'tags');
+      var localMatches = (option.tags || []).filter(function (tag) {
+        return entryValues.indexOf(tag) !== -1;
+      });
+
+      totalWeight += weight;
+
+      if (!localMatches.length) {
+        return;
+      }
+
+      var localCoverage = localMatches.length / Math.max((option.tags || []).length, 1);
+      score += weight * localCoverage;
+
+      localMatches.forEach(function (tag) {
+        if (matchedTags.indexOf(tag) === -1) {
+          matchedTags.push(tag);
+        }
+      });
+
+      reasons.push(buildReasonLabel(question.id, localMatches));
+    });
+
+    return {
+      entry: entry,
+      score: score,
+      matchedTags: matchedTags,
+      reasons: reasons,
+      coverage: totalWeight ? Math.round((score / totalWeight) * 100) : 0
+    };
   }
 
   function getShareUrl() {
@@ -206,6 +300,18 @@
     renderQuestion();
   }
 
+  function wizardEditAnswers() {
+    if (!QUESTIONS.length || !CATALOGUE.length) {
+      return;
+    }
+
+    document.getElementById('wizard-intro').hidden = true;
+    document.getElementById('wizard-results').hidden = true;
+    document.getElementById('wizard-questions').hidden = false;
+    currentStep = 0;
+    renderQuestion();
+  }
+
   function renderQuestion() {
     var q = QUESTIONS[currentStep];
     var progress = document.getElementById('wizard-progress');
@@ -268,37 +374,15 @@
     document.getElementById('wizard-results').hidden = false;
     syncUrl();
 
-    // Collect all selected tags
-    var selectedTags = getSelectedTags();
     var answerSummary = buildAnswerSummary();
-    var totalTags = Math.max(selectedTags.length, 1);
-
-    // Score each entry
-    var scored = CATALOGUE.map(function (entry) {
-      var score = 0;
-      var matchedTags = [];
-      selectedTags.forEach(function (tag) {
-        if (entry.tags.indexOf(tag) !== -1) {
-          score++;
-          if (matchedTags.indexOf(tag) === -1) {
-            matchedTags.push(tag);
-          }
-        }
-      });
-      return {
-        entry: entry,
-        score: score,
-        matchedTags: matchedTags,
-        coverage: Math.round((score / totalTags) * 100)
-      };
-    });
+    var scored = CATALOGUE.map(scoreEntry);
 
     scored.sort(function (a, b) {
       if (b.score !== a.score) {
         return b.score - a.score;
       }
 
-      return (b.entry.title || '').localeCompare(a.entry.title || '');
+      return (a.entry.title || '').localeCompare(b.entry.title || '');
     });
     var top = scored.filter(function (s) { return s.score > 0; }).slice(0, 6);
 
@@ -319,13 +403,18 @@
     summary.textContent = 'Based on your answers, here are the most relevant approaches from the current catalogue:';
     if (hint) {
       hint.textContent = answerSummary.length
-        ? 'The ranking is based on overlap between your selected context and each entry\'s domains, modalities, scales, collaboration types, and research methods.'
+        ? 'The ranking weighs your goal, domain, modality, and scale, then explains why each entry fits your context.'
         : '';
     }
     renderSelectedContext();
     list.innerHTML = top.map(function (s) {
       var matchedSummary = s.matchedTags.length
         ? '<p class="tagline">Matched on: ' + escapeHtml(s.matchedTags.slice(0, 4).join(', ')) + '</p>'
+        : '';
+      var whyThisResult = s.reasons.length
+        ? '<div class="wizard-why"><p class="wizard-why-title">Why this result</p><ul class="wizard-why-list">' + s.reasons.slice(0, 4).map(function (reason) {
+          return '<li>' + escapeHtml(reason) + '</li>';
+        }).join('') + '</ul></div>'
         : '';
       var entryType = s.entry.type ? '<span class="badge ' + escapeHtml(s.entry.type) + '">' + escapeHtml(s.entry.type) + '</span>' : '';
       var maturity = s.entry.maturity ? '<span class="badge maturity-' + escapeHtml(s.entry.maturity) + '">' + escapeHtml(s.entry.maturity) + '</span>' : '';
@@ -336,6 +425,7 @@
         '<h3><a href="' + escapeHtml(s.entry.url) + '">' + escapeHtml(s.entry.title) + '</a></h3>' +
         tagline +
         matchedSummary +
+        whyThisResult +
         '<div class="card-meta">' +
         scoreBadge +
         entryType +
@@ -377,6 +467,7 @@
   window.wizardNext = wizardNext;
   window.wizardBack = wizardBack;
   window.wizardReset = wizardReset;
+  window.wizardEditAnswers = wizardEditAnswers;
   window.copyWizardShareLink = copyShareLink;
 
   initializeWizardState();

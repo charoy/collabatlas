@@ -1,5 +1,7 @@
 - id: goal
   question: "What is your primary goal?"
+  match_field: tags
+  weight: 4
   options:
     - id: design-solution
       label: "Design a solution or product"
@@ -16,6 +18,8 @@
 
 - id: scale
   question: "How many people are involved?"
+  match_field: scales
+  weight: 2
   options:
     - id: pair
       label: "2–5 people (pair or small group)"
@@ -32,6 +36,8 @@
 
 - id: modality
   question: "How will people collaborate?"
+  match_field: modalities
+  weight: 3
   options:
     - id: in-person
       label: "In person"
@@ -45,6 +51,8 @@
 
 - id: domain
   question: "Which domain best describes your context?"
+  match_field: domains
+  weight: 3
   options:
     - id: tech
       label: "Technology / Software"

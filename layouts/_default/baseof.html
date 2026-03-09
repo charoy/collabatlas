@@ -111,7 +111,7 @@
       ) }}
     {{ end }}
   {{ end }}
-  <script id="site-search-index" type="application/json">{{ $searchItems | jsonify }}</script>
+  <script id="site-search-index" type="application/json">{{ $searchItems | jsonify | safeJS }}</script>
 
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
@@ -157,12 +157,17 @@
         "url" .RelPermalink
         "type" ($merged.type | default $subsection)
         "tags" $tags
+        "domains" ($merged.domains | default (slice))
+        "collaborationTypes" (index $merged "collaboration-types" | default (slice))
+        "modalities" ($merged.modalities | default (slice))
+        "scales" ($merged.scales | default (slice))
+        "researchMethods" ($merged.research_methods | default (slice))
         "maturity" ($merged.maturity | default "")
       ) }}
     {{ end }}
   {{ end }}
   {{ $wizardPayload := dict "questions" site.Data.wizard.questions "catalogue" $catalogueEntries }}
-  <script id="wizard-data" type="application/json">{{ $wizardPayload | jsonify }}</script>
+  <script id="wizard-data" type="application/json">{{ $wizardPayload | jsonify | safeJS }}</script>
   {{ if resources.Get "js/wizard.js" }}
   {{ $wjs := resources.Get "js/wizard.js" | minify | fingerprint }}
   <script src="{{ $wjs.RelPermalink }}" integrity="{{ $wjs.Data.Integrity }}"></script>

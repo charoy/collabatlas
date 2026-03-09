@@ -10,7 +10,12 @@
     }
 
     try {
-      return JSON.parse(element.textContent).map(function (item) {
+      var payload = JSON.parse(element.textContent);
+      if (typeof payload === 'string') {
+        payload = JSON.parse(payload);
+      }
+
+      return payload.map(function (item) {
         return {
           title: item.title || '',
           url: item.url || '#',
