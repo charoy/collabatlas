@@ -119,6 +119,7 @@ def build_front_matter(data: dict[str, Any]) -> str:
 
 def write_dataset_files(data: dict[str, Any], body: str = "") -> None:
 	"""Write both the dataset YAML file and its matching Hugo content file."""
+	data = compact_mapping(data)
 	DATASET_DATA_DIR.mkdir(parents=True, exist_ok=True)
 	DATASET_CONTENT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -168,4 +169,9 @@ def merge_dataset_metadata(
 		if field in existing:
 			merged[field] = existing[field]
 
-	return {k: v for k, v in merged.items() if v not in (None, [], "")}
+	return compact_mapping(merged)
+
+
+def compact_mapping(data: dict[str, Any]) -> dict[str, Any]:
+	"""Remove top-level empty values before persisting YAML files."""
+	return {k: v for k, v in data.items() if v not in (None, [], "")}

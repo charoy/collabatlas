@@ -158,8 +158,8 @@ Definition of done:
 
 First iteration now supports merged OpenAlex + Crossref enrichment, ORCID capture
 from available author metadata, Zotero library / CSL-JSON imports for research
-articles, and Zenodo-based dataset creation / refresh. GitHub API and broader
-catalogue-entry enrichment remain open.
+articles, Zenodo-based dataset creation / refresh, and GitHub-based tool entry
+creation / refresh. Broader catalogue-entry enrichment remains open.
 
 Candidates:
 
@@ -190,6 +190,12 @@ Definition of done:
 
 **Goal:** make the site feel more exploratory and dynamic.
 
+### Status
+
+First release implemented with a lightweight domain × entry type matrix on the
+catalogue landing page. Additional visualizations can build on the same
+metadata later.
+
 Possible components:
 
 - Taxonomy matrix (methods × domains, tools × modalities, etc.)
@@ -206,6 +212,8 @@ Tasks:
 Definition of done:
 
 - Visitors can discover content through at least one visual interface.
+
+**Status:** first release implemented.
 
 ---
 

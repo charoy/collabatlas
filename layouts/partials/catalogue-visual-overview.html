@@ -1,0 +1,104 @@
+{{ $cataloguePage := site.GetPage "catalogue" }}
+{{ if $cataloguePage }}
+{{ $toolsPage := site.GetPage "catalogue/tools" }}
+{{ $methodsPage := site.GetPage "catalogue/methods" }}
+{{ $frameworksPage := site.GetPage "catalogue/frameworks" }}
+{{ $caseStudiesPage := site.GetPage "catalogue/case-studies" }}
+{{ $datasetsPage := site.GetPage "catalogue/datasets" }}
+{{ $resourcesPage := site.GetPage "catalogue/resources" }}
+{{ $typeSpecs := slice }}
+{{ with $toolsPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "tools" "label" .Title "page" . "tone" "tools") }}{{ end }}
+{{ with $methodsPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "methods" "label" .Title "page" . "tone" "methods") }}{{ end }}
+{{ with $frameworksPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "frameworks" "label" .Title "page" . "tone" "frameworks") }}{{ end }}
+{{ with $caseStudiesPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "case-studies" "label" .Title "page" . "tone" "case-studies") }}{{ end }}
+{{ with $datasetsPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "datasets" "label" .Title "page" . "tone" "datasets") }}{{ end }}
+{{ with $resourcesPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "resources" "label" .Title "page" . "tone" "resources") }}{{ end }}
+
+{{ $domains := site.Data.taxonomies.domains | default (slice) }}
+{{ $allEntries := $cataloguePage.RegularPagesRecursive }}
+{{ $scratch := newScratch }}
+{{ $scratch.Set "maxCell" 1 }}
+{{ $scratch.Set "activeDomains" 0 }}
+
+{{ range $domain := $domains }}
+  {{ $rowTotal := len (where $allEntries "Params.domains" "intersect" (slice $domain.id)) }}
+  {{ if gt $rowTotal 0 }}{{ $scratch.Add "activeDomains" 1 }}{{ end }}
+  {{ range $spec := $typeSpecs }}
+    {{ with $spec.page }}
+      {{ $count := len (where .RegularPages "Params.domains" "intersect" (slice $domain.id)) }}
+      {{ if gt $count ($scratch.Get "maxCell") }}{{ $scratch.Set "maxCell" $count }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<section class="catalogue-visual-overview" aria-labelledby="catalogue-visual-title">
+  <div class="catalogue-visual-header">
+    <div>
+      <p class="catalogue-visual-eyebrow">Visual exploration</p>
+      <h2 id="catalogue-visual-title">Scan the catalogue by domain and entry type</h2>
+      <p class="catalogue-visual-intro">Start with a lightweight matrix built from live catalogue metadata. Each filled cell opens a pre-filtered catalogue view, so visitors can move from overview to detailed browsing in one click.</p>
+    </div>
+    <a href="#catalogue-filters" class="btn btn-secondary">Jump to filters</a>
+  </div>
+
+  <div class="catalogue-visual-stats" aria-label="Catalogue overview statistics">
+    <div class="catalogue-visual-stat">
+      <span class="stat-number">{{ len $allEntries }}</span>
+      <span class="stat-label">Total entries</span>
+    </div>
+    <div class="catalogue-visual-stat">
+      <span class="stat-number">{{ $scratch.Get "activeDomains" }}</span>
+      <span class="stat-label">Active domains</span>
+    </div>
+    <div class="catalogue-visual-stat">
+      <span class="stat-number">{{ len $typeSpecs }}</span>
+      <span class="stat-label">Entry types</span>
+    </div>
+  </div>
+
+  <div class="catalogue-matrix-wrap">
+    <table class="catalogue-matrix">
+      <caption>Counts of catalogue entries by domain and entry type. Filled cells link to a matching filtered catalogue view.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Domain</th>
+          {{ range $spec := $typeSpecs }}
+          <th scope="col">{{ $spec.label }}</th>
+          {{ end }}
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $domain := $domains }}
+          {{ $rowTotal := len (where $allEntries "Params.domains" "intersect" (slice $domain.id)) }}
+          {{ if gt $rowTotal 0 }}
+          <tr>
+            <th scope="row" class="catalogue-matrix-domain">
+              <a class="catalogue-matrix-domain-link" href="{{ printf "%s?domain=%s" $cataloguePage.RelPermalink $domain.id }}">{{ $domain.label }}</a>
+              <span class="catalogue-matrix-domain-meta">{{ $rowTotal }} entr{{ if eq $rowTotal 1 }}y{{ else }}ies{{ end }}</span>
+            </th>
+            {{ range $spec := $typeSpecs }}
+              {{ $count := 0 }}
+              {{ with $spec.page }}{{ $count = len (where .RegularPages "Params.domains" "intersect" (slice $domain.id)) }}{{ end }}
+              <td>
+                {{ if gt $count 0 }}
+                <a class="catalogue-matrix-cell catalogue-matrix-cell--{{ $spec.tone }}" href="{{ printf "%s?domain=%s&type=%s" $cataloguePage.RelPermalink $domain.id $spec.key }}" aria-label="{{ $count }} {{ $spec.label }} entries in {{ $domain.label }}">
+                  <span class="catalogue-matrix-bar" style="width: {{ div (mul $count 100) ($scratch.Get "maxCell") }}%;"></span>
+                  <span class="catalogue-matrix-value">{{ $count }}</span>
+                </a>
+                {{ else }}
+                <span class="catalogue-matrix-empty" aria-hidden="true">—</span>
+                {{ end }}
+              </td>
+            {{ end }}
+            <td class="catalogue-matrix-total">{{ $rowTotal }}</td>
+          </tr>
+          {{ end }}
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="catalogue-matrix-note">Tip: select any filled cell to open the main catalogue with matching filters already applied. Only domains currently represented in the catalogue are shown here.</p>
+</section>
+{{ end }}

@@ -147,10 +147,32 @@
       "type": "string",
       "description": "Digital Object Identifier for the resource."
     },
+    "github_repo": {
+      "type": "string",
+      "description": "GitHub repository in owner/repo form when the resource was enriched from GitHub."
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["public", "private", "internal"],
+      "description": "Repository visibility reported by GitHub when available."
+    },
     "access": {
       "type": "string",
       "enum": ["open", "restricted", "paid"],
       "description": "Access level required to obtain the resource."
+    },
+    "source_services": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["github"]
+      },
+      "description": "External services used to enrich or import the resource metadata."
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the last automatic enrichment refresh."
     }
   }
 }

@@ -21,6 +21,7 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Global site search with instant results and a dedicated search page
 - Shareable client-side filters for catalogue and research pages
 - Interactive "Find Your Method" decision wizard with shareable results
+- Visual catalogue overview with a lightweight domain × entry type matrix
 - Automated validation, build checks, and freshness tracking scripts
 
 ## Current Product Status
@@ -32,6 +33,7 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Shareable filtered views for catalogue and research pages
 - Interactive wizard for finding relevant methods and tools
 - Side-by-side comparison for 2–4 catalogue entries
+- Visual exploration on the catalogue landing page via a clickable taxonomy matrix
 - Data-driven Hugo build with validation and import scripts
 
 ### Planned next
@@ -160,6 +162,34 @@ content files while preserving CollabAtlas-specific taxonomy and editorial field
 Running the script with no arguments now starts an interactive assistant that
 prompts for the Zenodo identifier, target entry ID, taxonomy mapping, and write
 mode.
+
+#### Tools and resources from GitHub
+
+GitHub support is available as an import / enrichment script for tool and
+resource entries. It can create a new entry or refresh an existing one from a
+repository URL or `owner/repo` identifier.
+
+```bash
+# Start the interactive GitHub import assistant
+python scripts/fetch_github.py
+
+# Create or refresh a tool entry from GitHub
+python scripts/fetch_github.py cli/cli --entry-id github-cli --domains software-engineering --collaboration-types open-source distributed --scales small-team organization --modalities remote
+
+# Create or refresh a resource entry from GitHub
+python scripts/fetch_github.py cli/cli --entry-type resource --entry-id github-cli-guide --resource-type tutorial --authors "GitHub CLI Team" --year 2024 --access open --domains software-engineering --collaboration-types open-source distributed --scales small-team organization --modalities remote
+
+# Preview a GitHub import without writing files
+python scripts/fetch_github.py cli/cli --entry-id github-cli --dry-run
+
+# List accepted taxonomy IDs before creating a tool or resource entry
+python scripts/fetch_github.py --list-taxonomies
+```
+
+Running the script with no arguments starts an interactive assistant that
+prompts for the repository, entry type, target entry ID, taxonomy mapping, and
+final write confirmation. In resource mode, it also asks for resource type,
+authors, year, and access level.
 
 ### Project Structure
 

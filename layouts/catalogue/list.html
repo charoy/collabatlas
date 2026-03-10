@@ -7,7 +7,9 @@
 
   {{ .Content }}
 
-  <div class="filters" aria-label="Filter entries">
+  {{ partial "catalogue-visual-overview.html" . }}
+
+  <div class="filters" id="catalogue-filters" aria-label="Filter entries">
     <!-- Populated by catalogue-filter.js -->
   </div>
 

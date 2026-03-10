@@ -7,11 +7,9 @@ source_url: https://zenodo.org/records/16522610
 format: CSV, CSV, CSV, RMD
 size: 774.3 KB across 4 files
 license: cc-by-4.0
-temporal_coverage: null
 platform: zenodo
 platform_id: 10.5281/zenodo.16522610
 doi: 10.5281/zenodo.16522610
-version: null
 tags: []
 external_links:
 - type: doi

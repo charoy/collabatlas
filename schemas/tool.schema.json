@@ -128,6 +128,15 @@
       "format": "uri",
       "description": "Official website URL for the tool."
     },
+    "github_repo": {
+      "type": "string",
+      "description": "GitHub repository in owner/repo form when the tool was enriched from GitHub."
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["public", "private", "internal"],
+      "description": "Repository visibility reported by GitHub when available."
+    },
     "license": {
       "type": "string",
       "description": "License under which the tool is distributed."
@@ -140,6 +149,19 @@
       "type": "array",
       "items": { "type": "string" },
       "description": "Platforms on which the tool is available."
+    },
+    "source_services": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["github"]
+      },
+      "description": "External services used to enrich or import the tool metadata."
+    },
+    "fetched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC timestamp of the last automatic enrichment refresh."
     }
   }
 }
