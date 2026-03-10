@@ -23,6 +23,10 @@
     {{ range $scales }}<span class="badge scale" hidden>{{ . }}</span>{{ end }}
   </div>
   <div class="entry-card-actions">
+    <button type="button" class="btn btn-secondary btn-sm favorite-toggle" data-favorite-id="{{ .Params.data_id | default .File.ContentBaseName }}" data-favorite-title="{{ .Title }}" data-favorite-url="{{ .RelPermalink }}" aria-pressed="false">
+      <span class="favorite-toggle-icon" aria-hidden="true">☆</span>
+      <span class="favorite-toggle-label">Save</span>
+    </button>
     <button type="button" class="btn btn-secondary btn-sm compare-toggle" data-compare-id="{{ .Params.data_id | default .File.ContentBaseName }}" aria-pressed="false">Add to compare</button>
   </div>
 </article>

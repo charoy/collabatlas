@@ -14,10 +14,11 @@ This backlog captures the main remaining work for the site after the first round
 - A dedicated search page is now available.
 - Catalogue filters now persist in the URL and expose active chips.
 - Research page filters now persist in the URL and expose active chips.
+- Catalogue visual exploration is now available via a matrix and lightweight stats panels.
+- Local personalization now supports browser-stored favorites for catalogue entries.
 
 ### Still open
 
-- Data visualizations are not yet available.
 - External knowledge sources are only partially integrated.
 - Some documentation still needs contributor-oriented technical details.
 
@@ -192,9 +193,9 @@ Definition of done:
 
 ### Status
 
-First release implemented with a lightweight domain × entry type matrix on the
-catalogue landing page. Additional visualizations can build on the same
-metadata later.
+First release implemented with a lightweight domain × entry type matrix and a
+small statistics dashboard on the catalogue landing page. Additional
+visualizations can build on the same metadata later.
 
 Possible components:
 
@@ -250,9 +251,97 @@ Definition of done:
 
 ---
 
+## Priority 7 — Prepare catalogue scalability
+
+### 11. Plan the transition to a larger catalogue
+
+**Goal:** keep discovery fast and maintainable when the atlas grows to hundreds
+or thousands of entries.
+
+### Why this matters
+
+The current architecture is a good fit for a still-growing static catalogue, but
+some patterns will become expensive at larger scale:
+
+- global client-side search indexes injected into the page shell;
+- client-side filtering over all visible cards at once;
+- large all-in-one catalogue pages;
+- visual components that try to render too much raw data at once.
+
+### Scaling stages
+
+#### Stage 1 — up to ~500 entries
+
+**Approach:** keep the current static-site architecture, but reduce unnecessary
+payloads and make navigation more sectional.
+
+Tasks:
+
+- Limit page-level data injection to what each page actually needs.
+- Strengthen pagination and section-specific browsing.
+- Keep visualizations aggregated rather than exhaustive.
+- Monitor build size and client-side script payload size.
+
+Definition of done:
+
+- Catalogue pages remain fast to load and filter.
+- No page needs to preload the entire atlas unless strictly necessary.
+
+#### Stage 2 — ~500 to 2,000 entries
+
+**Approach:** introduce more specialized indexes and a stronger static-search
+strategy.
+
+Tasks:
+
+- Split search, compare, and visualization data into separate generated assets.
+- Evaluate or adopt a static-search engine such as Pagefind.
+- Prefer paginated and taxonomy-first list pages over one large aggregated view.
+- Precompute more aggregate statistics and relationship hints at build time.
+
+Definition of done:
+
+- Search stays responsive without loading a large monolithic JSON blob.
+- Catalogue discovery remains usable on modest devices.
+
+#### Stage 3 — beyond ~2,000 entries
+
+**Approach:** preserve the static-first model where possible, but be ready for a
+more dedicated search and indexing layer.
+
+Tasks:
+
+- Reassess whether client-side filtering should remain card-based or move to
+	JSON-backed result rendering.
+- Keep visual exploration limited to aggregated dashboards, timelines, and
+	summaries rather than full dense graphs.
+- Precompute automatic related-entry suggestions and store them as derived data.
+- Consider an external search service only if static search is no longer
+	sufficient.
+
+Definition of done:
+
+- Discovery still scales without making the site fragile.
+- Any move beyond pure-static search is justified by actual catalogue size and
+	usage needs.
+
+### Recommended future implementation order
+
+1. Reduce global data injection in the base template.
+2. Add or strengthen pagination for catalogue-heavy views.
+3. Introduce split JSON assets for search, comparison, and visual summaries.
+4. Evaluate Pagefind as the next search layer.
+5. Precompute related-entry and visualization aggregates during the Hugo build.
+
+### Status
+
+Planning only for now. Activate this track once catalogue growth starts to make
+page payload size, search latency, or filter responsiveness noticeably worse.
+
+---
+
 ## Nice-to-have
 
-- Save favorite entries locally in the browser.
 - Add printable or downloadable comparison views.
 - Add multilingual support for the wizard and catalogue UI.
 - Add analytics for anonymous feature usage, if governance permits it.

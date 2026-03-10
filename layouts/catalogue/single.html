@@ -8,8 +8,9 @@
   {{ $data = index $sectionData $id | default dict }}
 {{ end }}
 {{ $merged := merge .Params $data }}
+{{ $entryId := .Params.data_id | default .File.ContentBaseName }}
 
-<article class="catalogue-entry">
+<article class="catalogue-entry" data-entry-id="{{ $entryId }}">
   <header class="entry-header">
     <h1>{{ .Title }}</h1>
     {{ with $merged.tagline }}<p class="entry-tagline">{{ . }}</p>{{ end }}
@@ -21,8 +22,12 @@
   </div>
   {{ end }}
 
-  {{ if or $merged.website_url $merged.source_url $merged.doi $merged.external_links }}
   <div class="entry-source-link">
+    <button type="button" class="btn btn-secondary btn-sm favorite-toggle" data-favorite-id="{{ $entryId }}" data-favorite-title="{{ .Title }}" data-favorite-url="{{ .RelPermalink }}" aria-pressed="false">
+      <span class="favorite-toggle-icon" aria-hidden="true">☆</span>
+      <span class="favorite-toggle-label">Save to favorites</span>
+    </button>
+    {{ if or $merged.website_url $merged.source_url $merged.doi $merged.external_links }}
     {{ with $merged.website_url }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website ↗</a>
     {{ end }}
@@ -37,8 +42,8 @@
         <a href="{{ .url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">{{ .title }} ↗</a>
       {{ end }}
     {{ end }}
+    {{ end }}
   </div>
-  {{ end }}
 
   {{ if eq $subsection "datasets" }}
     {{ with $merged.platform }}

@@ -176,6 +176,10 @@
   {{ $compareJs := resources.Get "js/entry-compare.js" | minify | fingerprint }}
   <script src="{{ $compareJs.RelPermalink }}" integrity="{{ $compareJs.Data.Integrity }}" defer></script>
   {{ end }}
+  {{ if resources.Get "js/entry-favorites.js" }}
+  {{ $favoritesJs := resources.Get "js/entry-favorites.js" | minify | fingerprint }}
+  <script src="{{ $favoritesJs.RelPermalink }}" integrity="{{ $favoritesJs.Data.Integrity }}" defer></script>
+  {{ end }}
   {{ $wizardPage := site.GetPage "guides/find-your-method" }}
   {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}
   {{ $catalogueEntries := slice }}

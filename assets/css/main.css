@@ -436,8 +436,27 @@ main {
 }
 
 .entry-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-top: auto;
   padding-top: 0.25rem;
+}
+
+.entry-card.is-favorite {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 1px rgba(245,158,11,.18), var(--shadow-sm);
+}
+
+.favorite-toggle.is-selected {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  color: #b45309;
+}
+
+.favorite-toggle-icon {
+  font-size: 0.95rem;
+  line-height: 1;
 }
 
 .compare-toggle.is-selected {
@@ -623,6 +642,24 @@ main {
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-toggle input {
+  margin: 0;
 }
 
 .filters select,
@@ -1202,6 +1239,90 @@ main {
   font-size: 0.84rem;
   color: var(--color-text-muted);
 }
+
+.catalogue-insights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.catalogue-insight-card {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.85);
+}
+
+.catalogue-insight-header {
+  margin-bottom: 0.9rem;
+}
+
+.catalogue-insight-header h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.catalogue-insight-header p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+}
+
+.catalogue-stat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.catalogue-stat-row {
+  display: grid;
+  grid-template-columns: minmax(0, 8rem) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.catalogue-stat-row:hover {
+  background: var(--color-bg-subtle);
+  text-decoration: none;
+  transform: translateX(1px);
+}
+
+.catalogue-stat-label,
+.catalogue-stat-value {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.catalogue-stat-bar-wrap {
+  position: relative;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--color-bg-subtle);
+  overflow: hidden;
+}
+
+.catalogue-stat-bar {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.catalogue-stat-row--tools .catalogue-stat-bar { background: #059669; }
+.catalogue-stat-row--methods .catalogue-stat-bar { background: #7c3aed; }
+.catalogue-stat-row--frameworks .catalogue-stat-bar { background: #ea580c; }
+.catalogue-stat-row--case-studies .catalogue-stat-bar { background: #0891b2; }
+.catalogue-stat-row--datasets .catalogue-stat-bar { background: #ca8a04; }
+.catalogue-stat-row--resources .catalogue-stat-bar { background: #2563eb; }
 
 /* Taxonomy tile colour variants */
 .collab-tile:hover {
@@ -2509,12 +2630,20 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .catalogue-insights {
+    grid-template-columns: 1fr;
+  }
+
   .catalogue-matrix {
     min-width: 42rem;
   }
 
   .catalogue-matrix-domain {
     min-width: 11rem;
+  }
+
+  .catalogue-stat-row {
+    grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto;
   }
 
   .post-grid { grid-template-columns: 1fr; }

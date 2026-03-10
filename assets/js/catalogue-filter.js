@@ -9,8 +9,10 @@
     { key: 'domain', param: 'domain', label: 'Domain' },
     { key: 'collabType', param: 'collaboration_type', label: 'Collaboration' },
     { key: 'scale', param: 'scale', label: 'Scale' },
-    { key: 'modality', param: 'modality', label: 'Modality' }
+    { key: 'modality', param: 'modality', label: 'Modality' },
+    { key: 'favorites', param: 'favorites', label: 'Favorites' }
   ];
+  const FAVORITES_STORAGE_KEY = 'collabatlas-favorites';
 
   function splitValues(raw) {
     return raw ? raw.split('|').filter(Boolean) : [];
@@ -45,7 +47,7 @@
 
     container.hidden = false;
     container.innerHTML = activeFilters.map(field => {
-      const value = filters[field.key];
+      const value = field.key === 'favorites' ? 'saved items' : filters[field.key];
       return '<button type="button" class="filter-chip" data-filter-key="' + field.key + '">' +
         '<span class="filter-chip-label">' + field.label + ':</span> ' +
         '<span class="filter-chip-value">' + escapeHtml(String(value)) + '</span>' +
@@ -74,6 +76,26 @@
     const cards = Array.from(document.querySelectorAll('.entry-card'));
     if (!cards.length) return;
     const sections = Array.from(document.querySelectorAll('.type-section'));
+    let favoriteIds = new Set();
+
+    function readFavorites() {
+      try {
+        const raw = window.localStorage.getItem(FAVORITES_STORAGE_KEY);
+        if (!raw) {
+          return [];
+        }
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function refreshFavorites() {
+      favoriteIds = new Set(readFavorites().map(item => item && item.id).filter(Boolean));
+    }
+
+    refreshFavorites();
 
     let emptyMessage = document.querySelector('.filter-empty');
     if (!emptyMessage) {
@@ -157,6 +179,10 @@
           ${[...modalities].sort().map(m => `<option value="${m}">${capitalize(m)}</option>`).join('')}
         </select>
       </label>` : ''}
+      <label class="filter-toggle" for="filter-favorites">
+        <input type="checkbox" id="filter-favorites" aria-label="Show favorites only">
+        <span>Favorites only</span>
+      </label>
       <div class="filter-actions">
         <button id="filter-reset" type="button" class="btn btn-secondary filter-reset" hidden>Clear filters</button>
         <span id="filter-count" class="filter-count" aria-live="polite"></span>
@@ -170,6 +196,7 @@
     const collabTypeSelect = document.getElementById('filter-collaboration-type');
     const scaleSelect = document.getElementById('filter-scale');
     const modalitySelect = document.getElementById('filter-modality');
+    const favoritesToggle = document.getElementById('filter-favorites');
     const resetBtn = document.getElementById('filter-reset');
     const countSpan = document.getElementById('filter-count');
     const chips = document.getElementById('filter-chips');
@@ -180,7 +207,8 @@
       domain: domainSelect,
       collabType: collabTypeSelect,
       scale: scaleSelect,
-      modality: modalitySelect
+      modality: modalitySelect,
+      favorites: favoritesToggle
     };
 
     function getFilters() {
@@ -191,18 +219,23 @@
         collabType: collabTypeSelect ? collabTypeSelect.value : '',
         scale: scaleSelect ? scaleSelect.value : '',
         modality: modalitySelect ? modalitySelect.value : '',
+        favorites: favoritesToggle && favoritesToggle.checked ? 'saved' : '',
       };
     }
 
     function setFilterValue(key, value) {
       const control = controls[key];
       if (!control) return;
+      if (control.type === 'checkbox') {
+        control.checked = Boolean(value);
+        return;
+      }
       control.value = value;
     }
 
     function applyFilters() {
       const f = getFilters();
-      const hasFilter = f.search || f.type || f.domain || f.collabType || f.scale || f.modality;
+      const hasFilter = f.search || f.type || f.domain || f.collabType || f.scale || f.modality || f.favorites;
       resetBtn.hidden = !hasFilter;
 
       let visible = 0;
@@ -217,6 +250,7 @@
         if (f.collabType && !card.collaborationTypes.includes(f.collabType)) show = false;
         if (f.scale && !card.scales.includes(f.scale)) show = false;
         if (f.modality && !card.modalities.includes(f.modality)) show = false;
+        if (f.favorites && !favoriteIds.has(card.element.dataset.entryId)) show = false;
 
         card.element.hidden = !show;
         if (show) visible++;
@@ -240,7 +274,7 @@
     }
 
     if (searchInput) searchInput.addEventListener('input', applyFilters);
-    [typeSelect, domainSelect, collabTypeSelect, scaleSelect, modalitySelect].forEach(el => {
+    [typeSelect, domainSelect, collabTypeSelect, scaleSelect, modalitySelect, favoritesToggle].forEach(el => {
       if (el) el.addEventListener('change', applyFilters);
     });
 
@@ -251,6 +285,7 @@
       if (collabTypeSelect) collabTypeSelect.value = '';
       if (scaleSelect) scaleSelect.value = '';
       if (modalitySelect) modalitySelect.value = '';
+      if (favoritesToggle) favoritesToggle.checked = false;
       applyFilters();
     });
 
@@ -279,6 +314,18 @@
     hasUrlFilter = preselectFilter(scaleSelect, 'scale') || hasUrlFilter;
     hasUrlFilter = preselectFilter(modalitySelect, 'modality') || hasUrlFilter;
     hasUrlFilter = preselectFilter(typeSelect, 'type') || hasUrlFilter;
+    if (favoritesToggle && params.get('favorites')) {
+      favoritesToggle.checked = true;
+      hasUrlFilter = true;
+    }
+
+    document.addEventListener('collabatlas:favorites-changed', event => {
+      const favorites = event.detail && Array.isArray(event.detail.favorites)
+        ? event.detail.favorites
+        : readFavorites();
+      favoriteIds = new Set(favorites.map(item => item && item.id).filter(Boolean));
+      applyFilters();
+    });
 
     applyFilters();
   }

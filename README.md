@@ -21,7 +21,8 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Global site search with instant results and a dedicated search page
 - Shareable client-side filters for catalogue and research pages
 - Interactive "Find Your Method" decision wizard with shareable results
-- Visual catalogue overview with a lightweight domain × entry type matrix
+- Browser-stored favorites with star buttons and a favorites-only catalogue filter
+- Visual catalogue overview with a lightweight domain × entry type matrix and stats dashboard
 - Automated validation, build checks, and freshness tracking scripts
 
 ## Current Product Status
@@ -33,7 +34,8 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Shareable filtered views for catalogue and research pages
 - Interactive wizard for finding relevant methods and tools
 - Side-by-side comparison for 2–4 catalogue entries
-- Visual exploration on the catalogue landing page via a clickable taxonomy matrix
+- Local favorites saved in the browser for catalogue entries
+- Visual exploration on the catalogue landing page via a clickable taxonomy matrix and lightweight statistics panels
 - Data-driven Hugo build with validation and import scripts
 
 ### Planned next

@@ -15,14 +15,19 @@
 {{ with $resourcesPage }}{{ $typeSpecs = $typeSpecs | append (dict "key" "resources" "label" .Title "page" . "tone" "resources") }}{{ end }}
 
 {{ $domains := site.Data.taxonomies.domains | default (slice) }}
+{{ $modalities := site.Data.taxonomies.modalities | default (slice) }}
 {{ $allEntries := $cataloguePage.RegularPagesRecursive }}
 {{ $scratch := newScratch }}
 {{ $scratch.Set "maxCell" 1 }}
 {{ $scratch.Set "activeDomains" 0 }}
+{{ $domainStats := slice }}
+{{ $modalityStats := slice }}
+{{ $typeStats := slice }}
 
 {{ range $domain := $domains }}
   {{ $rowTotal := len (where $allEntries "Params.domains" "intersect" (slice $domain.id)) }}
   {{ if gt $rowTotal 0 }}{{ $scratch.Add "activeDomains" 1 }}{{ end }}
+  {{ $domainStats = $domainStats | append (dict "id" $domain.id "label" $domain.label "count" $rowTotal) }}
   {{ range $spec := $typeSpecs }}
     {{ with $spec.page }}
       {{ $count := len (where .RegularPages "Params.domains" "intersect" (slice $domain.id)) }}
@@ -30,6 +35,27 @@
     {{ end }}
   {{ end }}
 {{ end }}
+
+{{ range $modality := $modalities }}
+  {{ $count := len (where $allEntries "Params.modalities" "intersect" (slice $modality.id)) }}
+  {{ $modalityStats = $modalityStats | append (dict "id" $modality.id "label" $modality.label "count" $count) }}
+{{ end }}
+
+{{ range $spec := $typeSpecs }}
+  {{ $count := 0 }}
+  {{ with $spec.page }}{{ $count = len .RegularPages }}{{ end }}
+  {{ $typeStats = $typeStats | append (dict "id" $spec.key "label" $spec.label "count" $count "tone" $spec.tone) }}
+{{ end }}
+
+{{ $sortedDomains := sort $domainStats "count" "desc" }}
+{{ $sortedModalities := sort $modalityStats "count" "desc" }}
+{{ $sortedTypes := sort $typeStats "count" "desc" }}
+{{ $maxDomainCount := 1 }}
+{{ $maxModalityCount := 1 }}
+{{ $maxTypeCount := 1 }}
+{{ if gt (len $sortedDomains) 0 }}{{ $maxDomainCount = (index (index $sortedDomains 0) "count") }}{{ end }}
+{{ if gt (len $sortedModalities) 0 }}{{ $maxModalityCount = (index (index $sortedModalities 0) "count") }}{{ end }}
+{{ if gt (len $sortedTypes) 0 }}{{ $maxTypeCount = (index (index $sortedTypes 0) "count") }}{{ end }}
 
 <section class="catalogue-visual-overview" aria-labelledby="catalogue-visual-title">
   <div class="catalogue-visual-header">
@@ -100,5 +126,73 @@
   </div>
 
   <p class="catalogue-matrix-note">Tip: select any filled cell to open the main catalogue with matching filters already applied. Only domains currently represented in the catalogue are shown here.</p>
+
+  <div class="catalogue-insights" aria-label="Catalogue insights dashboard">
+    <section class="catalogue-insight-card">
+      <div class="catalogue-insight-header">
+        <h3>Top domains</h3>
+        <p>See where the catalogue is most densely populated.</p>
+      </div>
+      <ul class="catalogue-stat-list">
+        {{ range first 6 $sortedDomains }}
+          {{ if gt .count 0 }}
+          <li>
+            <a class="catalogue-stat-row" href="{{ printf "%s?domain=%s" $cataloguePage.RelPermalink .id }}">
+              <span class="catalogue-stat-label">{{ .label }}</span>
+              <span class="catalogue-stat-bar-wrap">
+                <span class="catalogue-stat-bar" style="width: {{ div (mul .count 100) $maxDomainCount }}%;"></span>
+              </span>
+              <span class="catalogue-stat-value">{{ .count }}</span>
+            </a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="catalogue-insight-card">
+      <div class="catalogue-insight-header">
+        <h3>Modalities</h3>
+        <p>Compare how often entries support in-person, remote, or hybrid collaboration.</p>
+      </div>
+      <ul class="catalogue-stat-list">
+        {{ range $sortedModalities }}
+          {{ if gt .count 0 }}
+          <li>
+            <a class="catalogue-stat-row" href="{{ printf "%s?modality=%s" $cataloguePage.RelPermalink .id }}">
+              <span class="catalogue-stat-label">{{ .label }}</span>
+              <span class="catalogue-stat-bar-wrap">
+                <span class="catalogue-stat-bar" style="width: {{ div (mul .count 100) $maxModalityCount }}%;"></span>
+              </span>
+              <span class="catalogue-stat-value">{{ .count }}</span>
+            </a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="catalogue-insight-card">
+      <div class="catalogue-insight-header">
+        <h3>Entry type balance</h3>
+        <p>Track which kinds of entries currently dominate the atlas.</p>
+      </div>
+      <ul class="catalogue-stat-list">
+        {{ range $sortedTypes }}
+          {{ if gt .count 0 }}
+          <li>
+            <a class="catalogue-stat-row catalogue-stat-row--{{ .tone }}" href="{{ printf "%s?type=%s" $cataloguePage.RelPermalink .id }}">
+              <span class="catalogue-stat-label">{{ .label }}</span>
+              <span class="catalogue-stat-bar-wrap">
+                <span class="catalogue-stat-bar" style="width: {{ div (mul .count 100) $maxTypeCount }}%;"></span>
+              </span>
+              <span class="catalogue-stat-value">{{ .count }}</span>
+            </a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
+  </div>
 </section>
 {{ end }}
