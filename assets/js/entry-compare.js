@@ -116,6 +116,11 @@
     var compareClear = document.getElementById('compare-page-clear');
     var compareCopy = document.getElementById('compare-page-copy');
     var compareFeedback = document.getElementById('compare-share-feedback');
+    var canUseDockOnPage = compareButtons.length > 0;
+
+    if (dock && !canUseDockOnPage) {
+      dock.hidden = true;
+    }
 
     var selection = dedupeSelection(readStoredSelection(), validIds);
     var selectionFromUrl = parseSelectionFromUrl(validIds);
@@ -148,6 +153,11 @@
 
     function syncDock() {
       if (!dock || !dockSummary || !dockOpen) {
+        return;
+      }
+
+      if (!canUseDockOnPage) {
+        dock.hidden = true;
         return;
       }
 
