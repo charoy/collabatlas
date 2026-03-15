@@ -1,0 +1,30 @@
+{{ if .metrics }}
+<div class="github-metrics" style="margin-top: 1rem; padding: 1rem; border: 1px solid #e1e4e8; border-radius: 6px; background-color: #f6f8fa;">
+  <h3 style="margin-top: 0; font-size: 1rem; color: #24292e;">GitHub Repository Stats</h3>
+  <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 1rem; text-align: center;">
+    <div class="metric-item" title="Stargazers">
+      <span class="metric-icon">⭐</span>
+      <span class="metric-value" style="display: block; font-weight: bold; font-size: 1.2rem;">{{ .metrics.stars }}</span>
+      <span class="metric-label" style="font-size: 0.8rem; color: #586069;">Stars</span>
+    </div>
+    <div class="metric-item" title="Forks">
+      <span class="metric-icon">🍴</span>
+      <span class="metric-value" style="display: block; font-weight: bold; font-size: 1.2rem;">{{ .metrics.forks }}</span>
+      <span class="metric-label" style="font-size: 0.8rem; color: #586069;">Forks</span>
+    </div>
+    <div class="metric-item" title="Open Issues">
+      <span class="metric-icon">🐞</span>
+      <span class="metric-value" style="display: block; font-weight: bold; font-size: 1.2rem;">{{ .metrics.open_issues }}</span>
+      <span class="metric-label" style="font-size: 0.8rem; color: #586069;">Issues</span>
+    </div>
+    <div class="metric-item" title="Last Commit">
+      <span class="metric-icon">🕒</span>
+      <span class="metric-value" style="display: block; font-weight: bold; font-size: 1.2rem;">{{ .metrics.last_commit }}</span>
+      <span class="metric-label" style="font-size: 0.8rem; color: #586069;">Updated</span>
+    </div>
+  </div>
+  {{ with .fetched_at }}
+  <p class="metrics-timestamp" style="font-size: 0.7rem; color: #6a737d; margin-bottom: 0; margin-top: 0.5rem; text-align: right;">Updated: {{ . }}</p>
+  {{ end }}
+</div>
+{{ end }}

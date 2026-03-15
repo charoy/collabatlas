@@ -8,11 +8,29 @@
   {{ $data = index $sectionData $id | default dict }}
 {{ end }}
 {{ $merged := merge .Params $data }}
+{{ $lastReviewed := $merged.last_reviewed }}
+{{ $freshness := "" }}
+{{ if $lastReviewed }}
+  {{ $reviewedTime := time.AsTime $lastReviewed }}
+  {{ $age := now.Sub $reviewedTime }}
+  {{ if lt $age.Hours (mul 180 24) }}
+    {{ $freshness = "fresh" }}
+  {{ else if gt $age.Hours (mul 365 24) }}
+    {{ $freshness = "stale" }}
+  {{ end }}
+{{ end }}
 {{ $entryId := .Params.data_id | default .File.ContentBaseName }}
 
 <article class="catalogue-entry" data-entry-id="{{ $entryId }}">
   <header class="entry-header">
-    <h1>{{ .Title }}</h1>
+    <div class="entry-title-row">
+      <h1>{{ .Title }}</h1>
+      {{ if eq $freshness "fresh" }}
+        <span class="badge fresh" title="Recently reviewed on {{ $lastReviewed }}">Fresh</span>
+      {{ else if eq $freshness "stale" }}
+        <span class="badge stale" title="Last reviewed on {{ $lastReviewed }}">Needs Review</span>
+      {{ end }}
+    </div>
     {{ with $merged.tagline }}<p class="entry-tagline">{{ . }}</p>{{ end }}
   </header>
 
@@ -44,6 +62,8 @@
     {{ end }}
     {{ end }}
   </div>
+
+  {{ partial "github-metrics.html" $merged }}
 
   {{ if eq $subsection "datasets" }}
     {{ with $merged.platform }}
@@ -116,8 +136,8 @@
     {{ .Content }}
   </div>
 
-  {{ partial "external-links.html" (dict "Params" $merged) }}
+  {{ partial "external-links.html" $merged }}
 
-  {{ partial "related-entries.html" (dict "Params" $merged) }}
+  {{ partial "related-entries.html" . }}
 </article>
 {{ end }}
