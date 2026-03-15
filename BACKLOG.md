@@ -96,6 +96,8 @@ Definition of done:
 - Users understand why a result appears.
 - Results feel more relevant for varied contexts.
 
+**Status:** implemented in second version.
+
 ### 4. Add entry comparison
 
 **Goal:** help users compare 2–4 entries side by side.
@@ -133,6 +135,8 @@ Definition of done:
 - Visitors can see whether an entry is current.
 - Editors can identify outdated content quickly.
 
+**Status:** implemented in first version.
+
 ### 6. Improve related-entry recommendations
 
 **Goal:** better connect entries across the catalogue.
@@ -147,6 +151,8 @@ Definition of done:
 
 - Entry pages encourage deeper browsing with meaningful related links.
 
+**Status:** implemented in first version.
+
 ---
 
 ## Priority 4 — Integrate external resources
@@ -160,7 +166,7 @@ Definition of done:
 First iteration now supports merged OpenAlex + Crossref enrichment, ORCID capture
 from available author metadata, Zotero library / CSL-JSON imports for research
 articles, Zenodo-based dataset creation / refresh, and GitHub-based tool entry
-creation / refresh. Broader catalogue-entry enrichment remains open.
+creation / refresh. Broader catalogue-entry enrichment partially complete.
 
 Candidates:
 
@@ -173,15 +179,18 @@ Candidates:
 
 Tasks:
 
-- Decide which sources are most valuable for the first iteration.
-- Define a small enrichment workflow for scripts in `scripts/`.
-- Store normalized identifiers where relevant.
-- Add attribution and rate-limit-safe fetching.
+- [x] Decide which sources are most valuable for the first iteration. (GitHub)
+- [x] Define a small enrichment workflow for scripts in `scripts/`. (`enrich_catalogue.py`)
+- [x] Store normalized identifiers where relevant.
+- [x] Add attribution and rate-limit-safe fetching.
 
 Definition of done:
 
-- External metadata can be imported or refreshed with a documented workflow.
-- The source of enriched metadata is visible and traceable.
+- [x] External metadata can be imported or refreshed with a documented workflow.
+- [x] The source of enriched metadata is visible and traceable.
+- [x] The UI exposes these metrics clearly.
+
+**Status:** implemented in first version.
 
 ---
 
