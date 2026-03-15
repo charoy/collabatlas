@@ -1,0 +1,94 @@
+{{ define "main" }}
+{{ $domains := site.Data.taxonomies.domains | default (slice) }}
+{{ $collaborationTypes := index site.Data.taxonomies "collaboration_types" | default (slice) }}
+{{ $modalities := site.Data.taxonomies.modalities | default (slice) }}
+{{ $scales := site.Data.taxonomies.scales | default (slice) }}
+{{ $researchMethods := index site.Data.taxonomies "research_methods" | default (slice) }}
+{{ $maturityLevels := index site.Data.taxonomies "maturity_levels" | default (slice) }}
+
+{{ $entries := slice }}
+{{ range where site.RegularPages "Section" "catalogue" }}
+  {{ $domains := .Params.domains | default (slice) }}
+  {{ $collabTypes := index .Params "collaboration-types" | default (slice) }}
+  {{ $entry := dict
+    "title" .Title
+    "permalink" .RelPermalink
+    "domains" $domains
+    "collaborationTypes" $collabTypes
+    "scales" (.Params.scales | default (slice))
+    "modalities" (.Params.modalities | default (slice))
+    "researchMethods" (.Params.research_methods | default (slice))
+    "maturity" (.Params.maturity | default "")
+  }}
+  {{ $entries = $entries | append $entry }}
+{{ end }}
+
+<section class="catalogue-visualize">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    <p class="page-description">{{ .Params.description }}</p>
+  </header>
+
+  <div class="visualize-controls">
+    <div class="control-group">
+      <label for="x-axis-select">X-Axis (Columns)</label>
+      <select id="x-axis-select">
+        <option value="domains" selected>Domains</option>
+        <option value="collaborationTypes">Collaboration Types</option>
+        <option value="scales">Scales</option>
+        <option value="modalities">Modalities</option>
+        <option value="researchMethods">Research Methods</option>
+        <option value="maturity">Maturity</option>
+      </select>
+    </div>
+    <div class="control-group">
+      <label for="y-axis-select">Y-Axis (Rows)</label>
+      <select id="y-axis-select">
+        <option value="collaborationTypes" selected>Collaboration Types</option>
+        <option value="domains">Domains</option>
+        <option value="scales">Scales</option>
+        <option value="modalities">Modalities</option>
+        <option value="researchMethods">Research Methods</option>
+        <option value="maturity">Maturity</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="visualize-chart" class="visualize-chart">
+    <p class="visualize-loading">Loading visualization data...</p>
+    <noscript>JavaScript is required to view this visualization.</noscript>
+  </div>
+
+  <dialog id="visualize-modal" class="visualize-modal">
+    <div class="visualize-modal-inner">
+      <header class="visualize-modal-header">
+        <h2 id="modal-title">Intersection Details</h2>
+        <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
+      </header>
+      <div class="visualize-modal-content">
+        <ul id="modal-list" class="modal-entry-list">
+          <!-- Entries will be injected here -->
+        </ul>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    console.log('Visualize script starting...');
+    window.CATALOGUE_DATA = {
+      entries: {{ $entries | jsonify | safeJS }},
+      taxonomies: {
+        domains: {{ $domains | jsonify | safeJS }},
+        collaborationTypes: {{ $collaborationTypes | jsonify | safeJS }},
+        modalities: {{ $modalities | jsonify | safeJS }},
+        scales: {{ $scales | jsonify | safeJS }},
+        researchMethods: {{ $researchMethods | jsonify | safeJS }},
+        maturity: {{ $maturityLevels | jsonify | safeJS }}
+      }
+    };
+    console.log('Data loaded:', window.CATALOGUE_DATA);
+  </script>
+  {{ $vizJs := resources.Get "js/catalogue-visualize.js" | minify | fingerprint }}
+  <script src="{{ $vizJs.RelPermalink }}" integrity="{{ $vizJs.Data.Integrity }}"></script>
+</section>
+{{ end }}
