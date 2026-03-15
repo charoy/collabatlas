@@ -1,18 +1,45 @@
+{{ $relatedRaw := .Site.RegularPages.Related . | first 4 }}
+{{ $manualRelated := slice }}
 {{ with .Params.related_entries }}
-<section class="related-entries">
-  <h2>Related Entries</h2>
-  <ul class="related-list">
-    {{ range . }}
+  {{ range . }}
     {{ $id := . }}
-    {{ $found := false }}
-    {{ range $.Site.Pages }}
-      {{ if and (not $found) .File (eq .File.ContentBaseName $id) }}
-        {{ $found = true }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Params.tagline }} — <span class="related-tagline">{{ . }}</span>{{ end }}</li>
+    {{ range where site.RegularPages "Params.data_id" $id }}
+      {{ $manualRelated = $manualRelated | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $related := $relatedRaw | append $manualRelated | uniq }}
+
+{{ if gt (len $related) 0 }}
+<section class="related-entries-section">
+  <h2>You might also like</h2>
+  
+  {{ $sections := slice }}
+  {{ range $related }}
+    {{ $sections = $sections | append .Section }}
+  {{ end }}
+  {{ $sections = $sections | uniq }}
+
+  {{ range $sections }}
+    {{ $currentSection := . }}
+    {{ $sectionPages := slice }}
+    {{ range $related }}
+      {{ if eq .Section $currentSection }}
+        {{ $sectionPages = $sectionPages | append . }}
       {{ end }}
     {{ end }}
-    {{ if not $found }}<li>{{ $id }}</li>{{ end }}
-    {{ end }}
-  </ul>
+
+    {{ $sectionTitle := . | humanize }}
+    {{ if eq . "catalogue" }}{{ $sectionTitle = "Other Entries" }}{{ end }}
+    
+    <div class="related-group">
+      <h3>Related {{ $sectionTitle }}</h3>
+      <div class="entry-grid">
+        {{ range $sectionPages }}
+          {{ partial "entry-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
 </section>
 {{ end }}

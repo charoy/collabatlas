@@ -66,3 +66,24 @@
     - id: community
       label: "Community / Urban"
       tags: [urban-planning, citizen-science, arts-culture]
+
+- id: entry_type
+  question: "What kind of resource are you looking for?"
+  match_field: type
+  weight: 5
+  options:
+    - id: any
+      label: "Any type (show me everything)"
+      tags: [method, tool, framework, case-study, dataset, resource]
+    - id: method
+      label: "Methods & Processes"
+      tags: [method]
+    - id: tool
+      label: "Tools & Software"
+      tags: [tool]
+    - id: framework
+      label: "Frameworks & Concepts"
+      tags: [framework]
+    - id: evidence
+      label: "Evidence (Case Studies & Datasets)"
+      tags: [case-study, dataset]

@@ -162,6 +162,16 @@
       "type": "string",
       "format": "date-time",
       "description": "UTC timestamp of the last automatic enrichment refresh."
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "stars": { "type": "integer" },
+        "forks": { "type": "integer" },
+        "open_issues": { "type": "integer" },
+        "last_commit": { "type": "string", "format": "date" }
+      },
+      "description": "Activity metrics from the source repository."
     }
   }
 }

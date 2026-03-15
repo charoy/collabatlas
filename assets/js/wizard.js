@@ -117,23 +117,27 @@
   function buildReasonLabel(questionId, matchedTags) {
     var tags = matchedTags.slice(0, 3).join(', ');
 
+    if (questionId === 'entry_type') {
+      return 'Matches your preferred resource type (' + tags + ').';
+    }
+
     if (questionId === 'goal') {
-      return 'Supports your goal through: ' + tags;
+      return 'Supports your goal: ' + tags + '.';
     }
 
     if (questionId === 'domain') {
-      return 'Relevant to your domain: ' + tags;
+      return 'Aligns with your domain: ' + tags + '.';
     }
 
     if (questionId === 'modality') {
-      return 'Works for your collaboration mode: ' + tags;
+      return 'Suitable for ' + tags + ' work.';
     }
 
     if (questionId === 'scale') {
-      return 'Fits your collaboration scale: ' + tags;
+      return 'Designed for ' + tags + ' scale.';
     }
 
-    return 'Matches your context on: ' + tags;
+    return 'Matches your context regarding ' + tags + '.';
   }
 
   function scoreEntry(entry) {
@@ -141,18 +145,29 @@
     var score = 0;
     var matchedTags = [];
     var reasons = [];
+    var isPreferredType = true;
 
     QUESTIONS.forEach(function (question) {
-      var option = getAnswerOption(question, answers[question.id]);
-      if (!option) {
-        return;
-      }
+      var answerId = answers[question.id];
+      if (!answerId) return;
+
+      var option = getAnswerOption(question, answerId);
+      if (!option) return;
 
       var weight = getQuestionWeight(question);
       var entryValues = getEntryFieldValues(entry, question.match_field || 'tags');
+      
+      // Calculate intersection size for coverage
       var localMatches = (option.tags || []).filter(function (tag) {
         return entryValues.indexOf(tag) !== -1;
       });
+
+      // Special handling for entry_type to act as a rigorous filter if needed
+      if (question.id === 'entry_type') {
+         if (option.id !== 'any' && localMatches.length === 0) {
+             isPreferredType = false;
+         }
+      }
 
       totalWeight += weight;
 
@@ -160,24 +175,37 @@
         return;
       }
 
+      // Coverage score: Fraction of option tags found in entry
       var localCoverage = localMatches.length / Math.max((option.tags || []).length, 1);
-      score += weight * localCoverage;
+      
+      // Boost for exact match (all option tags present in entry)
+      if (localCoverage === 1 && (option.tags || []).length > 0) {
+          score += weight * 1.2; // 20% boost for full match
+      } else {
+          score += weight * localCoverage;
+      }
 
-      localMatches.forEach(function (tag) {
-        if (matchedTags.indexOf(tag) === -1) {
-          matchedTags.push(tag);
-        }
-      });
-
-      reasons.push(buildReasonLabel(question.id, localMatches));
+      if (localMatches.length > 0) {
+        localMatches.forEach(function (tag) {
+          if (matchedTags.indexOf(tag) === -1) {
+            matchedTags.push(tag);
+          }
+        });
+        reasons.push(buildReasonLabel(question.id, localMatches));
+      }
     });
+
+    // Penalize if preferred type strictly mismatched
+    if (!isPreferredType) {
+        score = score * 0.1; 
+    }
 
     return {
       entry: entry,
       score: score,
       matchedTags: matchedTags,
       reasons: reasons,
-      coverage: totalWeight ? Math.round((score / totalWeight) * 100) : 0
+      coverage: totalWeight ? Math.min(Math.round((score / totalWeight) * 100), 100) : 0
     };
   }
 
@@ -403,13 +431,13 @@
     summary.textContent = 'Based on your answers, here are the most relevant approaches from the current catalogue:';
     if (hint) {
       hint.textContent = answerSummary.length
-        ? 'The ranking weighs your goal, domain, modality, and scale, then explains why each entry fits your context.'
+        ? 'The ranking weighs your preferred resource type, goal, domain, modality, and scale, then explains why each entry fits your context.'
         : '';
     }
     renderSelectedContext();
     list.innerHTML = top.map(function (s) {
       var matchedSummary = s.matchedTags.length
-        ? '<p class="tagline">Matched on: ' + escapeHtml(s.matchedTags.slice(0, 4).join(', ')) + '</p>'
+        ? '<p class="tagline"><strong>Matched context:</strong> ' + escapeHtml(s.matchedTags.slice(0, 4).join(', ')) + '</p>'
         : '';
       var whyThisResult = s.reasons.length
         ? '<div class="wizard-why"><p class="wizard-why-title">Why this result</p><ul class="wizard-why-list">' + s.reasons.slice(0, 4).map(function (reason) {
@@ -419,7 +447,7 @@
       var entryType = s.entry.type ? '<span class="badge ' + escapeHtml(s.entry.type) + '">' + escapeHtml(s.entry.type) + '</span>' : '';
       var maturity = s.entry.maturity ? '<span class="badge maturity-' + escapeHtml(s.entry.maturity) + '">' + escapeHtml(s.entry.maturity) + '</span>' : '';
       var tagline = s.entry.tagline ? '<p class="tagline">' + escapeHtml(s.entry.tagline) + '</p>' : '';
-      var scoreBadge = '<span class="badge wizard-match-score">' + escapeHtml(String(s.coverage)) + '% match</span>';
+      var scoreBadge = '<span class="badge wizard-match-score" title="Relevance score">' + escapeHtml(String(s.coverage)) + '% Match</span>';
 
       return '<article class="entry-card">' +
         '<h3><a href="' + escapeHtml(s.entry.url) + '">' + escapeHtml(s.entry.title) + '</a></h3>' +

@@ -1,54 +1,63 @@
 id: the-open-source-way
 type: resource
-title: "The Open Source Way"
-tagline: Community guide to creating, nurturing, and governing open source communities, covering governance models, contributor engagement, and sustainable practices.
-description: >-
-  The Open Source Way is a community-authored guidebook published by Red Hat that
-  distills practical wisdom on building and sustaining open source communities. It
-  covers the full lifecycle of open source community management, from attracting
+title: The Open Source Way
+tagline: Community guide to creating, nurturing, and governing open source communities,
+  covering governance models, contributor engagement, and sustainable practices.
+description: The Open Source Way is a community-authored guidebook published by Red
+  Hat that distills practical wisdom on building and sustaining open source communities.
+  It covers the full lifecycle of open source community management, from attracting
   and onboarding new contributors to establishing governance structures and resolving
   conflicts. The guide addresses topics including communication practices, community
   metrics, creating inclusive environments, and the relationship between corporate
-  sponsors and volunteer contributors. Written collaboratively on GitHub, it
-  exemplifies the open source principles it advocates and serves as a living document
-  that evolves with the community's collective experience.
+  sponsors and volunteer contributors. Written collaboratively on GitHub, it exemplifies
+  the open source principles it advocates and serves as a living document that evolves
+  with the community's collective experience.
 domains:
-  - software-engineering
-  - citizen-science
-  - business
+- software-engineering
+- citizen-science
+- business
 collaboration-types:
-  - open-source
-  - community-based
-  - distributed
+- open-source
+- community-based
+- distributed
 scales:
-  - organization
-  - community
+- organization
+- community
 modalities:
-  - remote
+- remote
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 resource_type: article
 authors:
-  - Red Hat Community
+- Red Hat Community
 year: 2020
 access: open
 external_links:
-  - type: website
-    url: https://www.theopensourceway.org
-    title: The Open Source Way
-  - type: documentation
-    url: https://github.com/theopensourceway/guidebook
-    title: GitHub Repository
+- type: website
+  url: https://www.theopensourceway.org
+  title: The Open Source Way
+- type: documentation
+  url: https://github.com/theopensourceway/guidebook
+  title: GitHub Repository
 related_entries:
-  - linux-kernel-development
-  - github
-  - open-innovation
+- linux-kernel-development
+- github
+- open-innovation
 tags:
-  - open-source
-  - community-building
-  - governance
-  - best-practices
+- open-source
+- community-building
+- governance
+- best-practices
+metrics:
+  stars: 201
+  forks: 47
+  open_issues: 26
+  last_commit: '2025-12-16'
+github_repo: theopensourceway/guidebook
+fetched_at: '2026-03-15T19:47:42.338814+00:00'
+visibility: public
+license: NOASSERTION

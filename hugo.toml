@@ -28,6 +28,27 @@ title = 'CollabAtlas'
     name = 'Governance'
     url = '/governance/'
     weight = 3
+
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = false
+
+[[related.indices]]
+  name = "domains"
+  weight = 100
+
+[[related.indices]]
+  name = "collaboration-types"
+  weight = 80
+
+[[related.indices]]
+  name = "modalities"
+  weight = 50
+
+[[related.indices]]
+  name = "scales"
+  weight = 50
   [[menu.main]]
     name = 'Research'
     url = '/research/'

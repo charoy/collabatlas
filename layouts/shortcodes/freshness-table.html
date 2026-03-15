@@ -1,0 +1,46 @@
+<table class="table freshness-table">
+  <thead>
+    <tr>
+      <th>Entry</th>
+      <th>Type</th>
+      <th>Last Reviewed</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range sort site.RegularPages "Title" }}
+      {{ if .Params.data_id }}
+        {{ $type := path.Base (path.Dir .File.Path) }}
+        {{ $entries := site.Data.entries }}
+        {{ $data := dict }}
+        {{ if $entries }}
+            {{ $sectionData := index $entries $type }}
+            {{ if $sectionData }}
+                {{ $data = index $sectionData .Params.data_id | default dict }}
+            {{ end }}
+        {{ end }}
+        
+        {{ $lastReviewed := $data.last_reviewed | default .Params.last_reviewed }}
+        
+        {{ $status := "missing" }}
+        {{ if $lastReviewed }}
+          {{ $age := now.Sub (time.AsTime $lastReviewed) }}
+          {{ if lt $age.Hours (mul 180 24) }}
+            {{ $status = "fresh" }}
+          {{ else if gt $age.Hours (mul 365 24) }}
+            {{ $status = "stale" }}
+          {{ else }}
+            {{ $status = "current" }}
+          {{ end }}
+        {{ end }}
+
+        <tr>
+          <td><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+          <td>{{ .CurrentSection.Title }}</td>
+          <td>{{ $lastReviewed | default "Never" }}</td>
+          <td><span class="badge {{ $status }}">{{ $status | humanize }}</span></td>
+        </tr>
+      {{ end }}
+    {{ end }}
+  </tbody>
+</table>
