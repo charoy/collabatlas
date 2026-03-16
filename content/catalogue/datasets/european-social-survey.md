@@ -1,0 +1,12 @@
+---
+title: "European Social Survey"
+tagline: "Cross-national survey measuring attitudes, beliefs, and behaviour across 30+ European countries biennially."
+data_id: "european-social-survey"
+domains: ["social-sciences", "public-policy", "education"]
+collaboration-types: ["interdisciplinary", "distributed", "co-production"]
+scales: ["multi-org"]
+modalities: ["hybrid"]
+maturity: "well-documented"
+status: "published"
+platform: "ess"
+---
