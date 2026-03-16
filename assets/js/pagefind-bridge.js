@@ -98,6 +98,7 @@
         status.textContent = 'No results found.';
         results.innerHTML = '';
         activeIndex = -1;
+        currentCount = 0;
         input.removeAttribute('aria-activedescendant');
         return;
       }
@@ -127,7 +128,11 @@
       });
     }
 
+    var searchGeneration = 0;
+
     async function performSearch(query) {
+      var thisGeneration = ++searchGeneration;
+
       if (query.length < 2) {
         renderResults([], '');
         return;
@@ -143,6 +148,10 @@
       var search = await pf.search(query);
       var topResults = search.results.slice(0, 8);
       var items = await Promise.all(topResults.map(function (r) { return r.data(); }));
+
+      // Discard stale results if a newer search was started
+      if (thisGeneration !== searchGeneration) return;
+
       renderResults(items, query);
     }
 

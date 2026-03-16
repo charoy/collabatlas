@@ -8,5 +8,5 @@ scales: ["community"]
 modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
-platform: "stack-exchange"
+platform: "other"
 ---

@@ -8,5 +8,5 @@ scales: ["community"]
 modalities: ["remote"]
 maturity: "established"
 status: "published"
-platform: "openalex"
+platform: "other"
 ---

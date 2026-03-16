@@ -8,5 +8,5 @@ scales: ["community"]
 modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
-platform: "orcid"
+platform: "other"
 ---

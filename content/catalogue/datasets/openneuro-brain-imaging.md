@@ -8,5 +8,5 @@ scales: ["multi-org", "community"]
 modalities: ["remote"]
 maturity: "established"
 status: "published"
-platform: "openneuro"
+platform: "other"
 ---

@@ -253,7 +253,7 @@
               ? '<ul class="compare-list">' + value.map(function (item) { return '<li>' + escapeHtml(capitalize(item)) + '</li>'; }).join('') + '</ul>'
               : '—';
           } else if (typeof row.format === 'function') {
-            content = row.format(value);
+            content = escapeHtml(row.format(value));
           } else if (value) {
             content = escapeHtml(value);
           }

@@ -8,5 +8,5 @@ scales: ["multi-org", "community"]
 modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
-platform: "who"
+platform: "other"
 ---

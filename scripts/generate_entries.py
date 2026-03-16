@@ -510,7 +510,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "orcid",
+            "platform": "other",
         },
         {
             "title": "Crossref Metadata API",
@@ -520,7 +520,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "crossref",
+            "platform": "other",
         },
         {
             "title": "WHO Global Health Observatory",
@@ -530,7 +530,7 @@ ENTRIES = {
             "scales": ["multi-org", "community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "who",
+            "platform": "other",
         },
         {
             "title": "OpenAlex Research Graph",
@@ -540,7 +540,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "established",
-            "platform": "openalex",
+            "platform": "other",
         },
         {
             "title": "Global Biodiversity Information Facility",
@@ -550,7 +550,7 @@ ENTRIES = {
             "scales": ["multi-org", "community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "gbif",
+            "platform": "other",
         },
         {
             "title": "European Social Survey",
@@ -560,7 +560,7 @@ ENTRIES = {
             "scales": ["multi-org"],
             "modalities": ["hybrid"],
             "maturity": "well-documented",
-            "platform": "ess",
+            "platform": "other",
         },
         {
             "title": "GitHub Archive",
@@ -570,7 +570,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "github",
+            "platform": "other",
         },
         {
             "title": "Humanitarian Data Exchange",
@@ -580,7 +580,7 @@ ENTRIES = {
             "scales": ["multi-org", "community"],
             "modalities": ["remote"],
             "maturity": "established",
-            "platform": "humdata",
+            "platform": "other",
         },
         {
             "title": "Urban Observatory Dataset",
@@ -590,7 +590,7 @@ ENTRIES = {
             "scales": ["multi-org"],
             "modalities": ["remote"],
             "maturity": "emerging",
-            "platform": "urban-observatory",
+            "platform": "other",
         },
         {
             "title": "OpenNeuro Brain Imaging",
@@ -600,7 +600,7 @@ ENTRIES = {
             "scales": ["multi-org", "community"],
             "modalities": ["remote"],
             "maturity": "established",
-            "platform": "openneuro",
+            "platform": "other",
         },
         {
             "title": "Wikipedia Edit History",
@@ -610,7 +610,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "wikimedia",
+            "platform": "other",
         },
         {
             "title": "Stack Overflow Data Dump",
@@ -620,7 +620,7 @@ ENTRIES = {
             "scales": ["community"],
             "modalities": ["remote"],
             "maturity": "well-documented",
-            "platform": "stack-exchange",
+            "platform": "other",
         },
     ],
     "resources": [
@@ -755,7 +755,10 @@ ENTRIES = {
 
 
 def make_data_id(title):
-    return title.lower().replace(" ", "-").replace("(", "").replace(")", "").replace("'", "").replace("/", "-").replace("&", "and")
+    import unicodedata
+    normalized = unicodedata.normalize("NFKD", title)
+    ascii_title = normalized.encode("ascii", "ignore").decode("ascii")
+    return ascii_title.lower().replace(" ", "-").replace("(", "").replace(")", "").replace("'", "").replace("/", "-").replace("&", "and")
 
 
 def yaml_list(items):

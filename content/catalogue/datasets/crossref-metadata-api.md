@@ -8,5 +8,5 @@ scales: ["community"]
 modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
-platform: "crossref"
+platform: "other"
 ---

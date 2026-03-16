@@ -8,5 +8,5 @@ scales: ["multi-org"]
 modalities: ["hybrid"]
 maturity: "well-documented"
 status: "published"
-platform: "ess"
+platform: "other"
 ---

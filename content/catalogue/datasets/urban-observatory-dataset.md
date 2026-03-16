@@ -8,5 +8,5 @@ scales: ["multi-org"]
 modalities: ["remote"]
 maturity: "emerging"
 status: "published"
-platform: "urban-observatory"
+platform: "other"
 ---
