@@ -13,7 +13,7 @@
 
   {{ if .RegularPages }}
   <div class="entry-grid">
-    {{ $paginator := .Paginate .RegularPages 12 }}
+    {{ $paginator := .Paginate .RegularPages 24 }}
     {{ range $paginator.Pages }}
       {{ partial "entry-card.html" . }}
     {{ end }}
