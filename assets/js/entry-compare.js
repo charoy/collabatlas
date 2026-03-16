@@ -5,23 +5,31 @@
 
   var STORAGE_KEY = 'collabatlas-compare-selection';
   var MAX_ITEMS = 4;
+  var COMPARE_DATA_URL = (window.__BASE_URL__ || '/') + 'compare/index.json';
+  var compareDataCache = null;
 
-  function parseCompareData() {
+  async function fetchCompareData() {
+    if (compareDataCache) return compareDataCache;
+    // Fallback: try inline data first (for backwards compat)
     var element = document.getElementById('compare-data');
-    if (!element) {
-      return [];
+    if (element) {
+      try {
+        var payload = JSON.parse(element.textContent);
+        if (typeof payload === 'string') payload = JSON.parse(payload);
+        compareDataCache = Array.isArray(payload) ? payload : [];
+        return compareDataCache;
+      } catch (e) {}
     }
-
+    // Fetch from external JSON
     try {
-      var payload = JSON.parse(element.textContent);
-      if (typeof payload === 'string') {
-        payload = JSON.parse(payload);
-      }
-      return Array.isArray(payload) ? payload : [];
-    } catch (error) {
-      console.error('Unable to parse compare data.', error);
-      return [];
+      var resp = await fetch(COMPARE_DATA_URL);
+      var data = await resp.json();
+      compareDataCache = Array.isArray(data) ? data : [];
+    } catch (err) {
+      console.error('Failed to load compare data.', err);
+      compareDataCache = [];
     }
+    return compareDataCache;
   }
 
   function escapeHtml(value) {
@@ -87,8 +95,8 @@
     return dedupeSelection(raw.split(','), validIds);
   }
 
-  function init() {
-    var compareEntries = parseCompareData();
+  async function init() {
+    var compareEntries = await fetchCompareData();
     if (!compareEntries.length) {
       return;
     }

@@ -62,8 +62,6 @@
     </div>
   </aside>
 
-  {{ partial "compare-data.html" . }}
-
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
