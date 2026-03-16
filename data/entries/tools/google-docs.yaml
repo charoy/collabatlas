@@ -45,7 +45,7 @@ external_links:
     url: https://docs.google.com
     title: Google Docs
   - type: documentation
-    url: https://support.google.com/docs
+    url: https://support.google.com/docs/?hl=en
     title: Google Docs Help
 related_entries:
   - notion

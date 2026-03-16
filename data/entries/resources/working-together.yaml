@@ -41,8 +41,8 @@ year: 2013
 access: paid
 external_links:
   - type: book
-    url: https://www.morganclaypoolpublishers.com/olson/
-    title: Morgan & Claypool
+    url: https://link.springer.com/book/10.1007/978-3-031-02203-6
+    title: "Working Together Apart (Springer)"
 related_entries:
   - cscw-framework
   - slack

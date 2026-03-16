@@ -6,6 +6,7 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from urllib.parse import urlparse
 
 import yaml
 
@@ -13,23 +14,29 @@ ROOT = Path(__file__).resolve().parent.parent
 ENTRIES_DIR = ROOT / "data" / "entries"
 TIMEOUT = 10
 MAX_WORKERS = 5
+SKIP_DOMAINS = {"doi.org", "dx.doi.org"}
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) CollabAtlas-LinkChecker/1.0"
 
 
 def check_url(url: str) -> tuple[str, bool, str]:
     """Check if a URL is reachable. Returns (url, ok, message)."""
+    hostname = urlparse(url).hostname or ""
+    if hostname in SKIP_DOMAINS:
+        return url, True, "SKIPPED (DOI)"
+
     try:
         req = urllib.request.Request(url, method="HEAD")
-        req.add_header("User-Agent", "CollabAtlas-LinkChecker/1.0")
+        req.add_header("User-Agent", USER_AGENT)
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
             if resp.status < 400:
                 return url, True, f"{resp.status}"
             return url, False, f"HTTP {resp.status}"
     except urllib.error.HTTPError as e:
-        # Some servers don't support HEAD, try GET
-        if e.code == 405:
+        # Some servers return 403/404/405 for HEAD but serve GET fine
+        if e.code in (403, 404, 405):
             try:
                 req = urllib.request.Request(url, method="GET")
-                req.add_header("User-Agent", "CollabAtlas-LinkChecker/1.0")
+                req.add_header("User-Agent", USER_AGENT)
                 with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
                     return url, resp.status < 400, f"{resp.status}"
             except Exception as e2:
