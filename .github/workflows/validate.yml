@@ -27,3 +27,6 @@ jobs:
 
       - name: Check for broken internal references
         run: python scripts/validate.py --check-refs
+
+      - name: Run tests
+        run: cd scripts && python -m pytest -v

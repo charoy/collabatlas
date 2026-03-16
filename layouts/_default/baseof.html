@@ -62,111 +62,14 @@
     </div>
   </aside>
 
-  {{ $searchItems := slice }}
-  {{ range site.RegularPages }}
-    {{ $summary := .Params.description | default .Params.tagline | default (.Summary | plainify) }}
-    {{ $keywords := slice }}
-    {{ with .Params.domains }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with index .Params "collaboration-types" }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with .Params.modalities }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with .Params.scales }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with .Params.research_methods }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with .Params.tags }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ with .Params.categories }}{{ $keywords = union $keywords . }}{{ end }}
-    {{ $typeLabel := "page" }}
-    {{ if eq .Section "catalogue" }}
-      {{ $typeLabel = path.Base (path.Dir .File.Path) }}
-    {{ else if eq .Section "blog" }}
-      {{ $typeLabel = "blog post" }}
-    {{ else if eq .Section "guides" }}
-      {{ $typeLabel = "guide" }}
-    {{ else if eq .Section "research" }}
-      {{ $typeLabel = "research" }}
-    {{ else if eq .Section "governance" }}
-      {{ $typeLabel = "governance" }}
-    {{ else if eq .Section "about" }}
-      {{ $typeLabel = "about" }}
-    {{ end }}
-    {{ $searchItems = $searchItems | append (dict
-      "title" .Title
-      "url" .RelPermalink
-      "type" $typeLabel
-      "summary" ($summary | plainify | truncate 180)
-      "text" (lower (printf "%s %s %s" .Title ($summary | plainify) (delimit $keywords " ")))
-      "external" false
-    ) }}
-  {{ end }}
-  {{ range slice "catalogue" "guides" "governance" "research" "blog" "about" }}
-    {{ with site.GetPage . }}
-      {{ $summary := .Params.description | default (.Summary | plainify) }}
-      {{ $searchItems = $searchItems | append (dict
-        "title" .Title
-        "url" .RelPermalink
-        "type" "section"
-        "summary" ($summary | plainify | truncate 180)
-        "text" (lower (printf "%s %s" .Title ($summary | plainify)))
-        "external" false
-      ) }}
-    {{ end }}
-  {{ end }}
-  {{ with site.Data.research_articles }}
-    {{ range . }}
-      {{ $articleKeywords := slice }}
-      {{ with .domains }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
-      {{ with .tags }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
-      {{ $searchItems = $searchItems | append (dict
-        "title" .title
-        "url" .url
-        "type" "research article"
-        "summary" ((printf "%s %s" (.authors | default "") (.journal | default "")) | plainify | truncate 180)
-        "text" (lower (printf "%s %s %s %s %s" .title (.authors | default "") (.journal | default "") (.abstract | default "") (delimit $articleKeywords " ")))
-        "external" true
-      ) }}
-    {{ end }}
-  {{ end }}
-  <script id="site-search-index" type="application/json">{{ $searchItems | jsonify | safeJS }}</script>
-
-  {{ $compareEntries := slice }}
-  {{ $cataloguePage := site.GetPage "catalogue" }}
-  {{ $entriesData := index site.Data "entries" | default dict }}
-  {{ with $cataloguePage }}
-    {{ range .RegularPagesRecursive }}
-      {{ $subsection := path.Base (path.Dir .File.Path) }}
-      {{ $entryData := dict }}
-      {{ with .Params.data_id }}
-        {{ $sectionData := index $entriesData $subsection | default dict }}
-        {{ $entryData = index $sectionData . | default dict }}
-      {{ end }}
-      {{ $merged := merge $entryData .Params }}
-      {{ $compareEntries = $compareEntries | append (dict
-        "id" (.Params.data_id | default .File.ContentBaseName)
-        "title" .Title
-        "url" .RelPermalink
-        "type" ($merged.type | default $subsection)
-        "tagline" ($merged.tagline | default "")
-        "maturity" ($merged.maturity | default "")
-        "domains" ($merged.domains | default (slice))
-        "collaborationTypes" (index $merged "collaboration-types" | default (slice))
-        "modalities" ($merged.modalities | default (slice))
-        "scales" ($merged.scales | default (slice))
-        "whenToUse" ($merged.when_to_use | default "")
-        "limitations" ($merged.limitations | default "")
-      ) }}
-    {{ end }}
-  {{ end }}
-  <script id="compare-data" type="application/json">{{ $compareEntries | jsonify | safeJS }}</script>
-
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ end }}
-  {{ if resources.Get "js/site-search.js" }}
-  {{ $searchJs := resources.Get "js/site-search.js" | minify | fingerprint }}
-  <script src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}" defer></script>
-  {{ end }}
-  {{ if resources.Get "js/search-page.js" }}
-  {{ $searchPageJs := resources.Get "js/search-page.js" | minify | fingerprint }}
-  <script src="{{ $searchPageJs.RelPermalink }}" integrity="{{ $searchPageJs.Data.Integrity }}" defer></script>
+  <script>window.__BASE_URL__ = {{ .Site.Home.RelPermalink | jsonify | safeJS }};</script>
+  {{ if resources.Get "js/pagefind-bridge.js" }}
+  {{ $pfBridge := resources.Get "js/pagefind-bridge.js" | minify | fingerprint }}
+  <script src="{{ $pfBridge.RelPermalink }}" integrity="{{ $pfBridge.Data.Integrity }}" defer></script>
   {{ end }}
   {{ if resources.Get "js/research-filter.js" }}
   {{ $researchJs := resources.Get "js/research-filter.js" | minify | fingerprint }}
@@ -180,6 +83,8 @@
   {{ $favoritesJs := resources.Get "js/entry-favorites.js" | minify | fingerprint }}
   <script src="{{ $favoritesJs.RelPermalink }}" integrity="{{ $favoritesJs.Data.Integrity }}" defer></script>
   {{ end }}
+  {{ $entriesData := index site.Data "entries" | default dict }}
+  {{ $cataloguePage := site.GetPage "catalogue" }}
   {{ $wizardPage := site.GetPage "guides/find-your-method" }}
   {{ if and $wizardPage (eq .RelPermalink $wizardPage.RelPermalink) }}
   {{ $catalogueEntries := slice }}

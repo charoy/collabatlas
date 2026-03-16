@@ -1,0 +1,11 @@
+---
+title: "Mentimeter"
+tagline: "Interactive presentation tool with live polls, quizzes, and word clouds for audience engagement."
+data_id: "mentimeter"
+domains: ["education", "business", "public-policy"]
+collaboration-types: ["participatory", "crowdsourcing"]
+scales: ["small-team", "organization", "community"]
+modalities: ["in-person", "remote", "hybrid"]
+maturity: "established"
+status: "published"
+---

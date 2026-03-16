@@ -1,0 +1,12 @@
+{
+  "name": "collabatlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CollabAtlas — Navigate the landscape of collaborative solutions for research and practice.",
+  "scripts": {
+    "index": "pagefind --site public --output-subdir pagefind"
+  },
+  "devDependencies": {
+    "pagefind": "^1.4.0"
+  }
+}

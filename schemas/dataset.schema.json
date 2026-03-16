@@ -180,6 +180,25 @@
       "type": "string",
       "format": "date-time",
       "description": "UTC timestamp of the last automatic enrichment refresh."
+    },
+    "github_repo": {
+      "type": "string",
+      "description": "GitHub repository in owner/repo form when the dataset was enriched from GitHub."
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["public", "private", "internal"],
+      "description": "Repository visibility reported by GitHub when available."
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "stars": { "type": "integer" },
+        "forks": { "type": "integer" },
+        "open_issues": { "type": "integer" },
+        "last_commit": { "type": "string", "format": "date" }
+      },
+      "description": "Activity metrics from the source repository."
     }
   }
 }

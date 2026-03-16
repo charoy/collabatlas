@@ -98,16 +98,16 @@ Definition of done:
 
 **Status:** implemented in second version.
 
-### 4. Add entry comparison
+### 4. Add entry comparison (COMPLETED)
 
 **Goal:** help users compare 2–4 entries side by side.
 
 Tasks:
 
-- Add compare checkboxes on entry cards.
-- Create a comparison page or panel.
-- Compare maturity, scales, modalities, domains, limitations, and when-to-use fields.
-- Support comparison links that can be shared.
+- [x] Add compare checkboxes on entry cards.
+- [x] Create a comparison page or panel.
+- [x] Compare maturity, scales, modalities, domains, limitations, and when-to-use fields.
+- [x] Support comparison links that can be shared.
 
 Definition of done:
 
@@ -194,9 +194,9 @@ Definition of done:
 
 ---
 
-## Priority 5 — Visualize the catalogue
+## Priority 5 — Visualize the catalogue (COMPLETED)
 
-### 8. Add visual exploration components
+### 8. Add visual exploration components (Done)
 
 **Goal:** make the site feel more exploratory and dynamic.
 
@@ -204,20 +204,21 @@ Definition of done:
 
 First release implemented with a lightweight domain × entry type matrix and a
 small statistics dashboard on the catalogue landing page. Additional
-visualizations can build on the same metadata later.
+visualizations include interactive distribution charts on the `/catalogue/visualize/` page.
 
 Possible components:
 
-- Taxonomy matrix (methods × domains, tools × modalities, etc.)
-- Network graph of related entries
-- Statistics dashboard for the catalogue
-- Timeline of recent additions and reviews
+- [x] Taxonomy matrix (methods × domains, tools × modalities, etc.)
+- [x] Statistics dashboard for the catalogue
+- [x] Interactive distribution charts (Domains, Maturity, Scales, etc.)
+- [ ] Network graph of related entries (deferred)
+- [ ] Timeline of recent additions and reviews (deferred)
 
 Tasks:
 
-- Choose one lightweight visualization for a first release.
-- Ensure it works without making the site heavy or fragile.
-- Reuse existing taxonomy and entry metadata.
+- [x] Choose one lightweight visualization for a first release.
+- [x] Ensure it works without making the site heavy or fragile.
+- [x] Reuse existing taxonomy and entry metadata.
 
 Definition of done:
 
@@ -279,17 +280,18 @@ some patterns will become expensive at larger scale:
 
 ### Scaling stages
 
-#### Stage 1 — up to ~500 entries
+#### Stage 1 — up to ~500 entries (COMPLETED)
 
 **Approach:** keep the current static-site architecture, but reduce unnecessary
 payloads and make navigation more sectional.
 
 Tasks:
 
-- Limit page-level data injection to what each page actually needs.
-- Strengthen pagination and section-specific browsing.
-- Keep visualizations aggregated rather than exhaustive.
-- Monitor build size and client-side script payload size.
+- [x] Extract search index from the DOM into a fetchable JSON asset.
+- [x] Limit page-level data injection to what each page actually needs.
+- [x] Strengthen pagination and section-specific browsing.
+- [x] Keep visualizations aggregated rather than exhaustive.
+- [x] Monitor build size and client-side script payload size.
 
 Definition of done:
 
@@ -344,8 +346,14 @@ Definition of done:
 
 ### Status
 
-Planning only for now. Activate this track once catalogue growth starts to make
-page payload size, search latency, or filter responsiveness noticeably worse.
+Planning only for now. Active track as of first scalability improvements.
+
+Tasks:
+
+- [x] Limit page-level data injection to what each page actually needs (Search index extracted).
+- [ ] Strengthen pagination and section-specific browsing.
+- [x] Keep visualizations aggregated rather than exhaustive (Visual exploration separate page).
+- [ ] Monitor build size and client-side script payload size.
 
 ---
 

@@ -1,0 +1,21 @@
+{{ $entries := slice }}
+{{ range where site.RegularPages "Section" "catalogue" }}
+  {{ $entry := dict
+    "id" (.Params.data_id | default .File.ContentBaseName)
+    "title" .Title
+    "url" .RelPermalink
+    "tagline" .Params.tagline
+    "type" (path.Base (path.Dir .File.Path))
+    "maturity" .Params.maturity
+    "description" .Params.description
+    "domains" (.Params.domains | default slice)
+    "collaborationTypes" (index .Params "collaboration-types" | default slice)
+    "modalities" (.Params.modalities | default slice)
+    "scales" (.Params.scales | default slice)
+    "researchMethods" (.Params.research_methods | default slice)
+    "whenToUse" .Params.when_to_use
+    "limitations" .Params.limitations
+  }}
+  {{ $entries = $entries | append $entry }}
+{{ end }}
+{{- $entries | jsonify -}}

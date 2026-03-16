@@ -1,0 +1,11 @@
+---
+title: "Theory of Change"
+tagline: "Planning and evaluation framework mapping how activities lead to desired outcomes through causal pathways."
+data_id: "theory-of-change"
+domains: ["public-policy", "social-sciences", "education", "healthcare"]
+collaboration-types: ["participatory", "co-design"]
+scales: ["small-team", "organization", "multi-org"]
+modalities: ["in-person", "hybrid"]
+maturity: "well-documented"
+status: "published"
+---

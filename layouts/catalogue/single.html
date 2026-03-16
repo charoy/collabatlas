@@ -21,7 +21,9 @@
 {{ end }}
 {{ $entryId := .Params.data_id | default .File.ContentBaseName }}
 
-<article class="catalogue-entry" data-entry-id="{{ $entryId }}">
+<article class="catalogue-entry" data-pagefind-body data-entry-id="{{ $entryId }}">
+  <meta data-pagefind-meta="type:{{ .Params.type | default (path.Base (path.Dir .File.Path)) }}" />
+  <meta data-pagefind-filter="type:{{ .Params.type | default (path.Base (path.Dir .File.Path)) }}" />
   <header class="entry-header">
     <div class="entry-title-row">
       <h1>{{ .Title }}</h1>

@@ -161,6 +161,10 @@
       "enum": ["open", "restricted", "paid"],
       "description": "Access level required to obtain the resource."
     },
+    "license": {
+      "type": "string",
+      "description": "License under which the resource is distributed."
+    },
     "source_services": {
       "type": "array",
       "items": {

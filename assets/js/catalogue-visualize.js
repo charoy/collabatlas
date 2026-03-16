@@ -9,14 +9,29 @@
   let currentYItems = [];
   let data = null; // Global data reference
 
-  function init() {
+  async function loadCatalogueData() {
+    if (window.CATALOGUE_DATA) return window.CATALOGUE_DATA;
+    var url = window.CATALOGUE_DATA_URL;
+    if (!url) return null;
+    try {
+      var resp = await fetch(url);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      window.CATALOGUE_DATA = await resp.json();
+      return window.CATALOGUE_DATA;
+    } catch (e) {
+      console.error('Failed to load catalogue data:', e);
+      return null;
+    }
+  }
+
+  async function init() {
     console.log('Catalogue Visualize Init');
-    data = window.CATALOGUE_DATA;
-    
+    data = await loadCatalogueData();
+
     const chart = document.getElementById('visualize-chart');
     if (!data) {
       console.error('No catalogue data found');
-      if (chart) chart.innerHTML = '<p class="error">Data error: window.CATALOGUE_DATA is missing.</p>';
+      if (chart) chart.innerHTML = '<p class="error">Data error: catalogue data could not be loaded.</p>';
       return;
     }
 
@@ -219,6 +234,71 @@
       html += '</tbody></table></div>';
 
       chart.innerHTML = html;
+
+      // Update distributions
+      renderDistributions(xKey, 'x-distribution', 'x-dist-title');
+      renderDistributions(yKey, 'y-distribution', 'y-dist-title');
+    }
+
+    function renderDistributions(axisKey, containerId, titleId) {
+      const container = document.getElementById(containerId);
+      const titleEl = document.getElementById(titleId);
+      if (!container) return;
+
+      const items = getItemsForAxis(axisKey);
+      if (!items.length) {
+        container.innerHTML = '<p>No data available.</p>';
+        return;
+      }
+      
+      // Update title with label
+      const select = axisKey === xSelect.value ? xSelect : ySelect;
+      if (titleEl && select) {
+        titleEl.textContent = `Distribution by ${select.options[select.selectedIndex].text}`;
+      }
+
+      // Count occurrences
+      const counts = {};
+      let maxCount = 0;
+      
+      // Initialize counts
+      items.forEach(item => { counts[item.id] = 0; });
+
+      data.entries.forEach(entry => {
+        const values = getEntryValues(entry, axisKey);
+        values.forEach(val => {
+          if (counts[val] !== undefined) {
+            counts[val]++;
+          }
+        });
+      });
+
+      // Find max for scaling
+      Object.values(counts).forEach(c => {
+        if (c > maxCount) maxCount = c;
+      });
+
+      // Sort items by count desc
+      const sortedItems = [...items].sort((a, b) => counts[b.id] - counts[a.id]);
+
+      // Render bars
+      container.innerHTML = sortedItems.map(item => {
+        const count = counts[item.id];
+        const percentage = maxCount > 0 ? (count / maxCount) * 100 : 0;
+        // Don't hide 0 counts, showing them can be informative (gaps)
+        // Adjust opacity if 0?
+        const barStyle = `width: ${percentage}%; opacity: ${count > 0 ? 1 : 0.3};`;
+        
+        return `
+          <div class="chart-row">
+            <span class="chart-label" title="${item.label}">${item.label}</span>
+            <div class="chart-bar-group">
+              <div class="chart-bar" style="${barStyle}"></div>
+              <span class="chart-value">${count}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
     }
 
     xSelect.addEventListener('change', renderMatrix);

@@ -145,10 +145,10 @@
   authors: Kjeld Schmidt, Liam J. Bannon
   journal: Computer Supported Cooperative Work (CSCW)
   year: 1992
-  doi: 10.1007/BF00752449
-  url: https://doi.org/10.1007/BF00752449
-  access: paid
-  citation_count: 962
+  doi: 10.1007/bf00752449
+  url: https://doi.org/10.1007/bf00752449
+  access: open
+  citation_count: 963
   openalex_id: https://openalex.org/W2396614874
   id: schmidt-bannon-1992
   domains:
@@ -158,6 +158,12 @@
   - CSCW
   - articulation-work
   - coordination
+  orcid_ids:
+  - https://orcid.org/0000-0003-0528-2951
+  source_services:
+  - crossref
+  - openalex
+  fetched_at: '2026-03-16T07:08:10Z'
 - id: raymond-1999
   title: The Cathedral and the Bazaar
   authors: Eric S. Raymond
@@ -330,59 +336,95 @@
   citation_count: 14692
   openalex_id: https://openalex.org/W4388174267
 - id: li-2021
-  title: "E-Portfolio: value tensions encountered in documenting design case studies"
-  authors: Qinyu Li, Peter Tolmie, Anne Weibert, Marén Schorch, Claudia Müller, Volker Wulf
+  title: 'E-Portfolio: value tensions encountered in documenting design case studies'
+  authors: Qinyu Li, Peter Tolmie, Anne Weibert, Marén Schorch, Claudia Müller, Volker
+    Wulf
   journal: Ethics and Information Technology
   year: 2021
   doi: 10.1007/s10676-020-09533-3
   url: https://doi.org/10.1007/s10676-020-09533-3
   access: paid
   domains:
-    - design
-    - education
-    - social-sciences
+  - design
+  - education
+  - social-sciences
   tags:
-    - design-case-studies
-    - e-portfolio
-    - ethics
-    - practice-based-computing
+  - design-case-studies
+  - e-portfolio
+  - ethics
+  - practice-based-computing
   related_entries:
-    - practice-based-computing
-    - participatory-design
+  - practice-based-computing
+  - participatory-design
 - id: randall-2018
-  title: "Research into design-research practices: Supporting an agenda towards self-reflectivity and transferability"
-  authors: Dave Randall, Tobias Dyrks, Bernhard Nett, Volkmar Pipek, Leonardo Ramirez, Gunnar Stevens, Volker Wulf
-  journal: "Socio-Informatics: A Practice-based Perspective on the Design and Use of IT Artefacts (Oxford University Press)"
+  title: 'Research into design-research practices: Supporting an agenda towards self-reflectivity
+    and transferability'
+  authors: Dave Randall, Tobias Dyrks, Bernhard Nett, Volkmar Pipek, Leonardo Ramirez,
+    Gunnar Stevens, Volker Wulf
+  journal: 'Socio-Informatics: A Practice-based Perspective on the Design and Use
+    of IT Artefacts (Oxford University Press)'
   year: 2018
   access: paid
   domains:
-    - software-engineering
-    - social-sciences
-    - design
+  - software-engineering
+  - social-sciences
+  - design
   tags:
-    - design-research
-    - socio-informatics
-    - practice-based-computing
-    - CSCW
+  - design-research
+  - socio-informatics
+  - practice-based-computing
+  - CSCW
   related_entries:
-    - practice-based-computing
-    - cscw-framework
+  - practice-based-computing
+  - cscw-framework
 - id: wulf-2015
-  title: "Practice-based computing: Empirically grounded conceptualizations derived from design case studies"
-  authors: Volker Wulf, Claudia Müller, Volkmar Pipek, David Randall, Markus Rohde, Gunnar Stevens
-  journal: "Designing Socially Embedded Technologies in the Real-World (Springer)"
+  title: 'Practice-based computing: Empirically grounded conceptualizations derived
+    from design case studies'
+  authors: Volker Wulf, Claudia Müller, Volkmar Pipek, David Randall, Markus Rohde,
+    Gunnar Stevens
+  journal: Designing Socially Embedded Technologies in the Real-World (Springer)
   year: 2015
   access: paid
   domains:
-    - software-engineering
-    - social-sciences
-    - design
+  - software-engineering
+  - social-sciences
+  - design
   tags:
-    - practice-based-computing
-    - design-case-studies
-    - sensitizing-concepts
-    - CSCW
+  - practice-based-computing
+  - design-case-studies
+  - sensitizing-concepts
+  - CSCW
   related_entries:
-    - practice-based-computing
-    - cscw-framework
-    - socio-technical-systems
+  - practice-based-computing
+  - cscw-framework
+  - socio-technical-systems
+- id: ellis-1989
+  title: Concurrency control in groupware systems
+  authors: Colter Ellis, S. Gibbs
+  journal: Proceedings of the 1989 ACM SIGMOD international conference on Management
+    of data  - SIGMOD '89
+  year: 1989
+  doi: 10.1145/67544.66963
+  url: https://dl.acm.org/doi/pdf/10.1145/67544.66963
+  access: open
+  abstract: 'Groupware systems are computer-based systems that support two or more
+    users engaged in a common task, and that provide an interface to a shared environment.
+    These systems frequently require fine-granularity sharing of data and fast response
+    times. This paper distinguishes real-time groupware systems from other multi-user
+    systems and discusses their concurrency control requirements. An algorithm for
+    concurrency control in real-time groupware systems is then presented. The advantages
+    of this algorithm are its simplicity of use and its responsiveness: users can
+    operate directly on the data without obtaining locks. The algorithm must know
+    some semantics of the operations. However the algorithm''s overall structure is
+    independent of the semantic information, allowing the algorithm to be adapted
+    to many situations. An example application of the algorithm to group text editing
+    is given, along with a sketch of its proof of correctness in this particular case.
+    We note that the behavior desired in many of these systems is non-serializable.'
+  citation_count: 450
+  orcid_ids:
+  - https://orcid.org/0000-0003-2151-9971
+  source_services:
+  - crossref
+  - openalex
+  openalex_id: https://openalex.org/W4236824789
+  fetched_at: '2026-03-16T07:11:40Z'
