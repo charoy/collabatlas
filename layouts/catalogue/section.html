@@ -13,10 +13,12 @@
 
   {{ if .RegularPages }}
   <div class="entry-grid">
-    {{ range .RegularPages }}
+    {{ $paginator := .Paginate .RegularPages 12 }}
+    {{ range $paginator.Pages }}
       {{ partial "entry-card.html" . }}
     {{ end }}
   </div>
+  {{ partial "pagination.html" . }}
   {{ end }}
 
   {{ range .Sections }}

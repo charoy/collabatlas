@@ -1,0 +1,21 @@
+{{ if gt .Paginator.TotalPages 1 }}
+<nav class="pagination" aria-label="Pagination">
+  <div class="pagination-prev">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="btn btn-secondary btn-sm" aria-label="Selected page: {{ .Paginator.Prev.PageNumber }}">← Previous</a>
+    {{ else }}
+    <span class="btn btn-secondary btn-sm disabled" aria-disabled="true">← Previous</span>
+    {{ end }}
+  </div>
+  
+  <span class="pagination-info">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
+
+  <div class="pagination-next">
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="btn btn-secondary btn-sm" aria-label="Selected page: {{ .Paginator.Next.PageNumber }}">Next →</a>
+    {{ else }}
+    <span class="btn btn-secondary btn-sm disabled" aria-disabled="true">Next →</span>
+    {{ end }}
+  </div>
+</nav>
+{{ end }}

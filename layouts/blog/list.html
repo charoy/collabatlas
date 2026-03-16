@@ -6,7 +6,8 @@
   </header>
 
   <div class="post-grid">
-    {{ range .Pages.ByDate.Reverse }}
+    {{ $paginator := .Paginate .Pages.ByDate.Reverse 6 }}
+    {{ range $paginator.Pages }}
     <article class="post-card">
       <div class="post-card-meta">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
@@ -24,5 +25,7 @@
     </article>
     {{ end }}
   </div>
+
+  {{ partial "pagination.html" . }}
 </section>
 {{ end }}

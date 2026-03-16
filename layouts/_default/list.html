@@ -9,13 +9,15 @@
 
   {{ if .Pages }}
   <ul class="page-list">
-    {{ range .Pages }}
+    {{ $paginator := .Paginate .Pages 20 }}
+    {{ range $paginator.Pages }}
     <li>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
       {{ with .Params.tagline }}<span class="list-tagline"> — {{ . }}</span>{{ end }}
     </li>
     {{ end }}
   </ul>
+  {{ partial "pagination.html" . }}
   {{ end }}
 </section>
 {{ end }}
