@@ -3,32 +3,49 @@
 (function () {
   'use strict';
 
-  function parseIndex() {
-    var element = document.getElementById('site-search-index');
-    if (!element) {
-      return [];
-    }
+  var searchIndex = [];
+  var isLoaded = false;
+  var isLoading = false;
 
-    try {
-      var payload = JSON.parse(element.textContent);
-      if (typeof payload === 'string') {
-        payload = JSON.parse(payload);
-      }
+  function loadIndex() {
+    if (isLoaded) return Promise.resolve(searchIndex);
+    if (isLoading) return new Promise(function(resolve) {
+      // Simple polling if already loading
+      var check = setInterval(function() {
+        if (isLoaded) {
+          clearInterval(check);
+          resolve(searchIndex);
+        }
+      }, 100);
+    });
 
-      return payload.map(function (item) {
-        return {
-          title: item.title || '',
-          url: item.url || '#',
-          type: item.type || 'page',
-          summary: item.summary || '',
-          text: (item.text || '').toLowerCase(),
-          external: Boolean(item.external)
-        };
+    isLoading = true;
+    var url = window.SEARCH_INDEX_URL || '/index.json';
+    return fetch(url)
+      .then(function(response) {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
+      .then(function(data) {
+        searchIndex = data.map(function (item) {
+          return {
+            title: item.title || '',
+            url: item.url || '#',
+            type: item.type || 'page',
+            summary: item.summary || '',
+            text: (item.text || '').toLowerCase(),
+            external: Boolean(item.external)
+          };
+        });
+        isLoaded = true;
+        isLoading = false;
+        return searchIndex;
+      })
+      .catch(function(error) {
+        console.error('Unable to load search index:', error);
+        isLoading = false;
+        return [];
       });
-    } catch (error) {
-      console.error('Unable to parse site search index.', error);
-      return [];
-    }
   }
 
   function escapeHtml(value) {
@@ -90,7 +107,6 @@
       return;
     }
 
-    var index = parseIndex();
     var activeIndex = -1;
     var currentMatches = [];
     var searchPage = search.dataset.searchPage || '/search/';
@@ -133,17 +149,13 @@
       if (!query) {
         status.textContent = 'Type at least 2 characters to search.';
         results.innerHTML = '';
-        if (moreLink) {
-          moreLink.href = buildSearchPageUrl('');
-        }
+        if (moreLink) moreLink.href = buildSearchPageUrl('');
         closePanel();
         return;
       }
 
       openPanel();
-      if (moreLink) {
-        moreLink.href = buildSearchPageUrl(query);
-      }
+      if (moreLink) moreLink.href = buildSearchPageUrl(query);
 
       if (!matches.length) {
         status.textContent = 'No results found.';
@@ -177,47 +189,56 @@
       });
     }
 
+    function performSearch(query) {
+         if (query.length < 2) {
+            renderResults([], '');
+            return;
+         }
+
+        var terms = query.split(/\s+/).filter(Boolean);
+        currentMatches = searchIndex
+          .map(function (item) {
+            return {
+              item: item,
+              score: scoreItem(item, query, terms)
+            };
+          })
+          .filter(function (entry) { return entry.score > 0; })
+          .sort(function (a, b) {
+            if (b.score !== a.score) {
+              return b.score - a.score;
+            }
+            return a.item.title.localeCompare(b.item.title);
+          })
+          .slice(0, 8)
+          .map(function (entry) { return entry.item; });
+  
+        renderResults(currentMatches, query);
+    }
+
     function runSearch() {
       var query = input.value.trim().toLowerCase();
-      if (query.length < 2) {
-        renderResults([], '');
-        return;
+      if (!isLoaded) {
+        loadIndex().then(function() {
+            performSearch(query);
+        });
+      } else {
+        performSearch(query);
       }
+    }
 
-      var terms = query.split(/\s+/).filter(Boolean);
-      currentMatches = index
-        .map(function (item) {
-          return {
-            item: item,
-            score: scoreItem(item, query, terms)
-          };
-        })
-        .filter(function (entry) { return entry.score > 0; })
-        .sort(function (a, b) {
-          if (b.score !== a.score) {
-            return b.score - a.score;
-          }
-
-          return a.item.title.localeCompare(b.item.title);
-        })
-        .slice(0, 8)
-        .map(function (entry) { return entry.item; });
-
-      renderResults(currentMatches, query);
+    // Lazy load on interaction
+    function lazyLoad() {
+        if (!isLoaded && !isLoading) loadIndex();
     }
 
     input.addEventListener('input', runSearch);
-    input.addEventListener('focus', function () {
-      if (input.value.trim().length >= 2) {
-        runSearch();
-      }
-    });
+    input.addEventListener('focus', lazyLoad);
+    input.addEventListener('click', lazyLoad);
 
     input.addEventListener('keydown', function (event) {
       if (panel.hidden || !currentMatches.length) {
-        if (event.key === 'Escape') {
-          closePanel();
-        }
+        if (event.key === 'Escape') closePanel();
         return;
       }
 
@@ -240,7 +261,7 @@
           event.preventDefault();
           results.querySelectorAll('.site-search-link')[activeIndex].click();
         } else if (input.value.trim().length >= 2) {
-          window.location.href = buildSearchPageUrl(input.value.trim().toLowerCase());
+            window.location.href = buildSearchPageUrl(input.value.trim().toLowerCase());
         }
         return;
       }

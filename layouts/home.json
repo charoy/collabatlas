@@ -1,0 +1,63 @@
+{{ $searchItems := slice }}
+{{ range site.RegularPages }}
+  {{ $summary := .Params.description | default .Params.tagline | default (.Summary | plainify) }}
+  {{ $keywords := slice }}
+  {{ with .Params.domains }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with index .Params "collaboration-types" }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with .Params.modalities }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with .Params.scales }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with .Params.research_methods }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with .Params.tags }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ with .Params.categories }}{{ $keywords = union $keywords . }}{{ end }}
+  {{ $typeLabel := "page" }}
+  {{ if eq .Section "catalogue" }}
+    {{ $typeLabel = path.Base (path.Dir .File.Path) }}
+  {{ else if eq .Section "blog" }}
+    {{ $typeLabel = "blog post" }}
+  {{ else if eq .Section "guides" }}
+    {{ $typeLabel = "guide" }}
+  {{ else if eq .Section "research" }}
+    {{ $typeLabel = "research" }}
+  {{ else if eq .Section "governance" }}
+    {{ $typeLabel = "governance" }}
+  {{ else if eq .Section "about" }}
+    {{ $typeLabel = "about" }}
+  {{ end }}
+  {{ $searchItems = $searchItems | append (dict
+    "title" .Title
+    "url" .RelPermalink
+    "type" $typeLabel
+    "summary" ($summary | plainify | truncate 180)
+    "text" (lower (printf "%s %s %s" .Title ($summary | plainify) (delimit $keywords " ")))
+    "external" false
+  ) }}
+{{ end }}
+{{ range slice "catalogue" "guides" "governance" "research" "blog" "about" }}
+  {{ with site.GetPage . }}
+    {{ $summary := .Params.description | default (.Summary | plainify) }}
+    {{ $searchItems = $searchItems | append (dict
+      "title" .Title
+      "url" .RelPermalink
+      "type" "section"
+      "summary" ($summary | plainify | truncate 180)
+      "text" (lower (printf "%s %s" .Title ($summary | plainify)))
+      "external" false
+    ) }}
+  {{ end }}
+{{ end }}
+{{ with site.Data.research_articles }}
+  {{ range . }}
+    {{ $articleKeywords := slice }}
+    {{ with .domains }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
+    {{ with .tags }}{{ $articleKeywords = union $articleKeywords . }}{{ end }}
+    {{ $searchItems = $searchItems | append (dict
+      "title" .title
+      "url" .url
+      "type" "research article"
+      "summary" ((printf "%s %s" (.authors | default "") (.journal | default "")) | plainify | truncate 180)
+      "text" (lower (printf "%s %s %s %s %s" .title (.authors | default "") (.journal | default "") (.abstract | default "") (delimit $articleKeywords " ")))
+      "external" true
+    ) }}
+  {{ end }}
+{{ end }}
+{{ $searchItems | jsonify | safeJS }}

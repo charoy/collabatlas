@@ -3,32 +3,48 @@
 (function () {
   'use strict';
 
-  function parseIndex() {
-    var element = document.getElementById('site-search-index');
-    if (!element) {
-      return [];
-    }
+  var searchIndex = [];
+  var isLoaded = false;
+  var isLoading = false;
 
-    try {
-      var payload = JSON.parse(element.textContent);
-      if (typeof payload === 'string') {
-        payload = JSON.parse(payload);
-      }
+  function loadIndex() {
+    if (isLoaded) return Promise.resolve(searchIndex);
+    if (isLoading) return new Promise(function(resolve) {
+      var check = setInterval(function() {
+        if (isLoaded) {
+          clearInterval(check);
+          resolve(searchIndex);
+        }
+      }, 100);
+    });
 
-      return payload.map(function (item) {
-        return {
-          title: item.title || '',
-          url: item.url || '#',
-          type: item.type || 'page',
-          summary: item.summary || '',
-          text: (item.text || '').toLowerCase(),
-          external: Boolean(item.external)
-        };
+    isLoading = true;
+    var url = window.SEARCH_INDEX_URL || '/index.json';
+    return fetch(url)
+      .then(function(response) {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      })
+      .then(function(data) {
+        searchIndex = data.map(function (item) {
+          return {
+            title: item.title || '',
+            url: item.url || '#',
+            type: item.type || 'page',
+            summary: item.summary || '',
+            text: (item.text || '').toLowerCase(),
+            external: Boolean(item.external)
+          };
+        });
+        isLoaded = true;
+        isLoading = false;
+        return searchIndex;
+      })
+      .catch(function(error) {
+        console.error('Unable to load search index:', error);
+        isLoading = false;
+        return [];
       });
-    } catch (error) {
-      console.error('Unable to parse site search index.', error);
-      return [];
-    }
   }
 
   function escapeHtml(value) {
@@ -79,97 +95,115 @@
     return score;
   }
 
-  function updateUrl(query) {
-    var url = new URL(window.location.href);
-    if (query) {
-      url.searchParams.set('q', query);
-    } else {
-      url.searchParams.delete('q');
-    }
-    window.history.replaceState({}, '', url.toString());
-  }
-
-  function renderResults(container, matches) {
-    container.innerHTML = matches.map(function (item) {
-      var target = item.external ? ' target="_blank" rel="noopener"' : '';
-      return '<article class="search-result-card">' +
-        '<div class="search-result-header">' +
-          '<span class="badge site-search-badge">' + escapeHtml(formatTypeLabel(item.type)) + '</span>' +
-          '<h2 class="search-result-title"><a href="' + escapeHtml(item.url) + '"' + target + '>' + escapeHtml(item.title) + '</a></h2>' +
-        '</div>' +
-        (item.summary ? '<p class="search-result-summary">' + escapeHtml(item.summary) + '</p>' : '') +
-        '<a class="search-result-link" href="' + escapeHtml(item.url) + '"' + target + '>' + escapeHtml(item.url) + (item.external ? ' ↗' : '') + '</a>' +
-      '</article>';
-    }).join('');
-  }
-
   function init() {
+    // Check for elements matching layouts/search/list.html
     var input = document.getElementById('search-page-input');
-    var count = document.getElementById('search-page-count');
-    var results = document.getElementById('search-page-results');
-    var empty = document.getElementById('search-page-empty');
-    var hint = document.getElementById('search-page-hint');
-    var reset = document.getElementById('search-page-reset');
-    if (!input || !count || !results || !empty || !hint || !reset) {
+    var resultsContainer = document.getElementById('search-page-results');
+    var countDisplay = document.getElementById('search-page-count');
+    var emptyMessage = document.getElementById('search-page-empty');
+    var resetButton = document.getElementById('search-page-reset');
+    var hintMessage = document.getElementById('search-page-hint');
+
+    if (!input || !resultsContainer) {
       return;
     }
 
-    var index = parseIndex();
+    function renderResults(matches, query) {
+        resultsContainer.innerHTML = '';
+        
+        if (!query) {
+            countDisplay.textContent = '';
+            emptyMessage.hidden = true;
+            if (hintMessage) hintMessage.hidden = false;
+            if (resetButton) resetButton.hidden = true;
+            return;
+        }
 
-    function applySearch() {
-      var query = input.value.trim().toLowerCase();
-      updateUrl(query);
+        if (hintMessage) hintMessage.hidden = true;
+        if (resetButton) resetButton.hidden = false;
 
-      if (!query) {
-        results.innerHTML = '';
-        count.textContent = 'Enter a search term to begin.';
-        empty.hidden = true;
-        reset.hidden = true;
-        hint.hidden = false;
-        return;
-      }
+        if (matches.length === 0) {
+            countDisplay.textContent = '0 results'; // Or hidden
+            emptyMessage.hidden = false;
+            return;
+        }
 
-      reset.hidden = false;
-      hint.hidden = true;
+        emptyMessage.hidden = true;
+        countDisplay.textContent = matches.length + ' result' + (matches.length !== 1 ? 's' : '');
 
-      var terms = query.split(/\s+/).filter(Boolean);
-      var matches = index
-        .map(function (item) {
-          return { item: item, score: scoreItem(item, query, terms) };
-        })
-        .filter(function (entry) { return entry.score > 0; })
-        .sort(function (a, b) {
-          if (b.score !== a.score) {
-            return b.score - a.score;
-          }
-          return a.item.title.localeCompare(b.item.title);
-        })
-        .map(function (entry) { return entry.item; });
-
-      count.textContent = matches.length + ' result' + (matches.length !== 1 ? 's' : '');
-      empty.hidden = matches.length !== 0;
-
-      if (!matches.length) {
-        results.innerHTML = '';
-        return;
-      }
-
-      renderResults(results, matches);
+        var html = matches.map(function(item) {
+             var typeLabel = formatTypeLabel(item.type);
+             var target = item.external ? ' target="_blank" rel="noopener"' : '';
+             return '<article class="search-result-card">' +
+                '<header class="search-result-header">' +
+                '<span class="badge search-result-badge">' + escapeHtml(typeLabel) + '</span>' +
+                '<h2 class="search-result-title"><a href="' + escapeHtml(item.url) + '"' + target + '>' + escapeHtml(item.title) + '</a></h2>' +
+                '</header>' +
+                (item.summary ? '<p class="search-result-summary">' + escapeHtml(item.summary) + '</p>' : '') +
+            '</article>';
+        }).join('');
+        
+        resultsContainer.innerHTML = html;
     }
 
-    input.addEventListener('input', applySearch);
-    reset.addEventListener('click', function () {
-      input.value = '';
-      applySearch();
-      input.focus();
+    function performSearch(query) {
+       if (!query) {
+          renderResults([], '');
+          // Update URL to remove query
+          var url = new URL(window.location);
+          url.searchParams.delete('q');
+          window.history.replaceState({}, '', url);
+          return;
+       }
+
+       // Update URL
+       var url = new URL(window.location);
+       url.searchParams.set('q', query);
+       window.history.replaceState({}, '', url);
+
+       loadIndex().then(function(index) {
+          var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+          var matches = index
+            .map(function (item) {
+                return {
+                item: item,
+                score: scoreItem(item, query.toLowerCase(), terms)
+                };
+            })
+            .filter(function (entry) { return entry.score > 0; })
+            .sort(function (a, b) {
+                if (b.score !== a.score) {
+                return b.score - a.score;
+                }
+                return a.item.title.localeCompare(b.item.title);
+            })
+            .map(function (entry) { return entry.item; });
+          
+          renderResults(matches, query);
+       });
+    }
+
+    // Event Listeners
+    input.addEventListener('input', function() {
+        performSearch(input.value.trim());
     });
-
-    var params = new URLSearchParams(window.location.search);
-    var initialQuery = params.get('q');
-    if (initialQuery) {
-      input.value = initialQuery;
+    
+    if (resetButton) {
+        resetButton.addEventListener('click', function() {
+            input.value = '';
+            performSearch('');
+            input.focus();
+        });
     }
-    applySearch();
+
+    // Initial Load from URL
+    var params = new URLSearchParams(window.location.search);
+    var initialQuery = (params.get('q') || '').trim();
+    if (initialQuery) {
+        input.value = initialQuery;
+        // Trigger search immediately
+        performSearch(initialQuery);
+    }
   }
 
   if (document.readyState === 'loading') {
