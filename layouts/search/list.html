@@ -13,7 +13,7 @@
       element: "#search-results",
       showSubResults: true,
       showImages: false,
-      baseUrl: "{{ "/" | relURL }}"
+      baseUrl: window.__BASE_URL__ || "/"
     });
     // Sync URL ?q= param
     var params = new URLSearchParams(window.location.search);

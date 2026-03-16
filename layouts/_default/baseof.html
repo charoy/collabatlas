@@ -66,7 +66,7 @@
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ end }}
-  <script>window.__BASE_URL__ = {{ "/" | relURL | jsonify }};</script>
+  <script>window.__BASE_URL__ = {{ .Site.Home.RelPermalink | jsonify | safeJS }};</script>
   {{ if resources.Get "js/pagefind-bridge.js" }}
   {{ $pfBridge := resources.Get "js/pagefind-bridge.js" | minify | fingerprint }}
   <script src="{{ $pfBridge.RelPermalink }}" integrity="{{ $pfBridge.Data.Integrity }}" defer></script>
