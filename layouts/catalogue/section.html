@@ -1,7 +1,23 @@
 {{ define "main" }}
+{{ $repo := .Site.Params.github_repo }}
+{{ $sectionName := .Title }}
+{{ $templateMap := dict
+  "Tools" "new-tool"
+  "Methods" "new-method"
+  "Frameworks" "new-framework"
+  "Case Studies" "new-case-study"
+  "Datasets" "new-dataset"
+  "Resources" "new-resource"
+}}
+{{ $template := index $templateMap $sectionName }}
 <section class="catalogue">
   <header class="page-header">
-    <h1>{{ .Title }}</h1>
+    <div class="page-header-row">
+      <h1>{{ .Title }}</h1>
+      {{ with $template }}
+      <a href="{{ $repo }}/issues/new?template={{ . }}.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">+ Suggest a {{ $sectionName | singularize }}</a>
+      {{ end }}
+    </div>
     {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
   </header>
 
