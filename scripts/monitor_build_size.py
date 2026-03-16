@@ -10,8 +10,6 @@ from pathlib import Path
 
 # Size thresholds in bytes
 THRESHOLDS = {
-    "public/index.json": 2 * 1024 * 1024,  # 2 MB (Search index)
-    "public/js/site-search.js": 50 * 1024, # 50 KB (Search logic)
     "public/css/main.css": 150 * 1024,     # 150 KB (Main stylesheet) - adjusted for inlined assets
     "public/index.html": 150 * 1024,       # 150 KB (Homepage HTML)
 }
@@ -21,6 +19,7 @@ SCAN_DIRS = [
     "public/js",
     "public/css",
     "public/catalogue",
+    "public/pagefind",
 ]
 
 def get_file_size(path):
@@ -92,9 +91,6 @@ def scan_directory(dir_path):
 def main():
     print("=== Build Size Monitor ===\n")
     
-    # Check specific files
-    check_file("public/index.json")
-    
     # Check CSS files (hashed)
     css_dir = Path("public/css")
     if css_dir.exists():
@@ -117,8 +113,9 @@ def main():
     # Check homepage
     check_file("public/index.html")
 
-    # General Scan
-    scan_directory("public")
+    # Scan configured directories for large files
+    for scan_dir in SCAN_DIRS:
+        scan_directory(scan_dir)
 
 if __name__ == "__main__":
     # Ensure we run from project root

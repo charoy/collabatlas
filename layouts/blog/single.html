@@ -1,5 +1,7 @@
 {{ define "main" }}
-<article class="blog-post">
+<article class="blog-post" data-pagefind-body>
+  <meta data-pagefind-meta="type:blog post" />
+  <meta data-pagefind-filter="type:blog post" />
   <header class="post-header">
     <div class="post-header-meta">
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>

@@ -62,22 +62,16 @@
     </div>
   </aside>
 
-  <link rel="search" href="/index.json" type="application/json" title="Search Index">
-
   {{ partial "compare-data.html" . }}
 
   {{ if resources.Get "js/catalogue-filter.js" }}
   {{ $js := resources.Get "js/catalogue-filter.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ end }}
-  <script>window.SEARCH_INDEX_URL = "{{ "index.json" | relURL }}";</script>
-  {{ if resources.Get "js/site-search.js" }}
-  {{ $searchJs := resources.Get "js/site-search.js" | minify | fingerprint }}
-  <script src="{{ $searchJs.RelPermalink }}" integrity="{{ $searchJs.Data.Integrity }}" defer></script>
-  {{ end }}
-  {{ if resources.Get "js/search-page.js" }}
-  {{ $searchPageJs := resources.Get "js/search-page.js" | minify | fingerprint }}
-  <script src="{{ $searchPageJs.RelPermalink }}" integrity="{{ $searchPageJs.Data.Integrity }}" defer></script>
+  <script>window.__BASE_URL__ = {{ "/" | relURL | jsonify }};</script>
+  {{ if resources.Get "js/pagefind-bridge.js" }}
+  {{ $pfBridge := resources.Get "js/pagefind-bridge.js" | minify | fingerprint }}
+  <script src="{{ $pfBridge.RelPermalink }}" integrity="{{ $pfBridge.Data.Integrity }}" defer></script>
   {{ end }}
   {{ if resources.Get "js/research-filter.js" }}
   {{ $researchJs := resources.Get "js/research-filter.js" | minify | fingerprint }}
