@@ -2940,6 +2940,15 @@ main {
   color: white;
   font-weight: 600;
 }
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
 
 /* ─── Distributions ─────────────────────────────────────────────── */
 

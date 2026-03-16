@@ -12,11 +12,26 @@
     {{ end }}
 
     <span class="pagination-pages">
+      {{ $current := $paginator.PageNumber }}
+      {{ $total := $paginator.TotalPages }}
       {{ range $paginator.Pagers }}
-        {{ if eq . $paginator }}
-          <span class="pagination-page pagination-page--current" aria-current="page">{{ .PageNumber }}</span>
+        {{ $show := false }}
+        {{ if or (le .PageNumber 2) (ge .PageNumber (sub $total 1)) }}{{ $show = true }}{{ end }}
+        {{ if and (ge .PageNumber (sub $current 1)) (le .PageNumber (add $current 1)) }}{{ $show = true }}{{ end }}
+        {{ if $show }}
+          {{ if eq . $paginator }}
+            <span class="pagination-page pagination-page--current" aria-current="page">{{ .PageNumber }}</span>
+          {{ else }}
+            <a href="{{ .URL }}" class="pagination-page">{{ .PageNumber }}</a>
+          {{ end }}
         {{ else }}
-          <a href="{{ .URL }}" class="pagination-page">{{ .PageNumber }}</a>
+          {{ $prev := sub .PageNumber 1 }}
+          {{ $prevShow := false }}
+          {{ if or (le $prev 2) (ge $prev (sub $total 1)) }}{{ $prevShow = true }}{{ end }}
+          {{ if and (ge $prev (sub $current 1)) (le $prev (add $current 1)) }}{{ $prevShow = true }}{{ end }}
+          {{ if $prevShow }}
+            <span class="pagination-ellipsis" aria-hidden="true">&hellip;</span>
+          {{ end }}
         {{ end }}
       {{ end }}
     </span>

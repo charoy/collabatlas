@@ -23,6 +23,7 @@
     // Fetch from external JSON
     try {
       var resp = await fetch(COMPARE_DATA_URL);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
       var data = await resp.json();
       compareDataCache = Array.isArray(data) ? data : [];
     } catch (err) {

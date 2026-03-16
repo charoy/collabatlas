@@ -111,7 +111,7 @@
           '<a id="site-search-option-' + index + '" class="site-search-link" href="' + escapeHtml(item.meta.url || item.url) + '" role="option">' +
             '<span class="badge site-search-badge">' + escapeHtml(typeLabel) + '</span>' +
             '<span class="site-search-title">' + escapeHtml(item.meta.title) + '</span>' +
-            (item.excerpt ? '<span class="site-search-summary">' + item.excerpt + '</span>' : '') +
+            (item.excerpt ? '<span class="site-search-summary">' + item.excerpt.replace(/<(?!\/?mark\b)[^>]*>/g, '') + '</span>' : '') +
           '</a>' +
         '</li>';
       }).join('');

@@ -15,6 +15,7 @@
     if (!url) return null;
     try {
       var resp = await fetch(url);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
       window.CATALOGUE_DATA = await resp.json();
       return window.CATALOGUE_DATA;
     } catch (e) {

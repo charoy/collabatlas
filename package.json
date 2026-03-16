@@ -1,26 +1,11 @@
 {
-  "name": "portfolio",
+  "name": "collabatlas",
   "version": "1.0.0",
-  "description": "**Navigate the landscape of collaborative solutions for research and practice.**",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "private": true,
+  "description": "CollabAtlas — Navigate the landscape of collaborative solutions for research and practice.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "index": "pagefind --site public --output-subdir pagefind"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/charoy/collabatlas.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/charoy/collabatlas/issues"
-  },
-  "homepage": "https://github.com/charoy/collabatlas#readme",
   "devDependencies": {
     "pagefind": "^1.4.0"
   }

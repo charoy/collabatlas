@@ -20,11 +20,11 @@
   {{ $entries = $entries | append $entry }}
 {{ end }}
 
-{{ dict "entries" $entries "taxonomies" (dict
+{{- dict "entries" $entries "taxonomies" (dict
   "domains" $domains
   "collaborationTypes" $collaborationTypes
   "modalities" $modalities
   "scales" $scales
   "researchMethods" $researchMethods
   "maturity" $maturityLevels
-) | jsonify }}
+) | jsonify -}}
