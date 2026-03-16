@@ -9,14 +9,28 @@
   let currentYItems = [];
   let data = null; // Global data reference
 
-  function init() {
+  async function loadCatalogueData() {
+    if (window.CATALOGUE_DATA) return window.CATALOGUE_DATA;
+    var url = window.CATALOGUE_DATA_URL;
+    if (!url) return null;
+    try {
+      var resp = await fetch(url);
+      window.CATALOGUE_DATA = await resp.json();
+      return window.CATALOGUE_DATA;
+    } catch (e) {
+      console.error('Failed to load catalogue data:', e);
+      return null;
+    }
+  }
+
+  async function init() {
     console.log('Catalogue Visualize Init');
-    data = window.CATALOGUE_DATA;
-    
+    data = await loadCatalogueData();
+
     const chart = document.getElementById('visualize-chart');
     if (!data) {
       console.error('No catalogue data found');
-      if (chart) chart.innerHTML = '<p class="error">Data error: window.CATALOGUE_DATA is missing.</p>';
+      if (chart) chart.innerHTML = '<p class="error">Data error: catalogue data could not be loaded.</p>';
       return;
     }
 

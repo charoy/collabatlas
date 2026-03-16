@@ -1,0 +1,30 @@
+{{ $domains := site.Data.taxonomies.domains | default (slice) }}
+{{ $collaborationTypes := index site.Data.taxonomies "collaboration_types" | default (slice) }}
+{{ $modalities := site.Data.taxonomies.modalities | default (slice) }}
+{{ $scales := site.Data.taxonomies.scales | default (slice) }}
+{{ $researchMethods := index site.Data.taxonomies "research_methods" | default (slice) }}
+{{ $maturityLevels := index site.Data.taxonomies "maturity_levels" | default (slice) }}
+
+{{ $entries := slice }}
+{{ range where site.RegularPages "Section" "catalogue" }}
+  {{ $entry := dict
+    "title" .Title
+    "permalink" .RelPermalink
+    "domains" (.Params.domains | default (slice))
+    "collaborationTypes" (index .Params "collaboration-types" | default (slice))
+    "scales" (.Params.scales | default (slice))
+    "modalities" (.Params.modalities | default (slice))
+    "researchMethods" (.Params.research_methods | default (slice))
+    "maturity" (.Params.maturity | default "")
+  }}
+  {{ $entries = $entries | append $entry }}
+{{ end }}
+
+{{ dict "entries" $entries "taxonomies" (dict
+  "domains" $domains
+  "collaborationTypes" $collaborationTypes
+  "modalities" $modalities
+  "scales" $scales
+  "researchMethods" $researchMethods
+  "maturity" $maturityLevels
+) | jsonify }}

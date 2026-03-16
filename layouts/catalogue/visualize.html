@@ -1,28 +1,4 @@
 {{ define "main" }}
-{{ $domains := site.Data.taxonomies.domains | default (slice) }}
-{{ $collaborationTypes := index site.Data.taxonomies "collaboration_types" | default (slice) }}
-{{ $modalities := site.Data.taxonomies.modalities | default (slice) }}
-{{ $scales := site.Data.taxonomies.scales | default (slice) }}
-{{ $researchMethods := index site.Data.taxonomies "research_methods" | default (slice) }}
-{{ $maturityLevels := index site.Data.taxonomies "maturity_levels" | default (slice) }}
-
-{{ $entries := slice }}
-{{ range where site.RegularPages "Section" "catalogue" }}
-  {{ $domains := .Params.domains | default (slice) }}
-  {{ $collabTypes := index .Params "collaboration-types" | default (slice) }}
-  {{ $entry := dict
-    "title" .Title
-    "permalink" .RelPermalink
-    "domains" $domains
-    "collaborationTypes" $collabTypes
-    "scales" (.Params.scales | default (slice))
-    "modalities" (.Params.modalities | default (slice))
-    "researchMethods" (.Params.research_methods | default (slice))
-    "maturity" (.Params.maturity | default "")
-  }}
-  {{ $entries = $entries | append $entry }}
-{{ end }}
-
 <section class="catalogue-visualize">
   <header class="page-header">
     <h1>{{ .Title }}</h1>
@@ -86,18 +62,7 @@
 
   <script>
     console.log('Visualize script starting...');
-    window.CATALOGUE_DATA = {
-      entries: {{ $entries | jsonify | safeJS }},
-      taxonomies: {
-        domains: {{ $domains | jsonify | safeJS }},
-        collaborationTypes: {{ $collaborationTypes | jsonify | safeJS }},
-        modalities: {{ $modalities | jsonify | safeJS }},
-        scales: {{ $scales | jsonify | safeJS }},
-        researchMethods: {{ $researchMethods | jsonify | safeJS }},
-        maturity: {{ $maturityLevels | jsonify | safeJS }}
-      }
-    };
-    console.log('Data loaded:', window.CATALOGUE_DATA);
+    window.CATALOGUE_DATA_URL = '{{ "catalogue/visualize/index.json" | relURL }}';
   </script>
   {{ $vizJs := resources.Get "js/catalogue-visualize.js" | minify | fingerprint }}
   <script src="{{ $vizJs.RelPermalink }}" integrity="{{ $vizJs.Data.Integrity }}"></script>
