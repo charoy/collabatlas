@@ -264,6 +264,8 @@ def get_checkboxes(sections: dict[str, str], label: str, mapping: dict[str, str]
         m = re.match(r"^\s*-\s*\[([xX])\]\s*(.+)$", line)
         if m:
             human_label = m.group(2).strip()
+            # Strip description suffix from label (e.g., "Healthcare — hospitals..." → "Healthcare")
+            human_label = human_label.split(" — ")[0].strip()
             taxonomy_id = mapping.get(human_label)
             if taxonomy_id:
                 result.append(taxonomy_id)
@@ -278,6 +280,8 @@ def get_dropdown(sections: dict[str, str], label: str, mapping: dict[str, str]) 
     raw = get_text(sections, label)
     if raw is None:
         return None
+    # Strip description suffix (e.g., "Emerging — new or experimental..." → "Emerging")
+    raw = raw.split(" — ")[0].strip()
     mapped = mapping.get(raw)
     if mapped is None:
         print(f"  Warning: unmapped dropdown value '{raw}' in '{label}'",

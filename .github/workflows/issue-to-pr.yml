@@ -79,7 +79,7 @@ jobs:
               --label "auto-generated,review-needed" \
               --base main
           else
-            echo "PR #${EXISTING_PR} already exists for branch ${BRANCH}, skipping."
+            echo "PR #${EXISTING_PR} already exists for branch ${BRANCH}, skipping creation."
           fi
 
       - name: Comment on issue (success)
