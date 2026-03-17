@@ -11,16 +11,16 @@ description: >-
 domains:
   - healthcare
   - education
-collaboration_type:
+collaboration-types:
   - co-design
   - distributed
   - community-based
-scale:
+scales:
   - pair
   - small-team
   - organization
   - multi-org
-modality:
+modalities:
   - remote
 maturity: established
 status: draft
