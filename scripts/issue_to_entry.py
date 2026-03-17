@@ -533,6 +533,80 @@ def handle_article(sections: dict[str, str], author: str) -> tuple[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Blog post handling
+# ---------------------------------------------------------------------------
+
+BLOG_DIR = ROOT / "content" / "blog"
+
+BLOG_CATEGORY_MAP: dict[str, str] = {
+    "Guide": "Guide",
+    "Tool Review": "Tool Review",
+    "Case Study Analysis": "Case Study Analysis",
+    "Research Insight": "Research Insight",
+    "Community Update": "Community Update",
+}
+
+
+def handle_blog_post(sections: dict[str, str], author: str) -> tuple[str, str]:
+    """Parse blog post fields, write blog markdown file, return (id, type)."""
+    title = get_text(sections, "Post Title")
+    if not title:
+        print("Error: blog post has no title.", file=sys.stderr)
+        sys.exit(1)
+
+    post_id = title_to_id(title)
+    today = date.today().isoformat()
+
+    summary = get_text(sections, "Summary") or ""
+
+    # Parse category (strip description suffix)
+    raw_category = get_text(sections, "Category") or "Guide"
+    category = raw_category.split(" — ")[0].strip()
+    category = BLOG_CATEGORY_MAP.get(category, category)
+
+    # Author: use provided name or fall back to GitHub username
+    author_name = get_text(sections, "Author Name") or author
+
+    # Post content (the actual blog body)
+    content = get_text(sections, "Post Content") or ""
+
+    # Related entries and tags
+    related = get_comma_list(sections, "Related CollabAtlas Entries (comma-separated IDs)")
+    related = [title_to_id(r) for r in related]
+    tags = get_comma_list(sections, "Tags (comma-separated)")
+
+    # Build frontmatter
+    lines: list[str] = ["---"]
+    lines.append(f'title: "{title}"')
+    lines.append(f'summary: "{summary}"')
+    lines.append(f"date: {today}")
+    lines.append(f'author: "{author_name}"')
+    lines.append(f'category: "{category}"')
+    if related:
+        inner = ", ".join(f'"{r}"' for r in related)
+        lines.append(f"related_entries: [{inner}]")
+    if tags:
+        inner = ", ".join(f'"{t}"' for t in tags)
+        lines.append(f"tags: [{inner}]")
+    lines.append("---")
+    lines.append("")
+
+    # Append body content
+    if content:
+        lines.append(content)
+        lines.append("")
+
+    # Write the file
+    BLOG_DIR.mkdir(parents=True, exist_ok=True)
+    out_path = BLOG_DIR / f"{post_id}.md"
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"  Created: {out_path.relative_to(ROOT)}")
+
+    return post_id, "blog-post"
+
+
+# ---------------------------------------------------------------------------
 # GitHub Actions output
 # ---------------------------------------------------------------------------
 
@@ -573,8 +647,16 @@ def main() -> None:
 
     sections = parse_issue_body(issue_body)
 
-    # ── Article path ──────────────────────────────────────────────────────
     label_list = [l.strip().lower() for l in issue_labels.split(",")]
+
+    # ── Blog post path ────────────────────────────────────────────────────
+    if "blog-post" in label_list:
+        print("  Detected type: blog-post")
+        post_id, post_type = handle_blog_post(sections, issue_author)
+        set_output(post_id, post_type)
+        return
+
+    # ── Article path ──────────────────────────────────────────────────────
     if "article" in label_list:
         print("  Detected type: research-article")
         article_id, article_type = handle_article(sections, issue_author)

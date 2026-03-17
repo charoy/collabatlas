@@ -1,0 +1,97 @@
+name: "Propose Blog Post"
+description: "Submit a blog post for the CollabAtlas blog."
+title: "[Blog] "
+labels: ["blog-post", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit a Blog Post
+
+        Share your insights about collaborative tools, methods, frameworks, or
+        experiences. Posts can be practical guides, tool reviews, case study
+        analyses, or research insights.
+
+        Write in **Markdown** — headings, links, lists, and code blocks are all
+        supported. To reference a CollabAtlas entry, use:
+        `[Tool Name]({{</* relref "/catalogue/tools/tool-id" */>}})`
+
+  - type: input
+    id: title
+    attributes:
+      label: Post Title
+      description: "A clear, descriptive title for your blog post."
+      placeholder: "e.g., Using Miro for Participatory Design Workshops"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: "1-2 sentences summarizing the post. Shown in listings and previews."
+      placeholder: "e.g., A practical guide to running participatory design sessions using Miro's collaborative features."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: "What type of blog post is this?"
+      options:
+        - "Guide — practical how-to or decision guide"
+        - "Tool Review — in-depth look at a collaborative tool"
+        - "Case Study Analysis — examining a real-world collaboration"
+        - "Research Insight — connecting academic research to practice"
+        - "Community Update — news, events, announcements"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author Name
+      description: "Your name as you'd like it displayed. Leave blank to use your GitHub username."
+      placeholder: "e.g., Jane Doe"
+    validations:
+      required: false
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Post Content
+      description: "The full blog post in Markdown. Use ## for sections, [text](url) for links."
+      placeholder: |
+        ## Introduction
+
+        Start with context — why does this topic matter?
+
+        ## Main Section
+
+        Your key content here. Use headings, bullet points, tables as needed.
+
+        ## Conclusion
+
+        Wrap up with takeaways or next steps.
+      render: markdown
+    validations:
+      required: true
+
+  - type: input
+    id: related_entries
+    attributes:
+      label: "Related CollabAtlas Entries (comma-separated IDs)"
+      description: "IDs of catalogue entries this post references. Find IDs in the URL (e.g., miro, design-sprint, cscw-framework)."
+      placeholder: "e.g., miro, participatory-design, design-sprint"
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Tags (comma-separated)"
+      description: "Keywords to help readers find this post."
+      placeholder: "e.g., workshops, participatory-design, facilitation"
+    validations:
+      required: false

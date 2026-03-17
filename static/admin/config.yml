@@ -11,6 +11,30 @@ slug:
   clean_accents: true
 
 collections:
+  - name: blog
+    label: Blog Posts
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Summary, name: summary, widget: text, required: true }
+      - { label: Date, name: date, widget: datetime, format: "YYYY-MM-DD", required: true }
+      - { label: Author, name: author, widget: string, required: true, default: "CollabAtlas Editorial" }
+      - label: Category
+        name: category
+        widget: select
+        required: true
+        options:
+          - { label: Guide, value: Guide }
+          - { label: Tool Review, value: Tool Review }
+          - { label: Case Study Analysis, value: Case Study Analysis }
+          - { label: Research Insight, value: Research Insight }
+          - { label: Community Update, value: Community Update }
+      - { label: "Related Entries", name: related_entries, widget: list, required: false, field: { label: Entry ID, name: id, widget: string } }
+      - { label: Tags, name: tags, widget: list, required: false }
+      - { label: Body, name: body, widget: markdown, required: true }
+
   - name: tools
     label: Tools
     folder: content/catalogue/tools
