@@ -1,0 +1,38 @@
+name: Validate Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  validate:
+    if: contains(github.event.issue.labels.*.name, 'new-entry')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Validate issue and generate feedback
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+          COMMENT_OUTPUT: /tmp/validation-comment.md
+        run: python scripts/validate_issue.py
+
+      - name: Post validation comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} \
+            --body-file /tmp/validation-comment.md

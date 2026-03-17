@@ -200,3 +200,91 @@ See the [Review Process]({{< relref "/governance/review-process" >}}) for full d
 
 - **Improve an existing entry** — Fix errors, update links, add missing fields
 - **Report a problem** — [Open an issue](https://github.com/charoy/collabatlas/issues) for broken links, outdated content, or missing features
+
+---
+
+## Taxonomy Quick Reference
+
+When filling in the issue form, you will be asked to select values from several taxonomy dimensions. Use the tables below to pick the most appropriate values. **Select all that apply** — most entries fit multiple categories.
+
+### Not Sure Which Entry Type to Use?
+
+| If your contribution is... | Choose |
+|---|---|
+| A software product, platform, or digital instrument | **Tool** |
+| A structured process, technique, or facilitation approach | **Method** |
+| A theoretical lens, conceptual model, or analytical structure | **Framework** |
+| A real-world example of collaboration in practice | **Case Study** |
+| A data source useful for studying collaboration | **Dataset** |
+| A book, guide, handbook, or reference material | **Resource** |
+
+### Domains
+
+Select the fields where this entry is commonly used or applied.
+
+| Domain | Examples |
+|---|---|
+| Healthcare | Hospitals, clinical research, public health |
+| Education | Schools, universities, training programmes |
+| Urban Planning | Cities, transport, housing, infrastructure |
+| Software Engineering | Development, DevOps, code review |
+| Design | UX, product design, architecture |
+| Environmental Science | Ecology, climate, conservation |
+| Social Sciences | Sociology, psychology, political science |
+| Public Policy | Government, civic engagement, regulation |
+| Business | Management, strategy, consulting |
+| Arts & Culture | Museums, performing arts, cultural heritage |
+| Disaster Response | Emergency management, humanitarian aid |
+| Citizen Science | Volunteer research, community monitoring |
+| Manufacturing | Production, supply chain, quality |
+| Agriculture | Farming, food systems, agritech |
+| Publishing | Journals, books, open access |
+
+### Collaboration Types
+
+Select the kinds of collaboration this entry involves or supports.
+
+| Type | What it means |
+|---|---|
+| Co-Design | Stakeholders jointly design solutions |
+| Co-Creation | Multiple parties create something new together |
+| Co-Production | Shared production across organizations |
+| Participatory | Actively involves end-users or communities |
+| Distributed | Geographically dispersed teams |
+| Crowdsourcing | Large-scale contributions from many people |
+| Open Source | Publicly available, community-developed |
+| Interdisciplinary | Across 2-3 related disciplines |
+| Transdisciplinary | Across many disciplines + non-academic actors |
+| Community-Based | Rooted in a specific community's needs |
+
+### Scale
+
+Select the group sizes this entry typically works with.
+
+| Scale | Size |
+|---|---|
+| Pair | 2 people |
+| Small Team | 3-10 people |
+| Organization | 11-100 people |
+| Multi-Organization | Networks of organizations |
+| Community | 100+ people, large open communities |
+
+### Modality
+
+Select how participants interact.
+
+| Modality | Description |
+|---|---|
+| In-Person | Co-located, face-to-face |
+| Remote | Fully online |
+| Hybrid | Mix of in-person and remote |
+
+### Maturity Level
+
+Choose the level that best describes how established this entry is.
+
+| Level | Description |
+|---|---|
+| Emerging | New or experimental, limited adoption, early-stage |
+| Established | Proven track record, widely used in practice |
+| Well-Documented | Extensive documentation, research literature, and community resources |
