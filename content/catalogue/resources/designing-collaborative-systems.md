@@ -9,3 +9,10 @@ modalities: ["in-person", "hybrid"]
 maturity: "well-documented"
 status: "published"
 ---
+
+
+This book by Andy Crabtree provides a practical introduction to ethnography as a design resource for collaborative systems. It bridges the gap between ethnographic fieldwork and the design of computer-supported cooperative work systems. The book covers core ethnographic concepts, fieldwork methods, and techniques for translating ethnographic findings into design requirements. It is widely used in HCI and CSCW courses and by practitioners designing sociotechnical systems. It is particularly relevant in Software Engineering, Social Sciences and Education.
+
+Designing Collaborative Systems: A Practical Guide to Ethnography supports co-design and interdisciplinary collaboration and is suited for small teams and organizational settings in in-person and hybrid settings.
+
+Designing Collaborative Systems: A Practical Guide to Ethnography is classified as a well-documented resource, indicating broad adoption and available documentation. This book by Andy Crabtree (2003) provides valuable reference material for researchers and practitioners.

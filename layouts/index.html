@@ -30,6 +30,7 @@
     <div class="hero-actions">
       <a href="{{ $cataloguePage.RelPermalink }}" class="btn btn-primary">Browse the Catalogue</a>
       <a href="{{ $wizardPage.RelPermalink }}" class="btn btn-secondary">Find Your Method →</a>
+      <a href="#contribute" class="btn btn-outline">Contribute →</a>
     </div>
   </div>
 </section>
@@ -246,6 +247,35 @@
   </div>
 </section>
 {{ end }}
+
+{{ $repo := .Site.Params.github_repo }}
+<section class="home-section home-contribute" id="contribute">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Contribute to CollabAtlas</h2>
+    <p class="home-section-subtitle">CollabAtlas grows through community contributions. Suggest a new entry, share a research article, or help improve existing content.</p>
+  </div>
+  <div class="contribute-grid">
+    {{ $types := slice
+      (dict "label" "Tool"        "template" "new-tool"        "icon" "⚙" "desc" "Software and platforms for collaboration")
+      (dict "label" "Method"      "template" "new-method"      "icon" "◎" "desc" "Structured approaches to organising work")
+      (dict "label" "Framework"   "template" "new-framework"   "icon" "⬡" "desc" "Theoretical lenses for analysis")
+      (dict "label" "Case Study"  "template" "new-case-study"  "icon" "◈" "desc" "Real-world examples of collaboration")
+      (dict "label" "Dataset"     "template" "new-dataset"     "icon" "▦" "desc" "Empirical data for research")
+      (dict "label" "Resource"    "template" "new-resource"    "icon" "◉" "desc" "Books, articles, and references")
+    }}
+    {{ range $types }}
+    <a href="{{ $repo }}/issues/new?template={{ .template }}.yml" target="_blank" rel="noopener" class="contribute-card">
+      <span class="contribute-card-icon">{{ .icon }}</span>
+      <strong>Suggest a {{ .label }}</strong>
+      <p>{{ .desc }}</p>
+    </a>
+    {{ end }}
+  </div>
+  <div class="contribute-extras">
+    <a href="{{ $repo }}/issues/new?template=suggest-article.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Suggest a Research Article</a>
+    <a href="{{ $repo }}/issues/new?template=update-entry.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Update an Existing Entry</a>
+  </div>
+</section>
 
 <section class="home-section">
   <div class="home-section-header">

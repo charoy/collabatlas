@@ -10,3 +10,10 @@ maturity: "established"
 status: "published"
 platform: "zenodo"
 ---
+
+
+Dataset and analyss of the COCCO 2 experiment It is particularly relevant in Education.
+
+COCCO 2 dataset and analyses supports distributed and co-production collaboration and is suited for small teams in remote settings.
+
+COCCO 2 dataset and analyses is an established dataset with a solid track record of use across multiple contexts. The dataset is hosted on zenodo, in CSV, CSV, CSV, RMD format.

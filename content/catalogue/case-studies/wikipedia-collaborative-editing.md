@@ -9,3 +9,10 @@ modalities: ["remote"]
 maturity: "well-documented"
 status: "published"
 ---
+
+
+Wikipedia represents one of the most studied cases of large-scale collaborative knowledge production. Since its founding in 2001, over 60 million articles have been created across hundreds of language editions by a global community of volunteer editors. The case illustrates mechanisms for distributed coordination, quality control through peer review, conflict resolution via talk pages and arbitration, and governance through community-established policies. Research on Wikipedia has contributed to understanding of crowdsourcing dynamics, knowledge commons governance, and the conditions under which open collaboration produces reliable outputs. It is particularly relevant in Citizen Science, Education and Social Sciences.
+
+Wikipedia Collaborative Editing Model supports crowdsourcing, open source and community-based collaboration and is suited for community-scale initiatives in remote settings.
+
+Wikipedia Collaborative Editing Model is classified as a well-documented case study, indicating broad adoption and available documentation. This case study examines the collaborative practices at Wikimedia Foundation, drawing on experiences since 2001.
