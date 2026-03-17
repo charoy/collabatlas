@@ -1,0 +1,54 @@
+id: grist
+type: tool
+title: Grist
+tagline: A collaborative spreadsheet application
+description: >-
+  Gemini a dit
+
+  Grist is a relational spreadsheet-database hybrid that combines the familiarity
+  of a grid with the structural integrity of a database. It allows teams to link tables,
+  create drag-and-drop dashboards, and automate workflows using Excel-like functions
+  or full Python formulas.
+
+
+  Collaboration is supported through real-time editing and a highly sophisticated
+  permissions system that can restrict access down to specific rows or individual
+  cells. This makes it possible for a large team to work within a single "source of
+  truth" while ensuring sensitive data remains private.
+
+
+  What makes it distinctive is its commitment to data sovereignty and technical flexibility;
+  it is open-source and self-hostable, uses a portable SQLite format to prevent vendor
+  lock-in, and offers an AI assistant to help non-coders generate complex Python-based
+  logic.
+domains:
+  - education
+  - urban-planning
+  - software-engineering
+  - social-sciences
+  - public-policy
+  - business
+collaboration-types:
+  - co-production
+  - distributed
+  - open-source
+scales:
+  - small-team
+  - organization
+modalities:
+  - remote
+maturity: established
+status: draft
+contributors:
+  - charoy
+created: '2026-03-17'
+last_reviewed: '2026-03-17'
+website_url: https://grist.numerique.gouv.fr/
+license: MIT
+open_source: true
+supported_platforms:
+  - all
+tags:
+  - spreadsheet
+  - collaboration
+  - data
