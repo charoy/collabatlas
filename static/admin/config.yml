@@ -1,0 +1,525 @@
+backend:
+  name: github
+  repo: charoy/collabatlas
+  branch: main
+
+media_folder: static/images
+public_folder: /images
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: tools
+    label: Tools
+    folder: content/catalogue/tools
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: methods
+    label: Methods
+    folder: content/catalogue/methods
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: frameworks
+    label: Frameworks
+    folder: content/catalogue/frameworks
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: case-studies
+    label: Case Studies
+    folder: content/catalogue/case-studies
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: datasets
+    label: Datasets
+    folder: content/catalogue/datasets
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Platform
+        name: platform
+        widget: select
+        required: false
+        options:
+          - { label: Zenodo, value: zenodo }
+          - { label: Kaggle, value: kaggle }
+          - { label: Figshare, value: figshare }
+          - { label: Dataverse, value: dataverse }
+          - { label: Dryad, value: dryad }
+          - { label: OSF, value: osf }
+          - { label: HuggingFace, value: huggingface }
+          - { label: Google BigQuery, value: google-bigquery }
+          - { label: ACM DL, value: acm-dl }
+          - { label: Other, value: other }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
+  - name: resources
+    label: Resources
+    folder: content/catalogue/resources
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Disaster Response, value: disaster-response }
+          - { label: Citizen Science, value: citizen-science }
+          - { label: Manufacturing, value: manufacturing }
+          - { label: Agriculture, value: agriculture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Maturity
+        name: maturity
+        widget: select
+        required: true
+        options:
+          - { label: Emerging, value: emerging }
+          - { label: Established, value: established }
+          - { label: Well-Documented, value: well-documented }
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
