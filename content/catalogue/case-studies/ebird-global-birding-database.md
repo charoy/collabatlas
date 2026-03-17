@@ -9,3 +9,9 @@ modalities: ["remote", "hybrid"]
 maturity: "well-documented"
 status: "published"
 ---
+
+eBird Global Birding Database is a case study for collaborative work. Citizen science platform collecting worldwide bird observations to drive avian research and conservation. It is particularly relevant in Environmental Science, Citizen Science and Education.
+
+eBird Global Birding Database supports crowdsourcing, community-based and distributed collaboration and is suited for community-scale initiatives in remote and hybrid settings.
+
+eBird Global Birding Database is a well-documented case study with extensive evidence, guides, and community support. This case study demonstrates real-world application of collaborative approaches.

@@ -9,3 +9,9 @@ modalities: ["hybrid"]
 maturity: "well-documented"
 status: "published"
 ---
+
+Triple Helix Model is a framework for collaborative work. Framework describing university-industry-government interactions driving innovation and economic development. It is particularly relevant in Business, Public Policy and Education.
+
+Triple Helix Model supports interdisciplinary, transdisciplinary and co-production collaboration and is suited for multi-organization networks and community-scale initiatives in hybrid settings.
+
+Triple Helix Model is a well-documented framework with extensive evidence, guides, and community support.

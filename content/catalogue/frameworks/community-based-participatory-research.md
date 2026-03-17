@@ -9,3 +9,9 @@ modalities: ["in-person", "hybrid"]
 maturity: "well-documented"
 status: "published"
 ---
+
+Community-Based Participatory Research is a framework for collaborative work. Collaborative framework that equitably involves community members and researchers in all phases of research. It is particularly relevant in Healthcare, Social Sciences and Public Policy.
+
+Community-Based Participatory Research supports participatory, community-based and co-production collaboration and is suited for small teams, organizational settings and community-scale initiatives in in-person and hybrid settings.
+
+Community-Based Participatory Research is a well-documented framework with extensive evidence, guides, and community support.

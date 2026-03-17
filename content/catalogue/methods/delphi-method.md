@@ -9,3 +9,9 @@ modalities: ["remote", "hybrid"]
 maturity: "well-documented"
 status: "published"
 ---
+
+The Delphi Method is a structured communication technique that relies on a panel of experts who respond to questionnaires in multiple rounds. After each round, a facilitator provides an anonymized summary of the experts' forecasts and the reasons they provided. Experts are encouraged to revise their earlier answers in light of the replies of other members. The process stops when a predefined consensus criterion is reached. It is widely used in policy research, healthcare priority-setting, technology forecasting, and curriculum design. It is particularly relevant in Public Policy, Healthcare and Education.
+
+Delphi Method supports interdisciplinary and distributed collaboration and is suited for small teams, organizational settings and multi-organization networks in remote and hybrid settings.
+
+Delphi Method is a well-documented method with extensive evidence, guides, and community support.
