@@ -1,8 +1,11 @@
 {{ define "main" }}
 <section class="blog-list">
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  <header class="page-header page-header-row">
+    <div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+    </div>
+    <a href="{{ .Site.Params.github_repo }}/issues/new?template=new-blog-post.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">✏️ Write a Post</a>
   </header>
 
   <div class="post-grid">
