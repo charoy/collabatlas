@@ -331,6 +331,25 @@ main {
   backdrop-filter: blur(8px);
 }
 
+.compare-dock-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
+
+.compare-dock-close:hover {
+  color: var(--color-text);
+  background: var(--color-border);
+}
+
 .compare-dock-text {
   min-width: 0;
 }

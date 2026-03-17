@@ -51,6 +51,7 @@
   </footer>
 
   <aside class="compare-dock" id="compare-dock" data-compare-page="{{ if $comparePage }}{{ $comparePage.RelPermalink }}{{ else }}/compare/{{ end }}" hidden>
+    <button type="button" class="compare-dock-close" id="compare-dock-close" aria-label="Dismiss comparison dock">&times;</button>
     <div class="compare-dock-text">
       <p class="compare-dock-title">Comparison list</p>
       <p class="compare-dock-summary" id="compare-dock-summary">No entries selected.</p>

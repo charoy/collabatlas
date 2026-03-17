@@ -115,6 +115,8 @@
     var dockClear = document.getElementById('compare-dock-clear');
     var comparePath = dock ? (dock.dataset.comparePage || '/compare/') : '/compare/';
 
+    var dockClose = document.getElementById('compare-dock-close');
+    var dockDismissed = false;
     var compareButtons = Array.prototype.slice.call(document.querySelectorAll('.compare-toggle'));
     var comparePage = document.getElementById('compare-table');
     var compareCount = document.getElementById('compare-page-count');
@@ -171,7 +173,7 @@
       }
 
       var entries = getSelectionEntries();
-      dock.hidden = entries.length === 0;
+      dock.hidden = entries.length === 0 || dockDismissed;
 
       if (!entries.length) {
         dockSummary.textContent = 'No entries selected.';
@@ -307,6 +309,7 @@
 
     compareButtons.forEach(function (button) {
       button.addEventListener('click', function () {
+        dockDismissed = false;
         var id = button.dataset.compareId;
         if (selection.indexOf(id) !== -1) {
           removeFromSelection(id);
@@ -315,6 +318,13 @@
         }
       });
     });
+
+    if (dockClose) {
+      dockClose.addEventListener('click', function () {
+        dockDismissed = true;
+        if (dock) dock.hidden = true;
+      });
+    }
 
     if (dockClear) {
       dockClear.addEventListener('click', clearSelection);
