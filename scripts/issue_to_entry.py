@@ -280,6 +280,8 @@ def get_dropdown(sections: dict[str, str], label: str, mapping: dict[str, str]) 
     raw = get_text(sections, label)
     if raw is None:
         return None
+    # Strip description suffix (e.g., "Emerging — new or experimental..." → "Emerging")
+    raw = raw.split(" — ")[0].strip()
     mapped = mapping.get(raw)
     if mapped is None:
         print(f"  Warning: unmapped dropdown value '{raw}' in '{label}'",

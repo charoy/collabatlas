@@ -3,11 +3,21 @@ description: "Suggest a collaborative method or structured approach for the Coll
 title: "[New Method] "
 labels: ["new-entry", "method", "triage"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Suggest a Collaborative Method
+
+        A **method** is a structured approach or process for facilitating collaboration
+        (e.g., Delphi Method, World Café, Design Thinking, Focus Groups).
+        If you're unsure about taxonomy fields, pick your best guess — the editorial team will review.
+
   - type: input
     id: title
     attributes:
       label: Title
-      placeholder: "e.g., Miro, Participatory Design, Activity Theory"
+      description: "The name of the method."
+      placeholder: "e.g., Delphi Method, World Café, Design Thinking"
     validations:
       required: true
 
@@ -16,7 +26,7 @@ body:
     attributes:
       label: Tagline
       description: "One-sentence summary (max 200 characters)."
-      placeholder: "Online collaborative whiteboard platform for visual teamwork."
+      placeholder: "e.g., A structured group communication technique for building expert consensus."
     validations:
       required: true
 
@@ -24,7 +34,12 @@ body:
     id: description
     attributes:
       label: Full Description
-      description: "2-5 sentences explaining what it is, how it supports collaboration, and why it matters."
+      description: "2-5 sentences. What is this method? How does it work? What makes it distinctive for collaboration?"
+      placeholder: |
+        Example: The Delphi Method is a structured communication technique that
+        builds consensus among a panel of experts through multiple rounds of
+        anonymous questionnaires. After each round, a facilitator summarises
+        responses and feeds them back, allowing participants to revise their views.
     validations:
       required: true
 
@@ -32,6 +47,7 @@ body:
     id: research-method
     attributes:
       label: Associated Research Methods
+      description: "Which research traditions commonly use this method?"
       options:
         - label: Action Research
         - label: Ethnography
@@ -66,70 +82,74 @@ body:
     id: limitations
     attributes:
       label: Limitations
-      placeholder: "Known limitations or caveats of this method."
+      description: "Known limitations, challenges, or caveats of this method."
+      placeholder: "e.g., Time-intensive; requires skilled facilitation; may not scale well beyond 30 participants."
 
   - type: checkboxes
     id: domains
     attributes:
-      label: Relevant Domains (select all that apply)
+      label: "Relevant Domains (select all that apply)"
+      description: "In which fields is this method commonly applied?"
       options:
-        - label: Healthcare
-        - label: Education
-        - label: Urban Planning
-        - label: Software Engineering
-        - label: Design
-        - label: Environmental Science
-        - label: Social Sciences
-        - label: Public Policy
-        - label: Business
-        - label: Arts & Culture
-        - label: Disaster Response
-        - label: Citizen Science
-        - label: Manufacturing
-        - label: Agriculture
-        - label: Publishing
+        - label: "Healthcare — hospitals, clinical research, public health"
+        - label: "Education — schools, universities, training"
+        - label: "Urban Planning — cities, transport, housing"
+        - label: "Software Engineering — development, DevOps"
+        - label: "Design — UX, product design, architecture"
+        - label: "Environmental Science — ecology, climate, conservation"
+        - label: "Social Sciences — sociology, psychology, political science"
+        - label: "Public Policy — government, civic engagement"
+        - label: "Business — management, strategy, consulting"
+        - label: "Arts & Culture — museums, performing arts"
+        - label: "Disaster Response — emergency management, humanitarian aid"
+        - label: "Citizen Science — volunteer research, community monitoring"
+        - label: "Manufacturing — production, supply chain"
+        - label: "Agriculture — farming, food systems"
+        - label: "Publishing — journals, books, open access"
     validations:
       required: true
 
   - type: checkboxes
     id: collaboration-type
     attributes:
-      label: Collaboration Types (select all that apply)
+      label: "Collaboration Types (select all that apply)"
+      description: "What kind of collaboration does this method involve?"
       options:
-        - label: Co-Design
-        - label: Co-Creation
-        - label: Co-Production
-        - label: Participatory
-        - label: Distributed
-        - label: Crowdsourcing
-        - label: Open Source
-        - label: Interdisciplinary
-        - label: Transdisciplinary
-        - label: Community-Based
+        - label: "Co-Design — stakeholders jointly design solutions"
+        - label: "Co-Creation — multiple parties create something new together"
+        - label: "Co-Production — shared production across organizations"
+        - label: "Participatory — actively involves end-users or communities"
+        - label: "Distributed — geographically dispersed teams"
+        - label: "Crowdsourcing — large-scale contributions from many people"
+        - label: "Open Source — publicly available, community-developed"
+        - label: "Interdisciplinary — across 2-3 related disciplines"
+        - label: "Transdisciplinary — across many disciplines + non-academic actors"
+        - label: "Community-Based — rooted in a specific community's needs"
     validations:
       required: true
 
   - type: checkboxes
     id: scale
     attributes:
-      label: Scale (select all that apply)
+      label: "Scale (select all that apply)"
+      description: "What group sizes does this method typically work with?"
       options:
-        - label: "Pair"
+        - label: "Pair — 2 people"
         - label: "Small Team (3-10)"
         - label: "Organization (11-100)"
-        - label: "Multi-Organization"
-        - label: "Community (100+)"
+        - label: "Multi-Organization — networks of organizations"
+        - label: "Community (100+) — large open communities"
     validations:
       required: true
 
   - type: checkboxes
     id: modality
     attributes:
-      label: Modality (select all that apply)
+      label: "Modality (select all that apply)"
       options:
-        - label: In-Person
-        - label: Remote
-        - label: Hybrid
+        - label: "In-Person — co-located, face-to-face"
+        - label: "Remote — fully online"
+        - label: "Hybrid — mix of in-person and remote"
     validations:
       required: true
 
@@ -137,10 +157,11 @@ body:
     id: maturity
     attributes:
       label: Maturity Level
+      description: "How well-established is this method?"
       options:
-        - Emerging
-        - Established
-        - Well-Documented
+        - "Emerging — new or experimental, limited adoption"
+        - "Established — proven track record, widely used"
+        - "Well-Documented — extensive documentation, research, and community resources"
     validations:
       required: true
 
@@ -148,22 +169,25 @@ body:
     id: external-links
     attributes:
       label: External Links
-      description: "One link per line. Format: type | URL | title"
+      description: "Optional. One link per line. Format: type | URL | title"
       placeholder: |
         website | https://example.com | Official Website
-        paper | https://doi.org/10.xxxx | Key Paper Title
+        paper | https://doi.org/10.xxxx | Key Research Paper
+        book | https://example.com/book | Foundational Book
 
   - type: input
     id: tags
     attributes:
       label: Tags (comma-separated)
-      placeholder: "e.g., real-time, visual-collaboration, brainstorming"
+      description: "Free-form keywords that describe this method. Examples below."
+      placeholder: "e.g., consensus, facilitation, workshops, iterative"
 
   - type: input
     id: related-entries
     attributes:
       label: Related CollabAtlas Entries (comma-separated IDs)
-      placeholder: "e.g., miro, participatory-design, cscw-framework"
+      description: "IDs of related entries. Browse the catalogue to find IDs (the URL slug is the ID)."
+      placeholder: "e.g., delphi-method, world-cafe, participatory-design"
 
   - type: textarea
     id: additional
