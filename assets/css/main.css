@@ -331,6 +331,10 @@ main {
   backdrop-filter: blur(8px);
 }
 
+.compare-dock[hidden] {
+  display: none;
+}
+
 .compare-dock-close {
   position: absolute;
   top: 0.4rem;
