@@ -264,6 +264,8 @@ def get_checkboxes(sections: dict[str, str], label: str, mapping: dict[str, str]
         m = re.match(r"^\s*-\s*\[([xX])\]\s*(.+)$", line)
         if m:
             human_label = m.group(2).strip()
+            # Strip description suffix from label (e.g., "Healthcare — hospitals..." → "Healthcare")
+            human_label = human_label.split(" — ")[0].strip()
             taxonomy_id = mapping.get(human_label)
             if taxonomy_id:
                 result.append(taxonomy_id)
