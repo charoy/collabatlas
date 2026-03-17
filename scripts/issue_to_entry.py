@@ -479,15 +479,15 @@ def build_common_fields(
         sections, "Collaboration Types (select all that apply)", COLLAB_TYPE_MAP
     )
     if collab_types:
-        data["collaboration_type"] = collab_types
+        data["collaboration-types"] = collab_types
 
     scale = get_checkboxes(sections, "Scale (select all that apply)", SCALE_MAP)
     if scale:
-        data["scale"] = scale
+        data["scales"] = scale
 
     modality = get_checkboxes(sections, "Modality (select all that apply)", MODALITY_MAP)
     if modality:
-        data["modality"] = modality
+        data["modalities"] = modality
 
     maturity = get_dropdown(sections, "Maturity Level", MATURITY_MAP)
     if maturity:
@@ -500,6 +500,22 @@ def build_common_fields(
     data["last_reviewed"] = today
 
     return data
+
+
+PLATFORM_CANONICAL: dict[str, str] = {
+    "windows": "Windows",
+    "macos": "macOS",
+    "linux": "Linux",
+    "android": "Android",
+    "ios": "iOS",
+    "web": "Web",
+    "chromeos": "ChromeOS",
+}
+
+
+def normalize_platform(name: str) -> str:
+    """Normalize platform name to canonical casing (e.g. 'windows' → 'Windows')."""
+    return PLATFORM_CANONICAL.get(name.lower().strip(), name.strip())
 
 
 def add_tool_fields(data: dict[str, Any], sections: dict[str, str]) -> None:
@@ -518,7 +534,7 @@ def add_tool_fields(data: dict[str, Any], sections: dict[str, str]) -> None:
 
     platforms = get_comma_list(sections, "Supported Platforms (comma-separated)")
     if platforms:
-        data["supported_platforms"] = platforms
+        data["supported_platforms"] = [normalize_platform(p) for p in platforms]
 
 
 def add_method_fields(data: dict[str, Any], sections: dict[str, str]) -> None:
@@ -670,7 +686,7 @@ def add_trailing_common_fields(
 
     related = get_comma_list(sections, "Related CollabAtlas Entries (comma-separated IDs)")
     if related:
-        data["related_entries"] = related
+        data["related_entries"] = [title_to_id(r) for r in related]
 
     tags = get_comma_list(sections, "Tags (comma-separated)")
     if tags:
@@ -695,7 +711,7 @@ def build_frontmatter(data: dict[str, Any]) -> str:
     lines.append(f'tagline: "{data.get("tagline", "")}"')
     lines.append(f'data_id: "{data["id"]}"')
 
-    for field in ("domains", "collaboration_type", "scale", "modality"):
+    for field in ("domains", "collaboration-types", "scales", "modalities"):
         value = data.get(field, [])
         if value:
             lines.append(f"{field}: {_flow_list(value)}")

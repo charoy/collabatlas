@@ -2,17 +2,17 @@ id: docs
 type: tool
 title: Docs
 tagline: collaborative editor from the Dinum
-description: Docs is the collaborative editing tools from the french states to edit,
+description: Docs is the collaborative editing tool from the French state to edit,
   share and publish documents easily
 domains:
   - education
   - publishing
-collaboration_type:
+collaboration-types:
   - co-creation
   - distributed
-scale:
+scales:
   - small-team
-modality:
+modalities:
   - remote
 maturity: established
 status: draft
@@ -24,11 +24,11 @@ website_url: https://docs.numerique.gouv.fr/
 license: MIT
 open_source: true
 supported_platforms:
-  - windows
+  - Windows
   - macOS
-  - linux
+  - Linux
 related_entries:
-  - google docs
+  - google-docs
 tags:
   - collaborative-editing
   - editing
