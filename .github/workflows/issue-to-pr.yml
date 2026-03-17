@@ -9,6 +9,10 @@ permissions:
   pull-requests: write
   issues: write
 
+concurrency:
+  group: issue-to-pr-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
 jobs:
   convert:
     if: >
@@ -52,11 +56,14 @@ jobs:
           git commit -m "Add ${ENTRY_TYPE} entry: ${ENTRY_ID}
 
           Auto-generated from issue #${ISSUE_NUMBER}"
-          git push origin "$BRANCH"
+          git push --force-with-lease origin "$BRANCH"
 
-          gh pr create \
-            --title "Add ${ENTRY_TYPE}: ${ENTRY_ID} (from issue #${ISSUE_NUMBER})" \
-            --body "$(cat <<'PREOF'
+          # Only create PR if one doesn't already exist for this branch
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -z "$EXISTING_PR" ]; then
+            gh pr create \
+              --title "Add ${ENTRY_TYPE}: ${ENTRY_ID} (from issue #${ISSUE_NUMBER})" \
+              --body "$(cat <<'PREOF'
           Auto-generated from #${{ github.event.issue.number }} by the issue-to-PR bot.
 
           ## Review checklist
@@ -68,9 +75,12 @@ jobs:
 
           Closes #${{ github.event.issue.number }}
           PREOF
-          )" \
-            --label "auto-generated,review-needed" \
-            --base main
+            )" \
+              --label "auto-generated,review-needed" \
+              --base main
+          else
+            echo "PR #${EXISTING_PR} already exists for branch ${BRANCH}, skipping creation."
+          fi
 
       - name: Comment on issue (success)
         if: steps.generate.outputs.entry_id != ''
