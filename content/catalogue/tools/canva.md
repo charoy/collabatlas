@@ -10,7 +10,8 @@ maturity: "established"
 status: "published"
 ---
 
-Canva is a tool for collaborative work. Graphic design platform enabling teams to create visual content collaboratively with shared brand kits. It is particularly relevant in Arts & Culture, Education and Business.
+
+Canva is a tool for collaborative work. Graphic design platform enabling teams to create visual content collaboratively with shared brand kits. It is particularly relevant in Arts & Culture, Education, Business and Publishing.
 
 Canva supports co-creation and distributed collaboration and is suited for small teams and organizational settings in remote settings.
 

@@ -10,6 +10,7 @@ maturity: "established"
 status: "published"
 ---
 
+
 The Art of Gathering is a resource for collaborative work. Guide to designing purposeful collaborative gatherings that transform how groups come together. It is particularly relevant in Business, Education and Arts & Culture.
 
 The Art of Gathering supports participatory and co-creation collaboration and is suited for small teams and organizational settings in in-person settings.

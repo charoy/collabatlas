@@ -148,7 +148,7 @@ def _build_overview(
         "resources": "resource",
     }.get(subsection, "entry")
 
-    domain_text = humanize_list(domains[:3], DOMAIN_LABELS)
+    domain_text = humanize_list(domains, DOMAIN_LABELS)
 
     if description:
         para = description
@@ -174,7 +174,7 @@ def _build_context(
     parts = []
 
     if collab_types:
-        ct_text = humanize_list(collab_types[:3], COLLAB_LABELS)
+        ct_text = humanize_list(collab_types, COLLAB_LABELS)
         parts.append(f"{title} supports {ct_text} collaboration")
 
     if scales:
@@ -204,7 +204,7 @@ def _build_type_specific(
     maturity_text = {
         "emerging": f"As an emerging {_type_noun(subsection)}, {title} is still developing its evidence base and community adoption.",
         "established": f"{title} is an established {_type_noun(subsection)} with a solid track record of use across multiple contexts.",
-        "well-documented": f"{title} is a well-documented {_type_noun(subsection)} with extensive evidence, guides, and community support.",
+        "well-documented": f"{title} is classified as a well-documented {_type_noun(subsection)}, indicating broad adoption and available documentation.",
     }.get(maturity, "")
 
     if subsection == "tools":
@@ -276,9 +276,13 @@ def _case_study_extra(title: str, data: dict) -> str:
         parts.append(f"from {org}")
     if year:
         parts.append(f"({year})")
-    if parts:
-        return f"This case study {' '.join(parts)} demonstrates real-world application of collaborative approaches."
-    return "This case study demonstrates real-world application of collaborative approaches."
+    if org and year:
+        return f"This case study examines the collaborative practices at {org}, drawing on experiences since {year}."
+    elif org:
+        return f"This case study examines collaborative practices at {org}."
+    elif year:
+        return f"This case study examines collaborative practices documented since {year}."
+    return "This case study examines real-world application of collaborative approaches."
 
 
 def _dataset_extra(title: str, data: dict) -> str:

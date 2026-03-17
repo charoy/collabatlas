@@ -11,6 +11,7 @@ status: "published"
 platform: "zenodo"
 ---
 
+
 Dataset and analyss of the COCCO 2 experiment It is particularly relevant in Education.
 
 COCCO 2 dataset and analyses supports distributed and co-production collaboration and is suited for small teams in remote settings.

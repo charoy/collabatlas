@@ -1059,7 +1059,6 @@ main {
   text-decoration: none;
   color: var(--color-text);
   transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s, background 0.2s;
-  box-shadow: var(--shadow-sm);
 }
 
 .domain-tile:hover {
