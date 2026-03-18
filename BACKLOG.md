@@ -18,6 +18,11 @@ This backlog captures the main remaining work for the site after the first round
 - "Write a Post" button on the blog listing page.
 - Comparison dock dismiss button (close with ×).
 - CodeRabbit automated PR review integration.
+- GitHub Actions validation bot for issue quality feedback.
+- Contributing guide page at `/guides/contributing/` with taxonomy quick reference.
+- Contributor attribution on entry pages (GitHub avatars and links).
+- "Recently Added" feed on the homepage.
+- Open Graph and Twitter Card meta tags for rich link previews.
 
 **Earlier phases:**
 
@@ -35,10 +40,8 @@ This backlog captures the main remaining work for the site after the first round
 ### Still open
 
 - External knowledge sources are only partially integrated.
-- Some documentation still needs contributor-oriented technical details.
 - Issue-to-PR automation requires enabling "Allow GitHub Actions to create PRs" in repo settings.
-- GitHub Actions validation bot for issue quality feedback not yet implemented.
-- Contributing guide page on the site (Hugo page at /contribute/) not yet created.
+- PR #6 (Docs entry) still pending merge.
 
 ---
 
