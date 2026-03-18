@@ -17,6 +17,7 @@
       {{ with $template }}
       <a href="{{ $repo }}/issues/new?template={{ . }}.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">+ Suggest a {{ $sectionName | singularize }}</a>
       {{ end }}
+      <a href="{{ $repo }}/issues/new?template=quick-add.yml" target="_blank" rel="noopener" class="btn btn-primary btn-sm">⚡ Quick Add by URL</a>
     </div>
     {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
   </header>
