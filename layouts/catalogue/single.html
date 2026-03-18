@@ -47,6 +47,7 @@
       <span class="favorite-toggle-icon" aria-hidden="true">☆</span>
       <span class="favorite-toggle-label">Save to favorites</span>
     </button>
+    <a href="{{ .Site.Params.github_repo }}/issues/new?template=update-entry.yml&title={{ printf "[Update] %s" .Title | urlquery }}&entry-id={{ $entryId }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">✏️ Suggest an edit</a>
     {{ if or $merged.website_url $merged.source_url $merged.doi $merged.external_links }}
     {{ with $merged.website_url }}
       <a href="{{ . }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website ↗</a>
