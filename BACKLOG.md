@@ -6,6 +6,21 @@ This backlog captures the main remaining work for the site after the first round
 
 ### Completed recently
 
+**Community contribution infrastructure (March 2026):**
+
+- GitHub Issue Forms for all 6 entry types + blog posts + research articles.
+- Issue templates with guided descriptions and taxonomy help on every field.
+- Automated issue-to-PR pipeline (GitHub Actions) with YAML/Markdown generation.
+- Parser fixes: correct field names, platform casing, related entry slugification.
+- Sveltia CMS at `/admin/` with GitHub OAuth via Cloudflare Workers.
+- "Contribute" section on homepage with cards linking to each issue form.
+- "Suggest a {Type}" buttons on every catalogue section page.
+- "Write a Post" button on the blog listing page.
+- Comparison dock dismiss button (close with ×).
+- CodeRabbit automated PR review integration.
+
+**Earlier phases:**
+
 - Wizard data now comes from live Hugo content and data files.
 - Wizard results can be shared via URL.
 - Wizard results now explain matches more clearly.
@@ -21,6 +36,9 @@ This backlog captures the main remaining work for the site after the first round
 
 - External knowledge sources are only partially integrated.
 - Some documentation still needs contributor-oriented technical details.
+- Issue-to-PR automation requires enabling "Allow GitHub Actions to create PRs" in repo settings.
+- GitHub Actions validation bot for issue quality feedback not yet implemented.
+- Contributing guide page on the site (Hugo page at /contribute/) not yet created.
 
 ---
 
@@ -357,17 +375,71 @@ Tasks:
 
 ---
 
+---
+
+## Priority 8 — Community growth and attractiveness
+
+### 12. Make the site inviting to new contributors
+
+**Goal:** lower the barrier to entry and make contributing feel rewarding.
+
+#### Quick wins (low effort, high impact)
+
+- [ ] Create a `/contribute/` Hugo page with a visual guide (what to contribute, how, what happens after).
+- [ ] Add contributor attribution on entry pages ("Added by @username").
+- [ ] Add a "Contributors" section on the homepage or about page showing avatars and contribution counts.
+- [ ] Add a "Recently added" feed on the homepage (replacing or complementing the static blog section).
+- [ ] Add Open Graph / social media meta tags for rich link previews when sharing entries.
+
+#### Community engagement (medium effort)
+
+- [ ] Add a "Suggest an edit" button on every entry page (links to GitHub issue pre-filled with entry ID).
+- [ ] Create a GitHub Discussions space for questions, feature requests, and community conversation.
+- [ ] Add a monthly changelog or "What's new" blog post template (can be semi-automated from git log).
+- [ ] Implement a GitHub Actions bot that validates new issues and comments with suggestions (e.g., "You selected 0 domains — did you forget?").
+- [ ] Add entry quality badges (completeness score based on filled fields).
+
+#### Content seeding (to reach critical mass)
+
+- [ ] Batch-import entries from curated lists (Awesome lists, CSCW proceedings, etc.).
+- [ ] Add a DOI/URL-based quick-add: paste a URL, auto-extract metadata via OpenAlex/Crossref.
+- [ ] Invite domain experts to curate specific taxonomy sections (e.g., "Healthcare collaboration tools").
+- [ ] Write 3-5 high-quality blog posts that demonstrate the atlas's value (tool comparisons, domain guides).
+
+#### Trust and governance (longer term)
+
+- [ ] Add a review workflow: draft → community review → published (currently draft → published).
+- [ ] Display review status on entry pages (peer-reviewed vs. community-submitted).
+- [ ] Add entry versioning (show edit history via git blame / GitHub API).
+- [ ] Create domain editor roles (trusted contributors who can merge PRs for their domain).
+
+---
+
 ## Nice-to-have
 
 - Add printable or downloadable comparison views.
 - Add multilingual support for the wizard and catalogue UI.
 - Add analytics for anonymous feature usage, if governance permits it.
+- Network graph of related entries.
+- Timeline of recent additions and reviews.
 
-## Suggested implementation order
+---
 
-1. Wizard scoring improvements
-2. Entry comparison
-3. Freshness indicators
-4. Documentation alignment
-5. External metadata enrichment
-6. Visual exploration components
+## Suggested implementation order (updated)
+
+**Done:**
+
+1. ~~Wizard scoring improvements~~
+2. ~~Entry comparison~~
+3. ~~Freshness indicators~~
+4. ~~External metadata enrichment~~
+5. ~~Visual exploration components~~
+6. ~~Community contribution infrastructure (issue forms, CMS, automation)~~
+
+**Next priorities:**
+
+7. Community growth quick wins (contributor attribution, recently-added feed, OG tags)
+8. Documentation alignment (README, contributing guide page)
+9. Content seeding (batch imports, quick-add by URL)
+10. Issue validation bot
+11. Trust and governance (review workflow, domain editors)
