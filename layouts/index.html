@@ -224,6 +224,38 @@
 </section>
 {{ end }}
 
+{{ $recentEntries := first 6 ($allEntries.ByDate.Reverse) }}
+{{ if $recentEntries }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Recently Added</h2>
+    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
+  </div>
+  <div class="home-recent-entries">
+    {{ range $recentEntries }}
+    {{ $subsection := path.Base (path.Dir .File.Path) }}
+    {{ $yamlData := dict }}
+    {{ with .Params.data_id }}
+      {{ $entries := index $.Site.Data "entries" | default dict }}
+      {{ $sectionData := index $entries $subsection | default dict }}
+      {{ $yamlData = index $sectionData . | default dict }}
+    {{ end }}
+    <a href="{{ .RelPermalink }}" class="recent-entry-card">
+      <div class="recent-entry-meta">
+        <span class="badge type-{{ $subsection }}">{{ $subsection | singularize | title }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </div>
+      <strong>{{ .Title }}</strong>
+      {{ with .Params.tagline }}<p>{{ . }}</p>{{ end }}
+      {{ with $yamlData.contributors }}
+      <span class="recent-entry-author">by @{{ index . 0 }}</span>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{ if $posts }}
 <section class="home-section">
   <div class="home-section-header">
