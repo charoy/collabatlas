@@ -1800,6 +1800,38 @@ main {
   color: var(--color-text-muted);
 }
 
+.entry-contributors {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.entry-contributors-label {
+  font-weight: 600;
+}
+
+.contributor-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.contributor-link:hover {
+  color: var(--color-primary);
+}
+
+.contributor-avatar {
+  border-radius: 50%;
+}
+
 .entry-tagline {
   font-size: 1.15rem;
   color: var(--color-text-muted);
