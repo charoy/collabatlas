@@ -1,0 +1,242 @@
+name: New Research Case
+description: Submit a living research case (typically a PhD thesis) documenting collaborative practices, tools, and challenges.
+title: "[Research Case] "
+labels: ["new-entry", "research-case"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: "A concise title for this research case."
+      placeholder: "e.g., Collaborative Book Layout Design"
+    validations:
+      required: true
+
+  - type: input
+    id: tagline
+    attributes:
+      label: Tagline
+      description: "One-sentence summary of the research focus."
+      placeholder: "e.g., Exploring graphic intent communication in publishing workflows"
+    validations:
+      required: true
+
+  - type: input
+    id: researcher-name
+    attributes:
+      label: Researcher Name
+      placeholder: "e.g., Emma-Jade De Moor"
+    validations:
+      required: true
+
+  - type: input
+    id: researcher-role
+    attributes:
+      label: Researcher Role
+      placeholder: "e.g., 1st year PhD Student in HCI and Design"
+    validations:
+      required: true
+
+  - type: textarea
+    id: supervisors
+    attributes:
+      label: Supervisors
+      description: "One supervisor per line."
+      placeholder: |
+        Michel Beaudouin-Lafon
+        Wendy Mackay
+    validations:
+      required: false
+
+  - type: textarea
+    id: studied-domain
+    attributes:
+      label: Studied Domain
+      description: "Describe the domain being studied."
+      placeholder: "e.g., Graphic/Layout Design in physical, digital and multimedia book publishing workflows"
+    validations:
+      required: true
+
+  - type: textarea
+    id: research-methodologies
+    attributes:
+      label: Research / Design Methodologies
+      description: "Describe the research or design methodologies used."
+      placeholder: "e.g., User centered design, story interviews, object-based interviews, corpus analysis"
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed-practices
+    attributes:
+      label: Observed / Supported Practices
+      description: "Describe the practices observed or supported in this domain."
+      placeholder: "e.g., Traditional and alternative (free and/or web-based) book layout practices"
+    validations:
+      required: false
+
+  - type: textarea
+    id: observed-artefacts
+    attributes:
+      label: Observed Artefacts in Use / Designed Artefacts
+      description: "List the tools, artefacts, or technologies observed or designed."
+      placeholder: "e.g., Adobe tools, FLOSS design softwares, web technologies, messaging apps, pads, clouds"
+    validations:
+      required: false
+
+  - type: textarea
+    id: issues-organizational
+    attributes:
+      label: Identified Organizational Issues
+      description: "Describe any organizational issues identified in this context."
+      placeholder: "e.g., Different stakeholders have conflicting goals and struggle to share a common language..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: issues-technical
+    attributes:
+      label: Identified Technical Issues
+      description: "Describe any technical issues identified."
+      placeholder: "e.g., Softwares used by different roles are not interoperable..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: issues-governance
+    attributes:
+      label: Identified Governance Issues
+      description: "Describe any governance issues identified."
+      placeholder: "e.g., Proprietary tools limit who can participate in the workflow..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: issues-policy
+    attributes:
+      label: Identified Policy Issues
+      description: "Describe any policy issues identified."
+      placeholder: "e.g., Data sharing policies conflict with collaboration needs..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: publications
+    attributes:
+      label: Publications
+      description: "One per line, format: Title | URL"
+      placeholder: |
+        My First Paper | https://doi.org/...
+        My Second Paper | https://hal.science/...
+    validations:
+      required: false
+
+  - type: textarea
+    id: datasets
+    attributes:
+      label: Datasets
+      description: "One per line, format: Title | URL"
+      placeholder: |
+        Interview Corpus | https://zenodo.org/...
+    validations:
+      required: false
+
+  - type: textarea
+    id: software
+    attributes:
+      label: Software
+      description: "One per line, format: Title | URL"
+      placeholder: |
+        My Prototype | https://github.com/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: domains
+    attributes:
+      label: Domains
+      description: "Select all relevant domains."
+      multiple: true
+      options:
+        - design
+        - education
+        - software-engineering
+        - business
+        - healthcare
+        - research
+        - government
+        - publishing
+    validations:
+      required: true
+
+  - type: dropdown
+    id: collaboration-types
+    attributes:
+      label: Collaboration Types
+      multiple: true
+      options:
+        - co-design
+        - co-creation
+        - co-writing
+        - co-analysis
+        - distributed
+        - asynchronous
+    validations:
+      required: false
+
+  - type: dropdown
+    id: scales
+    attributes:
+      label: Scales
+      multiple: true
+      options:
+        - individual
+        - pair
+        - small-team
+        - organization
+        - multi-org
+        - community
+    validations:
+      required: false
+
+  - type: dropdown
+    id: modalities
+    attributes:
+      label: Modalities
+      multiple: true
+      options:
+        - in-person
+        - remote
+        - hybrid
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-entries
+    attributes:
+      label: Related Catalogue Entries
+      description: "Names of existing catalogue entries related to this research case, one per line."
+      placeholder: |
+        InDesign
+        Figma
+        participatory design
+    validations:
+      required: false
+
+  - type: textarea
+    id: tags
+    attributes:
+      label: Tags
+      description: "Comma-separated keywords."
+      placeholder: "graphic-design, publishing, layout, interoperability"
+    validations:
+      required: false
+
+  - type: input
+    id: github-username
+    attributes:
+      label: Your GitHub Username
+      description: "For contributor attribution."
+      placeholder: "e.g., octocat"
+    validations:
+      required: false

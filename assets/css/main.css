@@ -3288,3 +3288,186 @@ main {
   color: var(--color-text-muted);
   min-width: 2rem;
 }
+
+/* ── Living Research ── */
+
+.badge.living {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fbbf24;
+}
+
+/* List page */
+.living-research .page-header {
+  margin-bottom: 2rem;
+}
+
+.research-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.research-case-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.research-case-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+}
+.research-case-card h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+}
+.research-case-card h2 a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.research-case-card h2 a:hover {
+  color: var(--color-primary);
+}
+.research-case-card .tagline {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.research-case-researcher {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg-subtle);
+  border-radius: 8px;
+}
+.research-case-researcher .researcher-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.research-case-researcher .researcher-role {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.research-case-domain {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.research-case-issues-summary {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.research-case-issues-summary .issue-icon {
+  font-size: 1.1rem;
+  cursor: default;
+}
+
+/* Single page */
+.research-case {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.researcher-card {
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.researcher-card h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem;
+}
+.researcher-card .researcher-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.researcher-card .researcher-role {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.researcher-card .researcher-supervisors {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0;
+}
+
+.research-context,
+.research-issues,
+.research-outputs {
+  margin-bottom: 2rem;
+}
+.research-context h2,
+.research-issues h2,
+.research-outputs h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.context-block,
+.issue-block,
+.output-block {
+  margin-bottom: 1.25rem;
+}
+.context-block h3,
+.issue-block h3,
+.output-block h3 {
+  font-size: 0.95rem;
+  margin: 0 0 0.35rem;
+}
+.context-block p,
+.issue-block p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.issue-block {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-border-strong);
+  background: var(--color-bg-alt);
+}
+.issue-organizational { border-left-color: #6366f1; }
+.issue-technical { border-left-color: #0891b2; }
+.issue-governance { border-left-color: #d97706; }
+.issue-policy { border-left-color: #059669; }
+
+.output-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.output-block li {
+  margin-bottom: 0.5rem;
+}
+.output-block a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.output-block a:hover {
+  text-decoration: underline;
+}

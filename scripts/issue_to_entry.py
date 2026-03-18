@@ -352,6 +352,83 @@ def add_resource_fields(data: dict[str, Any], sections: dict[str, str]) -> None:
         data["access"] = access
 
 
+def _parse_titled_links(sections: dict[str, str], label: str) -> list[dict[str, str]]:
+    """Parse lines formatted as 'Title | URL' into a list of dicts."""
+    raw = get_text(sections, label) or ""
+    result: list[dict[str, str]] = []
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if "|" in line:
+            parts = line.split("|", 1)
+            result.append({"title": parts[0].strip(), "url": parts[1].strip()})
+        elif line.startswith("http"):
+            result.append({"title": line, "url": line})
+    return result
+
+
+def add_research_case_fields(data: dict[str, Any], sections: dict[str, str]) -> None:
+    """Add research-case-specific fields."""
+    researcher_name = get_text(sections, "Researcher Name")
+    researcher_role = get_text(sections, "Researcher Role")
+    supervisors = get_lines_as_list(sections, "Supervisors")
+
+    researcher: dict[str, Any] = {}
+    if researcher_name:
+        researcher["name"] = researcher_name
+    if researcher_role:
+        researcher["role"] = researcher_role
+    if supervisors:
+        researcher["supervisors"] = supervisors
+    if researcher:
+        data["researcher"] = researcher
+
+    studied_domain = get_text(sections, "Studied Domain")
+    if studied_domain:
+        data["studied_domain"] = studied_domain
+
+    methodologies = get_text(sections, "Research / Design Methodologies")
+    if methodologies:
+        data["research_methodologies"] = methodologies
+
+    practices = get_text(sections, "Observed / Supported Practices")
+    if practices:
+        data["observed_practices"] = practices
+
+    artefacts = get_text(sections, "Observed Artefacts in Use / Designed Artefacts")
+    if artefacts:
+        data["observed_artefacts"] = artefacts
+
+    issues_org = get_text(sections, "Identified Organizational Issues")
+    if issues_org:
+        data["issues_organizational"] = issues_org
+
+    issues_tech = get_text(sections, "Identified Technical Issues")
+    if issues_tech:
+        data["issues_technical"] = issues_tech
+
+    issues_gov = get_text(sections, "Identified Governance Issues")
+    if issues_gov:
+        data["issues_governance"] = issues_gov
+
+    issues_pol = get_text(sections, "Identified Policy Issues")
+    if issues_pol:
+        data["issues_policy"] = issues_pol
+
+    publications = _parse_titled_links(sections, "Publications")
+    if publications:
+        data["publications"] = publications
+
+    datasets = _parse_titled_links(sections, "Datasets")
+    if datasets:
+        data["datasets"] = datasets
+
+    software = _parse_titled_links(sections, "Software")
+    if software:
+        data["software"] = software
+
+
 TYPE_FIELD_HANDLERS: dict[str, Any] = {
     "tool": add_tool_fields,
     "method": add_method_fields,
@@ -359,6 +436,7 @@ TYPE_FIELD_HANDLERS: dict[str, Any] = {
     "case-study": add_case_study_fields,
     "dataset": add_dataset_fields,
     "resource": add_resource_fields,
+    "research-case": add_research_case_fields,
 }
 
 
@@ -394,6 +472,8 @@ def build_frontmatter(data: dict[str, Any]) -> str:
     """Build Hugo-compatible Markdown front matter from the YAML data dict."""
     lines: list[str] = ["---"]
     lines.append(f'title: "{data.get("title", "")}"')
+    if data.get("type") == "research-case":
+        lines.append('type: "research-case"')
     lines.append(f'tagline: "{data.get("tagline", "")}"')
     lines.append(f'data_id: "{data["id"]}"')
 
@@ -437,7 +517,11 @@ def write_yaml_entry(data: dict[str, Any], entry_type: str) -> Path:
 def write_markdown_entry(data: dict[str, Any], entry_type: str) -> Path:
     """Write the Markdown content file and return its path."""
     type_dir = TYPE_DIRS[entry_type]
-    out_dir = CONTENT_DIR / type_dir
+    # Research cases live outside the catalogue at content/research-cases/
+    if entry_type == "research-case":
+        out_dir = ROOT / "content" / "research-cases"
+    else:
+        out_dir = CONTENT_DIR / type_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
     out_path = out_dir / f"{data['id']}.md"

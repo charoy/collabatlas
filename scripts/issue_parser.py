@@ -117,6 +117,7 @@ TYPE_DIRS: dict[str, str] = {
     "case-study": "case-studies",
     "dataset": "datasets",
     "resource": "resources",
+    "research-case": "research-cases",
 }
 
 VALID_TYPES = set(TYPE_DIRS.keys())

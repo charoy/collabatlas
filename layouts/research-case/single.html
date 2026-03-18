@@ -1,0 +1,198 @@
+{{ define "main" }}
+{{ $data := dict }}
+{{ with .Params.data_id }}
+  {{ $id := . }}
+  {{ $entries := index $.Site.Data "entries" | default dict }}
+  {{ $sectionData := index $entries "research-cases" | default dict }}
+  {{ $data = index $sectionData $id | default dict }}
+{{ end }}
+{{ $merged := merge .Params $data }}
+{{ $lastReviewed := $merged.last_reviewed }}
+{{ $freshness := "" }}
+{{ if $lastReviewed }}
+  {{ $reviewedTime := time.AsTime $lastReviewed }}
+  {{ $age := now.Sub $reviewedTime }}
+  {{ if lt $age.Hours (mul 180 24) }}
+    {{ $freshness = "fresh" }}
+  {{ else if gt $age.Hours (mul 365 24) }}
+    {{ $freshness = "stale" }}
+  {{ end }}
+{{ end }}
+{{ $entryId := .Params.data_id | default .File.ContentBaseName }}
+
+<article class="research-case" data-pagefind-body data-entry-id="{{ $entryId }}">
+  <meta data-pagefind-meta="type:research-case" />
+  <meta data-pagefind-filter="type:research-case" />
+
+  {{/* ── Header ── */}}
+  <header class="entry-header">
+    <div class="entry-title-row">
+      <h1>{{ .Title }}</h1>
+      <span class="badge living" title="Living research — updated as the work progresses">Living</span>
+      {{ if eq $freshness "fresh" }}
+        <span class="badge fresh" title="Recently reviewed on {{ $lastReviewed }}">Fresh</span>
+      {{ else if eq $freshness "stale" }}
+        <span class="badge stale" title="Last reviewed on {{ $lastReviewed }}">Needs Review</span>
+      {{ end }}
+    </div>
+    {{ with $merged.tagline }}<p class="entry-tagline">{{ . }}</p>{{ end }}
+  </header>
+
+  {{/* ── Action buttons ── */}}
+  <div class="entry-source-link">
+    <button type="button" class="btn btn-secondary btn-sm favorite-toggle" data-favorite-id="{{ $entryId }}" data-favorite-title="{{ .Title }}" data-favorite-url="{{ .RelPermalink }}" aria-pressed="false">
+      <span class="favorite-toggle-icon" aria-hidden="true">☆</span>
+      <span class="favorite-toggle-label">Save to favorites</span>
+    </button>
+    <a href="{{ .Site.Params.github_repo }}/issues/new?template=update-entry.yml&title={{ printf "[Update] %s" .Title | urlquery }}&entry-id={{ $entryId }}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">✏️ Suggest an edit</a>
+  </div>
+
+  {{/* ── Researcher card ── */}}
+  {{ with $merged.researcher }}
+  <section class="researcher-card">
+    <h2>Researcher</h2>
+    <p class="researcher-name">{{ .name }}</p>
+    {{ with .role }}<p class="researcher-role">{{ . }}</p>{{ end }}
+    {{ with .supervisors }}
+    <p class="researcher-supervisors">
+      <strong>Supervisors:</strong> {{ delimit . ", " }}
+    </p>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{/* ── Research context ── */}}
+  <section class="research-context">
+    <h2>Research Context</h2>
+
+    {{ with $merged.studied_domain }}
+    <div class="context-block">
+      <h3>Studied Domain</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.research_methodologies }}
+    <div class="context-block">
+      <h3>Research Methodologies</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.observed_practices }}
+    <div class="context-block">
+      <h3>Observed Practices</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.observed_artefacts }}
+    <div class="context-block">
+      <h3>Observed Artefacts</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+  </section>
+
+  {{/* ── Identified issues ── */}}
+  {{ if or $merged.issues_organizational $merged.issues_technical $merged.issues_governance $merged.issues_policy }}
+  <section class="research-issues">
+    <h2>Identified Issues</h2>
+
+    {{ with $merged.issues_organizational }}
+    <div class="issue-block issue-organizational">
+      <h3>🏢 Organizational</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.issues_technical }}
+    <div class="issue-block issue-technical">
+      <h3>🔧 Technical</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.issues_governance }}
+    <div class="issue-block issue-governance">
+      <h3>⚖️ Governance</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with $merged.issues_policy }}
+    <div class="issue-block issue-policy">
+      <h3>📜 Policy</h3>
+      <p>{{ . }}</p>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{/* ── Research outputs ── */}}
+  {{ if or $merged.publications $merged.datasets $merged.software }}
+  <section class="research-outputs">
+    <h2>Research Outputs</h2>
+
+    {{ with $merged.publications }}
+    <div class="output-block">
+      <h3>Publications</h3>
+      <ul>
+        {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ with $merged.datasets }}
+    <div class="output-block">
+      <h3>Datasets</h3>
+      <ul>
+        {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{ with $merged.software }}
+    <div class="output-block">
+      <h3>Software</h3>
+      <ul>
+        {{ range . }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+  </section>
+  {{ end }}
+
+  {{/* ── Taxonomy badges (reuse existing partial) ── */}}
+  {{ partial "taxonomy-badges.html" . }}
+
+  {{/* ── Related catalogue entries ── */}}
+  {{ partial "related-entries.html" . }}
+
+  {{/* ── Free-form content from markdown body ── */}}
+  {{ with .Content }}
+  <div class="entry-content">
+    {{ . }}
+  </div>
+  {{ end }}
+
+  {{/* ── Contributors ── */}}
+  {{ with $merged.contributors }}
+  <footer class="entry-contributors">
+    <span class="entry-contributors-label">Contributors:</span>
+    {{ range . }}
+    <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" class="contributor-link">
+      <img src="https://github.com/{{ . }}.png?size=24" alt="" class="contributor-avatar" width="24" height="24" loading="lazy">
+      @{{ . }}
+    </a>
+    {{ end }}
+  </footer>
+  {{ end }}
+</article>
+{{ end }}

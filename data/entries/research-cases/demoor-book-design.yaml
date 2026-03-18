@@ -1,0 +1,79 @@
+id: demoor-book-design
+type: research-case
+title: "Collaborative Book Layout Design"
+tagline: "Exploring graphic intent communication in publishing workflows"
+
+researcher:
+  name: "Emma-Jade De Moor"
+  role: "1st year PhD Student in HCI and Design"
+  supervisors:
+    - "Michel Beaudouin-Lafon"
+    - "Wendy Mackay"
+    - "Lorène Picard"
+
+studied_domain: >-
+  Graphic/Layout Design in physical, digital and multimedia book
+  publishing workflows.
+
+research_methodologies: >-
+  User centered design, story interviews, object-based interviews,
+  corpus analysis, generative theories of interaction.
+
+observed_practices: >-
+  Traditional and alternative (free and/or web-based) book layout
+  practices.
+
+observed_artefacts: >-
+  Adobe tools, FLOSS design softwares, web technologies and code
+  writing tools, communication and coordination tools (messaging apps,
+  pads, clouds).
+
+issues_organizational: >-
+  Publishing professionals have different goals within a project and
+  struggle to share a common language. For example, different views of
+  the layout (as a tool, as a result of the actual state of the
+  project). For book collections, the work is often passed to a second
+  designer who needs to apply the graphical intentions of the first
+  one. It is hard to communicate those intentions with current tools.
+
+issues_technical: >-
+  Different roles within a project require different softwares which
+  are not interoperable. Alternative tools are hard to use without
+  coding skills. Graphic design tools lack support for expliciting
+  graphical intents and keeping them persistent over time.
+
+issues_governance: >-
+  When using InDesign, the proprietary nature of the software makes it
+  hard for other people to interact with the layout, even for
+  proof-reading. With web-based practices, people without coding
+  skills may feel excluded from the project. Graphic designers may
+  feel frustrated when their graphical intents (and possibly their
+  intellectual property) are not respected.
+
+issues_policy: ""
+
+publications: []
+datasets: []
+software: []
+
+domains:
+  - design
+collaboration-types:
+  - co-creation
+  - distributed
+scales:
+  - small-team
+modalities:
+  - hybrid
+related_entries: []
+status: published
+contributors:
+  - emma-jade-demoor
+created: "2026-03-18"
+last_reviewed: "2026-03-18"
+tags:
+  - graphic-design
+  - publishing
+  - layout
+  - book-design
+  - interoperability

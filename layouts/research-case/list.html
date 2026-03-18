@@ -1,0 +1,57 @@
+{{ define "main" }}
+<section class="living-research">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ .Content }}
+
+  <div class="research-case-grid">
+    {{ range .Pages }}
+      {{ $dataId := .Params.data_id | default .File.ContentBaseName }}
+      {{ $yamlData := dict }}
+      {{ $entries := site.Data.entries }}
+      {{ if $entries }}
+        {{ $sectionData := index $entries "research-cases" }}
+        {{ if $sectionData }}
+          {{ $yamlData = index $sectionData $dataId | default dict }}
+        {{ end }}
+      {{ end }}
+      {{ $merged := merge .Params $yamlData }}
+
+      <article class="research-case-card">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ with $merged.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
+
+        {{ with $merged.researcher }}
+        <div class="research-case-researcher">
+          <span class="researcher-name">{{ .name }}</span>
+          {{ with .role }}<span class="researcher-role">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ with $merged.studied_domain }}
+        <p class="research-case-domain">{{ . }}</p>
+        {{ end }}
+
+        <div class="card-meta">
+          <span class="badge living">Living</span>
+          {{ $domains := $merged.domains | default (slice) }}
+          {{ range $domains }}<span class="badge domain">{{ . }}</span>{{ end }}
+        </div>
+
+        {{/* Issue summary icons */}}
+        {{ if or $merged.issues_organizational $merged.issues_technical $merged.issues_governance $merged.issues_policy }}
+        <div class="research-case-issues-summary">
+          {{ with $merged.issues_organizational }}<span class="issue-icon" title="Organizational issues identified">🏢</span>{{ end }}
+          {{ with $merged.issues_technical }}<span class="issue-icon" title="Technical issues identified">🔧</span>{{ end }}
+          {{ with $merged.issues_governance }}<span class="issue-icon" title="Governance issues identified">⚖️</span>{{ end }}
+          {{ with $merged.issues_policy }}<span class="issue-icon" title="Policy issues identified">📜</span>{{ end }}
+        </div>
+        {{ end }}
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

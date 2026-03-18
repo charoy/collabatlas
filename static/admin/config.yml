@@ -466,6 +466,129 @@ collections:
           - { label: Published, value: published }
       - { label: Body, name: body, widget: markdown, required: false }
 
+  - name: research-cases
+    label: Living Research
+    folder: content/research-cases
+    create: true
+    slug: "{{data_id}}"
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+      - { label: Tagline, name: tagline, widget: string, required: true }
+      - { label: Data ID, name: data_id, widget: string, required: true, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers, and hyphens only"] }
+      - { label: Type, name: type, widget: hidden, default: "research-case" }
+      - label: Researcher Name
+        name: researcher_name
+        widget: string
+        required: true
+      - label: Researcher Role
+        name: researcher_role
+        widget: string
+        required: true
+      - label: Supervisors
+        name: supervisors
+        widget: list
+        required: false
+        field: { label: Name, name: name, widget: string }
+      - { label: Studied Domain, name: studied_domain, widget: text, required: true }
+      - { label: Research Methodologies, name: research_methodologies, widget: text, required: true }
+      - { label: Observed Practices, name: observed_practices, widget: text, required: false }
+      - { label: Observed Artefacts, name: observed_artefacts, widget: text, required: false }
+      - { label: "Organizational Issues", name: issues_organizational, widget: text, required: false }
+      - { label: "Technical Issues", name: issues_technical, widget: text, required: false }
+      - { label: "Governance Issues", name: issues_governance, widget: text, required: false }
+      - { label: "Policy Issues", name: issues_policy, widget: text, required: false }
+      - label: Publications
+        name: publications
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: Datasets
+        name: datasets
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: Software
+        name: software
+        widget: list
+        required: false
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: Domains
+        name: domains
+        widget: select
+        multiple: true
+        required: true
+        options:
+          - { label: Healthcare, value: healthcare }
+          - { label: Education, value: education }
+          - { label: Urban Planning, value: urban-planning }
+          - { label: Software Engineering, value: software-engineering }
+          - { label: Design, value: design }
+          - { label: Environmental Science, value: environmental-science }
+          - { label: Social Sciences, value: social-sciences }
+          - { label: Public Policy, value: public-policy }
+          - { label: Business, value: business }
+          - { label: Arts & Culture, value: arts-culture }
+          - { label: Publishing, value: publishing }
+      - label: Collaboration Types
+        name: collaboration-types
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: Co-Design, value: co-design }
+          - { label: Co-Creation, value: co-creation }
+          - { label: Co-Production, value: co-production }
+          - { label: Participatory, value: participatory }
+          - { label: Distributed, value: distributed }
+          - { label: Crowdsourcing, value: crowdsourcing }
+          - { label: Open Source, value: open-source }
+          - { label: Interdisciplinary, value: interdisciplinary }
+          - { label: Transdisciplinary, value: transdisciplinary }
+          - { label: Community-Based, value: community-based }
+      - label: Scales
+        name: scales
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: Pair, value: pair }
+          - { label: Small Team, value: small-team }
+          - { label: Organization, value: organization }
+          - { label: Multi-Organization, value: multi-org }
+          - { label: Community, value: community }
+      - label: Modalities
+        name: modalities
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: In-Person, value: in-person }
+          - { label: Remote, value: remote }
+          - { label: Hybrid, value: hybrid }
+      - label: Related Entries
+        name: related_entries
+        widget: list
+        required: false
+        field: { label: Entry ID, name: id, widget: string }
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+      - label: Status
+        name: status
+        widget: select
+        default: published
+        options:
+          - { label: Draft, value: draft }
+          - { label: Published, value: published }
+      - { label: Body, name: body, widget: markdown, required: false }
+
   - name: resources
     label: Resources
     folder: content/catalogue/resources
