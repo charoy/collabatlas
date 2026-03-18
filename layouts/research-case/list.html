@@ -7,6 +7,10 @@
 
   {{ .Content }}
 
+  <div class="page-actions">
+    <a href="{{ .Site.Params.github_repo }}/issues/new?template=new-research-case.yml" target="_blank" rel="noopener" class="btn btn-primary">+ Add a research case</a>
+  </div>
+
   <div class="research-case-grid">
     {{ range .Pages }}
       {{ $dataId := .Params.data_id | default .File.ContentBaseName }}
