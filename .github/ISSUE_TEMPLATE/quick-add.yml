@@ -1,0 +1,47 @@
+name: "Quick Add by URL"
+description: "Quickly suggest a tool, method, or resource by sharing its URL."
+title: "[Quick Add] "
+labels: ["new-entry", "quick-add", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Quick Add
+
+        Found an interesting tool, method, or resource? Just paste its URL below
+        and we'll take care of the rest. The editorial team will enrich the entry
+        with the full metadata.
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: "The main website or page for this tool/method/resource."
+      placeholder: "https://example.com"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Entry type
+      description: "What kind of entry is this?"
+      options:
+        - tool
+        - method
+        - framework
+        - resource
+        - dataset
+        - case-study
+        - research-case
+    validations:
+      required: true
+
+  - type: textarea
+    id: comment
+    attributes:
+      label: Why is this relevant?
+      description: "A short note about why this belongs in CollabAtlas (optional)."
+      placeholder: "e.g., Great for remote co-design workshops, widely used in HCI research..."
+    validations:
+      required: false

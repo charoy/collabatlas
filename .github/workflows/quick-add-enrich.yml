@@ -1,0 +1,119 @@
+name: Enrich Quick Add issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  enrich:
+    if: contains(github.event.issue.labels.*.name, 'quick-add')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Extract URL from issue body
+        id: extract
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            // The URL field in issue forms renders as: ### URL\n\nhttps://...
+            const urlMatch = body.match(/### URL\s*\n\n(https?:\/\/[^\s]+)/);
+            if (!urlMatch) {
+              core.setFailed('No URL found in issue body');
+              return;
+            }
+            core.setOutput('url', urlMatch[1]);
+
+      - name: Fetch page metadata
+        id: metadata
+        uses: actions/github-script@v7
+        env:
+          TARGET_URL: ${{ steps.extract.outputs.url }}
+        with:
+          script: |
+            const url = process.env.TARGET_URL;
+            let title = '';
+            let description = '';
+
+            try {
+              const response = await fetch(url, {
+                headers: { 'User-Agent': 'CollabAtlas-Bot/1.0' },
+                signal: AbortSignal.timeout(10000),
+              });
+              const html = await response.text();
+
+              // Extract <title>
+              const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+              if (titleMatch) title = titleMatch[1].trim();
+
+              // Extract meta description
+              const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i)
+                || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["']/i);
+              if (descMatch) description = descMatch[1].trim();
+
+              // Try og:description as fallback
+              if (!description) {
+                const ogMatch = html.match(/<meta[^>]*property=["']og:description["'][^>]*content=["']([^"']+)["']/i)
+                  || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:description["']/i);
+                if (ogMatch) description = ogMatch[1].trim();
+              }
+
+              // Try og:title as fallback
+              if (!title) {
+                const ogTitle = html.match(/<meta[^>]*property=["']og:title["'][^>]*content=["']([^"']+)["']/i);
+                if (ogTitle) title = ogTitle[1].trim();
+              }
+            } catch (e) {
+              core.warning(`Could not fetch ${url}: ${e.message}`);
+            }
+
+            core.setOutput('title', title);
+            core.setOutput('description', description);
+
+      - name: Post enrichment comment
+        uses: actions/github-script@v7
+        env:
+          PAGE_TITLE: ${{ steps.metadata.outputs.title }}
+          PAGE_DESC: ${{ steps.metadata.outputs.description }}
+          TARGET_URL: ${{ steps.extract.outputs.url }}
+        with:
+          script: |
+            const url = process.env.TARGET_URL;
+            const title = process.env.PAGE_TITLE;
+            const desc = process.env.PAGE_DESC;
+
+            let comment = `## 🔍 Auto-enrichment from URL\n\n`;
+            comment += `**URL:** ${url}\n`;
+            if (title) comment += `**Page title:** ${title}\n`;
+            if (desc) comment += `**Description:** ${desc}\n`;
+            comment += `\n---\n`;
+            comment += `### Suggested entry draft\n\n`;
+            comment += `\`\`\`yaml\n`;
+            comment += `title: "${title || 'TODO'}"\n`;
+            comment += `tagline: "${desc ? desc.substring(0, 120) : 'TODO'}"\n`;
+            comment += `website_url: "${url}"\n`;
+            comment += `domains: []\n`;
+            comment += `collaboration-types: []\n`;
+            comment += `scales: []\n`;
+            comment += `modalities: []\n`;
+            comment += `tags: []\n`;
+            comment += `\`\`\`\n\n`;
+            comment += `> 💡 An editor can copy this draft into a full entry template to complete the submission.`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
+
+            // Update issue title with the fetched page title
+            if (title) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                title: `[Quick Add] ${title}`
+              });
+            }

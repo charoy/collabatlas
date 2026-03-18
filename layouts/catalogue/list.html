@@ -7,6 +7,10 @@
 
   {{ .Content }}
 
+  <div class="page-actions">
+    <a href="{{ .Site.Params.github_repo }}/issues/new?template=quick-add.yml" target="_blank" rel="noopener" class="btn btn-primary btn-sm">⚡ Quick Add by URL</a>
+  </div>
+
   {{ partial "catalogue-visual-overview.html" . }}
 
   <div class="filters" id="catalogue-filters" aria-label="Filter entries">
