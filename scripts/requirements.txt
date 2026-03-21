@@ -4,3 +4,4 @@ jsonschema>=4.20.0
 bibtexparser>=1.4.0
 rispy>=0.9.0
 pytest>=8.0.0
+anthropic>=0.40.0

@@ -1,0 +1,36 @@
+name: AI Enrich Issue
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  enrich:
+    # Run on new-entry or quick-add issues, skip if already enriched
+    if: |
+      (contains(github.event.issue.labels.*.name, 'new-entry') ||
+       contains(github.event.issue.labels.*.name, 'quick-add')) &&
+      !contains(github.event.issue.labels.*.name, 'ai-enriched')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run AI enrichment
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_LABELS: ${{ join(github.event.issue.labels.*.name, ',') }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/enrich_issue.py
