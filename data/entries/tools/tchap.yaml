@@ -1,0 +1,31 @@
+id: tchap
+type: tool
+title: Tchap
+tagline: communication, messaging
+description: Tchap is a secure messaging platform for collaboration. It is distributed
+  as part of LaSuite
+domains:
+  - education
+  - public-policy
+collaboration-types:
+  - participatory
+  - distributed
+scales:
+  - organization
+  - multi-org
+  - community
+modalities:
+  - remote
+maturity: well-documented
+status: draft
+contributors:
+  - charoy
+created: '2026-03-21'
+last_reviewed: '2026-03-21'
+website_url: https://www.tchap.gouv.fr/
+license: MIT
+open_source: true
+tags:
+  - real time communication
+  - chat
+  - communication
