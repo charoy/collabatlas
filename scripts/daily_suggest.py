@@ -209,91 +209,128 @@ def call_claude(
 
 
 # ---------------------------------------------------------------------------
-# Create GitHub issue
+# Generate entry files (YAML + Markdown)
 # ---------------------------------------------------------------------------
 
 
-def create_issue(category: str, suggestion: dict[str, Any]) -> str:
+def generate_entry_files(category: str, suggestion: dict[str, Any]) -> tuple[str, str, str]:
+    """Generate YAML and Markdown files for the suggestion.
+
+    Returns (entry_id, yaml_path, md_path) relative to ROOT.
+    """
+    from issue_parser import title_to_id
+
+    title = suggestion.get("title", "Unknown")
+    entry_id = title_to_id(title)
+    type_dir = TYPE_DIRS.get(category, category + "s")
+
+    # Build YAML data
+    entry_data: dict[str, Any] = {
+        "id": entry_id,
+        "type": category,
+        "title": title,
+        "tagline": suggestion.get("tagline", ""),
+        "description": suggestion.get("description", ""),
+    }
+
+    for field in ("domains", "collaboration-types", "scales", "modalities"):
+        values = suggestion.get(field, [])
+        if values:
+            entry_data[field] = values
+
+    maturity = suggestion.get("maturity")
+    if maturity:
+        entry_data["maturity"] = maturity
+
+    entry_data["status"] = "published"
+    entry_data["contributors"] = ["collabatlas-bot"]
+    entry_data["created"] = date.today().isoformat()
+    entry_data["last_reviewed"] = date.today().isoformat()
+
+    website = suggestion.get("website_url")
+    if website:
+        entry_data["website_url"] = website
+
+    tags = suggestion.get("tags", [])
+    if tags:
+        entry_data["tags"] = tags
+
+    related = suggestion.get("related_entries", [])
+    if related:
+        entry_data["related_entries"] = related
+
+    # Write YAML
+    yaml_dir = DATA_DIR / type_dir
+    yaml_dir.mkdir(parents=True, exist_ok=True)
+    yaml_path = yaml_dir / f"{entry_id}.yaml"
+    with open(yaml_path, "w", encoding="utf-8") as f:
+        yaml.dump(entry_data, f, default_flow_style=False,
+                  allow_unicode=True, sort_keys=False, width=120)
+
+    # Write Markdown
+    content_dir = ROOT / "content" / "catalogue" / type_dir
+    content_dir.mkdir(parents=True, exist_ok=True)
+    md_path = content_dir / f"{entry_id}.md"
+    md_content = f'---\ntitle: "{title}"\ndata_id: "{entry_id}"\n---\n'
+    with open(md_path, "w", encoding="utf-8") as f:
+        f.write(md_content)
+
+    print(f"  Generated {yaml_path.relative_to(ROOT)}")
+    print(f"  Generated {md_path.relative_to(ROOT)}")
+
+    return entry_id, str(yaml_path.relative_to(ROOT)), str(md_path.relative_to(ROOT))
+
+
+# ---------------------------------------------------------------------------
+# Create GitHub issue (for reference / tracking)
+# ---------------------------------------------------------------------------
+
+
+def create_issue(category: str, suggestion: dict[str, Any], pr_url: str = "") -> str:
     """Create a GitHub issue with the AI suggestion."""
     token = os.environ.get("GITHUB_TOKEN", "")
     repo = os.environ.get("GITHUB_REPOSITORY", "")
     if not token or not repo:
-        print("Error: GITHUB_TOKEN or GITHUB_REPOSITORY not set", file=sys.stderr)
-        sys.exit(1)
+        print("Skipping issue creation: GITHUB_TOKEN or GITHUB_REPOSITORY not set")
+        return ""
 
-    title = suggestion.get("title", "Unknown")
+    title_text = suggestion.get("title", "Unknown")
     tagline = suggestion.get("tagline", "")
     description = suggestion.get("description", "")
-    website = suggestion.get("website_url", "")
-    domains = suggestion.get("domains", [])
-    collab_types = suggestion.get("collaboration-types", [])
-    scales = suggestion.get("scales", [])
-    modalities = suggestion.get("modalities", [])
-    maturity = suggestion.get("maturity", "")
-    tags = suggestion.get("tags", [])
-    related = suggestion.get("related_entries", [])
     justification = suggestion.get("justification", "")
+    cat_label = category if category in ("tool", "resource") else category.replace("-", " ")
 
-    # Build issue body
     body_lines = [
-        f"## 🤖 AI Suggestion: New {category.title().replace('-', ' ')}",
+        f"## AI Suggestion: New {cat_label.title()}",
         "",
-        f"**{title}** — {tagline}",
+        f"**{title_text}** - {tagline}",
         "",
         "### Description",
         "",
         description,
         "",
-    ]
-
-    if website:
-        body_lines.extend(["### Website", "", website, ""])
-
-    body_lines.extend([
-        "### Taxonomy",
-        "",
-        f"- **Domains**: {', '.join(domains)}",
-        f"- **Collaboration types**: {', '.join(collab_types)}",
-        f"- **Scales**: {', '.join(scales)}",
-        f"- **Modalities**: {', '.join(modalities)}",
-        f"- **Maturity**: {maturity}",
-        "",
-    ])
-
-    if tags:
-        body_lines.extend([f"### Tags", "", ", ".join(tags), ""])
-
-    if related:
-        body_lines.extend([
-            "### Related entries",
-            "",
-            ", ".join(f"`{r}`" for r in related),
-            "",
-        ])
-
-    body_lines.extend([
         "### Why add this?",
         "",
         justification,
         "",
-        "---",
+    ]
+
+    if pr_url:
+        body_lines.extend([
+            "---",
+            "",
+            f"A pull request has been created automatically: {pr_url}",
+            "",
+            "**Review the PR and merge if the entry looks good.**",
+        ])
+
+    body_lines.extend([
         "",
-        "### Next steps",
-        "",
-        "- [ ] Verify the information is accurate",
-        "- [ ] Add any missing details",
-        "- [ ] Approve and convert to a full entry",
-        "",
-        "*This suggestion was generated by Claude Sonnet. "
-        "A human maintainer should verify before adding to the atlas.*",
+        "*This suggestion was generated by Claude Sonnet.*",
     ])
 
     body = "\n".join(body_lines)
-
-    # Human-readable category label
-    cat_label = category if category in ("tool", "resource") else category.replace("-", " ")
-
-    issue_title = f"[AI Suggestion] {cat_label.title()}: {title}"
+    issue_title = f"[AI Suggestion] {cat_label.title()}: {title_text}"
 
     url = f"https://api.github.com/repos/{repo}/issues"
     headers = {
@@ -340,7 +377,7 @@ def get_today_category(override: str | None = None) -> str:
 
 
 def main() -> None:
-    """Entry point: determine category, call Claude, create issue."""
+    """Entry point: determine category, call Claude, generate files."""
     override = os.environ.get("CATEGORY_OVERRIDE", "")
     category = get_today_category(override if override else None)
     print(f"Today's category: {category}")
@@ -356,11 +393,27 @@ def main() -> None:
     # Call Claude Sonnet
     print("Calling Claude Sonnet for a suggestion...")
     suggestion = call_claude(category, entries, past_suggestions, taxonomy_context)
-    print(f"Suggested: {suggestion.get('title', '?')}")
+    title = suggestion.get("title", "?")
+    print(f"Suggested: {title}")
 
-    # Create issue
-    create_issue(category, suggestion)
-    print("Done!")
+    # Generate entry files (YAML + MD)
+    entry_id, yaml_path, md_path = generate_entry_files(category, suggestion)
+
+    # Output for GitHub Actions to pick up
+    github_output = os.environ.get("GITHUB_OUTPUT", "")
+    if github_output:
+        with open(github_output, "a") as f:
+            f.write(f"entry_id={entry_id}\n")
+            f.write(f"entry_type={category}\n")
+            f.write(f"entry_title={title}\n")
+
+    # Store suggestion JSON for issue creation step
+    suggestion_path = ROOT / "suggestion.json"
+    with open(suggestion_path, "w", encoding="utf-8") as f:
+        json.dump({"category": category, "suggestion": suggestion}, f,
+                  ensure_ascii=False, indent=2)
+
+    print("Done! Files generated, ready for branch + PR creation.")
 
 
 if __name__ == "__main__":
