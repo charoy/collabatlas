@@ -44,6 +44,50 @@
   <div class="stat"><span class="stat-number">{{ len $resources }}</span><span class="stat-label">Resources</span></div>
 </div>
 
+{{/* Recently Added — sorted by YAML "created" date */}}
+{{ $recentWithDate := slice }}
+{{ range $allEntries }}
+  {{ $subsection := path.Base (path.Dir .File.Path) }}
+  {{ $yamlData := dict }}
+  {{ with .Params.data_id }}
+    {{ $entries := index $.Site.Data "entries" | default dict }}
+    {{ $sectionData := index $entries $subsection | default dict }}
+    {{ $yamlData = index $sectionData . | default dict }}
+  {{ end }}
+  {{ $merged := merge .Params $yamlData }}
+  {{ $created := $merged.created | default "" }}
+  {{ if $created }}
+    {{ $recentWithDate = $recentWithDate | append (dict "page" . "yaml" $yamlData "merged" $merged "created" $created "subsection" $subsection) }}
+  {{ end }}
+{{ end }}
+{{ $recentSorted := sort $recentWithDate "created" "desc" }}
+{{ $recentEntries := first 6 $recentSorted }}
+{{ if $recentEntries }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Recently Added</h2>
+    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
+  </div>
+  <div class="home-recent-entries">
+    {{ range $recentEntries }}
+    {{ $page := .page }}
+    {{ $merged := .merged }}
+    <a href="{{ $page.RelPermalink }}" class="recent-entry-card">
+      <div class="recent-entry-meta">
+        <span class="badge type-{{ .subsection }}">{{ .subsection | singularize | title }}</span>
+        <time datetime="{{ .created }}">{{ .created }}</time>
+      </div>
+      <strong>{{ $page.Title }}</strong>
+      {{ with $merged.tagline }}<p>{{ . }}</p>{{ end }}
+      {{ with $merged.contributors }}
+      <span class="recent-entry-author">by @{{ index . 0 }}</span>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{ $domains := .Site.Data.taxonomies.domains }}
 {{ $articles := .Site.Data.research_articles }}
 
@@ -219,50 +263,6 @@
         <a href="{{ .url }}" target="_blank" rel="noopener" class="article-link-btn">Read →</a>
       </div>
     </article>
-    {{ end }}
-  </div>
-</section>
-{{ end }}
-
-{{/* Build a list of entries with their YAML "created" date for proper sorting */}}
-{{ $recentWithDate := slice }}
-{{ range $allEntries }}
-  {{ $subsection := path.Base (path.Dir .File.Path) }}
-  {{ $yamlData := dict }}
-  {{ with .Params.data_id }}
-    {{ $entries := index $.Site.Data "entries" | default dict }}
-    {{ $sectionData := index $entries $subsection | default dict }}
-    {{ $yamlData = index $sectionData . | default dict }}
-  {{ end }}
-  {{ $merged := merge .Params $yamlData }}
-  {{ $created := $merged.created | default "" }}
-  {{ if $created }}
-    {{ $recentWithDate = $recentWithDate | append (dict "page" . "yaml" $yamlData "merged" $merged "created" $created "subsection" $subsection) }}
-  {{ end }}
-{{ end }}
-{{ $recentSorted := sort $recentWithDate "created" "desc" }}
-{{ $recentEntries := first 6 $recentSorted }}
-{{ if $recentEntries }}
-<section class="home-section">
-  <div class="home-section-header">
-    <h2 class="home-section-title">Recently Added</h2>
-    <a href="{{ $cataloguePage.RelPermalink }}" class="home-section-link">Full catalogue →</a>
-  </div>
-  <div class="home-recent-entries">
-    {{ range $recentEntries }}
-    {{ $page := .page }}
-    {{ $merged := .merged }}
-    <a href="{{ $page.RelPermalink }}" class="recent-entry-card">
-      <div class="recent-entry-meta">
-        <span class="badge type-{{ .subsection }}">{{ .subsection | singularize | title }}</span>
-        <time datetime="{{ .created }}">{{ .created }}</time>
-      </div>
-      <strong>{{ $page.Title }}</strong>
-      {{ with $merged.tagline }}<p>{{ . }}</p>{{ end }}
-      {{ with $merged.contributors }}
-      <span class="recent-entry-author">by @{{ index . 0 }}</span>
-      {{ end }}
-    </a>
     {{ end }}
   </div>
 </section>

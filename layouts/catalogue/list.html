@@ -11,6 +11,47 @@
     <a href="{{ .Site.Params.github_repo }}/issues/new?template=quick-add.yml" target="_blank" rel="noopener" class="btn btn-primary btn-sm">⚡ Quick Add by URL</a>
   </div>
 
+  {{/* Recently Added */}}
+  {{ $allEntries := .RegularPagesRecursive }}
+  {{ $recentWithDate := slice }}
+  {{ range $allEntries }}
+    {{ $subsection := path.Base (path.Dir .File.Path) }}
+    {{ $yamlData := dict }}
+    {{ with .Params.data_id }}
+      {{ $entries := index $.Site.Data "entries" | default dict }}
+      {{ $sectionData := index $entries $subsection | default dict }}
+      {{ $yamlData = index $sectionData . | default dict }}
+    {{ end }}
+    {{ $merged := merge .Params $yamlData }}
+    {{ $created := $merged.created | default "" }}
+    {{ if $created }}
+      {{ $recentWithDate = $recentWithDate | append (dict "page" . "yaml" $yamlData "merged" $merged "created" $created "subsection" $subsection) }}
+    {{ end }}
+  {{ end }}
+  {{ $recentSorted := sort $recentWithDate "created" "desc" }}
+  {{ $recentEntries := first 6 $recentSorted }}
+  {{ if $recentEntries }}
+  <section class="home-section">
+    <div class="home-section-header">
+      <h2 class="home-section-title">Recently Added</h2>
+    </div>
+    <div class="home-recent-entries">
+      {{ range $recentEntries }}
+      {{ $page := .page }}
+      {{ $merged := .merged }}
+      <a href="{{ $page.RelPermalink }}" class="recent-entry-card">
+        <div class="recent-entry-meta">
+          <span class="badge type-{{ .subsection }}">{{ .subsection | singularize | title }}</span>
+          <time datetime="{{ .created }}">{{ .created }}</time>
+        </div>
+        <strong>{{ $page.Title }}</strong>
+        {{ with $merged.tagline }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
   {{ partial "catalogue-visual-overview.html" . }}
 
   <div class="filters" id="catalogue-filters" aria-label="Filter entries">
