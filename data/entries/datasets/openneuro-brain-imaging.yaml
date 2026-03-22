@@ -17,3 +17,8 @@ modalities:
 maturity: established
 status: published
 platform: other
+description: OpenNeuro Brain Imaging is a dataset for collaborative work. Free platform for sharing neuroimaging data to accelerate
+  collaborative brain research. It is particularly relevant in Healthcare and Social Sciences.
+contributors:
+- collabatlas-team
+source_url: https://example.com/openneuro-brain-imaging

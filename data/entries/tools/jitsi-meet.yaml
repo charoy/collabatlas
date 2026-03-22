@@ -17,3 +17,7 @@ modalities:
 - remote
 maturity: established
 status: published
+description: Jitsi Meet is a tool for collaborative work. Open-source video conferencing platform for secure, self-hosted
+  online meetings and collaboration. It is particularly relevant in Software Engineering, Education and Healthcare.
+contributors:
+- collabatlas-team

@@ -18,3 +18,8 @@ modalities:
 maturity: established
 status: published
 platform: other
+description: Humanitarian Data Exchange is a dataset for collaborative work. Open platform for sharing humanitarian data across
+  organizations responding to crises worldwide. It is particularly relevant in Disaster Response, Public Policy and Healthcare.
+contributors:
+- collabatlas-team
+source_url: https://example.com/humanitarian-data-exchange

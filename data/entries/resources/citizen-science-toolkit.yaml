@@ -19,3 +19,9 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
+description: Citizen Science Toolkit is a resource for collaborative work. Step-by-step resources for designing and managing
+  citizen science projects with community volunteers. It is particularly relevant in Citizen Science, Environmental Science
+  and Education.
+contributors:
+- collabatlas-team
+resource_type: tutorial

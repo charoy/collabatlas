@@ -17,3 +17,7 @@ modalities:
 - remote
 maturity: established
 status: published
+description: Zulip is a tool for collaborative work. Topic-based team chat platform designed for organized, asynchronous communication
+  in distributed teams. It is particularly relevant in Software Engineering, Education and Citizen Science.
+contributors:
+- collabatlas-team

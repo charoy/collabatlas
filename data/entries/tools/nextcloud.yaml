@@ -18,3 +18,7 @@ modalities:
 - remote
 maturity: established
 status: published
+description: Nextcloud is a tool for collaborative work. Self-hosted collaboration platform providing file sharing, calendars,
+  and real-time document editing. It is particularly relevant in Software Engineering, Education, Healthcare and Business.
+contributors:
+- collabatlas-team

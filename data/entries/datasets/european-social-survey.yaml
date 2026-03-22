@@ -17,3 +17,9 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
+description: European Social Survey is a dataset for collaborative work. Cross-national survey measuring attitudes, beliefs,
+  and behaviour across 30+ European countries biennially. It is particularly relevant in Social Sciences, Public Policy and
+  Education.
+contributors:
+- collabatlas-team
+source_url: https://example.com/european-social-survey

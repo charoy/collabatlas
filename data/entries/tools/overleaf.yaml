@@ -17,3 +17,7 @@ modalities:
 - remote
 maturity: well-documented
 status: published
+description: Overleaf is a tool for collaborative work. Collaborative LaTeX editor for academic writing with real-time co-authoring
+  and version history. It is particularly relevant in Education, Social Sciences and Publishing.
+contributors:
+- collabatlas-team

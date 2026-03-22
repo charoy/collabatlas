@@ -21,3 +21,7 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
+description: Hackathon is a method for collaborative work. Time-bounded collaborative event where diverse teams rapidly prototype
+  solutions to defined challenges. It is particularly relevant in Software Engineering, Design, Citizen Science and Healthcare.
+contributors:
+- collabatlas-team

@@ -19,3 +19,7 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
+description: QGIS is a tool for collaborative work. Open-source geographic information system for collaborative spatial data
+  analysis and mapping. It is particularly relevant in Environmental Science, Urban Planning, Citizen Science and Agriculture.
+contributors:
+- collabatlas-team

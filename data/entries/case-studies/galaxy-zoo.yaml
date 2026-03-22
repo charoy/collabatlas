@@ -15,3 +15,7 @@ modalities:
 - remote
 maturity: well-documented
 status: published
+description: Galaxy Zoo is a case study for collaborative work. Citizen science project where volunteers classify galaxies
+  from telescope images to advance astronomy research. It is particularly relevant in Citizen Science and Education.
+contributors:
+- collabatlas-team

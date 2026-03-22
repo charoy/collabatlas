@@ -18,3 +18,9 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
+description: Global Biodiversity Information Facility is a dataset for collaborative work. International open data infrastructure
+  providing access to over 2 billion species occurrence records. It is particularly relevant in Environmental Science, Citizen
+  Science and Agriculture.
+contributors:
+- collabatlas-team
+source_url: https://example.com/global-biodiversity-information-facility

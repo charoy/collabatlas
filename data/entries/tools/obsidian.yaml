@@ -17,3 +17,7 @@ modalities:
 - hybrid
 maturity: established
 status: published
+description: Obsidian is a tool for collaborative work. Knowledge management tool using linked markdown files for personal
+  and collaborative note-taking. It is particularly relevant in Education, Social Sciences and Publishing.
+contributors:
+- collabatlas-team

@@ -17,3 +17,9 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
+description: WHO Global Health Observatory is a dataset for collaborative work. Comprehensive health statistics and indicators
+  from 194 countries for collaborative health research. It is particularly relevant in Healthcare, Public Policy and Social
+  Sciences.
+contributors:
+- collabatlas-team
+source_url: https://example.com/who-global-health-observatory

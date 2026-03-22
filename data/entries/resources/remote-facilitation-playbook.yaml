@@ -17,3 +17,8 @@ modalities:
 - remote
 maturity: established
 status: published
+description: Remote Facilitation Playbook is a resource for collaborative work. Techniques and tools for running effective
+  collaborative workshops and meetings in distributed teams. It is particularly relevant in Business, Education and Design.
+contributors:
+- collabatlas-team
+resource_type: tutorial
