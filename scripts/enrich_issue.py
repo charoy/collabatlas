@@ -43,6 +43,7 @@ from issue_parser import (
     get_comma_list,
     get_dropdown,
     get_text,
+    load_all_entries,
     parse_issue_body,
     title_to_id,
 )
@@ -56,27 +57,8 @@ DATA_DIR = ROOT / "data" / "entries"
 
 
 def load_existing_entries() -> list[dict[str, Any]]:
-    """Load all existing YAML entries (id, title, tagline, domains, type)."""
-    entries: list[dict[str, Any]] = []
-    for type_key, type_dir in TYPE_DIRS.items():
-        entry_dir = DATA_DIR / type_dir
-        if not entry_dir.exists():
-            continue
-        for yaml_file in entry_dir.glob("*.yaml"):
-            try:
-                with open(yaml_file, encoding="utf-8") as f:
-                    data = yaml.safe_load(f)
-                if data:
-                    entries.append({
-                        "id": data.get("id", yaml_file.stem),
-                        "title": data.get("title", ""),
-                        "tagline": data.get("tagline", ""),
-                        "domains": data.get("domains", []),
-                        "type": data.get("type", type_key),
-                    })
-            except Exception:
-                continue
-    return entries
+    """Load all existing entries (YAML + Markdown frontmatter)."""
+    return load_all_entries(str(ROOT))
 
 
 def build_taxonomy_context() -> str:

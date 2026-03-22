@@ -372,3 +372,83 @@ def extract_clean_title(issue_title: str) -> str:
     """Remove a ``[New XYZ]`` prefix from the issue title if present."""
     cleaned = re.sub(r"^\[New\s+\w[\w\s-]*\]\s*", "", issue_title, flags=re.IGNORECASE)
     return cleaned.strip()
+
+
+# ---------------------------------------------------------------------------
+# Load all catalogue entries (YAML data files + Markdown frontmatter)
+# ---------------------------------------------------------------------------
+
+
+def load_all_entries(root: str | None = None) -> list[dict[str, Any]]:
+    """Load all entries from both ``data/entries/`` YAML files and
+    ``content/catalogue/`` Markdown frontmatter.
+
+    Returns a deduplicated list of dicts with keys:
+    id, title, tagline, domains, type.
+    """
+    from pathlib import Path as _Path
+    import yaml as _yaml
+
+    base = _Path(root) if root else _Path(__file__).resolve().parent.parent
+    seen_ids: set[str] = set()
+    entries: list[dict[str, Any]] = []
+
+    # 1. YAML data files in data/entries/<type_dir>/*.yaml
+    data_dir = base / "data" / "entries"
+    for type_key, type_dir in TYPE_DIRS.items():
+        entry_dir = data_dir / type_dir
+        if not entry_dir.exists():
+            continue
+        for yaml_file in entry_dir.glob("*.yaml"):
+            try:
+                with open(yaml_file, encoding="utf-8") as f:
+                    data = _yaml.safe_load(f)
+                if not data:
+                    continue
+                eid = data.get("id", yaml_file.stem)
+                if eid in seen_ids:
+                    continue
+                seen_ids.add(eid)
+                entries.append({
+                    "id": eid,
+                    "title": data.get("title", ""),
+                    "tagline": data.get("tagline", ""),
+                    "domains": data.get("domains", []),
+                    "type": data.get("type", type_key),
+                })
+            except Exception:
+                continue
+
+    # 2. Markdown frontmatter in content/catalogue/<type_dir>/*.md
+    content_dir = base / "content" / "catalogue"
+    for type_key, type_dir in TYPE_DIRS.items():
+        section_dir = content_dir / type_dir
+        if not section_dir.exists():
+            continue
+        for md_file in section_dir.glob("*.md"):
+            if md_file.name.startswith("_"):
+                continue  # skip _index.md
+            try:
+                text = md_file.read_text(encoding="utf-8")
+                # Extract YAML frontmatter between --- markers
+                fm_match = re.match(r"^---\s*\n(.+?)\n---", text, re.DOTALL)
+                if not fm_match:
+                    continue
+                fm = _yaml.safe_load(fm_match.group(1))
+                if not fm:
+                    continue
+                eid = fm.get("data_id", md_file.stem)
+                if eid in seen_ids:
+                    continue
+                seen_ids.add(eid)
+                entries.append({
+                    "id": eid,
+                    "title": fm.get("title", ""),
+                    "tagline": fm.get("tagline", ""),
+                    "domains": fm.get("domains", []),
+                    "type": fm.get("type", type_key),
+                })
+            except Exception:
+                continue
+
+    return entries

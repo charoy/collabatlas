@@ -38,6 +38,7 @@ from issue_parser import (
     MODALITY_MAP,
     SCALE_MAP,
     TYPE_DIRS,
+    load_all_entries,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,27 +61,8 @@ CATEGORY_DESCRIPTIONS = {
 
 
 def load_existing_entries() -> list[dict[str, Any]]:
-    """Load all existing entries (id, title, type, domains)."""
-    entries: list[dict[str, Any]] = []
-    for type_key, type_dir in TYPE_DIRS.items():
-        entry_dir = DATA_DIR / type_dir
-        if not entry_dir.exists():
-            continue
-        for yaml_file in entry_dir.glob("*.yaml"):
-            try:
-                with open(yaml_file, encoding="utf-8") as f:
-                    data = yaml.safe_load(f)
-                if data:
-                    entries.append({
-                        "id": data.get("id", yaml_file.stem),
-                        "title": data.get("title", ""),
-                        "type": data.get("type", type_key),
-                        "tagline": data.get("tagline", ""),
-                        "domains": data.get("domains", []),
-                    })
-            except Exception:
-                continue
-    return entries
+    """Load all existing entries (YAML + Markdown frontmatter)."""
+    return load_all_entries(str(ROOT))
 
 
 def load_past_suggestions() -> set[str]:

@@ -36,6 +36,7 @@ from issue_parser import (
     get_comma_list,
     get_text,
     get_total_checkboxes,
+    load_all_entries,
     parse_issue_body,
     title_to_id,
 )
@@ -49,21 +50,8 @@ DATA_DIR = ROOT / "data" / "entries"
 
 
 def load_existing_entries() -> list[dict[str, Any]]:
-    """Load all existing YAML entries for tag/related suggestions."""
-    entries: list[dict[str, Any]] = []
-    for type_dir in TYPE_DIRS.values():
-        entry_dir = DATA_DIR / type_dir
-        if not entry_dir.exists():
-            continue
-        for yaml_file in entry_dir.glob("*.yaml"):
-            try:
-                with open(yaml_file, encoding="utf-8") as f:
-                    data = yaml.safe_load(f)
-                if data:
-                    entries.append(data)
-            except Exception:
-                continue
-    return entries
+    """Load all existing entries (YAML + Markdown frontmatter)."""
+    return load_all_entries(str(ROOT))
 
 
 def collect_existing_tags(entries: list[dict[str, Any]]) -> dict[str, int]:
