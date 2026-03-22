@@ -1,15 +1,7 @@
 ---
 title: "QGIS"
-tagline: "Open-source geographic information system for collaborative spatial data analysis and mapping."
 data_id: "qgis"
-domains: ["environmental-science", "urban-planning", "citizen-science", "agriculture"]
-collaboration-types: ["open-source", "interdisciplinary", "community-based"]
-scales: ["small-team", "community"]
-modalities: ["remote", "hybrid"]
-maturity: "well-documented"
-status: "published"
 ---
-
 
 QGIS is a tool for collaborative work. Open-source geographic information system for collaborative spatial data analysis and mapping. It is particularly relevant in Environmental Science, Urban Planning, Citizen Science and Agriculture.
 

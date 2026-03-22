@@ -1,15 +1,7 @@
 ---
 title: "Cooperative Development Manual"
-tagline: "Practical guide for establishing and governing worker cooperatives with democratic decision-making."
 data_id: "cooperative-development-manual"
-domains: ["business", "agriculture", "manufacturing"]
-collaboration-types: ["co-production", "community-based", "participatory"]
-scales: ["small-team", "organization"]
-modalities: ["in-person", "hybrid"]
-maturity: "established"
-status: "published"
 ---
-
 
 Cooperative Development Manual is a resource for collaborative work. Practical guide for establishing and governing worker cooperatives with democratic decision-making. It is particularly relevant in Business, Agriculture and Manufacturing.
 

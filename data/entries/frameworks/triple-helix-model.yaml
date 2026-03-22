@@ -1,0 +1,19 @@
+id: triple-helix-model
+type: framework
+title: Triple Helix Model
+tagline: Framework describing university-industry-government interactions driving innovation and economic development.
+domains:
+- business
+- public-policy
+- education
+collaboration-types:
+- interdisciplinary
+- transdisciplinary
+- co-production
+scales:
+- multi-org
+- community
+modalities:
+- hybrid
+maturity: well-documented
+status: published

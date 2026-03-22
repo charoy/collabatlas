@@ -1,15 +1,7 @@
 ---
 title: "Barcelona Superblock Program"
-tagline: "Participatory urban redesign transforming city blocks to prioritize pedestrians and community space."
 data_id: "barcelona-superblock-program"
-domains: ["urban-planning", "public-policy", "environmental-science"]
-collaboration-types: ["participatory", "co-design", "community-based"]
-scales: ["organization", "community"]
-modalities: ["in-person", "hybrid"]
-maturity: "established"
-status: "published"
 ---
-
 
 Barcelona Superblock Program is a case study for collaborative work. Participatory urban redesign transforming city blocks to prioritize pedestrians and community space. It is particularly relevant in Urban Planning, Public Policy and Environmental Science.
 

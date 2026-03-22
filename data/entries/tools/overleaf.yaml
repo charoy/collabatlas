@@ -1,0 +1,19 @@
+id: overleaf
+type: tool
+title: Overleaf
+tagline: Collaborative LaTeX editor for academic writing with real-time co-authoring and version history.
+domains:
+- education
+- social-sciences
+- publishing
+collaboration-types:
+- co-creation
+- distributed
+- interdisciplinary
+scales:
+- pair
+- small-team
+modalities:
+- remote
+maturity: well-documented
+status: published

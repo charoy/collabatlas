@@ -1,0 +1,18 @@
+id: stack-overflow-data-dump
+type: dataset
+title: Stack Overflow Data Dump
+tagline: Anonymized dump of all questions, answers, and user interactions from the developer Q&A platform.
+domains:
+- software-engineering
+- education
+collaboration-types:
+- crowdsourcing
+- community-based
+- distributed
+scales:
+- community
+modalities:
+- remote
+maturity: well-documented
+status: published
+platform: other

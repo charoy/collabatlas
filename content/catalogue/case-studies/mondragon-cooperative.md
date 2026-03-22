@@ -1,15 +1,7 @@
 ---
 title: "Mondragon Cooperative"
-tagline: "Worker-owned cooperative federation in Spain demonstrating collaborative governance in business at scale."
 data_id: "mondragon-cooperative"
-domains: ["business", "manufacturing", "education"]
-collaboration-types: ["co-production", "community-based", "participatory"]
-scales: ["organization", "multi-org"]
-modalities: ["in-person", "hybrid"]
-maturity: "well-documented"
-status: "published"
 ---
-
 
 Mondragon Cooperative is a case study for collaborative work. Worker-owned cooperative federation in Spain demonstrating collaborative governance in business at scale. It is particularly relevant in Business, Manufacturing and Education.
 

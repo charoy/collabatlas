@@ -1,15 +1,7 @@
 ---
 title: "Gather Town"
-tagline: "Virtual space platform combining video chat with spatial proximity for informal collaboration."
 data_id: "gather-town"
-domains: ["education", "software-engineering", "arts-culture"]
-collaboration-types: ["distributed", "community-based"]
-scales: ["small-team", "organization"]
-modalities: ["remote"]
-maturity: "emerging"
-status: "published"
 ---
-
 
 Gather Town is a tool for collaborative work. Virtual space platform combining video chat with spatial proximity for informal collaboration. It is particularly relevant in Education, Software Engineering and Arts & Culture.
 

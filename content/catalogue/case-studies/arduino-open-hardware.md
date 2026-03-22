@@ -1,15 +1,7 @@
 ---
 title: "Arduino Open Hardware"
-tagline: "Open-source electronics platform built by a global community of makers, educators, and engineers."
 data_id: "arduino-open-hardware"
-domains: ["design", "education", "manufacturing", "software-engineering"]
-collaboration-types: ["open-source", "co-creation", "community-based"]
-scales: ["community"]
-modalities: ["remote", "hybrid"]
-maturity: "well-documented"
-status: "published"
 ---
-
 
 Arduino Open Hardware is a case study for collaborative work. Open-source electronics platform built by a global community of makers, educators, and engineers. It is particularly relevant in Design, Education, Manufacturing and Software Engineering.
 

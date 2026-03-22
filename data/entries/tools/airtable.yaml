@@ -1,0 +1,18 @@
+id: airtable
+type: tool
+title: Airtable
+tagline: Flexible spreadsheet-database hybrid for organizing research data and collaborative project tracking.
+domains:
+- business
+- social-sciences
+- citizen-science
+collaboration-types:
+- distributed
+- co-production
+scales:
+- small-team
+- organization
+modalities:
+- remote
+maturity: established
+status: published

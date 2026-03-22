@@ -1,0 +1,20 @@
+id: humanitarian-data-exchange
+type: dataset
+title: Humanitarian Data Exchange
+tagline: Open platform for sharing humanitarian data across organizations responding to crises worldwide.
+domains:
+- disaster-response
+- public-policy
+- healthcare
+collaboration-types:
+- distributed
+- open-source
+- community-based
+scales:
+- multi-org
+- community
+modalities:
+- remote
+maturity: established
+status: published
+platform: other

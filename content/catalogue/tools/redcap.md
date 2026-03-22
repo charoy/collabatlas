@@ -1,15 +1,7 @@
 ---
 title: "REDCap"
-tagline: "Secure web application for building and managing online surveys and databases in research studies."
 data_id: "redcap"
-domains: ["healthcare", "social-sciences", "education"]
-collaboration-types: ["interdisciplinary", "distributed"]
-scales: ["small-team", "organization", "multi-org"]
-modalities: ["remote"]
-maturity: "well-documented"
-status: "published"
 ---
-
 
 REDCap is a tool for collaborative work. Secure web application for building and managing online surveys and databases in research studies. It is particularly relevant in Healthcare, Social Sciences and Education.
 

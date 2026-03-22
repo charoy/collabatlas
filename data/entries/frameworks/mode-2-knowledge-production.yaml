@@ -1,0 +1,19 @@
+id: mode-2-knowledge-production
+type: framework
+title: Mode 2 Knowledge Production
+tagline: Framework describing transdisciplinary, application-driven knowledge creation outside traditional academic boundaries.
+domains:
+- social-sciences
+- education
+- public-policy
+collaboration-types:
+- transdisciplinary
+- interdisciplinary
+- co-production
+scales:
+- organization
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published

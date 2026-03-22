@@ -1,0 +1,20 @@
+id: citizen-assembly
+type: method
+title: Citizen Assembly
+tagline: Deliberative democratic method where randomly selected citizens discuss and make policy recommendations.
+domains:
+- public-policy
+- urban-planning
+- environmental-science
+collaboration-types:
+- participatory
+- community-based
+- transdisciplinary
+scales:
+- organization
+- community
+modalities:
+- in-person
+- hybrid
+maturity: established
+status: published

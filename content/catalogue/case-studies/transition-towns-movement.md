@@ -1,15 +1,7 @@
 ---
 title: "Transition Towns Movement"
-tagline: "Grassroots community organizing for local resilience and sustainability in response to climate change."
 data_id: "transition-towns-movement"
-domains: ["environmental-science", "urban-planning", "agriculture"]
-collaboration-types: ["community-based", "participatory", "co-creation"]
-scales: ["community"]
-modalities: ["in-person", "hybrid"]
-maturity: "established"
-status: "published"
 ---
-
 
 Transition Towns Movement is a case study for collaborative work. Grassroots community organizing for local resilience and sustainability in response to climate change. It is particularly relevant in Environmental Science, Urban Planning and Agriculture.
 

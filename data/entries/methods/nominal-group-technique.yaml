@@ -1,0 +1,18 @@
+id: nominal-group-technique
+type: method
+title: Nominal Group Technique
+tagline: Structured decision-making method combining individual idea generation with group ranking and discussion.
+domains:
+- healthcare
+- business
+- education
+collaboration-types:
+- participatory
+- interdisciplinary
+scales:
+- small-team
+modalities:
+- in-person
+- remote
+maturity: well-documented
+status: published

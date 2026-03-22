@@ -1,0 +1,19 @@
+id: fab-lab-network
+type: case-study
+title: Fab Lab Network
+tagline: Global network of community fabrication laboratories enabling local digital manufacturing and collaborative innovation.
+domains:
+- design
+- manufacturing
+- education
+collaboration-types:
+- open-source
+- community-based
+- co-creation
+scales:
+- small-team
+- community
+modalities:
+- in-person
+maturity: established
+status: published

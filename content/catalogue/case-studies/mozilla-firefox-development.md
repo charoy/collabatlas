@@ -1,15 +1,7 @@
 ---
 title: "Mozilla Firefox Development"
-tagline: "Open-source browser development combining paid engineers and global volunteer contributors."
 data_id: "mozilla-firefox-development"
-domains: ["software-engineering"]
-collaboration-types: ["open-source", "distributed", "community-based"]
-scales: ["organization", "community"]
-modalities: ["remote"]
-maturity: "well-documented"
-status: "published"
 ---
-
 
 Mozilla Firefox Development is a case study for collaborative work. Open-source browser development combining paid engineers and global volunteer contributors. It is particularly relevant in Software Engineering.
 

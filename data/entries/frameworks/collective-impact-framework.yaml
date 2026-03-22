@@ -1,0 +1,21 @@
+id: collective-impact-framework
+type: framework
+title: Collective Impact Framework
+tagline: Structured approach for cross-sector collaboration to address complex social problems through shared agenda.
+domains:
+- public-policy
+- healthcare
+- education
+- urban-planning
+collaboration-types:
+- co-production
+- community-based
+- transdisciplinary
+scales:
+- multi-org
+- community
+modalities:
+- in-person
+- hybrid
+maturity: well-documented
+status: published
