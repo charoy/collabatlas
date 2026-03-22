@@ -80,9 +80,10 @@
     {{ end }}
   {{ end }}
 
-  {{ partial "metadata-table.html" . }}
+  {{ $ctx := dict "Params" $merged "Page" . "Site" .Site }}
+  {{ partial "metadata-table.html" $ctx }}
 
-  {{ partial "taxonomy-badges.html" . }}
+  {{ partial "taxonomy-badges.html" $ctx }}
 
   {{ with $merged.when_to_use }}
   <section class="entry-section">
@@ -141,7 +142,8 @@
 
   {{ partial "external-links.html" $merged }}
 
-  {{ partial "related-entries.html" . }}
+  {{ $relCtx := dict "Params" $merged "Page" . "Site" .Site "RegularPages" .Site.RegularPages }}
+  {{ partial "related-entries.html" $relCtx }}
 
   {{ with $merged.contributors }}
   <footer class="entry-contributors">

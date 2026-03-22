@@ -1,4 +1,5 @@
-{{ $relatedRaw := .Site.RegularPages.Related . | first 4 }}
+{{ $page := .Page | default . }}
+{{ $relatedRaw := site.RegularPages.Related $page | first 4 }}
 {{ $manualRelated := slice }}
 {{ with .Params.related_entries }}
   {{ range . }}
