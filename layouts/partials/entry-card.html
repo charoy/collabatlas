@@ -9,7 +9,8 @@
     {{ $yamlData = index $sectionData $dataId | default dict }}
   {{ end }}
 {{ end }}
-{{ $lastReviewed := $yamlData.last_reviewed | default .Params.last_reviewed }}
+{{ $merged := merge .Params $yamlData }}
+{{ $lastReviewed := $merged.last_reviewed }}
 {{ $freshness := "" }}
 {{ if $lastReviewed }}
   {{ $reviewedTime := time.AsTime $lastReviewed }}
@@ -20,12 +21,12 @@
     {{ $freshness = "stale" }}
   {{ end }}
 {{ end }}
-{{ $domains := .Params.domains | default (slice) }}
-{{ $collaborationTypes := index .Params "collaboration-types" | default (slice) }}
-{{ $modalities := .Params.modalities | default (slice) }}
-{{ $scales := .Params.scales | default (slice) }}
-{{ $researchMethods := .Params.research_methods | default (slice) }}
-{{ $metrics := index $yamlData "metrics" | default .Params.metrics }}
+{{ $domains := $merged.domains | default (slice) }}
+{{ $collaborationTypes := index $merged "collaboration-types" | default (slice) }}
+{{ $modalities := $merged.modalities | default (slice) }}
+{{ $scales := $merged.scales | default (slice) }}
+{{ $researchMethods := $merged.research_methods | default (slice) }}
+{{ $metrics := $merged.metrics }}
 {{ $stars := 0 }}
 {{ with $metrics }}{{ $stars = index . "stars" | default 0 }}{{ end }}
 <article
@@ -33,13 +34,13 @@
   data-entry-id="{{ .Params.data_id | default .File.ContentBaseName }}"
   data-type="{{ $type }}"
   data-stars="{{ $stars }}"
-  data-search-text="{{ lower (printf "%s %s %s %s %s %s %s" .Title (.Params.tagline | default "") (delimit $domains " ") (delimit $collaborationTypes " ") (delimit $modalities " ") (delimit $scales " ") (delimit $researchMethods " ")) }}"
+  data-search-text="{{ lower (printf "%s %s %s %s %s %s %s" .Title ($merged.tagline | default "") (delimit $domains " ") (delimit $collaborationTypes " ") (delimit $modalities " ") (delimit $scales " ") (delimit $researchMethods " ")) }}"
   data-domains="{{ delimit $domains "|" }}"
   data-collaboration-types="{{ delimit $collaborationTypes "|" }}"
   data-modalities="{{ delimit $modalities "|" }}"
   data-scales="{{ delimit $scales "|" }}">
   <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-  {{ with .Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
+  {{ with $merged.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
   <div class="card-meta">
     {{ if gt $stars 0 }}
       <span class="badge github-stars" title="GitHub Stars" style="background: #24292e; color: white;">⭐ {{ $stars }}</span>
@@ -49,7 +50,7 @@
     {{ else if eq $freshness "stale" }}
       <span class="badge stale" title="Needs review">Stale</span>
     {{ end }}
-    {{ with .Params.maturity }}<span class="badge maturity-{{ . }}">{{ . }}</span>{{ end }}
+    {{ with $merged.maturity }}<span class="badge maturity-{{ . }}">{{ . }}</span>{{ end }}
     {{ range $domains }}<span class="badge domain">{{ . }}</span>{{ end }}
     {{ range $collaborationTypes }}<span class="badge collaboration-type" hidden>{{ . }}</span>{{ end }}
     {{ range $modalities }}<span class="badge modality" hidden>{{ . }}</span>{{ end }}

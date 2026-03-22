@@ -36,7 +36,7 @@
     {{ with $merged.tagline }}<p class="entry-tagline">{{ . }}</p>{{ end }}
   </header>
 
-  {{ if $merged.description }}
+  {{ if and $merged.description (ne $merged.description ($merged.tagline | default "")) }}
   <div class="entry-description">
     <p>{{ $merged.description }}</p>
   </div>
