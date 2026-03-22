@@ -224,7 +224,24 @@
 </section>
 {{ end }}
 
-{{ $recentEntries := first 6 ($allEntries.ByDate.Reverse) }}
+{{/* Build a list of entries with their YAML "created" date for proper sorting */}}
+{{ $recentWithDate := slice }}
+{{ range $allEntries }}
+  {{ $subsection := path.Base (path.Dir .File.Path) }}
+  {{ $yamlData := dict }}
+  {{ with .Params.data_id }}
+    {{ $entries := index $.Site.Data "entries" | default dict }}
+    {{ $sectionData := index $entries $subsection | default dict }}
+    {{ $yamlData = index $sectionData . | default dict }}
+  {{ end }}
+  {{ $merged := merge .Params $yamlData }}
+  {{ $created := $merged.created | default "" }}
+  {{ if $created }}
+    {{ $recentWithDate = $recentWithDate | append (dict "page" . "yaml" $yamlData "merged" $merged "created" $created "subsection" $subsection) }}
+  {{ end }}
+{{ end }}
+{{ $recentSorted := sort $recentWithDate "created" "desc" }}
+{{ $recentEntries := first 6 $recentSorted }}
 {{ if $recentEntries }}
 <section class="home-section">
   <div class="home-section-header">
@@ -233,21 +250,16 @@
   </div>
   <div class="home-recent-entries">
     {{ range $recentEntries }}
-    {{ $subsection := path.Base (path.Dir .File.Path) }}
-    {{ $yamlData := dict }}
-    {{ with .Params.data_id }}
-      {{ $entries := index $.Site.Data "entries" | default dict }}
-      {{ $sectionData := index $entries $subsection | default dict }}
-      {{ $yamlData = index $sectionData . | default dict }}
-    {{ end }}
-    <a href="{{ .RelPermalink }}" class="recent-entry-card">
+    {{ $page := .page }}
+    {{ $merged := .merged }}
+    <a href="{{ $page.RelPermalink }}" class="recent-entry-card">
       <div class="recent-entry-meta">
-        <span class="badge type-{{ $subsection }}">{{ $subsection | singularize | title }}</span>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <span class="badge type-{{ .subsection }}">{{ .subsection | singularize | title }}</span>
+        <time datetime="{{ .created }}">{{ .created }}</time>
       </div>
-      <strong>{{ .Title }}</strong>
-      {{ with .Params.tagline }}<p>{{ . }}</p>{{ end }}
-      {{ with $yamlData.contributors }}
+      <strong>{{ $page.Title }}</strong>
+      {{ with $merged.tagline }}<p>{{ . }}</p>{{ end }}
+      {{ with $merged.contributors }}
       <span class="recent-entry-author">by @{{ index . 0 }}</span>
       {{ end }}
     </a>
