@@ -1,0 +1,44 @@
+id: microsoft-teams
+type: tool
+title: Microsoft Teams
+tagline: Enterprise collaboration platform integrating chat, video conferencing, file sharing, and productivity tools for
+  teamwork.
+description: Microsoft Teams is a comprehensive collaboration platform that combines persistent chat, video meetings, file
+  storage, and application integration in a unified workspace. It enables teams to collaborate seamlessly across projects
+  with features like shared channels, co-authoring documents, and integrated workflows. Widely adopted in business and education
+  sectors, Teams supports both synchronous and asynchronous collaboration patterns while integrating deeply with Microsoft
+  365 ecosystem and third-party applications.
+domains:
+- business
+- education
+- healthcare
+collaboration-types:
+- distributed
+- interdisciplinary
+- co-creation
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-22'
+last_reviewed: '2026-03-22'
+website_url: https://www.microsoft.com/en-us/microsoft-teams/group-chat-software
+tags:
+- video-conferencing
+- chat
+- file-sharing
+- enterprise
+- real-time-collaboration
+- workflow-integration
+related_entries:
+- slack
+- jitsi-meet
+- google-docs
+- notion
