@@ -2,7 +2,11 @@ name: AI Enrich Issue
 
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened]
+
+concurrency:
+  group: enrich-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
 
 jobs:
   enrich:
