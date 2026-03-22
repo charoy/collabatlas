@@ -187,6 +187,11 @@
         "last_commit": { "type": "string", "format": "date" }
       },
       "description": "Activity metrics from the source repository."
+    },
+    "website_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website or reference URL."
     }
   }
 }

@@ -140,6 +140,11 @@
     "limitations": {
       "type": "string",
       "description": "Known limitations or caveats of the method."
+    },
+    "website_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website or reference URL."
     }
   }
 }

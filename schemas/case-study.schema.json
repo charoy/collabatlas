@@ -154,6 +154,11 @@
       "type": "array",
       "items": { "type": "string" },
       "description": "Core concepts or themes explored in the case study."
+    },
+    "website_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official website or reference URL."
     }
   }
 }
