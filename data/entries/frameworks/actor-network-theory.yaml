@@ -2,64 +2,62 @@ id: actor-network-theory
 type: framework
 title: Actor-Network Theory
 tagline: Framework that treats human and non-human actors symmetrically in analyzing socio-technical networks.
-description: >-
-  Actor-Network Theory (ANT) is a theoretical and methodological framework
-  developed primarily by Bruno Latour, Michel Callon, and John Law that
-  analyzes the relationships between human and non-human entities (actants)
-  within heterogeneous networks. ANT rejects the distinction between the social
-  and the technical, instead treating all actors — whether people, technologies,
-  organizations, or natural phenomena — as equally capable of exerting agency
-  within a network. The framework traces how networks are built, maintained, and
-  transformed through processes of translation, and has been influential in
-  science and technology studies, information systems research, organizational
-  studies, and design.
+description: Actor-Network Theory (ANT) is a theoretical and methodological framework developed primarily by Bruno Latour,
+  Michel Callon, and John Law that analyzes the relationships between human and non-human entities (actants) within heterogeneous
+  networks. ANT rejects the distinction between the social and the technical, instead treating all actors — whether people,
+  technologies, organizations, or natural phenomena — as equally capable of exerting agency within a network. The framework
+  traces how networks are built, maintained, and transformed through processes of translation, and has been influential in
+  science and technology studies, information systems research, organizational studies, and design.
 domains:
-  - social-sciences
-  - software-engineering
-  - design
+- social-sciences
+- software-engineering
+- design
 collaboration-types:
-  - interdisciplinary
-  - transdisciplinary
+- interdisciplinary
+- transdisciplinary
 scales:
-  - organization
-  - multi-org
-  - community
+- organization
+- multi-org
+- community
 modalities:
-  - in-person
-  - remote
-  - hybrid
+- in-person
+- remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - ethnography
-  - case-study
+- ethnography
+- case-study
 key_concepts:
-  - Translation
-  - Actant
-  - Network
-  - Black-boxing
-  - Obligatory passage point
-  - Inscription
+- Translation
+- Actant
+- Network
+- Black-boxing
+- Obligatory passage point
+- Inscription
 seminal_works:
-  - title: "Reassembling the Social"
-    authors: ["Bruno Latour"]
-    year: 2005
-    url: https://global.oup.com/academic/product/9780199256044
-  - title: "Science in Action"
-    authors: ["Bruno Latour"]
-    year: 1987
+- title: Reassembling the Social
+  authors:
+  - Bruno Latour
+  year: 2005
+  url: https://global.oup.com/academic/product/9780199256044
+- title: Science in Action
+  authors:
+  - Bruno Latour
+  year: 1987
 external_links:
-  - type: article
-    url: https://doi.org/10.1111/j.1467-954X.1984.tb00113.x
-    title: "Some Elements of a Sociology of Translation (Callon, 1984)"
+- type: article
+  url: https://doi.org/10.1111/j.1467-954X.1984.tb00113.x
+  title: Some Elements of a Sociology of Translation (Callon, 1984)
 related_entries:
-  - cscw-framework
-  - socio-technical-systems
+- cscw-framework
+- socio-technical-systems
 tags:
-  - sociology-of-science
-  - materiality
-  - symmetry
+- sociology-of-science
+- materiality
+- symmetry
+website_url: https://en.wikipedia.org/wiki/Actor%E2%80%93network_theory

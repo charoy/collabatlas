@@ -16,6 +16,25 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: International 13-year research effort to map the complete human genome through multi-institutional collaboration.
+description: The Human Genome Project was a groundbreaking international scientific collaboration from 1990-2003 that successfully
+  mapped and sequenced the entire human genome. This massive undertaking involved thousands of researchers across 20 institutions
+  in six countries, demonstrating how large-scale distributed collaboration could tackle complex scientific challenges. The
+  project pioneered new models of open data sharing and international scientific cooperation, making all genomic data freely
+  available to researchers worldwide. It serves as a landmark example of how coordinated global collaboration can achieve
+  scientific breakthroughs that would be impossible for any single institution.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Human_Genome_Project
+tags:
+- genomics
+- international-collaboration
+- open-science
+- big-science
+- data-sharing
+- multi-institutional
+related_entries:
+- cern-lhc-collaboration
+- covid-research-collaborations
+- international-space-station
+- open-science-framework
+- foster-open-science-toolkit

@@ -2,55 +2,56 @@ id: grist
 type: tool
 title: Grist
 tagline: A collaborative spreadsheet-database hybrid for structured data and shared workflows.
-description: >-
-  Grist is a relational spreadsheet-database hybrid that combines the familiarity
-  of a grid with the structural integrity of a database. It allows teams to link
-  tables, create drag-and-drop dashboards, and automate workflows using Excel-like
-  functions or full Python formulas. Collaboration is supported through real-time
-  editing and a highly sophisticated permissions system that can restrict access
-  down to specific rows or individual cells, enabling large teams to work within
-  a single source of truth while keeping sensitive data private. Grist is
-  open-source and self-hostable, uses a portable SQLite format to prevent vendor
-  lock-in, and offers an AI assistant to help non-coders generate complex
-  Python-based logic.
+description: Grist is a relational spreadsheet-database hybrid that combines the familiarity of a grid with the structural
+  integrity of a database. It allows teams to link tables, create drag-and-drop dashboards, and automate workflows using Excel-like
+  functions or full Python formulas. Collaboration is supported through real-time editing and a highly sophisticated permissions
+  system that can restrict access down to specific rows or individual cells, enabling large teams to work within a single
+  source of truth while keeping sensitive data private. Grist is open-source and self-hostable, uses a portable SQLite format
+  to prevent vendor lock-in, and offers an AI assistant to help non-coders generate complex Python-based logic.
 domains:
-  - education
-  - urban-planning
-  - software-engineering
-  - social-sciences
-  - public-policy
-  - business
+- education
+- urban-planning
+- software-engineering
+- social-sciences
+- public-policy
+- business
 collaboration-types:
-  - co-production
-  - distributed
-  - open-source
+- co-production
+- distributed
+- open-source
 scales:
-  - small-team
-  - organization
+- small-team
+- organization
 modalities:
-  - remote
+- remote
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2026-03-17"
-last_reviewed: "2026-03-17"
+- collabatlas-team
+created: '2026-03-17'
+last_reviewed: '2026-03-17'
 website_url: https://grist.numerique.gouv.fr/
 license: MIT
 open_source: true
 supported_platforms:
-  - Web
-  - Linux
-  - macOS
-  - Windows
+- Web
+- Linux
+- macOS
+- Windows
 external_links:
-  - type: documentation
-    url: https://grist.numerique.gouv.fr/o/docs/
-    title: Grist Documentation
-  - type: repository
-    url: https://github.com/gristlabs/grist-core
-    title: Grist Core on GitHub
+- type: documentation
+  url: https://grist.numerique.gouv.fr/o/docs/
+  title: Grist Documentation
+- type: repository
+  url: https://github.com/gristlabs/grist-core
+  title: Grist Core on GitHub
 tags:
-  - spreadsheet
-  - collaboration
-  - data
+- spreadsheet
+- collaboration
+- data
+related_entries:
+- airtable
+- google-docs
+- notion
+- jupyter
+- nextcloud

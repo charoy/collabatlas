@@ -18,6 +18,24 @@ modalities:
 - hybrid
 maturity: emerging
 status: published
-description: Extension of Triple Helix adding civil society as fourth actor in innovation ecosystems.
+description: The Quadruple Helix Innovation model extends the Triple Helix framework by incorporating civil society as a fourth
+  key actor alongside academia, industry, and government in innovation ecosystems. This framework emphasizes the crucial role
+  of citizens, NGOs, and community organizations in driving innovation processes and ensuring that technological and social
+  innovations address societal needs. It recognizes that sustainable innovation requires active participation from all sectors
+  of society, not just traditional institutional actors.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Triple_helix_model_of_innovation
+tags:
+- innovation-ecosystems
+- civil-society
+- multi-stakeholder
+- public-participation
+- social-innovation
+- collaborative-governance
+related_entries:
+- triple-helix-model
+- open-innovation
+- responsible-research-and-innovation
+- community-based-participatory-research
+- collective-impact-framework

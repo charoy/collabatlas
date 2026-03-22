@@ -17,6 +17,23 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Framework describing university-industry-government interactions driving innovation and economic development.
+description: The Triple Helix Model is a framework that describes the dynamic relationships and interactions between universities,
+  industry, and government as key drivers of innovation and economic development. This model emphasizes how these three institutional
+  spheres increasingly take on roles traditionally associated with the others, creating hybrid organizations and collaborative
+  networks. It has become influential in understanding knowledge-based economies, technology transfer, and regional innovation
+  systems.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Triple_helix_model_of_innovation
+tags:
+- innovation-systems
+- university-industry
+- knowledge-transfer
+- economic-development
+- institutional-collaboration
+related_entries:
+- quadruple-helix-innovation
+- open-innovation
+- mode-2-knowledge-production
+- responsible-research-and-innovation
+- communities-of-practice

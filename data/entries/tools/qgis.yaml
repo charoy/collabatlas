@@ -19,6 +19,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Open-source geographic information system for collaborative spatial data analysis and mapping.
+description: QGIS (Quantum Geographic Information System) is a free, open-source desktop GIS application that enables teams
+  to collaboratively create, edit, visualize, and analyze geospatial data. It supports multiple data formats and provides
+  extensive tools for map creation, spatial analysis, and data management, making it essential for collaborative projects
+  in environmental monitoring, urban planning, and research. The platform's plugin architecture and interoperability features
+  facilitate knowledge sharing and coordinated spatial analysis across diverse stakeholder groups.
 contributors:
 - collabatlas-team
+website_url: https://qgis.org/
+tags:
+- gis
+- mapping
+- spatial-analysis
+- open-source
+- data-visualization
+- collaborative-mapping
+related_entries:
+- openstreetmap
+- citizen-science-toolkit
+- arduino-open-hardware
+- jupyter
+- github

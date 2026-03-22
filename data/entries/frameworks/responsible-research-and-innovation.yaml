@@ -18,6 +18,25 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: EU framework for inclusive and sustainable research through anticipation, reflexivity, inclusion, and responsiveness.
+description: 'Responsible Research and Innovation (RRI) is a European framework that promotes ethical and sustainable research
+  practices through four key dimensions: anticipation of consequences, reflexivity on assumptions, inclusion of stakeholders,
+  and responsiveness to societal needs. It emphasizes stakeholder engagement throughout the research process to ensure that
+  scientific and technological developments align with societal values and contribute to addressing grand challenges. RRI
+  fosters collaborative approaches between researchers, policymakers, industry, and civil society to create more democratic
+  and accountable innovation processes.'
 contributors:
 - collabatlas-team
+website_url: https://ec.europa.eu/programmes/horizon2020/en/h2020-section/responsible-research-innovation
+tags:
+- responsible-innovation
+- stakeholder-engagement
+- ethical-research
+- anticipatory-governance
+- reflexive-practice
+- inclusive-research
+related_entries:
+- community-based-participatory-research
+- participatory-action-research-framework
+- transdisciplinary-research-primer
+- design-justice-network-principles
+- open-science-framework

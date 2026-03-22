@@ -19,6 +19,25 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Human-centered iterative approach to problem-solving through empathy, ideation, prototyping, and testing.
+description: Design Thinking is a human-centered methodology that emphasizes understanding user needs through empathy, generating
+  creative solutions through ideation, and rapidly testing concepts through prototyping. Originally developed at Stanford's
+  d.school and popularized by IDEO, it provides a structured yet flexible framework for tackling complex problems across diverse
+  domains. The approach fosters collaborative innovation by bringing together multidisciplinary teams to co-create solutions
+  that are desirable, feasible, and viable. Its iterative nature and emphasis on user feedback makes it particularly valuable
+  for developing products, services, and systems that truly meet human needs.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Design_thinking
+tags:
+- human-centered-design
+- innovation
+- prototyping
+- empathy
+- ideation
+- iteration
+related_entries:
+- design-sprint
+- participatory-design
+- communities-of-practice
+- open-innovation
+- agile-methodology

@@ -18,6 +18,24 @@ modalities:
 - in-person
 maturity: established
 status: published
-description: Large-group planning method bringing stakeholders together to create shared vision and action plans.
+description: Future Search is a large-group planning method that brings together diverse stakeholders (60-100+ people) to
+  create shared vision and action plans over 2-3 days. Developed by Marvin Weisbord and Sandra Janoff, it focuses on common
+  ground rather than conflicts, using structured activities to help participants map the past, present, and preferred future.
+  The method emphasizes whole-system thinking and enables organizations, communities, and networks to align around shared
+  goals and concrete next steps.
 contributors:
 - collabatlas-team
+website_url: https://futuresearch.net/
+tags:
+- large-group-planning
+- stakeholder-engagement
+- shared-vision
+- systems-thinking
+- participatory-planning
+- consensus-building
+related_entries:
+- world-cafe
+- open-space-technology
+- appreciative-inquiry
+- citizen-assembly
+- participatory-design

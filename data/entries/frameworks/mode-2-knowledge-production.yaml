@@ -17,6 +17,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Framework describing transdisciplinary, application-driven knowledge creation outside traditional academic boundaries.
+description: Mode 2 Knowledge Production describes a shift from traditional disciplinary research (Mode 1) to transdisciplinary,
+  problem-oriented knowledge creation that occurs in real-world contexts. Characterized by heterogeneous teams, accountability
+  to multiple stakeholders, and quality control through social validation rather than peer review alone. This framework emphasizes
+  collaborative knowledge production that crosses institutional boundaries and directly addresses societal challenges through
+  participatory approaches.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Mode_2
+tags:
+- transdisciplinary-research
+- knowledge-production
+- participatory-research
+- collaborative-science
+- problem-oriented
+- stakeholder-engagement
+related_entries:
+- transdisciplinary-research-primer
+- community-based-participatory-research
+- participatory-action-research-framework
+- responsible-research-and-innovation
+- triple-helix-model

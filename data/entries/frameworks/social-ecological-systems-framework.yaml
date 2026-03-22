@@ -17,6 +17,23 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Analytical framework for understanding interactions between social and ecological systems in governance contexts.
+description: A comprehensive framework developed by Elinor Ostrom and colleagues for analyzing complex interactions between
+  human societies and natural ecosystems. It provides a structured approach to understanding how social institutions, ecological
+  processes, and governance systems interact in contexts like natural resource management, environmental policy, and sustainability
+  initiatives. The framework is particularly valuable for collaborative efforts that span multiple stakeholders and disciplines
+  in addressing environmental challenges.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Social%E2%80%93ecological_system
+tags:
+- environmental-governance
+- sustainability
+- institutional-analysis
+- natural-resources
+- systems-thinking
+related_entries:
+- communities-of-practice
+- collective-impact-framework
+- transdisciplinary-research-primer
+- participatory-action-research-framework
+- socio-technical-systems

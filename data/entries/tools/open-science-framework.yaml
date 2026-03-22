@@ -19,6 +19,25 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Free platform for managing research projects with preregistration, data sharing, and collaboration tools.
+description: Open Science Framework (OSF) is a free, web-based platform developed by the Center for Open Science that supports
+  the entire research lifecycle from study design to publication. It enables researchers to manage projects, collaborate with
+  team members, preregister studies, store and share data, and connect with other research tools through integrations. OSF
+  promotes transparency and reproducibility in research by providing version control, persistent identifiers, and public sharing
+  capabilities. The platform serves as a central hub for open science practices, making research more accessible and collaborative
+  across disciplines.
 contributors:
 - collabatlas-team
+website_url: https://osf.io/
+tags:
+- open-science
+- research-management
+- data-sharing
+- preregistration
+- reproducibility
+- collaboration-platform
+related_entries:
+- github
+- overleaf
+- zotero
+- jupyter
+- covid-research-collaborations

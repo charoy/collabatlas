@@ -16,7 +16,24 @@ modalities:
 - hybrid
 maturity: emerging
 status: published
-description: Methodological guide for visualizing and analyzing networks of collaborative actors and relationships.
+description: A comprehensive methodological guide that provides frameworks and tools for systematically mapping, visualizing,
+  and analyzing complex networks of collaborative actors and their relationships within organizational and social ecosystems.
+  This resource helps researchers, consultants, and organizational leaders understand the structure, dynamics, and influence
+  patterns of collaborative networks to improve coordination and outcomes. The guide combines network analysis techniques
+  with participatory mapping methods to create actionable insights for strengthening collaborative capacity.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+tags:
+- network-mapping
+- ecosystem-analysis
+- collaborative-networks
+- stakeholder-mapping
+- systems-visualization
+- relationship-analysis
+related_entries:
+- actor-network-theory
+- boundary-object-theory
+- communities-of-practice
+- collective-impact-framework
+- participatory-design

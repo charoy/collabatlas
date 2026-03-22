@@ -17,7 +17,26 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Framework describing increasing levels of public impact from informing to empowering in decision-making.
+description: 'The IAP2 Public Participation Spectrum is a foundational framework developed by the International Association
+  for Public Participation that defines five levels of public engagement: inform, consult, involve, collaborate, and empower.
+  Each level represents an increasing degree of public impact on decision-making processes, from one-way information sharing
+  to full citizen control. This spectrum has become the gold standard for designing participatory processes in government,
+  urban planning, and community development, helping organizations choose appropriate engagement methods based on their goals
+  and constraints.'
 contributors:
 - collabatlas-team
 resource_type: article
+website_url: https://www.iap2.org/mpage/Home
+tags:
+- public-participation
+- engagement-framework
+- decision-making
+- civic-participation
+- stakeholder-engagement
+- participatory-planning
+related_entries:
+- citizen-assembly
+- participatory-design
+- community-based-participatory-research
+- facilitators-guide-to-participatory-decision-making
+- oslo-urban-codesign

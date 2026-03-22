@@ -17,6 +17,24 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: DevOps platform with integrated CI/CD, issue tracking, and code review for collaborative software development.
+description: GitLab is a comprehensive DevOps platform that combines source code management, continuous integration/continuous
+  deployment (CI/CD), issue tracking, and code review in a single application. It enables distributed software development
+  teams to collaborate effectively through features like merge requests, project wikis, and integrated project management
+  tools. GitLab supports both cloud-hosted and self-hosted deployments, making it popular among organizations requiring full
+  control over their development infrastructure.
 contributors:
 - collabatlas-team
+website_url: https://gitlab.com
+tags:
+- devops
+- version-control
+- continuous-integration
+- code-review
+- project-management
+- software-development
+related_entries:
+- github
+- agile-methodology
+- open-source-guide
+- jupyter
+- cscw-framework

@@ -17,6 +17,23 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Graphic design platform enabling teams to create visual content collaboratively with shared brand kits.
+description: Canva is a web-based graphic design platform that enables teams to collaborate on visual content creation through
+  shared workspaces and brand kits. Teams can work together in real-time on presentations, social media graphics, documents,
+  and marketing materials while maintaining consistent branding across organizations. The platform democratizes design by
+  providing templates and drag-and-drop tools that allow non-designers to create professional-quality visual content collaboratively.
 contributors:
 - collabatlas-team
+website_url: https://www.canva.com
+tags:
+- graphic-design
+- visual-collaboration
+- team-workspaces
+- brand-management
+- creative-tools
+- real-time-editing
+related_entries:
+- figma
+- google-docs
+- miro
+- notion
+- slack

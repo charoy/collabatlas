@@ -18,7 +18,23 @@ modalities:
 maturity: established
 status: published
 platform: other
-description: Open platform for sharing humanitarian data across organizations responding to crises worldwide.
+description: The Humanitarian Data Exchange (HDX) is UNOCHA's open platform that enables humanitarian organizations to find
+  and share crisis data across emergency responses worldwide. It serves as a central repository where NGOs, UN agencies, governments,
+  and other actors can access standardized datasets on conflicts, natural disasters, population movements, and infrastructure
+  to coordinate more effective humanitarian interventions. The platform facilitates data-driven decision making and reduces
+  duplication of efforts during crisis response by providing a common data sharing infrastructure.
 contributors:
 - collabatlas-team
 source_url: https://example.com/humanitarian-data-exchange
+tags:
+- humanitarian-response
+- crisis-data
+- open-data
+- disaster-coordination
+- emergency-management
+related_entries:
+- openstreetmap
+- covid-research-collaborations
+- who-global-health-observatory
+- collective-impact-framework
+- communities-of-practice

@@ -2,63 +2,57 @@ id: open-space-technology
 type: method
 title: Open Space Technology
 tagline: Self-organizing meeting format where participants create and manage their own agenda.
-description: >-
-  Open Space Technology (OST) is a facilitation method created by Harrison Owen
-  in the mid-1980s for running productive meetings and conferences without a
-  pre-determined agenda. Participants propose topics they are passionate about,
-  post them on a shared marketplace wall, and then self-organize into breakout
-  sessions. The method is governed by four principles and one law (the Law of
-  Two Feet), which encourages participants to move freely to wherever they can
-  learn or contribute the most. OST has been used with groups ranging from five
-  to over two thousand people and is valued for its ability to surface emergent
-  topics and harness participant energy around real issues.
+description: Open Space Technology (OST) is a facilitation method created by Harrison Owen in the mid-1980s for running productive
+  meetings and conferences without a pre-determined agenda. Participants propose topics they are passionate about, post them
+  on a shared marketplace wall, and then self-organize into breakout sessions. The method is governed by four principles and
+  one law (the Law of Two Feet), which encourages participants to move freely to wherever they can learn or contribute the
+  most. OST has been used with groups ranging from five to over two thousand people and is valued for its ability to surface
+  emergent topics and harness participant energy around real issues.
 domains:
-  - business
-  - public-policy
-  - education
+- business
+- public-policy
+- education
 collaboration-types:
-  - participatory
-  - community-based
+- participatory
+- community-based
 scales:
-  - organization
-  - community
+- organization
+- community
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - action-research
-when_to_use: >-
-  Use Open Space Technology when a diverse group of people must address a complex
-  issue with no pre-defined solution, when you want to maximize participant
-  ownership and engagement, or when traditional agendas fail to capture the real
-  concerns of stakeholders. It works best when there is genuine passion and
-  potential conflict around the topic.
-limitations: >-
-  OST requires a willingness from organizers to relinquish control over the
-  agenda, which can be uncomfortable for hierarchical organizations. Outcomes
-  can be unpredictable and may not align with management expectations. The
-  method is less effective when there is a need for highly structured
-  decision-making or when participants lack genuine interest in the topic.
+- action-research
+when_to_use: Use Open Space Technology when a diverse group of people must address a complex issue with no pre-defined solution,
+  when you want to maximize participant ownership and engagement, or when traditional agendas fail to capture the real concerns
+  of stakeholders. It works best when there is genuine passion and potential conflict around the topic.
+limitations: OST requires a willingness from organizers to relinquish control over the agenda, which can be uncomfortable
+  for hierarchical organizations. Outcomes can be unpredictable and may not align with management expectations. The method
+  is less effective when there is a need for highly structured decision-making or when participants lack genuine interest
+  in the topic.
 steps:
-  - "Open Circle: the facilitator welcomes participants, introduces the theme, and explains the principles and the Law of Two Feet."
-  - "Marketplace of Ideas: participants propose session topics and post them on the agenda wall, then negotiate times and spaces."
-  - "Breakout Sessions: self-selected groups meet to discuss their chosen topics, with conveners capturing notes and action items."
-  - "Evening News: at the end of each session round, the whole group reconvenes to share highlights and emerging themes."
-  - "Closing Circle: the group gathers for final reflections, commitments, and next steps."
+- 'Open Circle: the facilitator welcomes participants, introduces the theme, and explains the principles and the Law of Two
+  Feet.'
+- 'Marketplace of Ideas: participants propose session topics and post them on the agenda wall, then negotiate times and spaces.'
+- 'Breakout Sessions: self-selected groups meet to discuss their chosen topics, with conveners capturing notes and action
+  items.'
+- 'Evening News: at the end of each session round, the whole group reconvenes to share highlights and emerging themes.'
+- 'Closing Circle: the group gathers for final reflections, commitments, and next steps.'
 external_links:
-  - type: website
-    url: https://openspaceworld.org/
-    title: "Open Space World"
+- type: website
+  url: https://openspaceworld.org/
+  title: Open Space World
 related_entries:
-  - world-cafe
-  - participatory-design
+- world-cafe
+- participatory-design
 tags:
-  - unconference
-  - self-organization
-  - emergence
+- unconference
+- self-organization
+- emergence
+website_url: https://en.wikipedia.org/wiki/Open_Space_Technology

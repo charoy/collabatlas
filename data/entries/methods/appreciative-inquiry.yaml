@@ -17,6 +17,25 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Strengths-based change methodology that engages stakeholders in discovering and building on organizational assets.
+description: 'Appreciative Inquiry is a strengths-based approach to organizational development and change management that
+  focuses on discovering and amplifying what works well rather than fixing problems. The methodology engages stakeholders
+  in collaborative conversations through four phases: Discover (identifying strengths), Dream (envisioning possibilities),
+  Design (planning initiatives), and Destiny (implementing change). It creates positive momentum for transformation by building
+  on existing organizational assets and collective wisdom, making it particularly effective for fostering collaborative cultures
+  and sustainable change.'
 contributors:
 - collabatlas-team
+website_url: https://www.appreciativeinquiry.case.edu/
+tags:
+- organizational-development
+- change-management
+- strengths-based
+- stakeholder-engagement
+- positive-change
+- collaborative-planning
+related_entries:
+- participatory-action-research-framework
+- future-search
+- world-cafe
+- communities-of-practice
+- theory-of-change

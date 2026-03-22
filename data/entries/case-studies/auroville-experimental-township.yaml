@@ -17,6 +17,23 @@ modalities:
 - in-person
 maturity: established
 status: published
-description: International community in India experimenting with collective governance and sustainable living.
+description: Auroville is an experimental township in Tamil Nadu, India, founded in 1968 as a place where people from around
+  the world live together regardless of nationality, politics, religion, or social status. The community practices consensus-based
+  decision-making through various councils and working groups, making it a living laboratory for collective governance and
+  sustainable living. With over 3,000 residents from 60+ countries, Auroville demonstrates innovative approaches to collaborative
+  urban planning, ecological regeneration, and alternative economic systems.
 contributors:
 - collabatlas-team
+website_url: https://www.auroville.org/
+tags:
+- intentional-community
+- collective-governance
+- sustainable-living
+- consensus-decision-making
+- experimental-township
+related_entries:
+- communities-of-practice
+- participatory-design
+- transition-towns-movement
+- collective-impact-framework
+- social-ecological-systems-framework

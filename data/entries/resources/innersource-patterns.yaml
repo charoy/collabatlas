@@ -16,7 +16,24 @@ modalities:
 - remote
 maturity: emerging
 status: published
-description: Documented patterns for applying open-source collaboration practices within organizational boundaries.
+description: InnerSource Patterns is a community-driven collection of documented best practices for implementing open source
+  collaboration methods within private organizations. These patterns help companies adopt transparent, collaborative development
+  practices while maintaining proprietary boundaries, drawing from successful open source projects like Linux and Apache.
+  The patterns cover everything from governance structures and contribution workflows to cultural transformation and tool
+  selection for internal collaborative development.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://patterns.innersourcecommons.org/
+tags:
+- open-source
+- software-development
+- organizational-culture
+- collaboration-patterns
+- community-governance
+related_entries:
+- open-source-guide
+- linux-kernel-development
+- github
+- communities-of-practice
+- agile-methodology

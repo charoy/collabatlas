@@ -19,6 +19,23 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Participatory monitoring and evaluation method using storytelling to capture and analyze program impact.
+description: Most Significant Change is a participatory monitoring and evaluation approach that collects and analyzes stories
+  of change to understand program impact and outcomes. Participants identify, discuss, and prioritize stories that represent
+  the most significant changes resulting from an intervention or program. This method emphasizes stakeholder involvement in
+  defining what constitutes meaningful change, making it particularly valuable for community-based programs and complex social
+  interventions where traditional metrics may not capture the full scope of impact.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Most_significant_change_technique
+tags:
+- participatory-evaluation
+- storytelling
+- impact-assessment
+- community-engagement
+- qualitative-research
+related_entries:
+- appreciative-inquiry
+- photovoice
+- participatory-action-research-framework
+- community-based-participatory-research
+- focus-groups

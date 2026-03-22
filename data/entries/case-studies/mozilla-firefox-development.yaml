@@ -15,6 +15,24 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Open-source browser development combining paid engineers and global volunteer contributors.
+description: Firefox is Mozilla's open-source web browser developed through a hybrid collaboration model combining paid engineers
+  with thousands of volunteer contributors worldwide. The project demonstrates large-scale distributed software development
+  where corporate employees work alongside community volunteers to build one of the world's most widely used browsers. This
+  collaboration spans multiple time zones, languages, and skill levels, creating a complex ecosystem of coordinated development
+  efforts. Firefox's development model has influenced how many other open-source projects balance commercial interests with
+  community-driven innovation.
 contributors:
 - collabatlas-team
+website_url: https://www.mozilla.org/firefox/
+tags:
+- open-source
+- distributed-development
+- hybrid-collaboration
+- community-driven
+- software-engineering
+related_entries:
+- linux-kernel-development
+- github
+- open-source-guide
+- communities-of-practice
+- cscw-framework

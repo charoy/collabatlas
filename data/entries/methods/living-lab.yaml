@@ -20,6 +20,22 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Open innovation ecosystem operating in real-world settings where users co-create solutions with researchers.
+description: Living Labs are real-world testing and experimentation environments where citizens, researchers, companies, and
+  public authorities work together to develop and validate innovative solutions. They operate as open innovation ecosystems
+  that enable user-driven innovation through co-creation processes in authentic settings. Living Labs bridge the gap between
+  laboratory research and real-world implementation by providing a platform for collaborative experimentation and learning.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Living_lab
+tags:
+- open-innovation
+- co-creation
+- user-driven-innovation
+- real-world-testing
+- collaborative-experimentation
+related_entries:
+- participatory-design
+- open-innovation
+- community-based-participatory-research
+- design-thinking
+- fab-lab-network

@@ -18,6 +18,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Open-source electronics platform built by a global community of makers, educators, and engineers.
+description: Arduino is an open-source electronics platform that enables collaborative hardware and software development through
+  standardized microcontroller boards and an accessible programming environment. The project demonstrates successful community-driven
+  innovation, with thousands of contributors worldwide creating libraries, tutorials, and derivative designs. Arduino's open
+  hardware model has spawned a vast ecosystem of compatible products and educational resources, making electronics prototyping
+  accessible to makers, students, and professionals across diverse fields.
 contributors:
 - collabatlas-team
+website_url: https://www.arduino.cc/
+tags:
+- open-source
+- hardware-design
+- maker-movement
+- community-development
+- educational-technology
+- prototyping
+related_entries:
+- fab-lab-network
+- linux-kernel-development
+- openstreetmap
+- communities-of-practice
+- open-innovation

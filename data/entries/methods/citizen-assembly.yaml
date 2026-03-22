@@ -18,6 +18,24 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Deliberative democratic method where randomly selected citizens discuss and make policy recommendations.
+description: A deliberative democratic method that brings together randomly selected representative groups of citizens to
+  learn about complex policy issues, deliberate together, and develop informed recommendations for policymakers. Citizens'
+  assemblies create structured environments for diverse perspectives to engage in evidence-based dialogue, often lasting several
+  months with expert input and professional facilitation. This method has been successfully used for contentious issues like
+  climate policy, electoral reform, and abortion rights, demonstrating how collaborative deliberation can bridge political
+  divides and generate nuanced policy solutions.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Citizens%27_assembly
+tags:
+- deliberative-democracy
+- participatory-governance
+- policy-making
+- civic-engagement
+- consensus-building
+related_entries:
+- delphi-method
+- future-search
+- world-cafe
+- participatory-design
+- iap2-public-participation-spectrum

@@ -18,7 +18,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Comprehensive reference covering participatory inquiry theory, practice, and applications across disciplines.
+description: The Handbook of Action Research is a comprehensive academic reference work edited by Peter Reason and Hilary
+  Bradbury that covers the theory, methodology, and practice of action research across multiple disciplines. It provides detailed
+  guidance on participatory inquiry approaches where researchers collaborate with participants to create knowledge while addressing
+  real-world problems. The handbook is essential reading for scholars and practitioners working in community-based research,
+  organizational development, and social change initiatives.
 contributors:
 - collabatlas-team
 resource_type: book
+website_url: https://en.wikipedia.org/wiki/The_Handbook_of_Action_Research
+tags:
+- action-research
+- participatory-inquiry
+- methodology
+- social-change
+- community-research
+related_entries:
+- action-research
+- participatory-action-research-framework
+- community-based-participatory-research
+- appreciative-inquiry
+- photovoice

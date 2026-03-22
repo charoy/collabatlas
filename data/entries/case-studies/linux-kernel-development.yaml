@@ -2,57 +2,52 @@ id: linux-kernel-development
 type: case-study
 title: Linux Kernel Development
 tagline: The world's most successful open-source collaborative software project, with thousands of contributors across organizations.
-description: >-
-  The Linux kernel is the most widely deployed operating system kernel in the world,
-  powering servers, mobile devices, embedded systems, and supercomputers. Its
-  development model — distributed, open-source, and meritocratic — has been
-  extensively studied as a paradigm for large-scale collaborative software
-  engineering. The project coordinates thousands of contributors from hundreds of
-  organizations through a patch-based workflow, mailing list discussions, and a
-  hierarchical maintainer structure. It demonstrates how trust, technical norms,
-  and tooling (Git) enable massive distributed collaboration without central control.
+description: The Linux kernel is the most widely deployed operating system kernel in the world, powering servers, mobile devices,
+  embedded systems, and supercomputers. Its development model — distributed, open-source, and meritocratic — has been extensively
+  studied as a paradigm for large-scale collaborative software engineering. The project coordinates thousands of contributors
+  from hundreds of organizations through a patch-based workflow, mailing list discussions, and a hierarchical maintainer structure.
+  It demonstrates how trust, technical norms, and tooling (Git) enable massive distributed collaboration without central control.
 domains:
-  - software-engineering
+- software-engineering
 collaboration-types:
-  - open-source
-  - distributed
-  - crowdsourcing
+- open-source
+- distributed
+- crowdsourcing
 scales:
-  - community
-  - multi-org
+- community
+- multi-org
 modalities:
-  - remote
+- remote
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - case-study
-  - ethnography
-  - mixed-methods
+- case-study
+- ethnography
+- mixed-methods
 organization: Linux Foundation
 year: 1991
-outcomes: >-
-  Linux has become the dominant operating system kernel globally. The development
-  model has influenced open-source governance practices across thousands of projects
-  and inspired research on distributed collaboration, meritocracy, and the economics
-  of open-source software production.
+outcomes: Linux has become the dominant operating system kernel globally. The development model has influenced open-source
+  governance practices across thousands of projects and inspired research on distributed collaboration, meritocracy, and the
+  economics of open-source software production.
 tools_used:
-  - jupyter
+- jupyter
 related_entries:
-  - cscw-framework
-  - open-innovation
+- cscw-framework
+- open-innovation
 external_links:
-  - type: website
-    url: https://www.kernel.org
-    title: The Linux Kernel Archives
-  - type: article
-    url: https://doi.org/10.1145/1134285.1134316
-    title: "The Linux Kernel Development Process (Kroah-Hartman, 2006)"
+- type: website
+  url: https://www.kernel.org
+  title: The Linux Kernel Archives
+- type: article
+  url: https://doi.org/10.1145/1134285.1134316
+  title: The Linux Kernel Development Process (Kroah-Hartman, 2006)
 tags:
-  - open-source
-  - distributed-development
-  - governance
-  - software-engineering
+- open-source
+- distributed-development
+- governance
+- software-engineering
+website_url: https://kernel.org/

@@ -2,35 +2,40 @@ id: visio
 type: tool
 title: Visio
 tagline: Simple and secure visioconferences from the Dinum
-description: >-
-  Visio est la solution de visioconférence souveraine de l’État, pour échanger en
-  toute confiance : fiable, sécurisée, ouverte et hébergée en France.
+description: 'Visio est la solution de visioconférence souveraine de l’État, pour échanger en toute confiance : fiable, sécurisée,
+  ouverte et hébergée en France.
 
 
-  https://github.com/suitenumerique/meet
+  https://github.com/suitenumerique/meet'
 domains:
-  - healthcare
-  - education
+- healthcare
+- education
 collaboration-types:
-  - co-design
-  - distributed
-  - community-based
+- co-design
+- distributed
+- community-based
 scales:
-  - pair
-  - small-team
-  - organization
-  - multi-org
+- pair
+- small-team
+- organization
+- multi-org
 modalities:
-  - remote
+- remote
 maturity: established
 status: draft
 contributors:
-  - charoy
+- charoy
 created: '2026-03-17'
 last_reviewed: '2026-03-17'
 website_url: https://visio.numerique.gouv.fr/
 license: MIT
 open_source: true
 tags:
-  - visual-collaboration
-  - visioconferencing
+- visual-collaboration
+- visioconferencing
+related_entries:
+- jitsi-meet
+- tchap
+- discord
+- slack
+- gather-town

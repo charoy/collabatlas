@@ -17,6 +17,22 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Open-source real-time collaborative text editor for synchronous group writing and note-taking.
+description: Etherpad is an open-source web-based collaborative text editor that enables multiple users to simultaneously
+  edit documents in real-time. It provides live synchronization with color-coded contributions from different authors, making
+  it ideal for group note-taking, brainstorming sessions, and collaborative writing. The tool maintains a complete revision
+  history and supports plugins for extended functionality, making it popular in educational settings and open-source communities.
 contributors:
 - collabatlas-team
+website_url: https://etherpad.org/
+tags:
+- real-time-editing
+- collaborative-writing
+- open-source
+- synchronous-collaboration
+- document-sharing
+related_entries:
+- google-docs
+- overleaf
+- cscw-framework
+- jupyter
+- nextcloud

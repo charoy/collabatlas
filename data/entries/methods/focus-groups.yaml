@@ -18,6 +18,22 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Facilitated group discussions to gather qualitative insights on attitudes, perceptions, and experiences.
+description: Focus groups are structured discussions with selected participants to explore attitudes, perceptions, and experiences
+  on specific topics through guided conversation. They provide rich qualitative insights by capturing diverse viewpoints and
+  group dynamics in a controlled setting. Widely used in market research, product development, and social research, focus
+  groups help organizations understand user needs and stakeholder perspectives before making decisions.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Focus_group
+tags:
+- qualitative-research
+- group-discussion
+- stakeholder-engagement
+- user-research
+- facilitated-session
+related_entries:
+- design-thinking
+- participatory-design
+- delphi-method
+- nominal-group-technique
+- world-cafe

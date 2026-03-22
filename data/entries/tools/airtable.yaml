@@ -16,6 +16,24 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Flexible spreadsheet-database hybrid for organizing research data and collaborative project tracking.
+description: Airtable is a cloud-based platform that combines the simplicity of a spreadsheet with the power of a relational
+  database, enabling teams to organize, track, and collaborate on projects with customizable views and workflows. Its intuitive
+  interface allows users to create structured databases for research data, project management, and collaborative workflows
+  without requiring technical database knowledge. The platform supports real-time collaboration, with features like comments,
+  attachments, and automated workflows that make it particularly valuable for interdisciplinary research teams and community-based
+  projects.
 contributors:
 - collabatlas-team
+website_url: https://airtable.com
+tags:
+- database
+- project-management
+- real-time-collaboration
+- data-organization
+- workflow-automation
+related_entries:
+- notion
+- google-docs
+- trello
+- redcap
+- github

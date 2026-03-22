@@ -16,7 +16,24 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: Anonymized dump of all questions, answers, and user interactions from the developer Q&A platform.
+description: A comprehensive anonymized dataset containing all public content from Stack Overflow, including questions, answers,
+  comments, votes, and user interactions from the world's largest programming Q&A community. This dataset provides unprecedented
+  insights into collaborative knowledge sharing patterns, peer learning dynamics, and collective problem-solving behaviors
+  among software developers. It serves as a valuable resource for researchers studying online communities, knowledge management,
+  and computer-supported collaborative work in technical domains.
 contributors:
 - collabatlas-team
 source_url: https://example.com/stack-overflow-data-dump
+tags:
+- developer-community
+- knowledge-sharing
+- q-and-a
+- peer-learning
+- technical-collaboration
+- online-community
+related_entries:
+- stack-overflow-survey
+- github-archive
+- cscw-framework
+- communities-of-practice
+- arxiv-dataset

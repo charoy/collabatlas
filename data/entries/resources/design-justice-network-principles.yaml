@@ -19,7 +19,25 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Community-generated principles centering marginalized communities in collaborative design processes.
+description: The Design Justice Network Principles are a set of ten community-generated principles that center equity and
+  liberation in design processes, emphasizing the voices and leadership of those most impacted by design decisions. These
+  principles guide collaborative design work to be more inclusive, accountable, and focused on dismantling systemic oppression
+  rather than perpetuating it. They provide a framework for designers, researchers, and community organizers to approach collaborative
+  work in ways that redistribute power and prioritize community self-determination.
 contributors:
 - collabatlas-team
 resource_type: article
+website_url: https://designjustice.org/read-the-principles
+tags:
+- design-justice
+- participatory-design
+- community-centered
+- equity-framework
+- social-justice
+- inclusive-design
+related_entries:
+- participatory-design
+- community-based-participatory-research
+- participatory-action-research-framework
+- design-thinking
+- responsible-research-and-innovation

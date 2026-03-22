@@ -1,59 +1,55 @@
 id: covid-research-collaborations
 type: case-study
-title: "COVID-19 Open Science Collaborations"
-tagline: Unprecedented global scientific collaboration during the pandemic, with rapid open data sharing, preprint publishing, and distributed research teams.
-description: >-
-  The COVID-19 pandemic triggered an extraordinary mobilization of the global scientific
-  community, resulting in unprecedented levels of open collaboration across disciplines,
-  institutions, and national borders. Researchers rapidly adopted preprint servers for
-  immediate dissemination, shared genomic sequences through platforms like GISAID, and
-  formed distributed teams to tackle urgent questions about the virus. Major funding
-  bodies including the WHO, NIH, and Wellcome Trust coordinated to remove barriers to
-  data sharing and accelerate research outputs. This period reshaped norms around open
-  science, demonstrating how crisis-driven collaboration can dramatically compress
-  timelines for scientific discovery and translational outcomes.
+title: COVID-19 Open Science Collaborations
+tagline: Unprecedented global scientific collaboration during the pandemic, with rapid open data sharing, preprint publishing,
+  and distributed research teams.
+description: The COVID-19 pandemic triggered an extraordinary mobilization of the global scientific community, resulting in
+  unprecedented levels of open collaboration across disciplines, institutions, and national borders. Researchers rapidly adopted
+  preprint servers for immediate dissemination, shared genomic sequences through platforms like GISAID, and formed distributed
+  teams to tackle urgent questions about the virus. Major funding bodies including the WHO, NIH, and Wellcome Trust coordinated
+  to remove barriers to data sharing and accelerate research outputs. This period reshaped norms around open science, demonstrating
+  how crisis-driven collaboration can dramatically compress timelines for scientific discovery and translational outcomes.
 domains:
-  - healthcare
-  - social-sciences
-  - public-policy
+- healthcare
+- social-sciences
+- public-policy
 collaboration-types:
-  - interdisciplinary
-  - transdisciplinary
-  - distributed
-  - open-source
+- interdisciplinary
+- transdisciplinary
+- distributed
+- open-source
 scales:
-  - multi-org
-  - community
+- multi-org
+- community
 modalities:
-  - remote
+- remote
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - case-study
-organization: "Multiple (WHO, NIH, Wellcome Trust, etc.)"
+- case-study
+organization: Multiple (WHO, NIH, Wellcome Trust, etc.)
 year: 2020
-outcomes: >-
-  Accelerated vaccine development from years to months, establishment of open-access
-  preprint norms in biomedical research, and creation of shared datasets like GISAID
-  for genomic surveillance.
+outcomes: Accelerated vaccine development from years to months, establishment of open-access preprint norms in biomedical
+  research, and creation of shared datasets like GISAID for genomic surveillance.
 methods_used:
-  - action-research
+- action-research
 tools_used:
-  - github
-  - slack
+- github
+- slack
 related_entries:
-  - cscw-framework
-  - open-innovation
+- cscw-framework
+- open-innovation
 external_links:
-  - type: website
-    url: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov
-    title: WHO COVID-19 Research
+- type: website
+  url: https://www.who.int/emergencies/diseases/novel-coronavirus-2019/global-research-on-novel-coronavirus-2019-ncov
+  title: WHO COVID-19 Research
 tags:
-  - pandemic-response
-  - open-science
-  - preprints
-  - vaccine-development
+- pandemic-response
+- open-science
+- preprints
+- vaccine-development
+website_url: https://en.wikipedia.org/wiki/COVID-19_pandemic_and_open_science

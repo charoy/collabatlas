@@ -19,6 +19,23 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Structured approach for cross-sector collaboration to address complex social problems through shared agenda.
+description: 'The Collective Impact Framework is a structured approach developed by FSG that brings together organizations
+  from different sectors to tackle complex social problems that cannot be solved by any single organization alone. It requires
+  five key conditions: a common agenda, shared measurement systems, mutually reinforcing activities, continuous communication,
+  and backbone support organizations. This framework has been widely adopted in initiatives addressing education reform, public
+  health challenges, environmental issues, and community development projects worldwide.'
 contributors:
 - collabatlas-team
+website_url: https://www.fsg.org/what-is-collective-impact/
+tags:
+- cross-sector-collaboration
+- social-impact
+- systems-change
+- community-development
+- shared-measurement
+related_entries:
+- communities-of-practice
+- social-ecological-systems-framework
+- theory-of-change
+- participatory-action-research-framework
+- boundary-object-theory

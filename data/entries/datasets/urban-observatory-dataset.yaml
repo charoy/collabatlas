@@ -16,7 +16,24 @@ modalities:
 maturity: emerging
 status: published
 platform: other
-description: Comparative data from cities worldwide enabling analysis of urban development and governance patterns.
+description: The Urban Observatory Dataset is a comprehensive collection of comparative data from cities worldwide, providing
+  standardized metrics on urban development patterns, governance structures, and environmental indicators. Maintained by the
+  Newcastle Urban Observatory and partner institutions, it enables researchers, policymakers, and urban planners to analyze
+  cross-city trends and evidence-based policy making. The dataset supports collaborative urban research by providing a shared
+  foundation for comparative studies and knowledge exchange between cities facing similar challenges.
 contributors:
 - collabatlas-team
 source_url: https://example.com/urban-observatory-dataset
+tags:
+- urban-data
+- comparative-analysis
+- city-governance
+- environmental-monitoring
+- policy-research
+- open-data
+related_entries:
+- barcelona-superblock-program
+- medellin-urban-innovation
+- oslo-urban-codesign
+- participatory-design
+- social-ecological-systems-framework

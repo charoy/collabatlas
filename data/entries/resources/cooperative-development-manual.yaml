@@ -18,7 +18,25 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Practical guide for establishing and governing worker cooperatives with democratic decision-making.
+description: A comprehensive resource that provides practical guidance for establishing, organizing, and governing worker
+  cooperatives based on democratic principles and shared ownership. The manual covers legal frameworks, governance structures,
+  financial planning, and decision-making processes essential for successful cooperative enterprises. It serves as a foundational
+  tool for communities and organizations seeking to implement collaborative economic models that prioritize worker participation
+  and collective ownership over traditional hierarchical business structures.
 contributors:
 - collabatlas-team
 resource_type: book
+website_url: https://en.wikipedia.org/wiki/Worker_cooperative
+tags:
+- worker-cooperatives
+- democratic-governance
+- shared-ownership
+- collective-decision-making
+- economic-democracy
+- organizational-development
+related_entries:
+- mondragon-cooperative
+- participatory-design
+- communities-of-practice
+- collective-impact-framework
+- facilitators-guide-to-participatory-decision-making

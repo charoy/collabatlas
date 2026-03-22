@@ -2,52 +2,46 @@ id: design-sprint
 type: method
 title: Design Sprint
 tagline: A five-day structured process for answering critical business questions through design, prototyping, and testing.
-description: >-
-  The Design Sprint is a time-constrained, five-phase process developed at Google
-  Ventures that uses design thinking to reduce the risk when bringing a new product,
-  service, or feature to market. The sprint compresses months of work into a single
-  week by moving quickly from problem definition to prototype to user testing. Each
-  day has a specific focus: Map, Sketch, Decide, Prototype, and Test. Design Sprints
-  are widely used in product teams, startups, and innovation labs.
+description: 'The Design Sprint is a time-constrained, five-phase process developed at Google Ventures that uses design thinking
+  to reduce the risk when bringing a new product, service, or feature to market. The sprint compresses months of work into
+  a single week by moving quickly from problem definition to prototype to user testing. Each day has a specific focus: Map,
+  Sketch, Decide, Prototype, and Test. Design Sprints are widely used in product teams, startups, and innovation labs.'
 domains:
-  - software-engineering
-  - design
-  - business
+- software-engineering
+- design
+- business
 collaboration-types:
-  - co-design
-  - co-creation
+- co-design
+- co-creation
 scales:
-  - small-team
+- small-team
 modalities:
-  - in-person
-  - hybrid
-  - remote
+- in-person
+- hybrid
+- remote
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - design-science
-  - experimental
-when_to_use: >-
-  Use a Design Sprint when a team faces a high-stakes decision with significant
-  uncertainty, when a new product or feature needs rapid validation, or when
-  stakeholder alignment is needed before committing to a development path.
-limitations: >-
-  The five-day format can feel rushed and may not allow sufficient depth for
-  complex problems. Sprint outcomes depend heavily on participant diversity and
-  facilitation quality. Remote sprints require careful tool selection.
+- design-science
+- experimental
+when_to_use: Use a Design Sprint when a team faces a high-stakes decision with significant uncertainty, when a new product
+  or feature needs rapid validation, or when stakeholder alignment is needed before committing to a development path.
+limitations: The five-day format can feel rushed and may not allow sufficient depth for complex problems. Sprint outcomes
+  depend heavily on participant diversity and facilitation quality. Remote sprints require careful tool selection.
 external_links:
-  - type: book
-    url: https://www.thesprintbook.com
-    title: "Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days (Knapp et al.)"
+- type: book
+  url: https://www.thesprintbook.com
+  title: 'Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days (Knapp et al.)'
 related_entries:
-  - miro
-  - participatory-design
+- miro
+- participatory-design
 tags:
-  - design-thinking
-  - rapid-prototyping
-  - product-development
-  - facilitation
+- design-thinking
+- rapid-prototyping
+- product-development
+- facilitation
+website_url: https://designsprintkit.withgoogle.com/

@@ -17,7 +17,22 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: Cross-national survey measuring attitudes, beliefs, and behaviour across 30+ European countries biennially.
+description: The European Social Survey (ESS) is a cross-national survey conducted every two years across 30+ European countries,
+  measuring citizens' attitudes, beliefs, and behaviors on political, social, and moral issues. It provides high-quality comparative
+  data essential for understanding European societies and informing evidence-based policy making. The survey's rigorous methodology
+  and open data access make it a cornerstone resource for collaborative research in social sciences, enabling researchers
+  across institutions and countries to conduct comparative studies on social cohesion, democracy, and cultural values.
 contributors:
 - collabatlas-team
 source_url: https://example.com/european-social-survey
+tags:
+- cross-national-survey
+- social-attitudes
+- comparative-research
+- european-studies
+- open-data
+related_entries:
+- who-global-health-observatory
+- community-based-participatory-research
+- social-ecological-systems-framework
+- responsible-research-and-innovation

@@ -18,6 +18,23 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Self-hosted collaboration platform providing file sharing, calendars, and real-time document editing.
+description: Nextcloud is an open-source, self-hosted collaboration platform that enables organizations to maintain control
+  over their data while providing comprehensive collaborative tools. It offers file sharing, synchronization, calendar management,
+  contact management, and real-time document editing capabilities similar to commercial cloud services. The platform emphasizes
+  privacy and data sovereignty, making it particularly valuable for organizations in regulated industries or those with strict
+  data governance requirements.
 contributors:
 - collabatlas-team
+website_url: https://nextcloud.com/
+tags:
+- self-hosted
+- file-sharing
+- document-collaboration
+- open-source
+- data-privacy
+related_entries:
+- google-docs
+- overleaf
+- open-science-framework
+- etherpad
+- gitlab

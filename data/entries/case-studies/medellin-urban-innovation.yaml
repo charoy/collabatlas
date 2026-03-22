@@ -17,6 +17,24 @@ modalities:
 - in-person
 maturity: well-documented
 status: published
-description: Participatory transformation of a violence-affected city through inclusive infrastructure and social programs.
+description: Medellín's urban transformation represents one of the most successful examples of participatory urban planning
+  in Latin America, where the city overcame extreme violence through inclusive infrastructure projects and community-led social
+  programs. The initiative demonstrates how collaborative governance, citizen participation, and strategic urban interventions
+  like cable cars, library parks, and green corridors can revitalize marginalized communities. This case exemplifies how cities
+  can use participatory design methods to address complex social challenges while building local capacity and social cohesion.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Urban_transformation_of_Medell%C3%ADn
+tags:
+- participatory-planning
+- urban-transformation
+- community-development
+- social-innovation
+- inclusive-infrastructure
+- citizen-participation
+related_entries:
+- barcelona-superblock-program
+- oslo-urban-codesign
+- participatory-design
+- community-based-participatory-research
+- collective-impact-framework

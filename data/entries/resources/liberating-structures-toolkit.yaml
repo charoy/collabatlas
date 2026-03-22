@@ -18,7 +18,23 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Collection of 33 facilitation microstructures for engaging everyone in shaping group decisions.
+description: Liberating Structures is a collection of 33 simple facilitation methods designed to include and unleash everyone
+  in group interactions. These microstructures replace conventional meeting formats with engaging alternatives that distribute
+  participation more equitably and generate better outcomes. The toolkit provides practical facilitation patterns that can
+  be combined to design more inclusive and productive collaborative sessions across various organizational contexts.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://www.liberatingstructures.com/
+tags:
+- facilitation
+- group-dynamics
+- participatory-methods
+- meeting-design
+- inclusive-collaboration
+related_entries:
+- facilitators-guide-to-participatory-decision-making
+- open-space-technology
+- world-cafe
+- appreciative-inquiry
+- design-thinking

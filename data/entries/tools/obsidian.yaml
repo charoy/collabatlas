@@ -17,6 +17,24 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Knowledge management tool using linked markdown files for personal and collaborative note-taking.
+description: Obsidian is a powerful knowledge management application that creates a network of interconnected notes using
+  markdown files and bidirectional linking. It enables users to build personal knowledge graphs where ideas, concepts, and
+  information are visually connected, making it valuable for research, writing, and collaborative knowledge work. The tool
+  supports real-time collaboration, plugin extensions, and graph visualization to help teams and individuals organize complex
+  information relationships.
 contributors:
 - collabatlas-team
+website_url: https://obsidian.md
+tags:
+- knowledge-management
+- note-taking
+- markdown
+- graph-visualization
+- personal-knowledge
+- collaborative-writing
+related_entries:
+- notion
+- zotero
+- overleaf
+- jupyter
+- communities-of-practice

@@ -17,6 +17,24 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Open-source video conferencing platform for secure, self-hosted online meetings and collaboration.
+description: Jitsi Meet is an open-source video conferencing platform that enables secure, privacy-focused online meetings
+  without requiring user registration or software installation. It can be self-hosted by organizations, providing full control
+  over data and infrastructure while supporting features like screen sharing, recording, and real-time collaboration. The
+  platform has become particularly valuable for distributed teams, educational institutions, and healthcare organizations
+  that prioritize security and data sovereignty in their collaborative communications.
 contributors:
 - collabatlas-team
+website_url: https://meet.jit.si/
+tags:
+- video-conferencing
+- open-source
+- self-hosted
+- privacy
+- real-time-collaboration
+- distributed-teams
+related_entries:
+- discord
+- slack
+- gather-town
+- nextcloud
+- cscw-framework

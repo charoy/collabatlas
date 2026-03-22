@@ -2,7 +2,10 @@ id: cocco-2-dataset-and-analyses
 type: dataset
 title: COCCO 2 dataset and analyses
 tagline: Dataset and analyss of the COCCO 2 experiment
-description: Dataset and analyss of the COCCO 2 experiment
+description: The COCCO 2 dataset contains data and analyses from a collaborative learning experiment studying computer-supported
+  cooperative work in educational settings. This dataset provides insights into how students collaborate in digital environments
+  and the factors that influence successful group learning outcomes. It serves as a valuable resource for researchers studying
+  collaborative learning patterns and the effectiveness of different cooperative work strategies in educational contexts.
 source_url: https://zenodo.org/records/16522610
 format: CSV, CSV, CSV, RMD
 size: 774.3 KB across 4 files
@@ -10,7 +13,13 @@ license: cc-by-4.0
 platform: zenodo
 platform_id: 10.5281/zenodo.16522610
 doi: 10.5281/zenodo.16522610
-tags: []
+tags:
+- collaborative-learning
+- educational-research
+- cscw-data
+- group-dynamics
+- cooperative-work
+- learning-analytics
 external_links:
 - type: doi
   url: https://doi.org/10.5281/zenodo.16522610
@@ -38,3 +47,9 @@ contributors:
 status: published
 research_methods:
 - experimental
+related_entries:
+- cscw-framework
+- cscw-proceedings-corpus
+- communities-of-practice
+- collaborative-learning
+- participatory-design

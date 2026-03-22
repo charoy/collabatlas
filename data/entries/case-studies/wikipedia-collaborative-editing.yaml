@@ -2,58 +2,53 @@ id: wikipedia-collaborative-editing
 type: case-study
 title: Wikipedia Collaborative Editing Model
 tagline: How millions of volunteers collaboratively build and maintain the world's largest encyclopedia.
-description: >-
-  Wikipedia represents one of the most studied cases of large-scale collaborative
-  knowledge production. Since its founding in 2001, over 60 million articles have
-  been created across hundreds of language editions by a global community of
-  volunteer editors. The case illustrates mechanisms for distributed coordination,
-  quality control through peer review, conflict resolution via talk pages and
-  arbitration, and governance through community-established policies. Research on
-  Wikipedia has contributed to understanding of crowdsourcing dynamics, knowledge
-  commons governance, and the conditions under which open collaboration produces
-  reliable outputs.
+description: Wikipedia represents one of the most studied cases of large-scale collaborative knowledge production. Since its
+  founding in 2001, over 60 million articles have been created across hundreds of language editions by a global community
+  of volunteer editors. The case illustrates mechanisms for distributed coordination, quality control through peer review,
+  conflict resolution via talk pages and arbitration, and governance through community-established policies. Research on Wikipedia
+  has contributed to understanding of crowdsourcing dynamics, knowledge commons governance, and the conditions under which
+  open collaboration produces reliable outputs.
 domains:
-  - citizen-science
-  - education
-  - social-sciences
+- citizen-science
+- education
+- social-sciences
 collaboration-types:
-  - crowdsourcing
-  - open-source
-  - community-based
+- crowdsourcing
+- open-source
+- community-based
 scales:
-  - community
+- community
 modalities:
-  - remote
+- remote
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-01-15"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-01-15'
+last_reviewed: '2025-06-01'
 research_methods:
-  - case-study
-  - ethnography
-  - mixed-methods
+- case-study
+- ethnography
+- mixed-methods
 organization: Wikimedia Foundation
 year: 2001
-outcomes: >-
-  Wikipedia has become the world's largest reference work, demonstrating that
-  open, distributed collaboration can produce high-quality knowledge at scale.
-  Research has identified key success factors including clear contribution norms,
+outcomes: Wikipedia has become the world's largest reference work, demonstrating that open, distributed collaboration can
+  produce high-quality knowledge at scale. Research has identified key success factors including clear contribution norms,
   transparent governance, and robust conflict resolution mechanisms.
 tools_used: []
 related_entries:
-  - cscw-framework
-  - open-innovation
+- cscw-framework
+- open-innovation
 external_links:
-  - type: article
-    url: https://doi.org/10.1145/1297797.1297798
-    title: "The Wikipedia Community (Kittur et al., 2007)"
-  - type: website
-    url: https://en.wikipedia.org/wiki/Wikipedia:About
-    title: About Wikipedia
+- type: article
+  url: https://doi.org/10.1145/1297797.1297798
+  title: The Wikipedia Community (Kittur et al., 2007)
+- type: website
+  url: https://en.wikipedia.org/wiki/Wikipedia:About
+  title: About Wikipedia
 tags:
-  - open-collaboration
-  - knowledge-commons
-  - crowdsourcing
-  - governance
+- open-collaboration
+- knowledge-commons
+- crowdsourcing
+- governance
+website_url: https://en.wikipedia.org/wiki/Wikipedia

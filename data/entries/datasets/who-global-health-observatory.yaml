@@ -17,7 +17,25 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: Comprehensive health statistics and indicators from 194 countries for collaborative health research.
+description: The WHO Global Health Observatory serves as the World Health Organization's central platform for monitoring global
+  health trends and statistics across 194 member states. It provides standardized health indicators, mortality data, disease
+  surveillance information, and health system performance metrics that enable researchers, policymakers, and international
+  organizations to collaborate on evidence-based health initiatives. The platform supports comparative analysis and benchmarking
+  between countries, facilitating coordinated global health responses and collaborative research efforts. Its open access
+  approach promotes transparency and knowledge sharing in the international health community.
 contributors:
 - collabatlas-team
 source_url: https://example.com/who-global-health-observatory
+tags:
+- global-health
+- health-statistics
+- international-collaboration
+- public-health
+- health-monitoring
+- evidence-based-policy
+related_entries:
+- humanitarian-data-exchange
+- european-social-survey
+- covid-research-collaborations
+- community-based-participatory-research
+- responsible-research-and-innovation

@@ -17,6 +17,25 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Grassroots community organizing for local resilience and sustainability in response to climate change.
+description: The Transition Towns Movement is a grassroots network of community-led initiatives that began in Totnes, England
+  in 2005, aimed at building local resilience in response to peak oil, climate change, and economic instability. Communities
+  work collaboratively to reduce carbon footprints and build economic resilience through local food systems, renewable energy
+  projects, local currencies, and skill-sharing networks. The movement emphasizes bottom-up organizing, permaculture principles,
+  and practical solutions that can be adapted to local contexts. With over 1,000 official Transition initiatives worldwide,
+  it demonstrates how communities can self-organize to address global challenges through local action.
 contributors:
 - collabatlas-team
+website_url: https://transitionnetwork.org/
+tags:
+- community-organizing
+- local-resilience
+- sustainability
+- grassroots-movement
+- climate-action
+- permaculture
+related_entries:
+- communities-of-practice
+- participatory-action-research-framework
+- social-ecological-systems-framework
+- community-based-participatory-research
+- collective-impact-framework

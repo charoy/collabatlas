@@ -17,7 +17,22 @@ modalities:
 maturity: established
 status: published
 platform: other
-description: Free platform for sharing neuroimaging data to accelerate collaborative brain research.
+description: OpenNeuro is a free and open platform for sharing and analyzing neuroimaging datasets, enabling researchers worldwide
+  to collaborate on brain studies. It hosts thousands of datasets following standardized formats like BIDS (Brain Imaging
+  Data Structure), making neuroimaging data findable, accessible, and reusable. The platform accelerates neuroscience research
+  by breaking down data silos and fostering global collaboration in understanding the human brain.
 contributors:
 - collabatlas-team
 source_url: https://example.com/openneuro-brain-imaging
+tags:
+- neuroimaging
+- open-science
+- data-sharing
+- brain-research
+- collaborative-research
+related_entries:
+- open-science-framework
+- foster-open-science-toolkit
+- covid-research-collaborations
+- human-genome-project
+- global-biodiversity-information-facility

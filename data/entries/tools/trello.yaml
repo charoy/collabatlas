@@ -16,6 +16,25 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Visual project management tool using boards, lists, and cards for task tracking and team coordination.
+description: Trello is a web-based kanban-style project management application that enables teams to organize work using boards,
+  lists, and cards. It provides a visual approach to task management where team members can collaborate by creating cards
+  for tasks, moving them through customizable workflow stages, and adding comments, attachments, and due dates. The platform's
+  intuitive interface makes it accessible for both technical and non-technical users, supporting various collaborative workflows
+  from simple to-do lists to complex project coordination. Trello's flexibility and ease of use have made it popular across
+  diverse domains including software development, marketing campaigns, and educational project management.
 contributors:
 - collabatlas-team
+website_url: https://trello.com
+tags:
+- project-management
+- kanban-board
+- task-tracking
+- team-collaboration
+- workflow-management
+- visual-organization
+related_entries:
+- notion
+- airtable
+- github
+- agile-methodology
+- scrum

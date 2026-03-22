@@ -16,6 +16,24 @@ modalities:
 - remote
 maturity: emerging
 status: published
-description: Virtual space platform combining video chat with spatial proximity for informal collaboration.
+description: Gather Town is a virtual space platform that combines video conferencing with 2D spatial environments, allowing
+  users to move avatars around interactive maps and automatically connect with nearby participants. It recreates the spontaneous
+  interactions of physical spaces by using proximity-based audio and video, making remote collaboration feel more natural
+  and serendipitous. The platform is particularly valuable for virtual events, remote team building, and educational settings
+  where informal networking and chance encounters are important.
 contributors:
 - collabatlas-team
+website_url: https://www.gather.town/
+tags:
+- virtual-spaces
+- video-conferencing
+- spatial-audio
+- remote-collaboration
+- avatar-interaction
+- proximity-chat
+related_entries:
+- discord
+- jitsi-meet
+- slack
+- miro
+- cscw-framework

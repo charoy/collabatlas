@@ -1,52 +1,49 @@
 id: designing-collaborative-systems
 type: resource
-title: "Designing Collaborative Systems: A Practical Guide to Ethnography"
+title: 'Designing Collaborative Systems: A Practical Guide to Ethnography'
 tagline: A practical guide to using ethnographic methods for designing collaborative work systems.
-description: >-
-  This book by Andy Crabtree provides a practical introduction to ethnography as
-  a design resource for collaborative systems. It bridges the gap between
-  ethnographic fieldwork and the design of computer-supported cooperative work
-  systems. The book covers core ethnographic concepts, fieldwork methods, and
-  techniques for translating ethnographic findings into design requirements.
-  It is widely used in HCI and CSCW courses and by practitioners designing
-  sociotechnical systems.
+description: This book by Andy Crabtree provides a practical introduction to ethnography as a design resource for collaborative
+  systems. It bridges the gap between ethnographic fieldwork and the design of computer-supported cooperative work systems.
+  The book covers core ethnographic concepts, fieldwork methods, and techniques for translating ethnographic findings into
+  design requirements. It is widely used in HCI and CSCW courses and by practitioners designing sociotechnical systems.
 domains:
-  - software-engineering
-  - social-sciences
-  - education
+- software-engineering
+- social-sciences
+- education
 collaboration-types:
-  - co-design
-  - interdisciplinary
+- co-design
+- interdisciplinary
 scales:
-  - small-team
-  - organization
+- small-team
+- organization
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - ethnography
-  - design-science
+- ethnography
+- design-science
 resource_type: book
 authors:
-  - Andy Crabtree
+- Andy Crabtree
 year: 2003
 access: paid
 external_links:
-  - type: book
-    url: https://www.springer.com/gp/book/9781852337407
-    title: "Designing Collaborative Systems (Springer)"
+- type: book
+  url: https://www.springer.com/gp/book/9781852337407
+  title: Designing Collaborative Systems (Springer)
 related_entries:
-  - cscw-framework
-  - activity-theory
-  - participatory-design
+- cscw-framework
+- activity-theory
+- participatory-design
 tags:
-  - ethnography
-  - CSCW
-  - design-methods
-  - sociotechnical
+- ethnography
+- CSCW
+- design-methods
+- sociotechnical
+website_url: https://www.amazon.com/Designing-Collaborative-Systems-Practical-Ethnography/dp/1558606866

@@ -16,7 +16,24 @@ modalities:
 - in-person
 maturity: well-documented
 status: published
-description: Practical manual for leading inclusive group processes using the diamond of participatory decision-making.
+description: A comprehensive practical manual by Sam Kaner that provides tools, techniques, and frameworks for leading inclusive
+  group decision-making processes. The book introduces the diamond of participatory decision-making model, which maps the
+  natural flow from divergent thinking to convergent agreement, helping facilitators navigate complex group dynamics. It offers
+  concrete strategies for managing difficult conversations, building consensus, and ensuring all voices are heard in collaborative
+  settings.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://en.wikipedia.org/wiki/Facilitator%27s_Guide_to_Participatory_Decision-Making
+tags:
+- participatory-decision-making
+- group-facilitation
+- consensus-building
+- collaborative-governance
+- inclusive-processes
+related_entries:
+- world-cafe
+- open-space-technology
+- citizen-assembly
+- participatory-design
+- liberating-structures-toolkit

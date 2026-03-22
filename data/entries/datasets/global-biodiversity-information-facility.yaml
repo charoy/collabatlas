@@ -18,7 +18,23 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: International open data infrastructure providing access to over 2 billion species occurrence records.
+description: GBIF is a global research infrastructure that provides free and open access to biodiversity data from over 2,000
+  institutions worldwide. The platform enables researchers, policymakers, and citizens to access more than 2 billion species
+  occurrence records for scientific research and conservation efforts. It facilitates international collaboration in biodiversity
+  research by standardizing data formats and providing tools for data discovery, analysis, and visualization.
 contributors:
 - collabatlas-team
 source_url: https://example.com/global-biodiversity-information-facility
+tags:
+- biodiversity-data
+- open-data
+- species-occurrence
+- environmental-collaboration
+- global-infrastructure
+- citizen-science
+related_entries:
+- ebird-global-birding-database
+- citizen-science-toolkit
+- openstreetmap
+- galaxy-zoo
+- who-global-health-observatory

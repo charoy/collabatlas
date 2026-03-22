@@ -20,6 +20,23 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Systematic framework for community members to investigate and take action on issues affecting their lives.
+description: Participatory Action Research (PAR) is a collaborative approach that combines research with action to address
+  real-world problems while empowering communities to be active participants in both the investigation and solution development.
+  It emphasizes democratic participation, social justice, and the integration of knowledge generation with practical change-making.
+  PAR creates cycles of reflection, planning, action, and evaluation that enable communities to systematically study their
+  own situations and implement improvements based on their findings.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Participatory_action_research
+tags:
+- participatory-research
+- community-engagement
+- social-justice
+- collaborative-inquiry
+- action-oriented
+related_entries:
+- action-research
+- community-based-participatory-research
+- participatory-design
+- appreciative-inquiry
+- photovoice

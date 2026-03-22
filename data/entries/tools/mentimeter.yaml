@@ -19,6 +19,23 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Interactive presentation tool with live polls, quizzes, and word clouds for audience engagement.
+description: Mentimeter is a web-based audience response system that enables real-time interaction during presentations through
+  live polls, Q&A sessions, word clouds, and quizzes. Participants use their smartphones or devices to respond to questions
+  and activities, creating immediate visual feedback that appears on the presenter's screen. The tool is widely used in educational
+  settings, business meetings, and public events to increase engagement, gather instant feedback, and facilitate collaborative
+  discussions in both physical and virtual environments.
 contributors:
 - collabatlas-team
+website_url: https://www.mentimeter.com
+tags:
+- audience-response
+- real-time-polling
+- presentation-tool
+- interactive-engagement
+- collaborative-feedback
+related_entries:
+- world-cafe
+- jamboard
+- miro
+- gather-town
+- focus-groups

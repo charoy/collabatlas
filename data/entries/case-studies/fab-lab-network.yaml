@@ -17,6 +17,23 @@ modalities:
 - in-person
 maturity: established
 status: published
-description: Global network of community fabrication laboratories enabling local digital manufacturing and collaborative innovation.
+description: A global network of over 1,750 digital fabrication laboratories that provide public access to tools for invention,
+  prototyping and entrepreneurship. Fab Labs connect local communities worldwide through shared knowledge, open-source designs,
+  and collaborative innovation in manufacturing. They democratize access to digital fabrication technologies like 3D printers,
+  laser cutters, and computer-controlled milling machines, enabling anyone to transform ideas into products.
 contributors:
 - collabatlas-team
+website_url: https://www.fablabs.io/
+tags:
+- digital-fabrication
+- maker-movement
+- open-innovation
+- community-workshops
+- distributed-manufacturing
+- peer-learning
+related_entries:
+- arduino-open-hardware
+- openstreetmap
+- communities-of-practice
+- open-innovation
+- participatory-design

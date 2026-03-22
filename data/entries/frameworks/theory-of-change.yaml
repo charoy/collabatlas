@@ -19,6 +19,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Planning and evaluation framework mapping how activities lead to desired outcomes through causal pathways.
+description: Theory of Change is a comprehensive planning and evaluation methodology that maps the causal pathways between
+  activities, outputs, outcomes, and long-term impacts to achieve desired social change. Originally developed in the nonprofit
+  sector, it provides a structured approach for organizations to articulate their assumptions about how and why their interventions
+  will lead to specific results. The framework emphasizes stakeholder engagement and evidence-based reasoning, making it particularly
+  valuable for collaborative initiatives where multiple actors must align around shared goals and understand their respective
+  contributions to complex social outcomes.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Theory_of_change
+tags:
+- planning-framework
+- evaluation-methodology
+- social-change
+- impact-assessment
+- stakeholder-alignment
+related_entries:
+- collective-impact-framework
+- participatory-action-research-framework
+- most-significant-change
+- community-based-participatory-research
+- responsible-research-and-innovation

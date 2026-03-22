@@ -16,6 +16,22 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Structured decision-making method combining individual idea generation with group ranking and discussion.
+description: The Nominal Group Technique is a structured group decision-making method that combines silent individual brainstorming
+  with group discussion and anonymous ranking. Participants first generate ideas independently, then share them in a round-robin
+  format before discussing and prioritizing options through voting. This approach reduces the influence of dominant personalities
+  and groupthink while ensuring all voices are heard in collaborative decision-making processes.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Nominal_group_technique
+tags:
+- group-decision-making
+- structured-facilitation
+- brainstorming
+- consensus-building
+- voting-methods
+related_entries:
+- delphi-method
+- world-cafe
+- focus-groups
+- facilitators-guide-to-participatory-decision-making
+- design-thinking

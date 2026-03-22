@@ -16,7 +16,24 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: GitHub's comprehensive guide to launching and sustaining open-source projects with community best practices.
+description: Open Source Guide is GitHub's comprehensive resource that provides practical advice for creating, maintaining,
+  and growing open source projects. It covers essential topics like building welcoming communities, establishing governance
+  structures, managing contributors, and sustaining long-term project health. The guide draws from real-world experiences
+  of successful open source projects and offers actionable frameworks for collaborative software development.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://opensource.guide/
+tags:
+- open-source
+- community-building
+- project-management
+- software-collaboration
+- governance
+- documentation
+related_entries:
+- github
+- linux-kernel-development
+- mozilla-firefox-development
+- communities-of-practice
+- innersource-patterns

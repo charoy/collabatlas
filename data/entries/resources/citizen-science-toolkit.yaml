@@ -19,7 +19,25 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Step-by-step resources for designing and managing citizen science projects with community volunteers.
+description: The Citizen Science Toolkit provides comprehensive guidance for researchers, educators, and community organizations
+  to design, launch, and manage citizen science projects that engage volunteers in scientific research. It offers practical
+  frameworks for recruiting participants, ensuring data quality, maintaining volunteer engagement, and managing collaborative
+  relationships between professional scientists and community contributors. This resource is essential for democratizing scientific
+  research and building sustainable partnerships between academic institutions and local communities.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://www.citizenscience.gov/toolkit/
+tags:
+- citizen-science
+- community-engagement
+- participatory-research
+- volunteer-management
+- data-collection
+- public-participation
+related_entries:
+- community-based-participatory-research
+- participatory-design
+- ebird-global-birding-database
+- galaxy-zoo
+- foster-open-science-toolkit

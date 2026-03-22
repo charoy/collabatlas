@@ -19,6 +19,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Framework explaining how shared artifacts enable coordination across diverse communities of practice.
+description: Boundary Object Theory explains how certain artifacts, documents, or concepts can serve as coordination mechanisms
+  across different communities with varying perspectives and expertise. These boundary objects are plastic enough to adapt
+  to local needs yet robust enough to maintain identity across domains, enabling collaboration between groups that might otherwise
+  struggle to coordinate. The theory is particularly valuable for understanding how interdisciplinary teams, cross-functional
+  projects, and multi-stakeholder initiatives achieve alignment despite different knowledge bases and working practices.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Boundary_object
+tags:
+- boundary-objects
+- coordination
+- communities-of-practice
+- interdisciplinary
+- knowledge-sharing
+- organizational-theory
+related_entries:
+- communities-of-practice
+- activity-theory
+- socio-technical-systems
+- cscw-framework
+- transdisciplinary-research-primer

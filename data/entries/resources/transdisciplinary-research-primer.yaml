@@ -17,7 +17,25 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Introduction to methods and challenges of research that bridges academic and non-academic knowledge systems.
+description: A comprehensive guide to transdisciplinary research approaches that integrate knowledge from multiple academic
+  disciplines with practical expertise from practitioners, policymakers, and community stakeholders. This resource addresses
+  the methodological challenges of bridging different knowledge systems and provides frameworks for collaborative research
+  that tackles complex real-world problems. It emphasizes co-creation of knowledge and the importance of participatory approaches
+  in research design and implementation.
 contributors:
 - collabatlas-team
 resource_type: book
+website_url: https://en.wikipedia.org/wiki/Transdisciplinarity
+tags:
+- transdisciplinary-research
+- knowledge-integration
+- participatory-research
+- cross-disciplinary
+- collaborative-research
+- stakeholder-engagement
+related_entries:
+- community-based-participatory-research
+- participatory-action-research-framework
+- mode-2-knowledge-production
+- participatory-design
+- action-research

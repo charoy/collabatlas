@@ -1,13 +1,11 @@
 id: zotero
 type: tool
 title: Zotero
-tagline: Free, open-source reference manager for collaborative research and bibliography
-  management.
-description: Zotero is a free, open-source reference management tool that helps researchers
-  collect, organize, annotate, cite, and share research sources. Its group libraries
-  feature enables teams to collaboratively build and maintain shared reference collections,
-  making it widely used in interdisciplinary and academic research projects. Zotero
-  integrates with word processors and supports hundreds of citation styles.
+tagline: Free, open-source reference manager for collaborative research and bibliography management.
+description: Zotero is a free, open-source reference management tool that helps researchers collect, organize, annotate, cite,
+  and share research sources. Its group libraries feature enables teams to collaboratively build and maintain shared reference
+  collections, making it widely used in interdisciplinary and academic research projects. Zotero integrates with word processors
+  and supports hundreds of citation styles.
 domains:
 - education
 - social-sciences
@@ -62,3 +60,9 @@ metrics:
 github_repo: zotero/zotero
 fetched_at: '2026-03-15T19:47:40.726141+00:00'
 visibility: public
+related_entries:
+- overleaf
+- open-science-framework
+- github
+- google-docs
+- crossref-metadata-api

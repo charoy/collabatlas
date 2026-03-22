@@ -17,6 +17,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Sense-making framework that helps teams choose appropriate collaboration strategies based on problem complexity.
+description: 'The Cynefin Framework is a decision-making model developed by Dave Snowden that categorizes problems into five
+  domains: simple, complicated, complex, chaotic, and disorder. It helps teams and organizations understand the nature of
+  their situation and choose appropriate response strategies, with different collaboration approaches needed for each domain.
+  The framework is particularly valuable for collaborative work as it guides when to use best practices, expert analysis,
+  emergent experimentation, or crisis response modes.'
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Cynefin_framework
+tags:
+- decision-making
+- sense-making
+- complexity
+- problem-solving
+- situational-awareness
+- adaptive-management
+related_entries:
+- design-thinking
+- theory-of-change
+- collective-impact-framework
+- socio-technical-systems
+- adaptive-management

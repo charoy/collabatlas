@@ -15,6 +15,24 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Citizen science project where volunteers classify galaxies from telescope images to advance astronomy research.
+description: Galaxy Zoo is a pioneering citizen science project that engages hundreds of thousands of volunteers worldwide
+  to classify galaxy shapes and features from astronomical telescope images. Launched in 2007, it has revolutionized how large-scale
+  scientific data analysis is conducted by distributing complex visual classification tasks to the general public. The project
+  has led to numerous scientific discoveries and publications while demonstrating the power of crowdsourced collaboration
+  in advancing astronomical research.
 contributors:
 - collabatlas-team
+website_url: https://www.galaxyzoo.org/
+tags:
+- citizen-science
+- crowdsourcing
+- astronomy
+- data-classification
+- volunteer-collaboration
+- scientific-discovery
+related_entries:
+- citizen-science-toolkit
+- ebird-global-birding-database
+- openstreetmap
+- wikipedia
+- covid-research-collaborations

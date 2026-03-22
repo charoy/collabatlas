@@ -1,60 +1,57 @@
 id: cern-lhc-collaboration
 type: case-study
-title: "CERN Large Hadron Collider"
-tagline: "The world's largest scientific instrument, operated by an international collaboration of over 10,000 scientists from 100+ countries."
-description: >-
-  The Large Hadron Collider at CERN is the world's largest and most powerful particle
-  accelerator, representing a landmark achievement in large-scale international scientific
-  collaboration. Over 10,000 scientists and engineers from more than 100 countries
-  participate in experiments conducted at the facility, organized into major collaborations
-  such as ATLAS and CMS. The project required developing new models for distributed
-  computing, shared governance, and consensus-based decision-making at an unprecedented
-  scale. CERN is also the birthplace of the World Wide Web, which was invented to
-  facilitate information sharing among the geographically dispersed physics community,
-  and later gave rise to the Worldwide LHC Computing Grid for distributed data processing.
+title: CERN Large Hadron Collider
+tagline: The world's largest scientific instrument, operated by an international collaboration of over 10,000 scientists from
+  100+ countries.
+description: The Large Hadron Collider at CERN is the world's largest and most powerful particle accelerator, representing
+  a landmark achievement in large-scale international scientific collaboration. Over 10,000 scientists and engineers from
+  more than 100 countries participate in experiments conducted at the facility, organized into major collaborations such as
+  ATLAS and CMS. The project required developing new models for distributed computing, shared governance, and consensus-based
+  decision-making at an unprecedented scale. CERN is also the birthplace of the World Wide Web, which was invented to facilitate
+  information sharing among the geographically dispersed physics community, and later gave rise to the Worldwide LHC Computing
+  Grid for distributed data processing.
 domains:
-  - environmental-science
-  - software-engineering
-  - public-policy
+- environmental-science
+- software-engineering
+- public-policy
 collaboration-types:
-  - interdisciplinary
-  - distributed
-  - co-production
+- interdisciplinary
+- distributed
+- co-production
 scales:
-  - multi-org
-  - community
+- multi-org
+- community
 modalities:
-  - in-person
-  - remote
-  - hybrid
+- in-person
+- remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - case-study
-organization: "CERN"
+- case-study
+organization: CERN
 year: 2008
-outcomes: >-
-  Discovery of the Higgs boson in 2012, development of the World Wide Web as a
-  collaboration tool, and establishment of a model for large-scale distributed
-  scientific computing (WLCG).
+outcomes: Discovery of the Higgs boson in 2012, development of the World Wide Web as a collaboration tool, and establishment
+  of a model for large-scale distributed scientific computing (WLCG).
 methods_used: []
 tools_used: []
 related_entries:
-  - international-space-station
-  - open-innovation
+- international-space-station
+- open-innovation
 external_links:
-  - type: website
-    url: https://home.cern
-    title: CERN
-  - type: website
-    url: https://home.cern/science/computing/world-wide-web
-    title: Birth of the Web at CERN
+- type: website
+  url: https://home.cern
+  title: CERN
+- type: website
+  url: https://home.cern/science/computing/world-wide-web
+  title: Birth of the Web at CERN
 tags:
-  - particle-physics
-  - big-science
-  - distributed-computing
-  - international-collaboration
+- particle-physics
+- big-science
+- distributed-computing
+- international-collaboration
+website_url: https://home.cern/science/accelerators/large-hadron-collider

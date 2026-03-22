@@ -16,6 +16,24 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: The world's largest collaboratively edited encyclopedia maintained by a global volunteer community.
+description: Wikipedia is a free, multilingual online encyclopedia that exemplifies large-scale collaborative knowledge creation
+  through its open editing model. Built and maintained by millions of volunteer editors worldwide, it demonstrates how distributed
+  communities can self-organize to produce high-quality content through peer review, consensus-building, and transparent editing
+  processes. The platform serves as a foundational example of successful crowdsourced collaboration, featuring sophisticated
+  governance mechanisms and social norms that enable coordination across cultural and linguistic boundaries.
 contributors:
 - collabatlas-team
+website_url: https://www.wikipedia.org/
+tags:
+- collaborative-editing
+- crowdsourcing
+- knowledge-creation
+- open-content
+- peer-review
+- distributed-collaboration
+related_entries:
+- wikipedia-collaborative-editing
+- wikipedia-edit-history
+- communities-of-practice
+- openstreetmap
+- github

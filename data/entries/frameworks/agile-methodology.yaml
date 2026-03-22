@@ -19,6 +19,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Iterative development framework emphasizing adaptive planning, cross-functional teams, and continuous delivery.
+description: Agile Methodology is a software development approach that emphasizes iterative progress, collaborative cross-functional
+  teams, and adaptive responses to change over rigid planning. Originally formalized in the Agile Manifesto of 2001, it prioritizes
+  individuals and interactions, working software, customer collaboration, and responding to change. Agile frameworks like
+  Scrum and Kanban have transformed not only software development but also project management across various industries, promoting
+  transparency, continuous improvement, and frequent delivery of value.
 contributors:
 - collabatlas-team
+website_url: https://agilemanifesto.org/
+tags:
+- iterative-development
+- cross-functional-teams
+- adaptive-planning
+- continuous-delivery
+- software-development
+- collaborative-frameworks
+related_entries:
+- scrum
+- design-sprint
+- communities-of-practice
+- cscw-framework
+- participatory-design

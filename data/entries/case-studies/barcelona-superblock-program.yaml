@@ -18,6 +18,24 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Participatory urban redesign transforming city blocks to prioritize pedestrians and community space.
+description: Barcelona's Superblock Program transforms traditional city blocks into car-free zones that prioritize pedestrians,
+  cyclists, and community activities. The initiative uses extensive citizen participation, co-design workshops, and community
+  engagement to redesign urban spaces for better air quality, social interaction, and quality of life. Since 2016, the program
+  has created dozens of superblocks through collaborative planning processes that involve residents, local businesses, and
+  municipal governments.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Superblock_(urban_planning)
+tags:
+- urban-planning
+- participatory-design
+- community-engagement
+- sustainable-cities
+- co-design
+- public-space
+related_entries:
+- participatory-design
+- community-based-participatory-research
+- medellin-urban-innovation
+- oslo-urban-codesign
+- citizen-assembly

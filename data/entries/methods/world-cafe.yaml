@@ -2,64 +2,57 @@ id: world-cafe
 type: method
 title: World Cafe
 tagline: Conversational process for exploring questions that matter through rotating small-group discussions.
-description: >-
-  World Cafe is a structured conversational method designed to facilitate
-  collaborative dialogue among large groups of people. Developed by Juanita Brown
-  and David Isaacs in the mid-1990s, it creates an informal cafe-style atmosphere
-  where participants rotate between small table discussions, cross-pollinating
-  ideas and building on each other's insights. Each round focuses on progressively
-  deeper questions, and a table host remains to share the essence of previous
-  conversations with newcomers. The method is particularly effective for surfacing
-  collective intelligence and generating shared understanding around complex issues
-  in communities and organizations.
+description: World Cafe is a structured conversational method designed to facilitate collaborative dialogue among large groups
+  of people. Developed by Juanita Brown and David Isaacs in the mid-1990s, it creates an informal cafe-style atmosphere where
+  participants rotate between small table discussions, cross-pollinating ideas and building on each other's insights. Each
+  round focuses on progressively deeper questions, and a table host remains to share the essence of previous conversations
+  with newcomers. The method is particularly effective for surfacing collective intelligence and generating shared understanding
+  around complex issues in communities and organizations.
 domains:
-  - social-sciences
-  - public-policy
-  - education
+- social-sciences
+- public-policy
+- education
 collaboration-types:
-  - participatory
-  - community-based
+- participatory
+- community-based
 scales:
-  - organization
-  - community
+- organization
+- community
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - action-research
-when_to_use: >-
-  Use World Cafe when you need to engage a large group in meaningful dialogue
-  around important questions, when diverse perspectives must be surfaced and
-  connected, or when the goal is to generate collective insight rather than
-  reach a formal decision. It is especially suited for community engagement,
-  strategic planning, and cross-organizational knowledge sharing.
-limitations: >-
-  World Cafe is not well suited for decision-making or action planning without
-  additional follow-up processes. The quality of outcomes depends heavily on the
-  design of the guiding questions. It can be challenging to capture and synthesize
-  the richness of conversations across many tables, and virtual adaptations lose
-  some of the informal cafe atmosphere that makes the method effective.
+- action-research
+when_to_use: Use World Cafe when you need to engage a large group in meaningful dialogue around important questions, when
+  diverse perspectives must be surfaced and connected, or when the goal is to generate collective insight rather than reach
+  a formal decision. It is especially suited for community engagement, strategic planning, and cross-organizational knowledge
+  sharing.
+limitations: World Cafe is not well suited for decision-making or action planning without additional follow-up processes.
+  The quality of outcomes depends heavily on the design of the guiding questions. It can be challenging to capture and synthesize
+  the richness of conversations across many tables, and virtual adaptations lose some of the informal cafe atmosphere that
+  makes the method effective.
 steps:
-  - "Set Context: clarify the purpose of the conversation and frame the guiding questions."
-  - "Create Hospitable Space: arrange the room in small cafe-style tables with materials for capturing ideas."
-  - "Explore Questions: pose the first question and allow participants to discuss in small groups."
-  - "Encourage Contribution: invite every participant to share perspectives and build on others' ideas."
-  - "Cross-Pollinate: rotate participants to new tables while table hosts summarize previous insights for newcomers."
-  - "Harvest Collective Discoveries: gather key themes and insights from all tables in a whole-group session."
+- 'Set Context: clarify the purpose of the conversation and frame the guiding questions.'
+- 'Create Hospitable Space: arrange the room in small cafe-style tables with materials for capturing ideas.'
+- 'Explore Questions: pose the first question and allow participants to discuss in small groups.'
+- 'Encourage Contribution: invite every participant to share perspectives and build on others'' ideas.'
+- 'Cross-Pollinate: rotate participants to new tables while table hosts summarize previous insights for newcomers.'
+- 'Harvest Collective Discoveries: gather key themes and insights from all tables in a whole-group session.'
 external_links:
-  - type: website
-    url: https://theworldcafe.com/
-    title: "The World Cafe Community Foundation"
+- type: website
+  url: https://theworldcafe.com/
+  title: The World Cafe Community Foundation
 related_entries:
-  - open-space-technology
-  - participatory-design
+- open-space-technology
+- participatory-design
 tags:
-  - dialogue
-  - collective-intelligence
-  - large-group
+- dialogue
+- collective-intelligence
+- large-group
+website_url: http://www.theworldcafe.com/

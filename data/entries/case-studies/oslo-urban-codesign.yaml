@@ -2,58 +2,53 @@ id: oslo-urban-codesign
 type: case-study
 title: Oslo Fjord City Participatory Urban Planning
 tagline: Large-scale participatory co-design process for Oslo's waterfront transformation involving thousands of citizens.
-description: >-
-  The Fjord City project in Oslo (Fjordbyen) is a long-running urban transformation
-  initiative that converted former industrial port areas into mixed-use public
-  spaces. The planning process incorporated extensive participatory design elements,
-  including public consultations, citizen workshops, design competitions, and
-  iterative feedback loops between planners, architects, and residents. The project
-  is notable for its multi-decade timeline, the scale of citizen engagement, and
-  its integration of participatory methods into formal municipal planning processes.
-  It has been studied as a model for large-scale urban co-design.
+description: The Fjord City project in Oslo (Fjordbyen) is a long-running urban transformation initiative that converted former
+  industrial port areas into mixed-use public spaces. The planning process incorporated extensive participatory design elements,
+  including public consultations, citizen workshops, design competitions, and iterative feedback loops between planners, architects,
+  and residents. The project is notable for its multi-decade timeline, the scale of citizen engagement, and its integration
+  of participatory methods into formal municipal planning processes. It has been studied as a model for large-scale urban
+  co-design.
 domains:
-  - urban-planning
-  - design
-  - public-policy
+- urban-planning
+- design
+- public-policy
 collaboration-types:
-  - participatory
-  - co-design
-  - community-based
+- participatory
+- co-design
+- community-based
 scales:
-  - community
-  - multi-org
+- community
+- multi-org
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - case-study
-  - participatory-action-research
-  - ethnography
+- case-study
+- participatory-action-research
+- ethnography
 organization: City of Oslo
 year: 2000
-outcomes: >-
-  The Fjord City project transformed over 8 km of Oslo's waterfront into
-  publicly accessible spaces. The participatory process increased public trust
-  in planning decisions and produced designs that better reflected community needs.
-  The project is cited as a model for integrating participatory methods into
-  large-scale municipal planning.
+outcomes: The Fjord City project transformed over 8 km of Oslo's waterfront into publicly accessible spaces. The participatory
+  process increased public trust in planning decisions and produced designs that better reflected community needs. The project
+  is cited as a model for integrating participatory methods into large-scale municipal planning.
 methods_used:
-  - participatory-design
+- participatory-design
 related_entries:
-  - participatory-design
-  - activity-theory
+- participatory-design
+- activity-theory
 external_links:
-  - type: website
-    url: https://www.oslo.kommune.no/fjordbyen/
-    title: Fjord City Oslo Official Site
+- type: website
+  url: https://www.oslo.kommune.no/fjordbyen/
+  title: Fjord City Oslo Official Site
 tags:
-  - urban-planning
-  - citizen-engagement
-  - waterfront
-  - public-space
+- urban-planning
+- citizen-engagement
+- waterfront
+- public-space
+website_url: https://en.wikipedia.org/wiki/Fj%C3%B8rd_City

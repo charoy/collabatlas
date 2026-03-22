@@ -2,63 +2,63 @@ id: socio-technical-systems
 type: framework
 title: Socio-Technical Systems Theory
 tagline: Analytical framework for understanding the joint optimization of social and technical subsystems in organizations.
-description: >-
-  Socio-Technical Systems (STS) Theory is an organizational design framework
-  originating from research at the Tavistock Institute of Human Relations in
-  London during the 1950s and 1960s. Pioneered by Eric Trist, Fred Emery, and
-  later extended by Enid Mumford and others, STS posits that organizations are
-  composed of interdependent social and technical subsystems, and that optimal
-  performance requires the joint optimization of both. The framework challenges
-  purely technological or purely social approaches to organizational design,
-  advocating instead for responsible autonomy, minimal critical specification,
-  and boundary management. STS has been influential in work system design,
-  information systems development, manufacturing, and healthcare improvement.
+description: Socio-Technical Systems (STS) Theory is an organizational design framework originating from research at the Tavistock
+  Institute of Human Relations in London during the 1950s and 1960s. Pioneered by Eric Trist, Fred Emery, and later extended
+  by Enid Mumford and others, STS posits that organizations are composed of interdependent social and technical subsystems,
+  and that optimal performance requires the joint optimization of both. The framework challenges purely technological or purely
+  social approaches to organizational design, advocating instead for responsible autonomy, minimal critical specification,
+  and boundary management. STS has been influential in work system design, information systems development, manufacturing,
+  and healthcare improvement.
 domains:
-  - software-engineering
-  - business
-  - manufacturing
-  - healthcare
+- software-engineering
+- business
+- manufacturing
+- healthcare
 collaboration-types:
-  - interdisciplinary
-  - co-design
+- interdisciplinary
+- co-design
 scales:
-  - organization
-  - multi-org
+- organization
+- multi-org
 modalities:
-  - in-person
-  - remote
-  - hybrid
+- in-person
+- remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - design-science
-  - case-study
+- design-science
+- case-study
 key_concepts:
-  - Joint optimization
-  - Responsible autonomy
-  - Minimal critical specification
-  - Boundary management
-  - Work system design
+- Joint optimization
+- Responsible autonomy
+- Minimal critical specification
+- Boundary management
+- Work system design
 seminal_works:
-  - title: "The Enterprise and its Environment"
-    authors: ["Fred Emery", "Eric Trist"]
-    year: 1965
-  - title: "Designing Organizations for an Information-Rich World"
-    authors: ["Enid Mumford"]
-    year: 1983
+- title: The Enterprise and its Environment
+  authors:
+  - Fred Emery
+  - Eric Trist
+  year: 1965
+- title: Designing Organizations for an Information-Rich World
+  authors:
+  - Enid Mumford
+  year: 1983
 external_links:
-  - type: article
-    url: https://doi.org/10.1177/001872676501800106
-    title: "The Causal Texture of Organizational Environments (Emery & Trist, 1965)"
+- type: article
+  url: https://doi.org/10.1177/001872676501800106
+  title: The Causal Texture of Organizational Environments (Emery & Trist, 1965)
 related_entries:
-  - cscw-framework
-  - activity-theory
-  - practice-based-computing
+- cscw-framework
+- activity-theory
+- practice-based-computing
 tags:
-  - systems-thinking
-  - work-design
-  - organizational-design
+- systems-thinking
+- work-design
+- organizational-design
+website_url: https://en.wikipedia.org/wiki/Sociotechnical_system

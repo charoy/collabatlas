@@ -1,53 +1,51 @@
 id: working-together
 type: resource
-title: "Working Together"
-tagline: "Olson & Olson's research-based guide examining factors that affect distributed work, including technology, social dynamics, and organizational structures."
-description: >-
-  Working Together by Gary M. Olson and Judith S. Olson synthesizes decades of research
-  on distributed and collaborative work, drawing from the authors' influential
-  contributions to the field of computer-supported cooperative work. The book examines
-  the key factors that determine whether distributed teams succeed or fail, including
-  the nature of the work, common ground among collaborators, coupling of tasks,
-  collaboration readiness, and technology readiness. It provides an evidence-based
-  framework for understanding why distance still matters in collaboration despite
-  advances in communication technology. The work is essential reading for researchers,
-  managers, and designers working to support geographically distributed teams and
+title: Working Together
+tagline: Olson & Olson's research-based guide examining factors that affect distributed work, including technology, social
+  dynamics, and organizational structures.
+description: Working Together by Gary M. Olson and Judith S. Olson synthesizes decades of research on distributed and collaborative
+  work, drawing from the authors' influential contributions to the field of computer-supported cooperative work. The book
+  examines the key factors that determine whether distributed teams succeed or fail, including the nature of the work, common
+  ground among collaborators, coupling of tasks, collaboration readiness, and technology readiness. It provides an evidence-based
+  framework for understanding why distance still matters in collaboration despite advances in communication technology. The
+  work is essential reading for researchers, managers, and designers working to support geographically distributed teams and
   organizations.
 domains:
-  - software-engineering
-  - business
-  - social-sciences
+- software-engineering
+- business
+- social-sciences
 collaboration-types:
-  - distributed
-  - co-creation
+- distributed
+- co-creation
 scales:
-  - small-team
-  - organization
-  - multi-org
+- small-team
+- organization
+- multi-org
 modalities:
-  - remote
-  - hybrid
+- remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 resource_type: book
 authors:
-  - Gary M. Olson
-  - Judith S. Olson
+- Gary M. Olson
+- Judith S. Olson
 year: 2013
 access: paid
 external_links:
-  - type: book
-    url: https://link.springer.com/book/10.1007/978-3-031-02203-6
-    title: "Working Together Apart (Springer)"
+- type: book
+  url: https://link.springer.com/book/10.1007/978-3-031-02203-6
+  title: Working Together Apart (Springer)
 related_entries:
-  - cscw-framework
-  - slack
+- cscw-framework
+- slack
 tags:
-  - distributed-work
-  - remote-collaboration
-  - cscw
-  - distance-matters
+- distributed-work
+- remote-collaboration
+- cscw
+- distance-matters
+website_url: https://en.wikipedia.org/wiki/Distance_Matters

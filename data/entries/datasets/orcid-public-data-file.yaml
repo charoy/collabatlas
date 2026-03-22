@@ -16,7 +16,23 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: Annual data dump of researcher identifiers and affiliations enabling analysis of scientific collaboration networks.
+description: The ORCID Public Data File is an annual dataset released by ORCID that contains researcher identifiers, publication
+  records, and institutional affiliations for millions of scholars worldwide. This comprehensive dataset enables researchers
+  to analyze scientific collaboration networks, study career trajectories, and examine the structure of academic communities
+  across disciplines. The data supports research on scholarly communication patterns, international research collaboration,
+  and the evolution of scientific fields over time.
 contributors:
 - collabatlas-team
 source_url: https://example.com/orcid-public-data-file
+tags:
+- researcher-identifiers
+- academic-networks
+- scholarly-data
+- collaboration-analysis
+- open-data
+related_entries:
+- openalex-research-graph
+- crossref-metadata-api
+- arxiv-dataset
+- cscw-proceedings-corpus
+- github-archive

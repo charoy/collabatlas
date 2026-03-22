@@ -1,70 +1,62 @@
 id: action-research
 type: method
 title: Action Research
-tagline: Cyclical research methodology combining practical problem-solving with knowledge generation through practitioner involvement.
-description: >-
-  Action Research is a participatory research methodology in which practitioners
-  and researchers collaborate to address real-world problems through iterative
-  cycles of planning, acting, observing, and reflecting. Rooted in the work of
-  Kurt Lewin in the 1940s and later expanded by scholars such as Chris Argyris,
-  Donald Schon, and Peter Reason, the approach treats research participants as
-  co-investigators rather than subjects. Action Research bridges the gap between
-  theory and practice by generating actionable knowledge that is both locally
-  relevant and contributes to broader scholarly understanding. It is widely used
-  in education, healthcare, social work, and community development.
+tagline: Cyclical research methodology combining practical problem-solving with knowledge generation through practitioner
+  involvement.
+description: Action Research is a participatory research methodology in which practitioners and researchers collaborate to
+  address real-world problems through iterative cycles of planning, acting, observing, and reflecting. Rooted in the work
+  of Kurt Lewin in the 1940s and later expanded by scholars such as Chris Argyris, Donald Schon, and Peter Reason, the approach
+  treats research participants as co-investigators rather than subjects. Action Research bridges the gap between theory and
+  practice by generating actionable knowledge that is both locally relevant and contributes to broader scholarly understanding.
+  It is widely used in education, healthcare, social work, and community development.
 domains:
-  - education
-  - social-sciences
-  - healthcare
+- education
+- social-sciences
+- healthcare
 collaboration-types:
-  - participatory
-  - co-design
-  - interdisciplinary
+- participatory
+- co-design
+- interdisciplinary
 scales:
-  - small-team
-  - organization
-  - community
+- small-team
+- organization
+- community
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-02-01"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-02-01'
+last_reviewed: '2025-06-01'
 research_methods:
-  - action-research
-  - mixed-methods
-when_to_use: >-
-  Use Action Research when you need to solve a practical problem while
-  simultaneously contributing to theoretical knowledge, when practitioner
-  involvement is essential for understanding the problem context, or when
-  the research aims to produce change in a social system. It is particularly
-  suited for situations where traditional research approaches fail to capture
-  the complexity of real-world practice.
-limitations: >-
-  Action Research can be time-intensive due to its cyclical nature and the
-  need for ongoing practitioner engagement. Findings may lack generalizability
-  because they are deeply situated in specific contexts. Dual roles of
-  researcher and practitioner can create tensions around objectivity and rigor.
-  Institutional review boards may find the emergent design challenging to
+- action-research
+- mixed-methods
+when_to_use: Use Action Research when you need to solve a practical problem while simultaneously contributing to theoretical
+  knowledge, when practitioner involvement is essential for understanding the problem context, or when the research aims to
+  produce change in a social system. It is particularly suited for situations where traditional research approaches fail to
+  capture the complexity of real-world practice.
+limitations: Action Research can be time-intensive due to its cyclical nature and the need for ongoing practitioner engagement.
+  Findings may lack generalizability because they are deeply situated in specific contexts. Dual roles of researcher and practitioner
+  can create tensions around objectivity and rigor. Institutional review boards may find the emergent design challenging to
   evaluate.
 steps:
-  - "Diagnose: identify and define the problem collaboratively with stakeholders in the practice setting."
-  - "Plan Action: design an intervention or change strategy based on the diagnosis and relevant theory."
-  - "Take Action: implement the planned intervention in the real-world practice context."
-  - "Evaluate: collect and analyze data on the effects of the intervention using appropriate methods."
-  - "Reflect: critically examine outcomes, process, and assumptions with all participants."
-  - "Specify Learning: document insights, revise theory, and feed learning into the next action cycle."
+- 'Diagnose: identify and define the problem collaboratively with stakeholders in the practice setting.'
+- 'Plan Action: design an intervention or change strategy based on the diagnosis and relevant theory.'
+- 'Take Action: implement the planned intervention in the real-world practice context.'
+- 'Evaluate: collect and analyze data on the effects of the intervention using appropriate methods.'
+- 'Reflect: critically examine outcomes, process, and assumptions with all participants.'
+- 'Specify Learning: document insights, revise theory, and feed learning into the next action cycle.'
 external_links:
-  - type: article
-    url: https://doi.org/10.1177/1476750306070101
-    title: "Action Research: An Overview (Reason & Bradbury, Handbook of Action Research)"
+- type: article
+  url: https://doi.org/10.1177/1476750306070101
+  title: 'Action Research: An Overview (Reason & Bradbury, Handbook of Action Research)'
 related_entries:
-  - participatory-design
-  - communities-of-practice
+- participatory-design
+- communities-of-practice
 tags:
-  - reflective-practice
-  - practitioner-research
-  - cycles
+- reflective-practice
+- practitioner-research
+- cycles
+website_url: https://en.wikipedia.org/wiki/Action_research

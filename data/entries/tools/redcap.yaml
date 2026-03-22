@@ -17,6 +17,22 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Secure web application for building and managing online surveys and databases in research studies.
+description: REDCap (Research Electronic Data Capture) is a secure web application designed for building and managing online
+  surveys and databases for research studies. It provides researchers with an intuitive interface to create data collection
+  instruments while maintaining rigorous security standards required for sensitive research data. The platform supports collaborative
+  research by enabling multiple users to simultaneously collect, manage, and analyze data across institutions.
 contributors:
 - collabatlas-team
+website_url: https://projectredcap.org/
+tags:
+- research-data
+- survey-platform
+- database-management
+- healthcare-research
+- collaborative-research
+related_entries:
+- open-science-framework
+- airtable
+- grist
+- community-based-participatory-research
+- cscw-framework

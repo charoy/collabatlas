@@ -21,6 +21,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Time-bounded collaborative event where diverse teams rapidly prototype solutions to defined challenges.
+description: Hackathons are intensive collaborative events where diverse teams of programmers, designers, and domain experts
+  work together over a compressed timeframe (typically 24-48 hours) to rapidly prototype solutions to specific challenges.
+  These events foster cross-disciplinary innovation by bringing together participants with different skills and perspectives
+  to tackle problems ranging from software development to social issues. The time pressure and collaborative structure encourage
+  creative problem-solving, rapid iteration, and the formation of new professional networks and partnerships.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Hackathon
+tags:
+- rapid-prototyping
+- time-bounded
+- cross-disciplinary
+- innovation
+- team-formation
+- collaborative-event
+related_entries:
+- design-sprint
+- design-thinking
+- agile-methodology
+- open-innovation
+- communities-of-practice

@@ -19,6 +19,24 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Participatory research method where community members use photography to document and discuss social issues.
+description: Photovoice is a participatory research methodology that empowers community members to document their lived experiences
+  and perspectives through photography, followed by facilitated discussions about the images and their meanings. Originally
+  developed by Caroline Wang and Mary Ann Burris, this method combines photography with critical dialogue to identify community
+  strengths and concerns, particularly around health and social issues. The process typically involves participants taking
+  photographs, reflecting on their images through structured discussions, and using the visual narratives to advocate for
+  policy change or community action.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Photovoice
+tags:
+- participatory-research
+- visual-methods
+- community-engagement
+- advocacy
+- social-documentation
+related_entries:
+- community-based-participatory-research
+- participatory-action-research-framework
+- participatory-design
+- action-research
+- most-significant-change

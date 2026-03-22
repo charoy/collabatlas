@@ -2,58 +2,52 @@ id: participatory-design
 type: method
 title: Participatory Design
 tagline: A design approach that actively involves all stakeholders in the design process to ensure results meet their needs.
-description: >-
-  Participatory Design (PD) is a design methodology that involves end-users and
-  other stakeholders as active co-designers rather than passive subjects. Originating
-  in Scandinavian workplace democracy movements in the 1970s, PD emphasizes mutual
-  learning between designers and users, iterative prototyping, and shared decision-making
-  throughout the design process. It is applied across product design, service design,
-  urban planning, healthcare systems, and educational technology.
+description: Participatory Design (PD) is a design methodology that involves end-users and other stakeholders as active co-designers
+  rather than passive subjects. Originating in Scandinavian workplace democracy movements in the 1970s, PD emphasizes mutual
+  learning between designers and users, iterative prototyping, and shared decision-making throughout the design process. It
+  is applied across product design, service design, urban planning, healthcare systems, and educational technology.
 domains:
-  - design
-  - urban-planning
-  - healthcare
-  - education
-  - software-engineering
+- design
+- urban-planning
+- healthcare
+- education
+- software-engineering
 collaboration-types:
-  - co-design
-  - participatory
-  - community-based
+- co-design
+- participatory
+- community-based
 scales:
-  - small-team
-  - organization
-  - community
+- small-team
+- organization
+- community
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-01-15"
-last_reviewed: "2025-06-01"
+- collabatlas-team
+created: '2025-01-15'
+last_reviewed: '2025-06-01'
 research_methods:
-  - action-research
-  - ethnography
-  - design-science
-when_to_use: >-
-  Use Participatory Design when the end-users have specialized knowledge that
-  designers lack, when buy-in and adoption are critical, or when the design
-  problem involves complex social or organizational dynamics.
-limitations: >-
-  PD can be time-consuming and resource-intensive. Power imbalances between
-  professional designers and lay participants can undermine genuine co-design.
-  Scaling PD to large or dispersed communities is challenging.
+- action-research
+- ethnography
+- design-science
+when_to_use: Use Participatory Design when the end-users have specialized knowledge that designers lack, when buy-in and adoption
+  are critical, or when the design problem involves complex social or organizational dynamics.
+limitations: PD can be time-consuming and resource-intensive. Power imbalances between professional designers and lay participants
+  can undermine genuine co-design. Scaling PD to large or dispersed communities is challenging.
 external_links:
-  - type: article
-    url: https://doi.org/10.1145/142750.142769
-    title: "Participatory Design: Principles and Practices (Schuler & Namioka, 1993)"
+- type: article
+  url: https://doi.org/10.1145/142750.142769
+  title: 'Participatory Design: Principles and Practices (Schuler & Namioka, 1993)'
 related_entries:
-  - miro
-  - activity-theory
-  - practice-based-computing
+- miro
+- activity-theory
+- practice-based-computing
 tags:
-  - co-design
-  - user-centered
-  - stakeholder-engagement
-  - design-research
+- co-design
+- user-centered
+- stakeholder-engagement
+- design-research
+website_url: https://en.wikipedia.org/wiki/Participatory_design

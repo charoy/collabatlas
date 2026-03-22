@@ -17,6 +17,23 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Collaborative LaTeX editor for academic writing with real-time co-authoring and version history.
+description: Overleaf is a cloud-based LaTeX editor that enables real-time collaborative writing and editing of academic documents.
+  It provides version control, commenting systems, and integrated reference management, making it particularly valuable for
+  researchers, academics, and students working on papers, theses, and technical documents. The platform eliminates the complexity
+  of local LaTeX installations while supporting seamless multi-author collaboration with live editing and comprehensive revision
+  tracking.
 contributors:
 - collabatlas-team
+website_url: https://www.overleaf.com
+tags:
+- latex-editor
+- academic-writing
+- real-time-collaboration
+- version-control
+- document-sharing
+related_entries:
+- google-docs
+- zotero
+- arxiv-dataset
+- github
+- jupyter

@@ -17,6 +17,23 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Topic-based team chat platform designed for organized, asynchronous communication in distributed teams.
+description: Zulip is an open-source team chat application that organizes conversations by topics within channels, making
+  it easier to follow discussions and maintain context in asynchronous communication. Unlike traditional chat platforms, its
+  threaded conversation model allows teams to have multiple focused discussions simultaneously without losing track of important
+  messages. It's particularly popular in software development teams, research groups, and educational institutions where organized,
+  searchable communication is essential for effective collaboration.
 contributors:
 - collabatlas-team
+website_url: https://zulip.com
+tags:
+- team-chat
+- asynchronous-communication
+- threaded-conversations
+- open-source
+- distributed-teams
+related_entries:
+- slack
+- discord
+- github
+- cscw-framework
+- communities-of-practice

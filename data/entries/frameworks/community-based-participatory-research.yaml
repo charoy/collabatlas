@@ -20,6 +20,26 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Collaborative framework that equitably involves community members and researchers in all phases of research.
+description: Community-Based Participatory Research (CBPR) is a collaborative approach that equitably involves community members
+  as co-researchers throughout all phases of the research process, from problem identification to dissemination of results.
+  This framework emphasizes shared decision-making, capacity building, and ensuring that research benefits the communities
+  being studied rather than extracting knowledge from them. CBPR is particularly valuable for addressing health disparities,
+  social justice issues, and complex community challenges by combining academic expertise with lived community experience.
+  The approach builds trust, enhances research relevance, and creates sustainable solutions that communities can implement
+  and maintain.
 contributors:
 - collabatlas-team
+website_url: https://en.wikipedia.org/wiki/Community-based_participatory_research
+tags:
+- participatory-research
+- community-engagement
+- collaborative-research
+- social-justice
+- capacity-building
+- co-research
+related_entries:
+- participatory-action-research-framework
+- action-research
+- participatory-design
+- photovoice
+- communities-of-practice

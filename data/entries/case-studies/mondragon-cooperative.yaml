@@ -18,6 +18,24 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Worker-owned cooperative federation in Spain demonstrating collaborative governance in business at scale.
+description: Mondragon Corporation is a federation of worker cooperatives based in the Basque region of Spain, founded in
+  1956 by Catholic priest José María Arizmendiarrieta. It demonstrates how collaborative governance and democratic decision-making
+  can operate at massive scale, encompassing over 260 companies across manufacturing, retail, finance, and education with
+  more than 80,000 worker-owners. The cooperative model emphasizes shared ownership, participatory management, and solidarity
+  principles, making it one of the world's largest examples of successful worker cooperation in business.
 contributors:
 - collabatlas-team
+website_url: https://www.mondragon-corporation.com/
+tags:
+- worker-cooperative
+- democratic-governance
+- participatory-management
+- solidarity-economy
+- collaborative-business
+- basque-model
+related_entries:
+- cooperative-development-manual
+- participatory-action-research-framework
+- communities-of-practice
+- collective-impact-framework
+- socio-technical-systems

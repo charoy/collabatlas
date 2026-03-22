@@ -17,7 +17,24 @@ modalities:
 maturity: established
 status: published
 platform: other
-description: Open catalog of scholarly works, authors, institutions, and concepts replacing Microsoft Academic Graph.
+description: OpenAlex is a comprehensive open bibliographic database that catalogs over 250 million scholarly works, authors,
+  institutions, and research concepts. It serves as the open successor to Microsoft Academic Graph, providing free API access
+  to structured metadata about academic publications and citation networks. The platform enables researchers, institutions,
+  and developers to analyze scholarly communication patterns, research collaboration networks, and knowledge production across
+  disciplines.
 contributors:
 - collabatlas-team
 source_url: https://example.com/openalex-research-graph
+tags:
+- scholarly-database
+- open-data
+- research-metadata
+- citation-analysis
+- academic-graph
+- bibliometrics
+related_entries:
+- arxiv-dataset
+- crossref-metadata-api
+- orcid-public-data-file
+- open-science-framework
+- wikipedia-edit-history

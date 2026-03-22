@@ -2,82 +2,91 @@ id: practice-based-computing
 type: framework
 title: Practice-Based Computing
 tagline: Design approach grounding computing system development in empirical studies of real-world work practices.
-description: >-
-  Practice-Based Computing (PBC) is a design and research framework that insists
-  computing systems should be designed based on detailed empirical understanding of
-  actual work and collaboration practices. Rooted in the ethnomethodological and
-  CSCW traditions, PBC emerged from the work of Volker Wulf and colleagues at the
-  University of Siegen. The framework integrates ethnographic fieldwork, participatory
-  design, and iterative system development into sustained engagement with communities
-  of practice. It employs sensitizing concepts (after Blumer 1954) to translate
-  fieldwork observations into design implications, and design case studies to
-  document and share design knowledge holistically across the phases of a
-  practice-oriented design process. PBC has been applied across domains including
-  crisis management, healthcare, education, and community-based organizations.
+description: Practice-Based Computing (PBC) is a design and research framework that insists computing systems should be designed
+  based on detailed empirical understanding of actual work and collaboration practices. Rooted in the ethnomethodological
+  and CSCW traditions, PBC emerged from the work of Volker Wulf and colleagues at the University of Siegen. The framework
+  integrates ethnographic fieldwork, participatory design, and iterative system development into sustained engagement with
+  communities of practice. It employs sensitizing concepts (after Blumer 1954) to translate fieldwork observations into design
+  implications, and design case studies to document and share design knowledge holistically across the phases of a practice-oriented
+  design process. PBC has been applied across domains including crisis management, healthcare, education, and community-based
+  organizations.
 domains:
-  - software-engineering
-  - social-sciences
-  - design
-  - education
+- software-engineering
+- social-sciences
+- design
+- education
 collaboration-types:
-  - co-design
-  - participatory
-  - interdisciplinary
+- co-design
+- participatory
+- interdisciplinary
 scales:
-  - small-team
-  - organization
-  - community
+- small-team
+- organization
+- community
 modalities:
-  - in-person
-  - hybrid
+- in-person
+- hybrid
 maturity: established
 status: published
 contributors:
-  - collabatlas-team
-created: "2026-02-19"
-last_reviewed: "2026-02-19"
+- collabatlas-team
+created: '2026-02-19'
+last_reviewed: '2026-02-19'
 research_methods:
-  - ethnography
-  - design-science
-  - action-research
-  - case-study
+- ethnography
+- design-science
+- action-research
+- case-study
 key_concepts:
-  - "Sensitizing concepts — general reference points guiding empirical inquiry, suggesting directions along which to look rather than prescribing what to see (Blumer 1954)"
-  - "Design case studies — holistic documentation of a practice-oriented design process spanning pre-study, design, and appropriation phases"
-  - "Grounded design — deriving design implications from empirically observed practices rather than abstract models"
-  - "Sustained community engagement — long-term relationships between researchers and communities of practice"
-  - "Appropriation — studying how users adopt, adapt, and transform technologies in their actual practices"
+- Sensitizing concepts — general reference points guiding empirical inquiry, suggesting directions along which to look rather
+  than prescribing what to see (Blumer 1954)
+- Design case studies — holistic documentation of a practice-oriented design process spanning pre-study, design, and appropriation
+  phases
+- Grounded design — deriving design implications from empirically observed practices rather than abstract models
+- Sustained community engagement — long-term relationships between researchers and communities of practice
+- Appropriation — studying how users adopt, adapt, and transform technologies in their actual practices
 seminal_works:
-  - title: "Practice-based computing: Empirically grounded conceptualizations derived from design case studies"
-    authors: ["Volker Wulf", "Claudia Müller", "Volkmar Pipek", "David Randall", "Markus Rohde", "Gunnar Stevens"]
-    year: 2015
-  - title: "Socio-Informatics: A Practice-based Perspective on the Design and Use of IT Artefacts"
-    authors: ["Volker Wulf", "Volkmar Pipek", "David Randall", "Markus Rohde", "Kjeld Schmidt", "Gunnar Stevens"]
-    year: 2018
-    url: https://doi.org/10.1093/oso/9780198733249.001.0001
-limitations: >-
-  Practice-based computing requires sustained, long-term engagement with communities,
-  making it resource-intensive and difficult to scale. The approach depends heavily
-  on ethnographic skills and may be challenging for teams without social science
-  training. Generalizability of findings from specific design cases to broader
-  contexts remains an ongoing methodological challenge.
+- title: 'Practice-based computing: Empirically grounded conceptualizations derived from design case studies'
+  authors:
+  - Volker Wulf
+  - Claudia Müller
+  - Volkmar Pipek
+  - David Randall
+  - Markus Rohde
+  - Gunnar Stevens
+  year: 2015
+- title: 'Socio-Informatics: A Practice-based Perspective on the Design and Use of IT Artefacts'
+  authors:
+  - Volker Wulf
+  - Volkmar Pipek
+  - David Randall
+  - Markus Rohde
+  - Kjeld Schmidt
+  - Gunnar Stevens
+  year: 2018
+  url: https://doi.org/10.1093/oso/9780198733249.001.0001
+limitations: Practice-based computing requires sustained, long-term engagement with communities, making it resource-intensive
+  and difficult to scale. The approach depends heavily on ethnographic skills and may be challenging for teams without social
+  science training. Generalizability of findings from specific design cases to broader contexts remains an ongoing methodological
+  challenge.
 external_links:
-  - type: book
-    url: https://doi.org/10.1093/oso/9780198733249.001.0001
-    title: "Socio-Informatics (Oxford University Press)"
-  - type: book
-    url: https://doi.org/10.1007/978-1-4471-6720-4
-    title: "Designing Socially Embedded Technologies in the Real-World (Springer)"
+- type: book
+  url: https://doi.org/10.1093/oso/9780198733249.001.0001
+  title: Socio-Informatics (Oxford University Press)
+- type: book
+  url: https://doi.org/10.1007/978-1-4471-6720-4
+  title: Designing Socially Embedded Technologies in the Real-World (Springer)
 related_entries:
-  - cscw-framework
-  - socio-technical-systems
-  - participatory-design
-  - activity-theory
-  - communities-of-practice
+- cscw-framework
+- socio-technical-systems
+- participatory-design
+- activity-theory
+- communities-of-practice
 tags:
-  - ethnography
-  - grounded-design
-  - sociotechnical
-  - CSCW
-  - sensitizing-concepts
-  - design-case-studies
+- ethnography
+- grounded-design
+- sociotechnical
+- CSCW
+- sensitizing-concepts
+- design-case-studies
+website_url: https://en.wikipedia.org/wiki/Practice-based_computing

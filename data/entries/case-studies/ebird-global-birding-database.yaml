@@ -17,6 +17,25 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Citizen science platform collecting worldwide bird observations to drive avian research and conservation.
+description: eBird is a real-time, online checklist program launched by the Cornell Lab of Ornithology in 2002 that has become
+  the world's largest biodiversity-related citizen science project. The platform allows birders worldwide to record their
+  observations, creating a massive collaborative database with over 1 billion bird sightings that scientists use to track
+  bird populations, migrations, and conservation needs. This citizen science initiative demonstrates how global collaboration
+  between amateur naturalists and professional researchers can generate unprecedented datasets for environmental monitoring
+  and species protection.
 contributors:
 - collabatlas-team
+website_url: https://ebird.org
+tags:
+- citizen-science
+- biodiversity-monitoring
+- environmental-collaboration
+- crowd-sourcing
+- conservation-science
+- global-database
+related_entries:
+- citizen-science-toolkit
+- galaxy-zoo
+- global-biodiversity-information-facility
+- communities-of-practice
+- openstreetmap

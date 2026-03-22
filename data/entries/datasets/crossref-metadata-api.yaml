@@ -16,7 +16,23 @@ modalities:
 maturity: well-documented
 status: published
 platform: other
-description: Scholarly metadata for over 130 million research outputs enabling citation and co-authorship analysis.
+description: A comprehensive REST API providing structured metadata for over 130 million scholarly publications, including
+  journal articles, books, and conference proceedings from thousands of publishers worldwide. The API enables researchers
+  to access bibliographic information, citation data, author affiliations, and funding details, making it essential for analyzing
+  collaboration patterns, co-authorship networks, and research impact across disciplines. It serves as a critical infrastructure
+  for scholarly communication tools, citation managers, and research analytics platforms.
 contributors:
 - collabatlas-team
 source_url: https://example.com/crossref-metadata-api
+tags:
+- scholarly-metadata
+- research-api
+- citation-analysis
+- bibliographic-data
+- academic-publishing
+related_entries:
+- arxiv-dataset
+- openalex-research-graph
+- orcid-public-data-file
+- cscw-proceedings-corpus
+- open-science-framework

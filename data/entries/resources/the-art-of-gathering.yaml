@@ -16,7 +16,23 @@ modalities:
 - in-person
 maturity: established
 status: published
-description: Guide to designing purposeful collaborative gatherings that transform how groups come together.
+description: A comprehensive guide by Priya Parker that reimagines how to create meaningful gatherings by focusing on purpose
+  rather than tradition. The book provides practical frameworks for designing events, meetings, and gatherings that foster
+  authentic connection and collaboration. Parker emphasizes the importance of intentional design, skillful hosting, and creating
+  psychological safety to transform ordinary gatherings into transformative experiences.
 contributors:
 - collabatlas-team
 resource_type: book
+website_url: https://www.priyaparker.com/book
+tags:
+- meeting-design
+- facilitation
+- event-planning
+- group-dynamics
+- collaborative-gatherings
+related_entries:
+- facilitators-guide-to-participatory-decision-making
+- liberating-structures-toolkit
+- world-cafe
+- open-space-technology
+- remote-facilitation-playbook

@@ -17,7 +17,25 @@ modalities:
 - remote
 maturity: established
 status: published
-description: Techniques and tools for running effective collaborative workshops and meetings in distributed teams.
+description: A comprehensive resource providing practical guidance for facilitating workshops, meetings, and collaborative
+  sessions with distributed teams. It covers essential techniques for managing virtual group dynamics, maintaining engagement
+  across time zones, and leveraging digital tools effectively. The playbook addresses unique challenges of remote facilitation
+  including technology troubleshooting, creating psychological safety in virtual environments, and adapting traditional facilitation
+  methods for digital spaces.
 contributors:
 - collabatlas-team
 resource_type: tutorial
+website_url: https://www.sessionlab.com/blog/remote-facilitation/
+tags:
+- remote-work
+- facilitation
+- virtual-meetings
+- distributed-teams
+- workshop-design
+- collaboration-tools
+related_entries:
+- facilitators-guide-to-participatory-decision-making
+- liberating-structures-toolkit
+- design-sprint
+- world-cafe
+- open-space-technology
