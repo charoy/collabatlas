@@ -18,8 +18,6 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Arduino Open Hardware is a case study for collaborative work. Open-source electronics platform built by a global
-  community of makers, educators, and engineers. It is particularly relevant in Design, Education, Manufacturing and Software
-  Engineering.
+description: Open-source electronics platform built by a global community of makers, educators, and engineers.
 contributors:
 - collabatlas-team

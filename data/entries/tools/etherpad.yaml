@@ -17,7 +17,6 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Etherpad is a tool for collaborative work. Open-source real-time collaborative text editor for synchronous group
-  writing and note-taking. It is particularly relevant in Education, Software Engineering and Publishing.
+description: Open-source real-time collaborative text editor for synchronous group writing and note-taking.
 contributors:
 - collabatlas-team

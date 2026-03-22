@@ -19,8 +19,6 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Open Science Framework is a tool for collaborative work. Free platform for managing research projects with preregistration,
-  data sharing, and collaboration tools. It is particularly relevant in Social Sciences, Education, Healthcare and Environmental
-  Science.
+description: Free platform for managing research projects with preregistration, data sharing, and collaboration tools.
 contributors:
 - collabatlas-team

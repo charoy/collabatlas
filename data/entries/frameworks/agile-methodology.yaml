@@ -19,8 +19,6 @@ modalities:
 - hybrid
 maturity: well-documented
 status: published
-description: Agile Methodology is a framework for collaborative work. Iterative development framework emphasizing adaptive
-  planning, cross-functional teams, and continuous delivery. It is particularly relevant in Software Engineering, Business
-  and Design.
+description: Iterative development framework emphasizing adaptive planning, cross-functional teams, and continuous delivery.
 contributors:
 - collabatlas-team

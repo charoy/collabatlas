@@ -17,7 +17,6 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: REDCap is a tool for collaborative work. Secure web application for building and managing online surveys and
-  databases in research studies. It is particularly relevant in Healthcare, Social Sciences and Education.
+description: Secure web application for building and managing online surveys and databases in research studies.
 contributors:
 - collabatlas-team

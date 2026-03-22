@@ -20,8 +20,6 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: Living Lab is a method for collaborative work. Open innovation ecosystem operating in real-world settings where
-  users co-create solutions with researchers. It is particularly relevant in Urban Planning, Design, Software Engineering
-  and Healthcare.
+description: Open innovation ecosystem operating in real-world settings where users co-create solutions with researchers.
 contributors:
 - collabatlas-team

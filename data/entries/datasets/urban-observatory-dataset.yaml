@@ -16,9 +16,7 @@ modalities:
 maturity: emerging
 status: published
 platform: other
-description: Urban Observatory Dataset is a dataset for collaborative work. Comparative data from cities worldwide enabling
-  analysis of urban development and governance patterns. It is particularly relevant in Urban Planning, Public Policy and
-  Environmental Science.
+description: Comparative data from cities worldwide enabling analysis of urban development and governance patterns.
 contributors:
 - collabatlas-team
 source_url: https://example.com/urban-observatory-dataset

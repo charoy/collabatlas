@@ -16,8 +16,7 @@ modalities:
 - remote
 maturity: emerging
 status: published
-description: InnerSource Patterns is a resource for collaborative work. Documented patterns for applying open-source collaboration
-  practices within organizational boundaries. It is particularly relevant in Software Engineering and Business.
+description: Documented patterns for applying open-source collaboration practices within organizational boundaries.
 contributors:
 - collabatlas-team
 resource_type: tutorial

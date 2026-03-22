@@ -18,8 +18,7 @@ modalities:
 - hybrid
 maturity: established
 status: published
-description: FOSTER Open Science Toolkit is a resource for collaborative work. Training resources and best practices for implementing
-  open science principles in research institutions. It is particularly relevant in Education, Social Sciences and Publishing.
+description: Training resources and best practices for implementing open science principles in research institutions.
 contributors:
 - collabatlas-team
 resource_type: tutorial

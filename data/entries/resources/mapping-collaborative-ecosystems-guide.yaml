@@ -16,9 +16,7 @@ modalities:
 - hybrid
 maturity: emerging
 status: published
-description: Mapping Collaborative Ecosystems Guide is a resource for collaborative work. Methodological guide for visualizing
-  and analyzing networks of collaborative actors and relationships. It is particularly relevant in Social Sciences, Business
-  and Public Policy.
+description: Methodological guide for visualizing and analyzing networks of collaborative actors and relationships.
 contributors:
 - collabatlas-team
 resource_type: tutorial

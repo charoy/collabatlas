@@ -15,7 +15,6 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Mozilla Firefox Development is a case study for collaborative work. Open-source browser development combining
-  paid engineers and global volunteer contributors. It is particularly relevant in Software Engineering.
+description: Open-source browser development combining paid engineers and global volunteer contributors.
 contributors:
 - collabatlas-team

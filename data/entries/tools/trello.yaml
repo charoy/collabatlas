@@ -16,7 +16,6 @@ modalities:
 - remote
 maturity: well-documented
 status: published
-description: Trello is a tool for collaborative work. Visual project management tool using boards, lists, and cards for task
-  tracking and team coordination. It is particularly relevant in Business, Software Engineering and Education.
+description: Visual project management tool using boards, lists, and cards for task tracking and team coordination.
 contributors:
 - collabatlas-team
