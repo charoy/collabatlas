@@ -1,0 +1,35 @@
+name: Daily Suggestion
+
+on:
+  schedule:
+    # Every day at 8:00 UTC (9:00 or 10:00 CET/CEST)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      category:
+        description: 'Category to suggest (tool, method, framework, case-study, resource). Leave empty for daily rotation.'
+        required: false
+        default: ''
+
+jobs:
+  suggest:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate suggestion
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CATEGORY_OVERRIDE: ${{ github.event.inputs.category || '' }}
+        run: python scripts/daily_suggest.py
