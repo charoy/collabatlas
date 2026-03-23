@@ -1,0 +1,65 @@
+id: zoom
+type: tool
+title: Zoom
+tagline: Cloud-based video conferencing platform enabling real-time meetings, webinars, and remote collaboration at scale.
+description: >-
+  Zoom is a cloud-based video conferencing platform that supports real-time video
+  meetings, screen sharing, breakout rooms, and recording capabilities for
+  distributed teams and large-scale virtual events. It became foundational
+  infrastructure for remote collaboration during the COVID-19 pandemic and
+  remains widely adopted across education, business, healthcare, and research
+  sectors. Zoom's scalable architecture accommodates everything from one-on-one
+  calls to webinars with thousands of participants, and its ease of use has made
+  it a primary tool for synchronous communication in distributed work practices.
+domains:
+  - business
+  - education
+  - healthcare
+  - social-sciences
+collaboration-types:
+  - distributed
+  - interdisciplinary
+  - co-production
+scales:
+  - pair
+  - small-team
+  - organization
+  - multi-org
+modalities:
+  - remote
+  - hybrid
+maturity: well-documented
+status: published
+contributors:
+  - collabatlas-team
+created: "2026-03-23"
+last_reviewed: "2026-03-23"
+website_url: https://zoom.us
+license: Proprietary
+open_source: false
+supported_platforms:
+  - Web
+  - macOS
+  - Windows
+  - iOS
+  - Android
+  - Linux
+external_links:
+  - type: website
+    url: https://zoom.us
+    title: Zoom Official Website
+  - type: documentation
+    url: https://support.zoom.com
+    title: Zoom Support Center
+related_entries:
+  - jitsi-meet
+  - microsoft-teams
+  - slack
+  - gather-town
+tags:
+  - video-conferencing
+  - webinar
+  - screen-sharing
+  - breakout-rooms
+  - remote-work
+  - real-time-collaboration
