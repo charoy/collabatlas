@@ -1,0 +1,36 @@
+id: pair-programming
+type: method
+title: Pair Programming
+tagline: Two programmers work together at one workstation, with one writing code while the other reviews each line in real-time.
+description: Pair programming is an agile software development technique where two developers collaborate at a single computer,
+  continuously switching between 'driver' (writing code) and 'navigator' (reviewing and guiding) roles. This method enhances
+  code quality through immediate peer review, knowledge sharing, and collective problem-solving. It reduces bugs, improves
+  design decisions, and facilitates skill transfer between team members, making it a cornerstone practice in collaborative
+  software development.
+domains:
+- software-engineering
+collaboration-types:
+- co-creation
+scales:
+- pair
+modalities:
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-24'
+last_reviewed: '2026-03-24'
+website_url : https://agilealliance.org/glossary/pair-programming/
+tags:
+- programming
+- code-review
+- agile
+- knowledge-sharing
+- quality-assurance
+- real-time
+related_entries:
+- scrum
+- agile-methodology
+- github
