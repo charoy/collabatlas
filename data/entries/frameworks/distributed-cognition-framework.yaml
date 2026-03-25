@@ -1,0 +1,47 @@
+id: distributed-cognition-framework
+type: framework
+title: Distributed Cognition Framework
+tagline: Framework for understanding how cognitive processes are distributed across individuals, tools, and representations
+  in collaborative systems.
+description: Distributed Cognition is a theoretical framework developed by Edwin Hutchins that examines how cognitive processes
+  extend beyond individual minds to include interactions between people, tools, and environmental representations. It emphasizes
+  how knowledge and problem-solving emerge from the coordination of multiple agents and artifacts working together. This framework
+  is particularly valuable for analyzing collaborative work systems where cognition is shared across team members and technological
+  tools, providing insights into how groups collectively process information and make decisions.
+domains:
+- software-engineering
+- design
+- healthcare
+- education
+- business
+collaboration-types:
+- distributed
+- interdisciplinary
+- co-creation
+- community-based
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- remote
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-25'
+last_reviewed: '2026-03-25'
+tags:
+- cognitive-science
+- collaboration-theory
+- team-cognition
+- human-computer-interaction
+- coordination
+- knowledge-sharing
+related_entries:
+- Activity Theory
+- Computer-Supported Cooperative Work (CSCW)
+- Socio-Technical Systems Theory
+- Communities of Practice
