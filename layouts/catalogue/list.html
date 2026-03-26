@@ -8,6 +8,7 @@
   {{ .Content }}
 
   <div class="page-actions">
+    <a href="{{ "catalogue/visualize" | relURL }}/" class="btn btn-secondary btn-sm">Graph view</a>
     <a href="{{ .Site.Params.github_repo }}/issues/new?template=quick-add.yml" target="_blank" rel="noopener" class="btn btn-primary btn-sm">⚡ Quick Add by URL</a>
   </div>
 
@@ -58,6 +59,11 @@
     <!-- Populated by catalogue-filter.js -->
   </div>
 
+  <div class="view-toggle" id="view-toggle">
+    <button class="view-toggle-btn active" data-view="cards" title="Card view">▦</button>
+    <button class="view-toggle-btn" data-view="compact" title="Compact list">☰</button>
+  </div>
+
   {{ range .Sections }}
   <div class="type-section">
     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
@@ -69,5 +75,31 @@
     </div>
   </div>
   {{ end }}
+
+  <script>
+  (function() {
+    var toggle = document.getElementById('view-toggle');
+    if (!toggle) return;
+    var saved = localStorage.getItem('catalogue-view') || 'cards';
+    applyView(saved);
+
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-view]');
+      if (!btn) return;
+      var view = btn.dataset.view;
+      localStorage.setItem('catalogue-view', view);
+      applyView(view);
+    });
+
+    function applyView(view) {
+      var catalogue = document.querySelector('.catalogue');
+      catalogue.classList.remove('view-cards', 'view-compact');
+      catalogue.classList.add('view-' + view);
+      toggle.querySelectorAll('.view-toggle-btn').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.view === view);
+      });
+    }
+  })();
+  </script>
 </section>
 {{ end }}
