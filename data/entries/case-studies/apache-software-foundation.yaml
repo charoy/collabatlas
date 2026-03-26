@@ -1,0 +1,41 @@
+id: apache-software-foundation
+type: case-study
+title: Apache Software Foundation
+tagline: Global open-source software development community managing 300+ collaborative projects through distributed governance
+  and mentorship.
+description: The Apache Software Foundation (ASF) represents one of the largest and most successful models of distributed
+  open-source collaboration, supporting over 300 active projects with thousands of contributors worldwide. The foundation
+  employs a unique merit-based governance structure where contributors advance through roles (contributor, committer, PMC
+  member) based on sustained participation and community recognition. Its collaborative model emphasizes consensus-driven
+  decision making, transparent communication through mailing lists, and a strong mentoring culture that has successfully scaled
+  technical collaboration across diverse global communities for over two decades.
+domains:
+- software-engineering
+collaboration-types:
+- open-source
+- distributed
+- community-based
+scales:
+- multi-org
+modalities:
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-26'
+last_reviewed: '2026-03-26'
+website_url: https://www.apache.org/
+tags:
+- open-source
+- governance
+- mentorship
+- meritocracy
+- distributed-development
+- community-management
+related_entries:
+- Linux Kernel Development
+- Mozilla Firefox Development
+- GitHub
+- GitLab
+- Open Source Guide
