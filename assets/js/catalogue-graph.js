@@ -33,7 +33,8 @@
     resource: 'resources',
   };
 
-  const TAXONOMY_LINK_THRESHOLD = 2; // min shared taxonomy values to create a link
+  const TAXONOMY_LINK_THRESHOLD = 5; // min shared taxonomy values to create a link
+  const MAX_TAXONOMY_LINKS = 150;   // cap total taxonomy links for performance
   const D3_CDN = 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js';
 
   /* ------------------------------------------------------------------ */
@@ -122,7 +123,8 @@
       });
     });
 
-    // Taxonomy links (shared values)
+    // Taxonomy links (shared values) — scored and capped for performance
+    var candidates = [];
     for (var i = 0; i < nodes.length; i++) {
       for (var j = i + 1; j < nodes.length; j++) {
         var a = nodes[i];
@@ -137,18 +139,23 @@
         shared += countShared(a.modalities, b.modalities);
 
         if (shared >= TAXONOMY_LINK_THRESHOLD) {
-          linkSet.add(key);
-          links.push({
-            source: a.id,
-            target: b.id,
-            type: 'taxonomy',
-            strength: Math.min(shared / 6, 1),
-          });
-          a.linkCount++;
-          b.linkCount++;
+          candidates.push({ a: a, b: b, key: key, shared: shared });
         }
       }
     }
+    // Sort by strength descending and keep only top N
+    candidates.sort(function (x, y) { return y.shared - x.shared; });
+    candidates.slice(0, MAX_TAXONOMY_LINKS).forEach(function (c) {
+      linkSet.add(c.key);
+      links.push({
+        source: c.a.id,
+        target: c.b.id,
+        type: 'taxonomy',
+        strength: Math.min(c.shared / 6, 1),
+      });
+      c.a.linkCount++;
+      c.b.linkCount++;
+    });
 
     return { nodes: nodes, links: links };
   }
@@ -261,7 +268,8 @@
       .attr('class', 'graph-label')
       .style('font-size', '11px')
       .style('fill', '#333')
-      .style('pointer-events', 'none');
+      .style('pointer-events', 'none')
+      .style('display', 'none');
 
     // Hover highlight
     node.on('mouseover', function (event, d) {
@@ -274,6 +282,7 @@
         if (tid === d.id) neighbors.add(sid);
       });
 
+      node.select('text').style('display', function (n) { return neighbors.has(n.id) ? 'block' : 'none'; });
       node.style('opacity', function (n) { return neighbors.has(n.id) ? 1 : 0.15; });
       link.style('opacity', function (l) {
         var sid = typeof l.source === 'object' ? l.source.id : l.source;
@@ -283,6 +292,7 @@
     });
 
     node.on('mouseout', function () {
+      node.select('text').style('display', 'none');
       node.style('opacity', 1);
       link.style('opacity', function (d) { return d.type === 'explicit' ? 0.7 : 0.3; });
     });
@@ -297,10 +307,11 @@
 
     // Simulation
     simulation = d3.forceSimulation(graph.nodes)
-      .force('link', d3.forceLink(graph.links).id(function (d) { return d.id; }).distance(80).strength(function (d) { return d.type === 'explicit' ? 0.5 : 0.1; }))
-      .force('charge', d3.forceManyBody().strength(-120))
+      .force('link', d3.forceLink(graph.links).id(function (d) { return d.id; }).distance(100).strength(function (d) { return d.type === 'explicit' ? 0.3 : 0.05; }))
+      .force('charge', d3.forceManyBody().strength(-80).distanceMax(300))
       .force('center', d3.forceCenter(width / 2, height / 2))
-      .force('collision', d3.forceCollide().radius(20))
+      .force('collision', d3.forceCollide().radius(15))
+      .alphaDecay(0.05)
       .on('tick', function () {
         link
           .attr('x1', function (d) { return d.source.x; })
