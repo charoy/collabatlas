@@ -5,66 +5,109 @@
     <p class="page-description">{{ .Params.description }}</p>
   </header>
 
-  <div class="visualize-controls">
-    <div class="control-group">
-      <label for="x-axis-select">X-Axis (Columns)</label>
-      <select id="x-axis-select">
-        <option value="domains" selected>Domains</option>
-        <option value="collaborationTypes">Collaboration Types</option>
-        <option value="scales">Scales</option>
-        <option value="modalities">Modalities</option>
-        <option value="researchMethods">Research Methods</option>
-        <option value="maturity">Maturity</option>
-      </select>
-    </div>
-    <div class="control-group">
-      <label for="y-axis-select">Y-Axis (Rows)</label>
-      <select id="y-axis-select">
-        <option value="collaborationTypes" selected>Collaboration Types</option>
-        <option value="domains">Domains</option>
-        <option value="scales">Scales</option>
-        <option value="modalities">Modalities</option>
-        <option value="researchMethods">Research Methods</option>
-        <option value="maturity">Maturity</option>
-      </select>
-    </div>
+  {{/* View tabs */}}
+  <div class="visualize-tabs" role="tablist">
+    <button class="visualize-tab active" role="tab" aria-selected="true" data-tab="graph">Graph</button>
+    <button class="visualize-tab" role="tab" aria-selected="false" data-tab="matrix">Matrix</button>
   </div>
 
-  <div id="visualize-chart" class="visualize-chart">
-    <p class="visualize-loading">Loading visualization data...</p>
-    <noscript>JavaScript is required to view this visualization.</noscript>
-  </div>
-
-  <div class="visualize-distributions-grid">
-    <div class="distribution-panel">
-      <h3 id="x-dist-title">Distribution</h3>
-      <div id="x-distribution" class="chart-container"></div>
-    </div>
-    <div class="distribution-panel">
-      <h3 id="y-dist-title">Distribution</h3>
-      <div id="y-distribution" class="chart-container"></div>
-    </div>
-  </div>
-
-  <dialog id="visualize-modal" class="visualize-modal">
-    <div class="visualize-modal-inner">
-      <header class="visualize-modal-header">
-        <h2 id="modal-title">Intersection Details</h2>
-        <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
-      </header>
-      <div class="visualize-modal-content">
-        <ul id="modal-list" class="modal-entry-list">
-          <!-- Entries will be injected here -->
-        </ul>
+  {{/* ===== GRAPH VIEW ===== */}}
+  <div id="tab-graph" class="visualize-tab-panel active">
+    <div class="graph-controls">
+      <div class="graph-type-toggles" id="graph-type-toggles">
+        <button class="type-toggle active" data-type="tools">Tools</button>
+        <button class="type-toggle active" data-type="methods">Methods</button>
+        <button class="type-toggle active" data-type="frameworks">Frameworks</button>
+        <button class="type-toggle active" data-type="case-studies">Case Studies</button>
+        <button class="type-toggle active" data-type="datasets">Datasets</button>
+        <button class="type-toggle active" data-type="resources">Resources</button>
+      </div>
+      <div class="graph-filters">
+        <select id="graph-filter-domain"><option value="">All domains</option></select>
+        <select id="graph-filter-collab"><option value="">All collaboration types</option></select>
+        <select id="graph-filter-scale"><option value="">All scales</option></select>
+        <select id="graph-filter-modality"><option value="">All modalities</option></select>
+      </div>
+      <div class="graph-stats">
+        <span id="graph-node-count">0</span> entries &middot; <span id="graph-link-count">0</span> connections
       </div>
     </div>
-  </dialog>
+
+    <div id="graph-container" class="graph-container">
+      <p class="visualize-loading">Loading graph data...</p>
+    </div>
+
+    <div id="graph-detail" class="graph-detail" hidden>
+      <button type="button" class="graph-detail-close" id="graph-detail-close" aria-label="Close">&times;</button>
+      <h3 id="graph-detail-title"></h3>
+      <p id="graph-detail-tagline" class="graph-detail-tagline"></p>
+      <div id="graph-detail-meta" class="graph-detail-meta"></div>
+      <a id="graph-detail-link" href="#" class="btn btn-primary btn-sm">View full entry →</a>
+    </div>
+  </div>
+
+  {{/* ===== MATRIX VIEW ===== */}}
+  <div id="tab-matrix" class="visualize-tab-panel" hidden>
+    <div class="visualize-controls">
+      <div class="control-group">
+        <label for="x-axis-select">X-Axis (Columns)</label>
+        <select id="x-axis-select">
+          <option value="domains" selected>Domains</option>
+          <option value="collaborationTypes">Collaboration Types</option>
+          <option value="scales">Scales</option>
+          <option value="modalities">Modalities</option>
+          <option value="researchMethods">Research Methods</option>
+          <option value="maturity">Maturity</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="y-axis-select">Y-Axis (Rows)</label>
+        <select id="y-axis-select">
+          <option value="collaborationTypes" selected>Collaboration Types</option>
+          <option value="domains">Domains</option>
+          <option value="scales">Scales</option>
+          <option value="modalities">Modalities</option>
+          <option value="researchMethods">Research Methods</option>
+          <option value="maturity">Maturity</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="visualize-chart" class="visualize-chart">
+      <p class="visualize-loading">Loading visualization data...</p>
+      <noscript>JavaScript is required to view this visualization.</noscript>
+    </div>
+
+    <div class="visualize-distributions-grid">
+      <div class="distribution-panel">
+        <h3 id="x-dist-title">Distribution</h3>
+        <div id="x-distribution" class="chart-container"></div>
+      </div>
+      <div class="distribution-panel">
+        <h3 id="y-dist-title">Distribution</h3>
+        <div id="y-distribution" class="chart-container"></div>
+      </div>
+    </div>
+
+    <dialog id="visualize-modal" class="visualize-modal">
+      <div class="visualize-modal-inner">
+        <header class="visualize-modal-header">
+          <h2 id="modal-title">Intersection Details</h2>
+          <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
+        </header>
+        <div class="visualize-modal-content">
+          <ul id="modal-list" class="modal-entry-list"></ul>
+        </div>
+      </div>
+    </dialog>
+  </div>
 
   <script>
-    console.log('Visualize script starting...');
     window.CATALOGUE_DATA_URL = '{{ "catalogue/visualize/index.json" | relURL }}';
   </script>
   {{ $vizJs := resources.Get "js/catalogue-visualize.js" | minify | fingerprint }}
   <script src="{{ $vizJs.RelPermalink }}" integrity="{{ $vizJs.Data.Integrity }}"></script>
+  {{ $graphJs := resources.Get "js/catalogue-graph.js" | minify | fingerprint }}
+  <script src="{{ $graphJs.RelPermalink }}" integrity="{{ $graphJs.Data.Integrity }}"></script>
 </section>
 {{ end }}
