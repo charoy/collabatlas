@@ -1,0 +1,42 @@
+id: the-fifth-discipline-the-art-and-practice-of-the-learning-organization
+type: resource
+title: 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+tagline: Seminal book on systems thinking and organizational learning for collaborative teams and organizations.
+description: Peter Senge's influential work introduces the concept of learning organizations and five disciplines essential
+  for collaborative organizational development. The book emphasizes systems thinking, shared vision, team learning, and mental
+  models as foundations for effective collaboration. It has shaped decades of thinking about how organizations can work together
+  more effectively through continuous learning and collective intelligence.
+domains:
+- business
+- education
+- social-sciences
+collaboration-types:
+- interdisciplinary
+- community-based
+- participatory
+scales:
+- organization
+- multi-org
+- small-team
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-27'
+last_reviewed: '2026-03-27'
+tags:
+- systems-thinking
+- organizational-learning
+- team-learning
+- shared-vision
+- mental-models
+- collective-intelligence
+related_entries:
+- Communities of Practice
+- Socio-Technical Systems Theory
+- Activity Theory
+- The Art of Gathering
