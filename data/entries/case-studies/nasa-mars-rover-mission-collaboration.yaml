@@ -1,0 +1,39 @@
+id: nasa-mars-rover-mission-collaboration
+type: case-study
+title: NASA Mars Rover Mission Collaboration
+tagline: International multi-organizational collaboration for designing, building, and operating Mars exploration rovers across
+  decades.
+description: NASA's Mars rover missions represent one of the most complex collaborative engineering projects in history, involving
+  thousands of scientists, engineers, and technicians across multiple space agencies, universities, and private companies
+  worldwide. The collaboration spans mission planning, spacecraft design, instrument development, launch operations, and ongoing
+  mission control with rovers operating millions of miles from Earth. Teams work across time zones using sophisticated remote
+  collaboration tools and protocols to coordinate daily operations, analyze data, and make critical decisions about rover
+  movements and scientific experiments.
+domains:
+- environmental-science
+collaboration-types:
+- interdisciplinary
+- distributed
+- multi-org
+scales:
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-29'
+last_reviewed: '2026-03-29'
+website_url: https://mars.nasa.gov/mars-exploration/missions/
+tags:
+- space exploration
+- remote operations
+- scientific collaboration
+- mission control
+- international cooperation
+- engineering
+related_entries:
+- International Space Station (ISS)
+- Human Genome Project
+- CERN Large Hadron Collider
