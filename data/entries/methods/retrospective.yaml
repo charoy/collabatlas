@@ -1,0 +1,42 @@
+id: retrospective
+type: method
+title: Retrospective
+tagline: A structured method for teams to reflect on their work process and identify improvements collaboratively.
+description: Retrospectives are structured meetings where teams collectively reflect on their recent work, discussing what
+  went well, what could be improved, and what actions to take moving forward. Originally popularized in Agile software development,
+  this method promotes continuous improvement through collaborative reflection and shared learning. The practice creates psychological
+  safety for team members to openly discuss challenges and successes, leading to better team dynamics and more effective collaborative
+  processes.
+domains:
+- software-engineering
+- business
+- design
+- manufacturing
+collaboration-types:
+- co-creation
+- interdisciplinary
+scales:
+- small-team
+- organization
+modalities:
+- in-person
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-31'
+last_reviewed: '2026-03-31'
+website_url: https://retrospectivewiki.org/index.php?title=Retrospective_Techniques
+tags:
+- reflection
+- continuous-improvement
+- team-development
+- agile
+- feedback
+- process-improvement
+related_entries:
+- Scrum
+- Agile Methodology
+- Design Sprint
