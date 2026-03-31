@@ -1,0 +1,40 @@
+id: basecamp
+type: tool
+title: Basecamp
+tagline: Project management and team collaboration platform designed for remote and distributed teams.
+description: Basecamp is a web-based project management and collaboration tool that combines task management, file sharing,
+  messaging, and scheduling in a single platform. It enables teams to organize work, communicate effectively, and track project
+  progress through its simple, integrated interface. The platform is particularly valued for its user-friendly design and
+  focus on reducing communication overhead in distributed teams.
+domains:
+- business
+- software-engineering
+- design
+collaboration-types:
+- distributed
+- open-source
+scales:
+- small-team
+- organization
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-30'
+last_reviewed: '2026-03-30'
+website_url: https://basecamp.com
+tags:
+- project-management
+- communication
+- task-tracking
+- file-sharing
+- team-coordination
+- remote-work
+related_entries:
+- Slack
+- Trello
+- Notion
+- Microsoft Teams
