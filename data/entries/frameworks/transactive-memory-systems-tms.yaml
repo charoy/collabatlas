@@ -1,0 +1,46 @@
+id: transactive-memory-systems-tms
+type: framework
+title: Transactive Memory Systems (TMS)
+tagline: Framework for understanding how teams collectively encode, store, and retrieve knowledge through specialized expertise
+  and shared awareness.
+description: 'Transactive Memory Systems theory explains how collaborative groups develop and maintain shared knowledge systems
+  where members specialize in different domains and rely on each other''s expertise. The framework describes three key processes:
+  specialization (who knows what), credibility (who to trust for information), and coordination (how to access and combine
+  knowledge). TMS is fundamental for understanding how teams leverage distributed expertise, coordinate complex tasks, and
+  maintain institutional memory across time and personnel changes.'
+domains:
+- business
+- education
+- healthcare
+- software-engineering
+collaboration-types:
+- interdisciplinary
+- distributed
+- co-production
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-03-28'
+last_reviewed: '2026-03-28'
+webside_url : https://guilfordjournals.com/doi/10.1521/soco.1995.13.3.319
+tags:
+- knowledge-management
+- team-cognition
+- expertise-coordination
+- organizational-memory
+- distributed-expertise
+- team-performance
+related_entries:
+- Communities of Practice (framework)
+- Distributed Cognition Framework (framework)
+- Activity Theory (framework)
+- Socio-Technical Systems Theory (framework)
