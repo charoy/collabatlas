@@ -1,0 +1,47 @@
+id: coordination-theory
+type: framework
+title: Coordination Theory
+tagline: Theoretical framework for understanding how multiple actors manage interdependencies in collaborative work.
+description: Coordination Theory provides a systematic approach to understanding how individuals, teams, and organizations
+  manage dependencies and coordinate their activities to achieve common goals. Developed by Thomas Malone and Kevin Crowston,
+  this framework identifies different types of dependencies (shared resources, producer-consumer relationships, simultaneity
+  constraints) and coordination mechanisms to manage them. It has been foundational in CSCW research and organizational design,
+  helping explain how technology can support coordination in distributed and complex collaborative environments.
+domains:
+- business
+- software-engineering
+- design
+- manufacturing
+- public-policy
+collaboration-types:
+- distributed
+- interdisciplinary
+- community-based
+- co-production
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- remote
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-01'
+last_reviewed: '2026-04-01'
+website_url : https://dspace.mit.edu/bitstream/handle/1721.1/2208/SWP-2051-27084940-CISR-182.pdf
+tags:
+- coordination
+- dependencies
+- organizational-theory
+- cscw
+- workflow
+- interdependencies
+related_entries:
+- cscw-framework
+- distributed-cognition-framework
+- socio-technical-systems
+- activity-theory
