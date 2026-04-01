@@ -6,7 +6,6 @@ author: "CollabAtlas Editorial"
 category: "Research Spotlight"
 related_entries:
   - pilot-long-term-collaboration
-  - xwiki
   - practice-based-computing
   - recherche-data-gouv
   - cscw-framework
