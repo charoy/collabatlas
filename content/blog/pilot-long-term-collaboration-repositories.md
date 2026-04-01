@@ -40,9 +40,6 @@ Several themes from PILOT discussions resonate with well-known CSCW challenges:
 - **Adoption resistance**: Fieldwork across civil security, education, and publishing reveals recurring patterns: users often do not use all available features, resist new tools, or lack awareness of their existing tools' capabilities.
 - **Organizational context**: Status, job security, and organizational culture all shape willingness to collaborate — a finding that echoes decades of CSCW research.
 
-## Tools and infrastructure
-
-The project builds on [XWiki]({{< relref "/catalogue/tools/xwiki" >}}), an open-source wiki platform that provides the collaborative editing backbone, and leverages national infrastructure like Recherche Data Gouv for FAIR-compliant data stewardship. The emphasis on open-source and federated architecture reflects a deliberate choice for long-term sustainability over commercial convenience.
 
 ## Further reading
 
