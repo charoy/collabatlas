@@ -1,0 +1,38 @@
+id: foldit-protein-folding-game
+type: case-study
+title: Foldit Protein Folding Game
+tagline: Crowdsourced protein folding puzzle game where players collectively solve complex biochemistry problems through gamified
+  collaboration.
+description: Foldit is an online puzzle game developed by the University of Washington that harnesses the collective intelligence
+  of players to solve protein folding problems that are computationally challenging for traditional algorithms. Players collaborate
+  through forums, share strategies, and compete in teams to find optimal protein structures, contributing to real scientific
+  discoveries including HIV enzyme design and COVID-19 research. The project demonstrates how gamification can mobilize distributed
+  human intelligence for complex scientific problem-solving.
+domains:
+- citizen-science
+collaboration-types:
+- crowdsourcing
+- community-based
+- distributed
+scales:
+- community
+modalities:
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-02'
+last_reviewed: '2026-04-02'
+website_url: https://fold.it
+tags:
+- gamification
+- citizen-science
+- protein-folding
+- crowdsourcing
+- scientific-discovery
+- biochemistry
+related_entries:
+- Galaxy Zoo
+- eBird Global Birding Database
+- OpenStreetMap
