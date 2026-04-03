@@ -1,0 +1,44 @@
+id: getting-to-yes-negotiating-agreement-without-giving-in
+type: resource
+title: 'Getting to Yes: Negotiating Agreement Without Giving In'
+tagline: Classic guide to principled negotiation and collaborative problem-solving in conflict situations.
+description: A foundational book by Roger Fisher and William Ury that presents the Harvard Negotiation Project's method for
+  reaching mutually beneficial agreements. The book introduces principled negotiation techniques that focus on interests rather
+  than positions, enabling collaborative solutions even in adversarial contexts. Widely used in business, diplomacy, and conflict
+  resolution, it provides practical frameworks for transforming competitive negotiations into collaborative problem-solving
+  processes.
+domains:
+- business
+- public-policy
+- social-sciences
+collaboration-types:
+- co-creation
+- participatory
+scales:
+- pair
+- small-team
+- organization
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-03'
+last_reviewed: '2026-04-03'
+resource_type: book
+website_url: https://www.williamury.com/getting-to-yes/
+tags:
+- negotiation
+- conflict-resolution
+- communication
+- decision-making
+- mediation
+- principled-negotiation
+related_entries:
+- facilitators-guide-to-participatory-decision-making
+- the-art-of-gathering
+- appreciative-inquiry
+- focus-groups
