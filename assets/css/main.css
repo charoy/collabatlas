@@ -401,6 +401,19 @@ main {
   letter-spacing: -0.02em;
 }
 
+.rss-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: #f26522;
+  text-decoration: none;
+  margin-top: 0.25rem;
+}
+.rss-link:hover {
+  text-decoration: underline;
+}
+
 .page-description {
   font-size: 1.05rem;
   color: var(--color-text-muted);
