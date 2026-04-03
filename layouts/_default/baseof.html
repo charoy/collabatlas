@@ -20,9 +20,9 @@
   {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
   {{/* RSS autodiscovery */}}
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Catalogue" href="{{ "/catalogue/index.xml" | absURL }}" />
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Blog" href="{{ "/blog/index.xml" | absURL }}" />
-  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Living Research" href="{{ "/research-cases/index.xml" | absURL }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Catalogue" href="{{ "catalogue/index.xml" | absURL }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Blog" href="{{ "blog/index.xml" | absURL }}" />
+  <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — Living Research" href="{{ "research-cases/index.xml" | absURL }}" />
   {{- if eq .Kind "term" }}
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} — {{ .Title }}" href="{{ .Permalink }}index.xml" />
   {{- end }}
