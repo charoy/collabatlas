@@ -11,7 +11,7 @@
   </header>
   {{ .Content }}
   <ul class="entry-list">
-    {{ range .Pages }}
+    {{ range where .Pages "Section" "catalogue" }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
