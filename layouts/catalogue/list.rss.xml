@@ -1,4 +1,4 @@
-{{- $pages := where .Pages "Section" "catalogue" -}}
+{{- $pages := where .RegularPagesRecursive "Params.status" "published" -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
   {{- $pages = $pages | first $limit -}}
@@ -7,7 +7,7 @@
   <channel>
     <title>{{ .Title }} — {{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
-    <description>New catalogue entries tagged &#34;{{ .Title }}&#34;</description>
+    <description>New entries in the CollabAtlas catalogue</description>
     <generator>Hugo</generator>
     <language>{{ site.Language.LanguageCode }}</language>
     <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
       <guid>{{ .Permalink }}</guid>
-      <description>{{ with .Params.tagline }}{{ . | html }}{{ end }}</description>
+      {{ with .Params.tagline }}<description>{{ . | html }}</description>{{ end }}
     </item>
     {{- end }}
   </channel>
