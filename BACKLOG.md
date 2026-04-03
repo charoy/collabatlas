@@ -418,6 +418,53 @@ Tasks:
 
 ---
 
+## Priority 9 — Reduce maintenance cost: automation and editorialisation
+
+### 13. Mailing list via RSS-to-email
+
+**Goal:** let visitors subscribe to catalogue and blog updates without any manual work.
+
+**Approach:** integrate an external service (Buttondown or Mailchimp) that watches the RSS feeds and sends automatic emails when new entries appear. No server needed — just a subscription form in the footer.
+
+Tasks:
+
+- [ ] Choose a provider (Buttondown recommended: free up to ~100 subscribers, GDPR-friendly).
+- [ ] Configure RSS-to-email automation for the catalogue and blog feeds.
+- [ ] Add a subscription form widget in the footer of `baseof.html`.
+
+Definition of done:
+
+- A visitor can subscribe and receive automatic emails when new catalogue entries or blog posts are published.
+- Zero manual work required per email sent.
+
+### 14. AI-driven editorialisation (keep the site alive with minimal human effort)
+
+**Goal:** surface fresh, curated content automatically to make the site feel active without requiring constant human editorial work.
+
+**Approach:** GitHub Actions + Claude API. Humans validate (via PR review) but do not draft.
+
+#### Quick wins
+
+- [ ] **Weekly "Entry spotlight"** — a GitHub Action runs weekly, calls Claude, which picks a catalogue entry and writes a short blog post explaining why it's interesting. Opens a draft PR for review before publishing.
+- [ ] **Monthly "New entries" digest** — auto-generated blog post summarising the month's additions with connections between them.
+
+#### Medium effort
+
+- [ ] **"Unexpected connections" feature** — Claude identifies non-obvious links between entries (e.g. a method used in multiple case studies across different domains) and surfaces them on entry pages or as a blog post.
+- [ ] **Events section** — a GitHub Action scrapes targeted sources (CSCW, CHI, Participatory Design conference CFPs) and creates YAML event entries. Claude filters and formats. Auto-PR for validation before publish.
+
+#### Constraints
+
+- All AI-generated content opens a PR, not a direct commit — a human approves before publishing.
+- Scope-limited sources for events (2–3 known RSS/web feeds) to keep quality manageable.
+
+Definition of done:
+
+- At least one piece of new content per week appears on the site without requiring manual drafting.
+- The human cost is review-only (not writing).
+
+---
+
 ## Nice-to-have
 
 - Add printable or downloadable comparison views.
