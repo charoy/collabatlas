@@ -1,0 +1,41 @@
+id: the-winograd-flower-a-pattern-language-for-collaborative-work
+type: resource
+title: 'The Winograd Flower: A Pattern Language for Collaborative Work'
+tagline: A foundational framework for understanding conversational structures in collaborative work environments.
+description: Developed by Terry Winograd, this pattern language describes the conversational structures that underlie all
+  collaborative work, focusing on requests, promises, and commitments. It provides a systematic way to analyze and design
+  collaborative processes by understanding the speech acts that coordinate human action. The framework has been influential
+  in CSCW research and organizational design, offering practical tools for improving team communication and workflow coordination.
+domains:
+- business
+- software-engineering
+- design
+collaboration-types:
+- distributed
+- interdisciplinary
+- participatory
+scales:
+- small-team
+- organization
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-04'
+last_reviewed: '2026-04-04'
+tags:
+- conversation
+- coordination
+- speech-acts
+- workflow
+- linguistics
+- organizational-theory
+related_entries:
+- Computer-Supported Cooperative Work (CSCW)
+- Coordination Theory
+- Activity Theory
+- Practice-Based Computing
