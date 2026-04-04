@@ -1,4 +1,4 @@
-{{- $pages := where .RegularPagesRecursive "Params.status" "published" -}}
+{{- $pages := .RegularPagesRecursive -}}
 {{- $pages = sort $pages "Lastmod" "desc" -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
