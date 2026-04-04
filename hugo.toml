@@ -1,6 +1,7 @@
 baseURL = 'https://charoy.github.io/collabatlas/'
 languageCode = 'en-us'
 title = 'CollabAtlas'
+enableGitInfo = true
 
 [params]
   description = 'An open, community-governed knowledge platform for collaborative solutions'
