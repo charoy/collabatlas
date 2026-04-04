@@ -2,15 +2,14 @@ id: the-winograd-flower-a-pattern-language-for-collaborative-work
 type: resource
 title: 'The Winograd Flower: A Pattern Language for Collaborative Work'
 tagline: A foundational framework for understanding conversational structures in collaborative work environments.
-description: DDeveloped by Terry Winograd and Fernando Flores, this pattern language describes the 
+description: Developed by Terry Winograd and Fernando Flores, this pattern language describes the 
   conversational structures that underlie all collaborative work, focusing on requests, 
   promises, and commitments. Based on their seminal work "Understanding Computers and 
   Cognition" (1986), it provides a systematic way to analyze and design collaborative 
   processes by understanding the speech acts that coordinate human action. The framework 
   has been influential in CSCW research and organizational design, offering practical 
   tools for improving team communication and workflow coordination.
-references:
-  - "Winograd, T., & Flores, F. (1986). Understanding Computers and Cognition: A New Foundation for Design. Ablex Publishing Corporation."
+ "Winograd, T., & Flores, F. (1986). Understanding Computers and Cognition: A New Foundation for Design. Ablex Publishing Corporation."
 domains:
 - business
 - software-engineering
