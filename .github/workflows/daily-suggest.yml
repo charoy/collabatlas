@@ -2,8 +2,8 @@ name: Daily Suggestion
 
 on:
   schedule:
-    # Every day at 8:00 UTC (9:00 or 10:00 CET/CEST)
-    - cron: '0 8 * * *'
+    # Every day at 5:00 UTC (6:00 or 7:00 CET/CEST)
+    - cron: '0 5 * * *'
   workflow_dispatch:
     inputs:
       category:
