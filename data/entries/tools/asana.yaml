@@ -1,0 +1,44 @@
+id: asana
+type: tool
+title: Asana
+tagline: Project management platform for teams to organize, track, and manage work collaboratively across projects and tasks.
+description: Asana is a comprehensive project management and team collaboration platform that enables teams to plan, organize,
+  and track work across projects. The tool supports collaborative workflows through shared projects, task assignments, timeline
+  views, and real-time communication features. Teams can coordinate work through customizable project templates, automated
+  workflows, and integrated reporting dashboards that provide visibility into progress and dependencies.
+domains:
+- business
+- design
+- software-engineering
+- education
+collaboration-types:
+- distributed
+- co-production
+- interdisciplinary
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-06'
+last_reviewed: '2026-04-06'
+website_url: https://asana.com
+tags:
+- project-management
+- task-tracking
+- workflow
+- team-coordination
+- planning
+- productivity
+related_entries:
+- Basecamp
+- Trello
+- Slack
+- Microsoft Teams
+- Notion
