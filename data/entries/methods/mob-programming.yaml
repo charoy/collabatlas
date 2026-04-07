@@ -1,0 +1,38 @@
+id: mob-programming
+type: method
+title: Mob Programming
+tagline: A collaborative software development approach where the whole team works on the same thing, at the same time, in
+  the same space, and at the same computer.
+description: Mob Programming extends pair programming to include the entire team working together on a single task using one
+  shared computer and display. The approach emphasizes continuous collaboration, knowledge sharing, and collective code ownership.
+  It reduces silos, improves code quality through real-time review, and accelerates learning across the team. Teams typically
+  rotate who is "driving" (typing) while others navigate and contribute ideas.
+domains:
+- software-engineering
+collaboration-types:
+- co-creation
+- interdisciplinary
+scales:
+- small-team
+modalities:
+- in-person
+- remote
+maturity: established
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-07'
+last_reviewed: '2026-04-07'
+website_url: https://mobprogramming.org/
+tags:
+- programming
+- software-development
+- team-collaboration
+- agile
+- knowledge-sharing
+- continuous-integration
+related_entries:
+- pair-programming
+- scrum
+- agile-methodology
+- retrospective
