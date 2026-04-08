@@ -1,0 +1,46 @@
+id: grounded-theory
+type: framework
+title: Grounded Theory
+tagline: Systematic methodology for developing theory through iterative data collection and analysis in collaborative research
+  contexts.
+description: Grounded Theory is a qualitative research methodology that enables collaborative development of theoretical frameworks
+  through systematic data collection, coding, and analysis. Originally developed by Glaser and Strauss, it supports interdisciplinary
+  teams in building theory from empirical data through iterative processes of constant comparison and theoretical sampling.
+  The methodology provides structured approaches for collaborative sense-making and theory construction across diverse research
+  contexts, making it particularly valuable for CSCW and collaborative research endeavors.
+domains:
+- social-sciences
+- healthcare
+- education
+- business
+collaboration-types:
+- interdisciplinary
+- co-production
+- participatory
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-08'
+last_reviewed: '2026-04-08'
+website_url: https://www.groundedtheory.com/
+tags:
+- qualitative-research
+- theory-development
+- methodology
+- data-analysis
+- collaborative-research
+- systematic
+related_entries:
+- Activity Theory
+- Participatory Action Research Framework
+- Action Research
+- Social-Ecological Systems Framework
