@@ -89,6 +89,40 @@
 </section>
 {{ end }}
 
+{{ $events := .Site.Data.events }}
+{{ $upcoming := slice }}
+{{ range $events }}
+  {{ if eq .status "upcoming" }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ end }}
+{{ end }}
+{{ $upcoming = sort $upcoming "date_start" "asc" }}
+{{ $upcomingDisplay := first 3 $upcoming }}
+{{ if $upcomingDisplay }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">Upcoming Events</h2>
+    <a href="{{ "events" | relURL }}/" class="home-section-link">All events →</a>
+  </div>
+  <div class="events-grid">
+    {{ range $upcomingDisplay }}
+    <a href="{{ .url }}" target="_blank" rel="noopener" class="event-card">
+      <div class="event-date">
+        <span class="event-month">{{ (time .date_start).Format "Jan" }}</span>
+        <span class="event-day">{{ (time .date_start).Format "02" }}</span>
+      </div>
+      <div class="event-info">
+        <span class="event-type-badge event-type-{{ .type }}">{{ .type }}</span>
+        <strong>{{ .title }}</strong>
+        <span class="event-location">{{ .location }}</span>
+        {{ with .description }}<p class="event-desc">{{ . }}</p>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{/* Recently Added — sorted by YAML "created" date */}}
 {{ $recentWithDate := slice }}
 {{ range $allEntries }}

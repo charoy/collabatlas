@@ -1,0 +1,43 @@
+- id: cscw-2026
+  title: "CSCW 2026"
+  type: conference
+  date_start: "2026-11-07"
+  date_end: "2026-11-11"
+  location: "San Jose, CA, USA"
+  url: "https://cscw.acm.org/2026/"
+  description: "ACM Conference on Computer-Supported Cooperative Work and Social Computing"
+  domains: [cscw]
+  status: upcoming
+
+- id: chi-2026
+  title: "CHI 2026"
+  type: conference
+  date_start: "2026-04-25"
+  date_end: "2026-04-30"
+  location: "Yokohama, Japan"
+  url: "https://chi2026.acm.org/"
+  description: "ACM CHI Conference on Human Factors in Computing Systems"
+  domains: [cscw, digital-humanities]
+  status: upcoming
+
+- id: ecscw-2026
+  title: "ECSCW 2026"
+  type: conference
+  date_start: "2026-06-14"
+  date_end: "2026-06-18"
+  location: "Zurich, Switzerland"
+  url: "https://ecscw.eusset.eu/2026/"
+  description: "European Conference on Computer-Supported Cooperative Work"
+  domains: [cscw]
+  status: upcoming
+
+- id: coop-school-2026
+  title: "COOP Summer School 2026"
+  type: school
+  date_start: "2026-07-06"
+  date_end: "2026-07-10"
+  location: "Nancy, France"
+  url: ""
+  description: "Summer school on cooperative systems design and research methods"
+  domains: [cscw, education]
+  status: upcoming
