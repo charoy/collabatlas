@@ -44,6 +44,50 @@
   <div class="stat"><span class="stat-number">{{ len $resources }}</span><span class="stat-label">Resources</span></div>
 </div>
 
+{{ $featured := .Site.Data.featured }}
+{{ if $featured }}
+<section class="home-section">
+  <div class="home-section-header">
+    <h2 class="home-section-title">A la une</h2>
+  </div>
+  <div class="featured-grid">
+    {{ range first 3 $featured }}
+      {{ if eq .type "entry" }}
+        {{ $path := printf "catalogue/%s/%s" .section .id }}
+        {{ $page := site.GetPage $path }}
+        {{ if $page }}
+        <a href="{{ $page.RelPermalink }}" class="featured-card featured-entry">
+          <span class="featured-badge">{{ .section | singularize | title }}</span>
+          <strong>{{ $page.Title }}</strong>
+          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
+        </a>
+        {{ end }}
+      {{ else if eq .type "article" }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="featured-card featured-article">
+          <span class="featured-badge">Research</span>
+          <strong>{{ .title }}</strong>
+          {{ with .authors }}<span class="featured-meta">{{ . }}</span>{{ end }}
+          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
+        </a>
+      {{ else if eq .type "event" }}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="featured-card featured-event">
+          <span class="featured-badge">Event</span>
+          <strong>{{ .title }}</strong>
+          {{ with .date_start }}<span class="featured-meta">{{ . }}{{ with $.location }} · {{ . }}{{ end }}</span>{{ end }}
+          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
+        </a>
+      {{ else if eq .type "custom" }}
+        <a href="{{ .url | relURL }}" class="featured-card featured-custom">
+          {{ with .badge }}<span class="featured-badge">{{ . }}</span>{{ end }}
+          <strong>{{ .title }}</strong>
+          {{ with .description }}<p class="featured-highlight">{{ . }}</p>{{ end }}
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
 {{/* Recently Added — sorted by YAML "created" date */}}
 {{ $recentWithDate := slice }}
 {{ range $allEntries }}

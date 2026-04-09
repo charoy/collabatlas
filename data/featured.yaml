@@ -1,0 +1,16 @@
+- type: entry
+  id: miro
+  section: tools
+  highlight: "Widely adopted for remote participatory design workshops"
+
+- type: article
+  title: "The CSCW Research Landscape"
+  url: "https://doi.org/example"
+  authors: "Smith et al., 2025"
+  highlight: "A recent survey mapping the field of computer-supported cooperative work"
+
+- type: custom
+  title: "Call for Contributions"
+  description: "CollabAtlas is looking for case studies in collaborative urban planning"
+  url: "/catalogue/case-studies/"
+  badge: "Call"
