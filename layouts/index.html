@@ -32,63 +32,53 @@
       <a href="{{ $wizardPage.RelPermalink }}" class="btn btn-secondary">Find Your Method →</a>
       <a href="#contribute" class="btn btn-outline">Contribute →</a>
     </div>
-  </div>
-</section>
 
-<div class="home-stats">
-  <div class="stat"><span class="stat-number">{{ len $tools }}</span><span class="stat-label">Tools</span></div>
-  <div class="stat"><span class="stat-number">{{ len $methods }}</span><span class="stat-label">Methods</span></div>
-  <div class="stat"><span class="stat-number">{{ len $frameworks }}</span><span class="stat-label">Frameworks</span></div>
-  <div class="stat"><span class="stat-number">{{ len $caseStudies }}</span><span class="stat-label">Case Studies</span></div>
-  <div class="stat"><span class="stat-number">{{ len $datasets }}</span><span class="stat-label">Datasets</span></div>
-  <div class="stat"><span class="stat-number">{{ len $resources }}</span><span class="stat-label">Resources</span></div>
-</div>
-
-{{ $featured := .Site.Data.featured }}
-{{ if $featured }}
-<section class="home-section">
-  <div class="home-section-header">
-    <h2 class="home-section-title">A la une</h2>
-  </div>
-  <div class="featured-grid">
-    {{ range first 3 $featured }}
-      {{ if eq .type "entry" }}
-        {{ $path := printf "catalogue/%s/%s" .section .id }}
-        {{ $page := site.GetPage $path }}
-        {{ if $page }}
-        <a href="{{ $page.RelPermalink }}" class="featured-card featured-entry">
-          <span class="featured-badge">{{ .section | singularize | title }}</span>
-          <strong>{{ $page.Title }}</strong>
-          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
-        </a>
+    {{/* Featured spotlight — rotating item inside the hero */}}
+    {{ $featured := .Site.Data.featured }}
+    {{ if $featured }}
+    <div class="hero-spotlight" id="hero-spotlight">
+      <span class="hero-spotlight-label">A la une</span>
+      <div class="hero-spotlight-track">
+        {{ range first 5 $featured }}
+          {{ if eq .type "entry" }}
+            {{ $path := printf "catalogue/%s/%s" .section .id }}
+            {{ $page := site.GetPage $path }}
+            {{ if $page }}
+            <a href="{{ $page.RelPermalink }}" class="hero-spotlight-item">
+              <span class="featured-badge featured-badge--{{ .section }}">{{ .section | singularize | title }}</span>
+              <strong>{{ $page.Title }}</strong>
+              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+            </a>
+            {{ end }}
+          {{ else if eq .type "article" }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" class="hero-spotlight-item">
+              <span class="featured-badge featured-badge--research">Research</span>
+              <strong>{{ .title }}</strong>
+              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+            </a>
+          {{ else if eq .type "event" }}
+            <a href="{{ .url }}" target="_blank" rel="noopener" class="hero-spotlight-item">
+              <span class="featured-badge featured-badge--event">Event</span>
+              <strong>{{ .title }}</strong>
+              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+            </a>
+          {{ else if eq .type "custom" }}
+            <a href="{{ .url | relURL }}" class="hero-spotlight-item">
+              <span class="featured-badge featured-badge--custom">{{ .badge | default "Featured" }}</span>
+              <strong>{{ .title }}</strong>
+              {{ with .description }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+            </a>
+          {{ end }}
         {{ end }}
-      {{ else if eq .type "article" }}
-        <a href="{{ .url }}" target="_blank" rel="noopener" class="featured-card featured-article">
-          <span class="featured-badge">Research</span>
-          <strong>{{ .title }}</strong>
-          {{ with .authors }}<span class="featured-meta">{{ . }}</span>{{ end }}
-          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
-        </a>
-      {{ else if eq .type "event" }}
-        <a href="{{ .url }}" target="_blank" rel="noopener" class="featured-card featured-event">
-          <span class="featured-badge">Event</span>
-          <strong>{{ .title }}</strong>
-          {{ $loc := .location }}
-          {{ with .date_start }}<span class="featured-meta">{{ . }}{{ with $loc }} · {{ . }}{{ end }}</span>{{ end }}
-          {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
-        </a>
-      {{ else if eq .type "custom" }}
-        <a href="{{ .url | relURL }}" class="featured-card featured-custom">
-          {{ with .badge }}<span class="featured-badge">{{ . }}</span>{{ end }}
-          <strong>{{ .title }}</strong>
-          {{ with .description }}<p class="featured-highlight">{{ . }}</p>{{ end }}
-        </a>
-      {{ end }}
+      </div>
+      <div class="hero-spotlight-dots" id="hero-spotlight-dots"></div>
+    </div>
     {{ end }}
+
   </div>
 </section>
-{{ end }}
 
+{{/* Upcoming Events — compact horizontal strip */}}
 {{ $events := .Site.Data.events }}
 {{ $upcoming := slice }}
 {{ range $events }}
@@ -97,30 +87,21 @@
   {{ end }}
 {{ end }}
 {{ $upcoming = sort $upcoming "date_start" "asc" }}
-{{ $upcomingDisplay := first 3 $upcoming }}
+{{ $upcomingDisplay := first 4 $upcoming }}
 {{ if $upcomingDisplay }}
-<section class="home-section">
-  <div class="home-section-header">
-    <h2 class="home-section-title">Upcoming Events</h2>
-    <a href="{{ "events" | relURL }}/" class="home-section-link">All events →</a>
-  </div>
-  <div class="events-grid">
+<div class="events-strip">
+  <div class="events-strip-inner">
+    <span class="events-strip-label">Upcoming</span>
     {{ range $upcomingDisplay }}
-    <a href="{{ .url }}" target="_blank" rel="noopener" class="event-card">
-      <div class="event-date">
-        <span class="event-month">{{ (time .date_start).Format "Jan" }}</span>
-        <span class="event-day">{{ (time .date_start).Format "02" }}</span>
-      </div>
-      <div class="event-info">
-        <span class="event-type-badge event-type-{{ .type }}">{{ .type }}</span>
-        <strong>{{ .title }}</strong>
-        <span class="event-location">{{ .location }}</span>
-        {{ with .description }}<p class="event-desc">{{ . }}</p>{{ end }}
-      </div>
+    <a href="{{ .url }}" target="_blank" rel="noopener" class="events-strip-item">
+      <span class="events-strip-date">{{ (time .date_start).Format "Jan 02" }}</span>
+      <span class="events-strip-title">{{ .title }}</span>
+      <span class="events-strip-location">{{ .location }}</span>
     </a>
     {{ end }}
+    <a href="{{ "events" | relURL }}/" class="events-strip-more">All events →</a>
   </div>
-</section>
+</div>
 {{ end }}
 
 {{/* Recently Added — sorted by YAML "created" date */}}
@@ -455,5 +436,42 @@
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var track = document.getElementById('hero-spotlight');
+  if (!track) return;
+  var items = track.querySelectorAll('.hero-spotlight-item');
+  var dotsContainer = document.getElementById('hero-spotlight-dots');
+  if (items.length === 0) return;
+
+  var current = 0;
+  var interval;
+
+  items.forEach(function(_, i) {
+    var dot = document.createElement('button');
+    dot.className = 'hero-spotlight-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Show item ' + (i + 1));
+    dot.addEventListener('click', function() { goTo(i); resetInterval(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  var dots = dotsContainer.querySelectorAll('.hero-spotlight-dot');
+
+  function goTo(index) {
+    items[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = index;
+    items[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  items[0].classList.add('active');
+
+  function next() { goTo((current + 1) % items.length); }
+  function resetInterval() { clearInterval(interval); interval = setInterval(next, 5000); }
+  resetInterval();
+});
+</script>
 
 {{ end }}
