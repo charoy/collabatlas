@@ -1,0 +1,97 @@
+{{ define "main" }}
+<section class="events-page">
+  <header class="page-header">
+    <div class="page-header-row">
+      <h1>{{ .Title }}</h1>
+      <a href="{{ .Site.Params.github_repo }}/issues/new?template=new-event.yml" target="_blank" rel="noopener" class="btn btn-outline btn-sm">+ Suggest an Event</a>
+    </div>
+    {{ with .Params.description }}<p class="page-description">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ $events := .Site.Data.events }}
+
+  <div class="events-filters">
+    <button class="event-filter-btn active" data-filter="all">All</button>
+    <button class="event-filter-btn" data-filter="conference">Conferences</button>
+    <button class="event-filter-btn" data-filter="seminar">Seminars</button>
+    <button class="event-filter-btn" data-filter="workshop">Workshops</button>
+    <button class="event-filter-btn" data-filter="school">Schools</button>
+  </div>
+
+  {{ $upcoming := slice }}
+  {{ $past := slice }}
+  {{ range $events }}
+    {{ if eq .status "upcoming" }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ else }}
+      {{ $past = $past | append . }}
+    {{ end }}
+  {{ end }}
+  {{ $upcoming = sort $upcoming "date_start" "asc" }}
+  {{ $past = sort $past "date_start" "desc" }}
+
+  {{ if $upcoming }}
+  <h2 class="events-section-title">Upcoming</h2>
+  <div class="events-list">
+    {{ range $upcoming }}
+    <a href="{{ .url }}" target="_blank" rel="noopener" class="event-row" data-type="{{ .type }}">
+      <div class="event-date">
+        <span class="event-month">{{ (time .date_start).Format "Jan" }}</span>
+        <span class="event-day">{{ (time .date_start).Format "02" }}</span>
+        <span class="event-year">{{ (time .date_start).Format "2006" }}</span>
+      </div>
+      <div class="event-info">
+        <span class="event-type-badge event-type-{{ .type }}">{{ .type }}</span>
+        <strong>{{ .title }}</strong>
+        <span class="event-location">{{ .location }}</span>
+        {{ $ds := .date_start }}
+        {{ with .date_end }}
+          <span class="event-dates">{{ (time $ds).Format "Jan 2" }} – {{ (time .).Format "Jan 2, 2006" }}</span>
+        {{ end }}
+      </div>
+      <div class="event-desc-col">
+        {{ with .description }}<p class="event-desc">{{ . }}</p>{{ end }}
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if $past }}
+  <h2 class="events-section-title events-past-title">Past Events</h2>
+  <div class="events-list events-past">
+    {{ range $past }}
+    <a href="{{ .url }}" target="_blank" rel="noopener" class="event-row" data-type="{{ .type }}">
+      <div class="event-date">
+        <span class="event-month">{{ (time .date_start).Format "Jan" }}</span>
+        <span class="event-day">{{ (time .date_start).Format "02" }}</span>
+        <span class="event-year">{{ (time .date_start).Format "2006" }}</span>
+      </div>
+      <div class="event-info">
+        <span class="event-type-badge event-type-{{ .type }}">{{ .type }}</span>
+        <strong>{{ .title }}</strong>
+        <span class="event-location">{{ .location }}</span>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btns = document.querySelectorAll('.event-filter-btn');
+  var rows = document.querySelectorAll('.event-row');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      rows.forEach(function(row) {
+        row.style.display = (filter === 'all' || row.dataset.type === filter) ? '' : 'none';
+      });
+    });
+  });
+});
+</script>
+{{ end }}

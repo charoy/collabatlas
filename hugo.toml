@@ -61,6 +61,10 @@ enableGitInfo = true
   [[menu.main]]
     name = 'Blog'
     url = '/blog/'
+    weight = 5
+  [[menu.main]]
+    name = 'Events'
+    url = '/events/'
     weight = 6
   [[menu.main]]
     name = 'About'
