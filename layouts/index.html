@@ -73,7 +73,8 @@
         <a href="{{ .url }}" target="_blank" rel="noopener" class="featured-card featured-event">
           <span class="featured-badge">Event</span>
           <strong>{{ .title }}</strong>
-          {{ with .date_start }}<span class="featured-meta">{{ . }}{{ with $.location }} · {{ . }}{{ end }}</span>{{ end }}
+          {{ $loc := .location }}
+          {{ with .date_start }}<span class="featured-meta">{{ . }}{{ with $loc }} · {{ . }}{{ end }}</span>{{ end }}
           {{ with .highlight }}<p class="featured-highlight">{{ . }}</p>{{ end }}
         </a>
       {{ else if eq .type "custom" }}
