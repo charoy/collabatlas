@@ -4,13 +4,14 @@
   highlight: "Widely adopted for remote participatory design workshops"
 
 - type: article
-  title: "The CSCW Research Landscape"
-  url: "https://doi.org/example"
-  authors: "Smith et al., 2025"
-  highlight: "A recent survey mapping the field of computer-supported cooperative work"
+  title: "CSCW — Past, Present and Future"
+  url: "https://www.degruyterbrill.com/document/doi/10.1515/icom-2024-0023/html"
+  authors: "Bullinger-Hoffmann et al., i-com, 2024"
+  highlight: "A comprehensive overview of how CSCW has evolved since the 1980s and where the field is heading"
 
-- type: custom
-  title: "Call for Contributions"
-  description: "CollabAtlas is looking for case studies in collaborative urban planning"
-  url: "/catalogue/case-studies/"
-  badge: "Call"
+- type: event
+  title: "CHI 2026"
+  url: "https://chi2026.acm.org/"
+  date_start: "2026-04-13"
+  location: "Barcelona"
+  highlight: "The premier HCI conference, this week in Barcelona"
