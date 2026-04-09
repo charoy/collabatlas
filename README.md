@@ -17,12 +17,22 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 
 ## Features
 
-- Browsable catalogue with taxonomy-based navigation
+- Browsable catalogue with taxonomy-based navigation and card/compact view toggle
 - Global site search with instant results and a dedicated search page
 - Shareable client-side filters for catalogue and research pages
 - Interactive "Find Your Method" decision wizard with shareable results
 - Browser-stored favorites with star buttons and a favorites-only catalogue filter
 - Visual catalogue overview with a lightweight domain × entry type matrix and stats dashboard
+- Interactive D3.js force-directed graph visualization (`/catalogue/visualize/`) with type toggles and taxonomy filters
+- Editorial spotlight ("A la une") with rotating featured content in the homepage hero
+- Events section: upcoming conferences, seminars, workshops, and schools (`/events/`)
+- Living Research section for PhD theses and ongoing research cases
+- AI-powered workflows:
+  - Issue enrichment via Claude Haiku (auto-evaluates relevance and fills metadata)
+  - Daily entry suggestion bot via Claude Sonnet (creates PRs with new entries)
+  - Weekly event suggestion bot via Claude Sonnet (proposes upcoming events)
+  - Auto-archiving of past events
+- Community contribution via GitHub issue templates (entries, events, blog posts, articles)
 - Automated validation, build checks, and freshness tracking scripts
 
 ## Current Product Status
@@ -35,12 +45,15 @@ Every entry is tagged across multiple dimensions: domain, collaboration type, sc
 - Interactive wizard for finding relevant methods and tools
 - Side-by-side comparison for 2–4 catalogue entries
 - Local favorites saved in the browser for catalogue entries
-- Visual exploration on the catalogue landing page via a clickable taxonomy matrix and lightweight statistics panels
+- Card and compact list view toggle for catalogue pages
+- Visual exploration via clickable taxonomy matrix, stats dashboard, and interactive force-directed graph
+- Editorial spotlight with rotating featured content on homepage
+- Events calendar with dedicated `/events/` page and type filtering
+- AI-assisted curation: issue enrichment, daily entry suggestions, weekly event suggestions
 - Data-driven Hugo build with validation and import scripts
 
 ### Planned next
 
-- Visual exploration components
 - External metadata enrichment beyond the first OpenAlex, Crossref, Zotero, and Zenodo integrations
 
 See [BACKLOG.md](BACKLOG.md) for the current roadmap.
@@ -198,13 +211,15 @@ authors, year, and access level.
 ```text
 data/entries/       # YAML entry files (tools, methods, etc.)
 data/taxonomies/    # Taxonomy dimension definitions
+data/events.yaml    # Events (conferences, seminars, workshops, schools)
+data/featured.yaml  # Editorial spotlight items for the homepage
 data/research-articles.yaml  # Research article references
 schemas/            # JSON Schema validation files
 content/            # Markdown content pages
 layouts/            # Hugo templates
 assets/             # CSS and JavaScript
-scripts/            # Validation, import, and maintenance scripts
-.github/workflows/  # CI/CD (validate, deploy, freshness check)
+scripts/            # Validation, import, AI enrichment, and maintenance scripts
+.github/workflows/  # CI/CD, AI suggestion bots, event automation
 ```
 
 ## Deployment
@@ -222,6 +237,11 @@ The site is deployed automatically to GitHub Pages via GitHub Actions.
 - **`validate.yml`** — Runs on PRs: validates entries against JSON schemas and checks cross-references
 - **`deploy.yml`** — Runs on push to `main`: validates, builds with Hugo, deploys to GitHub Pages
 - **`freshness.yml`** — Monthly: reports stale entries and creates a GitHub issue
+- **`enrich-issue.yml`** — On new issues: AI enrichment via Claude Haiku (evaluates relevance, fills metadata)
+- **`daily-suggest.yml`** — Daily at 8:00 UTC: Claude Sonnet suggests a new catalogue entry and creates a PR
+- **`weekly-suggest-events.yml`** — Mondays at 9:00 UTC: Claude Sonnet suggests upcoming events and creates a PR
+- **`archive-past-events.yml`** — Sundays at 6:00 UTC: archives events whose end date has passed
+- **`event-from-issue.yml`** — On approved event issues: parses and adds event to `data/events.yaml`
 
 The site is published at: [https://charoy.github.io/collabatlas/](https://charoy.github.io/collabatlas/)
 
