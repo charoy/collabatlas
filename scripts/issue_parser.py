@@ -452,3 +452,30 @@ def load_all_entries(root: str | None = None) -> list[dict[str, Any]]:
                 continue
 
     return entries
+
+
+def parse_event_issue(body: str) -> dict[str, Any]:
+    """Parse a new-event issue body into an event dict."""
+    sections = parse_issue_body(body)
+    title = get_text(sections, "Event name") or ""
+    event_id = title_to_id(title)
+
+    domains_checked = get_checkboxes(sections, "Related domains", DOMAIN_MAP)
+
+    return {
+        "id": event_id,
+        "title": title,
+        "type": get_dropdown(sections, "Event type", {
+            "conference": "conference",
+            "seminar": "seminar",
+            "workshop": "workshop",
+            "school": "school",
+        }) or "conference",
+        "date_start": get_text(sections, "Start date") or "",
+        "date_end": get_text(sections, "End date") or "",
+        "location": get_text(sections, "Location") or "",
+        "url": get_text(sections, "Website URL") or "",
+        "description": get_text(sections, "Description") or "",
+        "domains": domains_checked,
+        "status": "upcoming",
+    }

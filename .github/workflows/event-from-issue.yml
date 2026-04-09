@@ -1,0 +1,51 @@
+name: Event from Issue
+
+on:
+  issues:
+    types: [labeled]
+
+concurrency:
+  group: event-issue-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  create-event:
+    if: contains(github.event.issue.labels.*.name, 'new-event') && contains(github.event.issue.labels.*.name, 'approved')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Add event to data file
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: python scripts/add_event.py
+
+      - name: Commit and push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "collabatlas-bot"
+          git config user.email "bot@collabatlas.org"
+          git add data/events.yaml
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "feat: add event from issue #${ISSUE_NUMBER}"
+          git push origin main
+
+      - name: Close issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close ${{ github.event.issue.number }} \
+            --comment "Event added to CollabAtlas. Thank you!"
