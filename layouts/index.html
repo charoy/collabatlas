@@ -45,28 +45,24 @@
             {{ $page := site.GetPage $path }}
             {{ if $page }}
             <a href="{{ $page.RelPermalink }}" class="hero-spotlight-item">
-              <span class="featured-badge featured-badge--{{ .section }}">{{ .section | singularize | title }}</span>
-              <strong>{{ $page.Title }}</strong>
-              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+              <div class="hero-spotlight-title"><span class="featured-badge featured-badge--{{ .section }}">{{ .section | singularize | title }}</span> {{ $page.Title }}</div>
+              {{ with .highlight }}<div class="hero-spotlight-desc">{{ . }}</div>{{ end }}
             </a>
             {{ end }}
           {{ else if eq .type "article" }}
             <a href="{{ .url }}" target="_blank" rel="noopener" class="hero-spotlight-item">
-              <span class="featured-badge featured-badge--research">Research</span>
-              <strong>{{ .title }}</strong>
-              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+              <div class="hero-spotlight-title"><span class="featured-badge featured-badge--research">Research</span> {{ .title }}</div>
+              {{ with .highlight }}<div class="hero-spotlight-desc">{{ . }}</div>{{ end }}
             </a>
           {{ else if eq .type "event" }}
             <a href="{{ .url }}" target="_blank" rel="noopener" class="hero-spotlight-item">
-              <span class="featured-badge featured-badge--event">Event</span>
-              <strong>{{ .title }}</strong>
-              {{ with .highlight }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+              <div class="hero-spotlight-title"><span class="featured-badge featured-badge--event">Event</span> {{ .title }}</div>
+              {{ with .highlight }}<div class="hero-spotlight-desc">{{ . }}</div>{{ end }}
             </a>
           {{ else if eq .type "custom" }}
             <a href="{{ .url | relURL }}" class="hero-spotlight-item">
-              <span class="featured-badge featured-badge--custom">{{ .badge | default "Featured" }}</span>
-              <strong>{{ .title }}</strong>
-              {{ with .description }}<span class="hero-spotlight-text">— {{ . }}</span>{{ end }}
+              <div class="hero-spotlight-title"><span class="featured-badge featured-badge--custom">{{ .badge | default "Featured" }}</span> {{ .title }}</div>
+              {{ with .description }}<div class="hero-spotlight-desc">{{ . }}</div>{{ end }}
             </a>
           {{ end }}
         {{ end }}
