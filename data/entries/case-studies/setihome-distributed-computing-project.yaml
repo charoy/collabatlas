@@ -1,0 +1,39 @@
+id: setihome-distributed-computing-project
+type: case-study
+title: SETI@home Distributed Computing Project
+tagline: Pioneering citizen science project that used millions of volunteer computers to analyze radio telescope data for
+  extraterrestrial intelligence signals.
+description: SETI@home was a distributed computing project launched in 1999 that enabled millions of volunteers worldwide
+  to contribute their idle computer processing power to analyze radio telescope data from the Arecibo Observatory. The project
+  demonstrated the power of crowdsourced scientific computing, processing over 2 million years of CPU time and engaging the
+  public in scientific research. Although it ended active data distribution in 2020, it established foundational principles
+  for volunteer computing and citizen science that influenced many subsequent projects like Folding@home and BOINC.
+domains:
+- citizen-science
+collaboration-types:
+- crowdsourcing
+- distributed
+- community-based
+scales:
+- multi-org
+- community
+modalities:
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-09'
+last_reviewed: '2026-04-09'
+website_url: https://setiathome.berkeley.edu/
+tags:
+- distributed-computing
+- volunteer-computing
+- citizen-science
+- crowdsourcing
+- radio-astronomy
+- BOINC
+related_entries:
+- Foldit Protein Folding Game
+- Galaxy Zoo
+- eBird Global Birding Database
