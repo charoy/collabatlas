@@ -1,0 +1,95 @@
+name: "Suggest an Event"
+description: "Suggest a conference, seminar, workshop, or school related to collaborative research."
+title: "[New Event] "
+labels: ["new-event", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Suggest an Event
+
+        Know of an upcoming event relevant to collaborative research? Fill in the details below.
+
+  - type: input
+    id: title
+    attributes:
+      label: Event name
+      placeholder: "e.g., CSCW 2027"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: event_type
+    attributes:
+      label: Event type
+      options:
+        - conference
+        - seminar
+        - workshop
+        - school
+    validations:
+      required: true
+
+  - type: input
+    id: date_start
+    attributes:
+      label: Start date
+      description: "YYYY-MM-DD format"
+      placeholder: "2027-01-15"
+    validations:
+      required: true
+
+  - type: input
+    id: date_end
+    attributes:
+      label: End date
+      description: "YYYY-MM-DD format (same as start for single-day events)"
+      placeholder: "2027-01-18"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: "City, Country"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Website URL
+      placeholder: "https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Brief description of the event and its relevance to collaborative research."
+      placeholder: "International conference on..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: domains
+    attributes:
+      label: Related domains
+      options:
+        - label: CSCW
+        - label: Healthcare
+        - label: Education
+        - label: Urban Planning
+        - label: Software Engineering
+        - label: Digital Humanities
+        - label: Environmental Science
+        - label: Citizen Science
+        - label: Open Science
+        - label: Design
+        - label: Innovation
+        - label: Crisis Management
+        - label: Governance
+        - label: Manufacturing
+        - label: "Media & Journalism"
