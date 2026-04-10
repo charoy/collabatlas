@@ -1,0 +1,41 @@
+id: collaborative-intelligence-using-teams-to-solve-hard-problems
+type: resource
+title: 'Collaborative Intelligence: Using Teams to Solve Hard Problems'
+tagline: Comprehensive guide to designing and managing collaborative teams for complex problem-solving across organizations.
+description: Written by J. Richard Hackman, this seminal book examines how teams can be structured and supported to tackle
+  complex challenges that exceed individual capabilities. The book provides research-based frameworks for understanding team
+  dynamics, leadership, and organizational conditions that enable effective collaboration. It offers practical guidance for
+  managers and team leaders on creating conditions for high-performing collaborative work, drawing from decades of organizational
+  psychology research.
+domains:
+- business
+- social-sciences
+collaboration-types:
+- interdisciplinary
+- distributed
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-10'
+last_reviewed: '2026-04-10'
+tags:
+- team-dynamics
+- organizational-psychology
+- leadership
+- problem-solving
+- management
+- research-based
+related_entries:
+- Communities of Practice
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+- Agile Methodology
+- Scrum
