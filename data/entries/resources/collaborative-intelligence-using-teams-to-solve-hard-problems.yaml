@@ -23,6 +23,8 @@ modalities:
 - remote
 maturity: well-documented
 status: published
+resource_type : book
+website_url: https://books.google.fr/books?id=k31pEQAAQBAJ
 contributors:
 - collabatlas-bot
 created: '2026-04-10'
