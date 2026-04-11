@@ -1,0 +1,46 @@
+id: consensus-decision-making
+type: method
+title: Consensus Decision Making
+tagline: A collaborative decision-making process where all participants work together to reach agreement that everyone can
+  support.
+description: Consensus decision making is a group decision-making process in which all members participate actively to reach
+  a decision that everyone can accept and support, even if it's not everyone's first choice. The method emphasizes inclusive
+  participation, active listening, and finding solutions that address the concerns of all group members. It is widely used
+  in cooperative organizations, community groups, and collaborative projects where maintaining group cohesion and buy-in is
+  essential for long-term success.
+domains:
+- business
+- social-sciences
+- public-policy
+- citizen-science
+collaboration-types:
+- participatory
+- community-based
+- co-creation
+scales:
+- small-team
+- community
+- organization
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-11'
+last_reviewed: '2026-04-11'
+website_url: https://www.seedsforchange.org.uk/consensus
+tags:
+- decision-making
+- facilitation
+- governance
+- participation
+- conflict-resolution
+- democratic
+related_entries:
+- world-cafe
+- appreciative-inquiry
+- open-space-technology
+- facilitators-guide-to-participatory-decision-making
