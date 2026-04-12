@@ -26,6 +26,10 @@ modalities:
 - remote
 maturity: well-documented
 status: published
+external_links:
+- type: book
+  url: https://www.cambridge.org/highereducation/books/situated-learning
+  title: Situated Learning  Legitimate Peripheral Participation (Lave and Wenger 1991)
 contributors:
 - collabatlas-bot
 created: '2026-04-12'
