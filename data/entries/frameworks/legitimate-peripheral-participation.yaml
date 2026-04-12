@@ -1,0 +1,47 @@
+id: legitimate-peripheral-participation
+type: framework
+title: Legitimate Peripheral Participation
+tagline: Framework describing how newcomers gradually become full participants in communities of practice through collaborative
+  learning
+description: Legitimate Peripheral Participation (LPP) is a theoretical framework developed by Jean Lave and Etienne Wenger
+  that explains how learning occurs through participation in collaborative communities. The framework describes how newcomers
+  start at the periphery of a community and gradually move toward full participation through engagement in authentic activities.
+  LPP emphasizes that learning is inherently social and collaborative, occurring through interactions with more experienced
+  community members and meaningful participation in shared practices.
+domains:
+- education
+- business
+- software-engineering
+- social-sciences
+collaboration-types:
+- community-based
+- participatory
+scales:
+- community
+- organization
+- small-team
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+external_links:
+- type: book
+  url: https://www.cambridge.org/highereducation/books/situated-learning
+  title: Situated Learning: Legitimate Peripheral Participation (Lave and Wenger 1991)
+contributors:
+- collabatlas-bot
+created: '2026-04-12'
+last_reviewed: '2026-04-12'
+tags:
+- learning
+- communities
+- knowledge-transfer
+- mentorship
+- social-learning
+- participation
+related_entries:
+- communities-of-practice
+- socio-technical-systems
+- actor-network-theory
