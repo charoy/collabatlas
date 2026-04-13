@@ -33,19 +33,6 @@
   domains:
   - cscw
   status: upcoming
-- id: pdc-2026
-  title: PDC 2026
-  type: conference
-  date_start: '2026-08-19'
-  date_end: '2026-08-23'
-  location: Aarhus, Denmark
-  url: https://pdc2026.org/
-  description: Participatory Design Conference emphasizing collaborative design methods and community engagement.
-  domains:
-  - participatory-design
-  - collaborative-design
-  - community-engagement
-  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
