@@ -1,43 +1,85 @@
 - id: chi-2026
-  title: "CHI 2026"
+  title: CHI 2026
   type: conference
-  date_start: "2026-04-13"
-  date_end: "2026-04-17"
-  location: "Barcelona, Spain"
-  url: "https://chi2026.acm.org/"
-  description: "ACM CHI Conference on Human Factors in Computing Systems"
-  domains: [cscw, digital-humanities]
+  date_start: '2026-04-13'
+  date_end: '2026-04-17'
+  location: Barcelona, Spain
+  url: https://chi2026.acm.org/
+  description: ACM CHI Conference on Human Factors in Computing Systems
+  domains:
+  - cscw
+  - digital-humanities
   status: upcoming
-
 - id: dis-2026
-  title: "DIS 2026"
+  title: DIS 2026
   type: conference
-  date_start: "2026-06-13"
-  date_end: "2026-06-17"
-  location: "Singapore"
-  url: "https://dis.acm.org/2026/"
-  description: "ACM Conference on Designing Interactive Systems"
-  domains: [cscw, design]
+  date_start: '2026-06-13'
+  date_end: '2026-06-17'
+  location: Singapore
+  url: https://dis.acm.org/2026/
+  description: ACM Conference on Designing Interactive Systems
+  domains:
+  - cscw
+  - design
   status: upcoming
-
 - id: ecscw-2026
-  title: "ECSCW 2026"
+  title: ECSCW 2026
   type: conference
-  date_start: "2026-06-29"
-  date_end: "2026-07-03"
-  location: "Munich, Germany"
-  url: "https://ecscw.eusset.eu/2026/"
-  description: "European Conference on Computer-Supported Cooperative Work"
-  domains: [cscw]
+  date_start: '2026-06-29'
+  date_end: '2026-07-03'
+  location: Munich, Germany
+  url: https://ecscw.eusset.eu/2026/
+  description: European Conference on Computer-Supported Cooperative Work
+  domains:
+  - cscw
   status: upcoming
-
-- id: cscw-2026
-  title: "CSCW 2026"
+- id: pdc-2026
+  title: PDC 2026
   type: conference
-  date_start: "2026-10-10"
-  date_end: "2026-10-14"
-  location: "Salt Lake City, UT, USA"
-  url: "https://cscw.acm.org/2026/"
-  description: "ACM Conference on Computer-Supported Cooperative Work and Social Computing"
-  domains: [cscw]
+  date_start: '2026-08-19'
+  date_end: '2026-08-23'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org/
+  description: Participatory Design Conference emphasizing collaborative design methods and community engagement.
+  domains:
+  - participatory-design
+  - collaborative-design
+  - community-engagement
+  status: upcoming
+- id: cscw-2026
+  title: CSCW 2026
+  type: conference
+  date_start: '2026-10-10'
+  date_end: '2026-10-14'
+  location: Salt Lake City, UT, USA
+  url: https://cscw.acm.org/2026/
+  description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
+  domains:
+  - cscw
+  status: upcoming
+- id: group-2027
+  title: GROUP 2027
+  type: conference
+  date_start: '2027-01-12'
+  date_end: '2027-01-15'
+  location: Sanibel Island, Florida, USA
+  url: https://group.acm.org/conferences/group27/
+  description: ACM International Conference on Supporting Group Work focusing on collaborative technologies and group dynamics.
+  domains:
+  - cscw
+  - collaboration
+  - group-work
+  status: upcoming
+- id: interact-2027
+  title: INTERACT 2027
+  type: conference
+  date_start: '2027-08-30'
+  date_end: '2027-09-03'
+  location: Uppsala, Sweden
+  url: https://interact2027.org/
+  description: IFIP TC13 International Conference on Human-Computer Interaction with strong collaborative computing track.
+  domains:
+  - hci
+  - interaction-design
+  - collaborative-systems
   status: upcoming
