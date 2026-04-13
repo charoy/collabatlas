@@ -1,0 +1,44 @@
+id: confluence
+type: tool
+title: Confluence
+tagline: Enterprise wiki and knowledge management platform for team collaboration and documentation
+description: Confluence is Atlassian's collaborative workspace platform that enables teams to create, organize, and share
+  knowledge through wikis, documentation, and project spaces. It supports real-time collaborative editing, commenting, and
+  content organization across departments and projects. The platform integrates with development tools and project management
+  systems, making it particularly valuable for software teams and organizations managing complex knowledge bases and collaborative
+  documentation workflows.
+domains:
+- software-engineering
+- business
+- education
+collaboration-types:
+- co-creation
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-13'
+last_reviewed: '2026-04-13'
+website_url: https://www.atlassian.com/software/confluence
+tags:
+- wiki
+- knowledge-management
+- documentation
+- enterprise
+- atlassian
+- content-collaboration
+related_entries:
+- notion
+- google-docs
+- slack
+- asana
+- microsoft-teams
