@@ -1,0 +1,42 @@
+id: lean-startup
+type: method
+title: Lean Startup
+tagline: Iterative methodology for developing products through validated learning, customer feedback, and rapid experimentation
+  cycles.
+description: Lean Startup is a methodology for developing businesses and products through build-measure-learn feedback loops.
+  It emphasizes collaborative experimentation with customers, cross-functional team collaboration, and iterative development
+  based on validated learning. The approach enables teams to work together to rapidly test hypotheses, pivot based on data,
+  and build products that customers actually want through continuous collaboration between development teams and users.
+domains:
+- business
+- design
+- software-engineering
+collaboration-types:
+- co-creation
+- interdisciplinary
+- participatory
+scales:
+- small-team
+- organization
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-14'
+last_reviewed: '2026-04-14'
+website_url: http://theleanstartup.com/
+tags:
+- experimentation
+- iteration
+- customer-feedback
+- hypothesis-testing
+- product-development
+- validation
+related_entries:
+- Design Thinking
+- Agile Methodology
+- Design Sprint
