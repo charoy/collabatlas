@@ -1,0 +1,38 @@
+id: khan-academy-educational-content-development
+type: case-study
+title: Khan Academy Educational Content Development
+tagline: Global crowdsourced creation of educational content with community-driven translation and quality assurance processes
+description: Khan Academy's educational platform demonstrates large-scale collaborative content creation involving thousands
+  of volunteers worldwide who translate, review, and improve educational materials. The platform uses distributed collaboration
+  to create learning content in over 40 languages, with community moderators ensuring quality and cultural relevance. This
+  case exemplifies how educational organizations can leverage crowdsourcing and community-based collaboration to scale impact
+  globally while maintaining content quality through peer review mechanisms.
+domains:
+- education
+collaboration-types:
+- crowdsourcing
+- community-based
+- distributed
+scales:
+- multi-org
+modalities:
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-16'
+last_reviewed: '2026-04-16'
+website_url: https://www.khanacademy.org
+tags:
+- education
+- crowdsourcing
+- content-creation
+- translation
+- quality-assurance
+- peer-review
+related_entries:
+- Wikipedia
+- Crowdsourcing
+- Community-Based Participatory Research
+- Distributed
