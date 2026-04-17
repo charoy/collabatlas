@@ -1,0 +1,43 @@
+id: collective-intelligence-creating-a-prosperous-world-at-peace
+type: resource
+title: 'Collective Intelligence: Creating a Prosperous World at Peace'
+tagline: Seminal book on harnessing collective intelligence for addressing global challenges through collaborative approaches.
+description: Written by Tom Atlee, this influential book explores how collective intelligence emerges from collaboration and
+  can be systematically cultivated to solve complex societal problems. It presents frameworks for designing collaborative
+  processes that tap into the wisdom of groups, communities, and networks. The book has become a foundational text for practitioners
+  working on participatory democracy, citizen engagement, and collaborative governance initiatives.
+domains:
+- public-policy
+- social-sciences
+- citizen-science
+collaboration-types:
+- participatory
+- community-based
+- co-creation
+scales:
+- community
+- multi-org
+- organization
+modalities:
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-17'
+last_reviewed: '2026-04-17'
+website_url: https://www.co-intelligence.org/
+tags:
+- collective-intelligence
+- participatory-democracy
+- citizen-engagement
+- collaborative-governance
+- wisdom-of-crowds
+- group-decision-making
+related_entries:
+- Citizen Assembly
+- Participatory Design
+- Future Search
+- Open Space Technology
+- Communities of Practice
