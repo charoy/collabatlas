@@ -1,0 +1,43 @@
+id: minecraft-educational-collaborative-building
+type: case-study
+title: Minecraft Educational Collaborative Building
+tagline: Global educational collaboration through virtual world-building and creative construction in Minecraft
+description: Minecraft has become a powerful platform for collaborative learning, where students and educators worldwide work
+  together to build virtual worlds, historical recreations, and educational simulations. The platform enables real-time co-creation
+  across distributed teams, fostering creativity, problem-solving, and knowledge sharing through shared virtual environments.
+  Educational institutions use Minecraft to teach subjects ranging from architecture and history to environmental science
+  and urban planning through collaborative construction projects.
+domains:
+- education
+- design
+- arts-culture
+collaboration-types:
+- co-creation
+- community-based
+- distributed
+scales:
+- small-team
+- community
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: established
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-18'
+last_reviewed: '2026-04-18'
+website_url: https://education.minecraft.net/
+tags:
+- gaming
+- virtual-worlds
+- educational-technology
+- creative-collaboration
+- youth-engagement
+- digital-construction
+related_entries:
+- Fab Lab Network
+- Design Thinking
+- Co-design
+- Communities of Practice
