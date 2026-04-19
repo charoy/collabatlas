@@ -1,0 +1,44 @@
+id: the-wisdom-of-crowds
+type: resource
+title: The Wisdom of Crowds
+tagline: Foundational book exploring how groups of people can be smarter than the smartest people in them when conditions
+  are right.
+description: 'James Surowiecki''s influential book examines the conditions under which groups make better decisions than individuals,
+  drawing from economics, psychology, and sociology. It explores four key conditions for crowd wisdom: diversity of opinion,
+  independence of members, decentralization, and aggregation mechanisms. The book provides essential theoretical grounding
+  for understanding collective intelligence in crowdsourcing, participatory decision-making, and distributed problem-solving
+  initiatives.'
+domains:
+- business
+- social-sciences
+- public-policy
+collaboration-types:
+- crowdsourcing
+- participatory
+- community-based
+scales:
+- community
+- multi-org
+- organization
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-19'
+last_reviewed: '2026-04-19'
+tags:
+- collective-intelligence
+- decision-making
+- crowdsourcing
+- group-dynamics
+- psychology
+- economics
+related_entries:
+- Galaxy Zoo
+- Citizen Science Toolkit
+- Collective Impact Framework
+- Delphi Method
