@@ -33,6 +33,30 @@
   domains:
   - cscw
   status: upcoming
+- id: pdc-2026-participatory-design-conference
+  title: PDC 2026 - Participatory Design Conference
+  type: conference
+  date_start: '2026-08-17'
+  date_end: '2026-08-21'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org
+  description: Biennial conference focusing on participatory design methods and collaborative design practices.
+  domains:
+  - cscw
+  - participatory-design
+  status: upcoming
+- id: ct-2026-communities-and-technologies
+  title: C&T 2026 - Communities and Technologies
+  type: conference
+  date_start: '2026-09-07'
+  date_end: '2026-09-11'
+  location: Seattle, USA
+  url: https://ct2026.acm.org
+  description: Biennial ACM conference on the intersection of communities, technology, and collaborative systems.
+  domains:
+  - cscw
+  - community-informatics
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -56,6 +80,18 @@
   - cscw
   - collaboration
   - group-work
+  status: upcoming
+- id: eusset-winter-school-on-cscw-and-social-computing
+  title: EUSSET Winter School on CSCW and Social Computing
+  type: school
+  date_start: '2027-02-15'
+  date_end: '2027-02-19'
+  location: St. Gallen, Switzerland
+  url: https://eusset.eu/winterschool2027
+  description: Annual doctoral school for early-career researchers in CSCW and social computing.
+  domains:
+  - cscw
+  - social-computing
   status: upcoming
 - id: interact-2027
   title: INTERACT 2027
