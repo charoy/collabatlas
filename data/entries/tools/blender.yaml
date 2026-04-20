@@ -1,0 +1,43 @@
+id: blender
+type: tool
+title: Blender
+tagline: Open-source 3D creation suite enabling collaborative modeling, animation, and visual effects production
+description: Blender is a powerful open-source 3D computer graphics software toolset used for creating animated films, visual
+  effects, art, 3D printed models, motion graphics, interactive 3D applications, and computer games. It supports collaborative
+  workflows through features like linked libraries for asset sharing, version control integration, and cloud-based project
+  management. Blender's open-source nature and extensive community make it a prime example of collaborative software development
+  and creative production.
+domains:
+- arts-culture
+- design
+- software-engineering
+collaboration-types:
+- open-source
+- co-creation
+- community-based
+scales:
+- community
+- small-team
+- organization
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-20'
+last_reviewed: '2026-04-20'
+website_url: https://www.blender.org
+tags:
+- 3d-modeling
+- animation
+- open-source
+- creative-tools
+- visual-effects
+- community-driven
+related_entries:
+- GitHub
+- Figma
+- Canva
+- open-source
