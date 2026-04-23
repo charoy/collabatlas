@@ -1,0 +1,38 @@
+id: cern-collaboration-in-high-energy-physics
+type: case-study
+title: CERN Collaboration in High Energy Physics
+tagline: Massive international scientific collaboration involving thousands of physicists across hundreds of institutions
+  worldwide
+description: CERN represents one of the largest and most complex scientific collaborations in history, involving over 17,000
+  scientists from 110+ countries working together on particle physics experiments. The collaboration model encompasses distributed
+  data analysis, shared computing resources, and coordinated experimental design across multiple time zones and institutions.
+  This case demonstrates how large-scale scientific collaboration can be sustained over decades, producing groundbreaking
+  discoveries while managing complex governance, resource sharing, and knowledge integration challenges.
+domains:
+- environmental-science
+collaboration-types:
+- distributed
+- interdisciplinary
+- community-based
+scales:
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-23'
+last_reviewed: '2026-04-23'
+website_url: https://home.cern
+tags:
+- scientific-collaboration
+- distributed-computing
+- international-cooperation
+- big-science
+- particle-physics
+- data-sharing
+related_entries:
+- Human Genome Project
+- CERN Large Hadron Collider
+- International Space Station (ISS)
