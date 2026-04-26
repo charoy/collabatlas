@@ -1,0 +1,46 @@
+id: brainstorming
+type: method
+title: Brainstorming
+tagline: A creative problem-solving method where groups generate ideas through free-flowing discussion without immediate criticism
+  or evaluation.
+description: Brainstorming is a widely-used collaborative method developed by Alex Osborn that encourages groups to generate
+  creative ideas through spontaneous discussion. The method follows key principles including deferring judgment, building
+  on others' ideas, and focusing on quantity over quality during the initial ideation phase. It supports collaboration by
+  creating a safe space for creative expression and leveraging collective intelligence to solve problems or generate innovative
+  solutions across diverse domains.
+domains:
+- business
+- design
+- education
+- arts-culture
+- software-engineering
+collaboration-types:
+- co-creation
+- participatory
+- interdisciplinary
+scales:
+- small-team
+- community
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-26'
+last_reviewed: '2026-04-26'
+tags:
+- ideation
+- creativity
+- problem-solving
+- group-dynamics
+- innovation
+- facilitation
+related_entries:
+- Design Thinking
+- Design Sprint
+- World Cafe
+- Nominal Group Technique
+- Open Space Technology
