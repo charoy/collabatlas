@@ -33,6 +33,32 @@
   domains:
   - cscw
   status: upcoming
+- id: pdc-2026-participatory-design-conference
+  title: PDC 2026 - Participatory Design Conference
+  type: conference
+  date_start: '2026-08-17'
+  date_end: '2026-08-21'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org
+  description: Biennial conference focusing on participatory design methods and collaborative design practices.
+  domains:
+  - cscw
+  - participatory-design
+  - hci
+  status: upcoming
+- id: iwsm-2026-international-workshop-on-social-media
+  title: IWSM 2026 - International Workshop on Social Media
+  type: workshop
+  date_start: '2026-09-14'
+  date_end: '2026-09-15'
+  location: Vienna, Austria
+  url: https://iwsm2026.ac.at
+  description: Workshop exploring collaborative aspects of social media platforms and online communities.
+  domains:
+  - cscw
+  - social-media
+  - online-collaboration
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -56,6 +82,19 @@
   - cscw
   - collaboration
   - group-work
+  status: upcoming
+- id: eusset-winter-school-on-cooperative-technologies
+  title: EUSSET Winter School on Cooperative Technologies
+  type: school
+  date_start: '2027-02-15'
+  date_end: '2027-02-19'
+  location: Trento, Italy
+  url: https://eusset.eu/winter-school-2027
+  description: Annual winter school for PhD students and early career researchers in CSCW and cooperative technologies.
+  domains:
+  - cscw
+  - cooperative-systems
+  - education
   status: upcoming
 - id: interact-2027
   title: INTERACT 2027
