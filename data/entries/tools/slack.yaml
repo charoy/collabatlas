@@ -1,56 +1,43 @@
 id: slack
 type: tool
 title: Slack
-tagline: Channel-based messaging platform for team communication and distributed collaboration.
-description: >-
-  Slack is a cloud-based team communication platform organized around channels,
-  direct messages, and integrations. It enables persistent, searchable
-  conversations across distributed teams and integrates with hundreds of
-  third-party tools. Slack is widely adopted in software engineering, business,
-  and research organizations for coordinating asynchronous and synchronous
-  collaboration across time zones.
+tagline: A business communication platform that organizes conversations, files, and tools in shared workspaces.
+description: Slack is a cloud-based collaboration platform that enables teams to communicate through organized channels, direct
+  messages, and integrated workflows. It supports real-time messaging, file sharing, video calls, and integrates with hundreds
+  of third-party tools to create centralized collaborative workspaces. The platform facilitates both synchronous and asynchronous
+  communication, making it essential for distributed teams and remote work environments.
 domains:
-  - software-engineering
-  - business
-  - education
-  - design
+- business
+- software-engineering
+- education
 collaboration-types:
-  - distributed
-  - co-production
-  - open-source
+- distributed
+- open-source
+- community-based
 scales:
-  - small-team
-  - organization
-  - multi-org
+- small-team
+- organization
+- multi-org
 modalities:
-  - remote
-  - hybrid
+- remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
-  - collabatlas-team
-created: "2025-01-20"
-last_reviewed: "2025-06-01"
+- collabatlas-bot
+created: '2026-04-27'
+last_reviewed: '2026-04-27'
 website_url: https://slack.com
-license: Proprietary
-open_source: false
-supported_platforms:
-  - Web
-  - macOS
-  - Windows
-  - iOS
-  - Android
-external_links:
-  - type: website
-    url: https://slack.com
-    title: Slack Official Website
-  - type: documentation
-    url: https://slack.com/help
-    title: Slack Help Center
-related_entries:
-  - miro
 tags:
-  - messaging
-  - team-communication
-  - async-collaboration
-  - remote-work
+- messaging
+- communication
+- workspace
+- integration
+- channels
+- remote-work
+related_entries:
+- Microsoft Teams
+- Discord
+- Zoom
+- Asana
+- Trello
