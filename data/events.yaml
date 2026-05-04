@@ -33,6 +33,19 @@
   domains:
   - cscw
   status: upcoming
+- id: pdc-2026-participatory-design-conference
+  title: PDC 2026 - Participatory Design Conference
+  type: conference
+  date_start: '2026-08-24'
+  date_end: '2026-08-28'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org
+  description: Biennial conference focusing on participatory design methods and collaborative design processes.
+  domains:
+  - cscw
+  - participatory-design
+  - hci
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -43,6 +56,32 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: icis-2026-international-conference-on-information-systems
+  title: ICIS 2026 - International Conference on Information Systems
+  type: conference
+  date_start: '2026-12-13'
+  date_end: '2026-12-16'
+  location: Dublin, Ireland
+  url: https://icis2026.aisnet.org
+  description: Premier conference covering information systems research including collaborative systems and digital work.
+  domains:
+  - cscw
+  - information-systems
+  - digital-work
+  status: upcoming
+- id: hicss-2027-hawaii-international-conference-on-system-sciences
+  title: HICSS 2027 - Hawaii International Conference on System Sciences
+  type: conference
+  date_start: '2027-01-04'
+  date_end: '2027-01-07'
+  location: Maui, Hawaii, USA
+  url: https://hicss.hawaii.edu
+  description: Multidisciplinary conference with strong tracks on collaboration technology and virtual teams.
+  domains:
+  - cscw
+  - collaboration-technology
+  - virtual-teams
   status: upcoming
 - id: group-2027
   title: GROUP 2027
