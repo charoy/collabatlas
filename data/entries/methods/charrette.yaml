@@ -1,0 +1,43 @@
+id: charrette
+type: method
+title: Charrette
+tagline: Intensive collaborative design workshop bringing diverse stakeholders together to rapidly develop solutions for complex
+  planning challenges.
+description: A charrette is an intensive, multi-day collaborative design process that brings together community members, planners,
+  architects, and other stakeholders to develop comprehensive solutions for urban planning or design challenges. Participants
+  work in small interdisciplinary teams through iterative design sessions, with regular feedback loops and public presentations.
+  This method emphasizes rapid prototyping, visual communication, and consensus-building to create implementable plans that
+  reflect community needs and expert knowledge.
+domains:
+- urban-planning
+- design
+- public-policy
+collaboration-types:
+- participatory
+- co-design
+- interdisciplinary
+scales:
+- community
+- multi-org
+modalities:
+- in-person
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-05'
+last_reviewed: '2026-05-05'
+website_url: https://www.planning.org/knowledgebase/charrettes/
+tags:
+- urban-planning
+- participatory-design
+- stakeholder-engagement
+- rapid-prototyping
+- community-planning
+- consensus-building
+related_entries:
+- Participatory Design
+- Design Thinking
+- World Cafe
+- Open Space Technology
