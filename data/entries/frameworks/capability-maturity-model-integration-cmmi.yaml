@@ -1,0 +1,44 @@
+id: capability-maturity-model-integration-cmmi
+type: framework
+title: Capability Maturity Model Integration (CMMI)
+tagline: A process improvement framework for developing and refining collaborative organizational processes and capabilities.
+description: CMMI is a structured framework for improving organizational processes through defined maturity levels, from initial
+  ad-hoc practices to optimized collaborative processes. It provides a systematic approach for organizations to assess and
+  enhance their collaborative capabilities across teams and departments. The framework emphasizes continuous improvement,
+  standardized processes, and measurable outcomes in collaborative work environments. CMMI has been widely adopted across
+  industries to improve team coordination, project management, and organizational learning.
+domains:
+- software-engineering
+- manufacturing
+- business
+- healthcare
+collaboration-types:
+- interdisciplinary
+- distributed
+- multi-org
+scales:
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-06'
+last_reviewed: '2026-05-06'
+website_url: https://cmmiinstitute.com/
+tags:
+- process-improvement
+- maturity-model
+- organizational-development
+- quality-management
+- team-coordination
+- continuous-improvement
+related_entries:
+- Agile Methodology
+- Coordination Theory
+- Communities of Practice
+- Socio-Technical Systems Theory
