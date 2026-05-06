@@ -1,0 +1,45 @@
+id: social-learning-theory
+type: framework
+title: Social Learning Theory
+tagline: Framework explaining how people learn collaboratively through observation, imitation, and social interaction in group
+  settings.
+description: Social Learning Theory, developed by Albert Bandura, provides a framework for understanding how individuals learn
+  and develop skills through social interaction, observation, and collaboration with others. It emphasizes the importance
+  of modeling, social reinforcement, and situated learning in collaborative environments. The theory has been widely applied
+  to understand how teams and communities share knowledge, develop collective expertise, and support collaborative learning
+  processes across various domains.
+domains:
+- education
+- business
+- healthcare
+- social-sciences
+collaboration-types:
+- community-based
+- participatory
+- co-creation
+scales:
+- small-team
+- community
+- organization
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-15'
+last_reviewed: '2026-04-15'
+tags:
+- learning
+- social-interaction
+- knowledge-sharing
+- behavioral-theory
+- skill-development
+- collective-learning
+related_entries:
+- communities-of-practice
+- legitimate-peripheral-participation
+- activity-theory
+- social-ecological-systems-framework
