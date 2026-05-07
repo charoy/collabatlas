@@ -1,0 +1,38 @@
+id: internet-engineering-task-force-ietf
+type: case-study
+title: Internet Engineering Task Force (IETF)
+tagline: Global open standards organization developing internet protocols through collaborative technical working groups and
+  consensus-based decision making.
+description: The IETF is a large open international community of network designers, operators, vendors, and researchers concerned
+  with the evolution of the Internet architecture and the smooth operation of the Internet. It operates through working groups
+  that develop technical specifications for internet protocols like HTTP, TCP/IP, and DNS through a consensus-based process.
+  The organization exemplifies distributed collaboration at scale, with participants from around the world contributing to
+  standards that form the foundation of global internet infrastructure.
+domains:
+- software-engineering
+collaboration-types:
+- open-source
+- distributed
+- community-based
+scales:
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-07'
+last_reviewed: '2026-05-07'
+website_url: https://www.ietf.org/
+tags:
+- standards
+- protocols
+- consensus
+- technical-specification
+- internet
+- governance
+related_entries:
+- Consensus Decision Making
+- Apache Software Foundation
+- Mozilla Firefox Development
