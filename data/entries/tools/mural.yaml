@@ -1,0 +1,45 @@
+id: mural
+type: tool
+title: Mural
+tagline: Digital workspace for visual collaboration with sticky notes, diagrams, and facilitation features for distributed
+  teams.
+description: Mural is a digital workspace platform that enables teams to collaborate visually through virtual whiteboards,
+  sticky notes, diagrams, and interactive templates. It supports structured facilitation of design thinking sessions, workshops,
+  and brainstorming activities across distributed teams. The platform includes features like voting, timers, and guided workflows
+  that help teams move from ideation to decision-making in collaborative sessions.
+domains:
+- business
+- design
+- education
+collaboration-types:
+- co-creation
+- co-design
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-11'
+last_reviewed: '2026-05-11'
+website_url: https://www.mural.co
+tags:
+- visual-collaboration
+- digital-whiteboard
+- facilitation
+- workshop
+- brainstorming
+- design-thinking
+related_entries:
+- Miro
+- Figma
+- Design Thinking
+- Design Sprint
+- Jamboard
