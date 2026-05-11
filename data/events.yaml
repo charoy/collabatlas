@@ -33,6 +33,19 @@
   domains:
   - cscw
   status: upcoming
+- id: pdc-2026-participatory-design-conference
+  title: PDC 2026 - Participatory Design Conference
+  type: conference
+  date_start: '2026-08-23'
+  date_end: '2026-08-27'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org/
+  description: Biennial conference focusing on participatory design methods and collaborative design processes.
+  domains:
+  - participatory-design
+  - cscw
+  - collaboration
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -43,6 +56,34 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: uist-2026-user-interface-software-and-technology
+  title: UIST 2026 - User Interface Software and Technology
+  type: conference
+  date_start: '2026-10-11'
+  date_end: '2026-10-14'
+  location: Tokyo, Japan
+  url: https://uist.acm.org/uist2026/
+  description: ACM symposium on user interface software and technology with sessions on collaborative interfaces and groupware
+    systems.
+  domains:
+  - ui-technology
+  - cscw
+  - groupware
+  status: upcoming
+- id: acm-multimedia-2026
+  title: ACM Multimedia 2026
+  type: conference
+  date_start: '2026-10-26'
+  date_end: '2026-10-30'
+  location: Nice, France
+  url: https://2026.acmmm.org/
+  description: Premier international conference on multimedia research with strong focus on collaborative multimedia systems
+    and social computing.
+  domains:
+  - multimedia
+  - cscw
+  - social-computing
   status: upcoming
 - id: group-2027
   title: GROUP 2027
