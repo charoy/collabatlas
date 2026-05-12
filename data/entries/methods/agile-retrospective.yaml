@@ -1,0 +1,40 @@
+id: agile-retrospective
+type: method
+title: Agile Retrospective
+tagline: A structured team reflection method to continuously improve collaborative processes and outcomes.
+description: Agile Retrospective is a facilitated meeting where teams regularly reflect on their collaboration process, identify
+  what worked well, what didn't work, and agree on specific improvements. The method typically follows formats like Start-Stop-Continue
+  or What Went Well-What Could Be Improved-Action Items. It creates a safe space for honest feedback and drives continuous
+  improvement in team dynamics and collaborative practices.
+domains:
+- software-engineering
+- business
+- design
+collaboration-types:
+- co-production
+- interdisciplinary
+scales:
+- small-team
+- organization
+modalities:
+- in-person
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-12'
+last_reviewed: '2026-05-12'
+website_url: https://retrospectivewiki.org/
+tags:
+- reflection
+- continuous-improvement
+- team-dynamics
+- process-optimization
+- feedback
+- agile
+related_entries:
+- scrum
+- agile-methodology
+- retrospective
