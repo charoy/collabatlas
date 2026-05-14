@@ -1,0 +1,43 @@
+id: openideo-innovation-platform
+type: case-study
+title: OpenIDEO Innovation Platform
+tagline: Global innovation platform where diverse communities collaborate to solve social challenges through human-centered
+  design
+description: OpenIDEO is a global innovation platform that brings together designers, entrepreneurs, NGOs, and citizens to
+  collaboratively tackle complex social challenges. The platform uses structured design challenges that guide participants
+  through inspiration, ideation, and implementation phases, fostering cross-sector collaboration on issues like climate change,
+  education, and public health. Each challenge attracts thousands of participants worldwide who contribute ideas, provide
+  feedback, and form teams to develop and pilot solutions.
+domains:
+- design
+- social-sciences
+- public-policy
+collaboration-types:
+- crowdsourcing
+- co-creation
+- participatory
+- interdisciplinary
+scales:
+- community
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-14'
+last_reviewed: '2026-05-14'
+website_url: https://www.openideo.com
+tags:
+- social innovation
+- human-centered design
+- crowdsourcing
+- global collaboration
+- design challenges
+- cross-sector
+related_entries:
+- Design Thinking
+- Participatory Design
+- Co-creation
+- Crowdsourcing
