@@ -1,0 +1,44 @@
+id: affinity-mapping
+type: method
+title: Affinity Mapping
+tagline: Visual method for collaborative analysis and pattern identification by clustering related ideas and observations
+description: Affinity mapping is a collaborative sense-making method where team members organize large amounts of data, ideas,
+  or observations into meaningful clusters based on relationships and themes. Participants work together to physically or
+  digitally group related items, then identify patterns and insights that emerge from the clustering process. This method
+  is widely used in design research, user experience work, and cross-functional team analysis to transform raw data into actionable
+  insights through collective interpretation.
+domains:
+- design
+- business
+- software-engineering
+- social-sciences
+collaboration-types:
+- co-creation
+- interdisciplinary
+- participatory
+scales:
+- small-team
+- organization
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-16'
+last_reviewed: '2026-05-16'
+tags:
+- sense-making
+- data-analysis
+- pattern-recognition
+- visual-method
+- clustering
+- design-research
+related_entries:
+- Design Thinking
+- Participatory Design
+- Focus Groups
+- Miro
+- Figma
