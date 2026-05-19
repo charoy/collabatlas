@@ -1,0 +1,42 @@
+id: standups
+type: method
+title: Standups
+tagline: Short, frequent team meetings where members share progress, plans, and obstacles to maintain alignment and identify
+  collaboration needs.
+description: Standups are brief, regular team meetings (typically daily) where each participant shares what they accomplished,
+  what they plan to work on, and any blockers they're facing. Originally from Agile software development, this method has
+  spread across domains as an effective way to maintain team coordination, surface collaboration opportunities, and quickly
+  address impediments. The format promotes transparency, accountability, and rapid problem-solving while keeping meetings
+  focused and time-bounded.
+domains:
+- software-engineering
+- business
+- design
+collaboration-types:
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+modalities:
+- in-person
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-19'
+last_reviewed: '2026-05-19'
+website_url: https://www.atlassian.com/agile/scrum/standups
+tags:
+- agile
+- coordination
+- communication
+- meetings
+- transparency
+- workflow
+related_entries:
+- Scrum
+- Retrospective
+- Agile Methodology
