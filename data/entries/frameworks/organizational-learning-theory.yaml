@@ -1,0 +1,47 @@
+id: organizational-learning-theory
+type: framework
+title: Organizational Learning Theory
+tagline: Framework for understanding how organizations acquire, share, and apply knowledge collectively to improve performance
+  and adapt to change.
+description: Organizational Learning Theory examines how organizations develop collective capabilities through shared experience,
+  knowledge creation, and adaptive processes. It provides frameworks for understanding how teams and organizations can systematically
+  improve their collaborative practices by reflecting on experiences, sharing insights, and embedding learning into organizational
+  routines. The theory emphasizes the importance of creating environments where knowledge flows freely across boundaries and
+  where collective reflection leads to improved collaborative outcomes.
+domains:
+- business
+- education
+- healthcare
+- manufacturing
+- software-engineering
+collaboration-types:
+- interdisciplinary
+- distributed
+- community-based
+- participatory
+scales:
+- organization
+- multi-org
+- small-team
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-20'
+last_reviewed: '2026-05-20'
+tags:
+- learning
+- knowledge-management
+- adaptation
+- reflection
+- organizational-development
+- continuous-improvement
+related_entries:
+- Communities of Practice (framework)
+- Social Learning Theory (framework)
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization (resource)'
+- Retrospective (method)
