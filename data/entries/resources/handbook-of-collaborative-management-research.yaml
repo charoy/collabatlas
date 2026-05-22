@@ -1,0 +1,45 @@
+id: handbook-of-collaborative-management-research
+type: resource
+title: Handbook of Collaborative Management Research
+tagline: Comprehensive academic reference on collaborative management theory, methods, and applications across organizational
+  contexts.
+description: The Handbook of Collaborative Management Research is a scholarly compilation that brings together leading research
+  on collaboration across organizations, networks, and public-private partnerships. It covers theoretical frameworks, empirical
+  studies, and practical applications of collaborative management in various sectors. The handbook serves as a definitive
+  resource for researchers and practitioners working on inter-organizational collaboration, network governance, and collective
+  problem-solving approaches.
+domains:
+- business
+- public-policy
+- social-sciences
+collaboration-types:
+- multi-org
+- interdisciplinary
+- community-based
+scales:
+- multi-org
+- organization
+- community
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-22'
+last_reviewed: '2026-05-22'
+website_url: https://www.routledge.com/Handbook-of-Collaborative-Management-Research/OLeary-Van-Slyke/p/book/9780415779227
+tags:
+- management
+- research
+- handbook
+- theory
+- governance
+- networks
+related_entries:
+- Computer-Supported Cooperative Work (CSCW)
+- Collective Impact Framework
+- Communities of Practice
+- Coordination Theory
