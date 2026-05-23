@@ -22,6 +22,19 @@
   - cscw
   - design
   status: upcoming
+- id: ct-2026-communities-and-technologies
+  title: C&T 2026 - Communities and Technologies
+  type: conference
+  date_start: '2026-06-20'
+  date_end: '2026-06-24'
+  location: Vienna, Austria
+  url: https://ct2026.acm.org
+  description: ACM conference examining the intersection of technology design and community practices in collaborative settings.
+  domains:
+  - cscw
+  - community-informatics
+  - social-computing
+  status: upcoming
 - id: ecscw-2026
   title: ECSCW 2026
   type: conference
@@ -32,6 +45,32 @@
   description: European Conference on Computer-Supported Cooperative Work
   domains:
   - cscw
+  status: upcoming
+- id: icls-2026-international-conference-of-the-learning-sciences
+  title: ICLS 2026 - International Conference of the Learning Sciences
+  type: conference
+  date_start: '2026-07-13'
+  date_end: '2026-07-17'
+  location: Melbourne, Australia
+  url: https://icls2026.org
+  description: Conference on learning sciences with strong focus on computer-supported collaborative learning (CSCL) research.
+  domains:
+  - cscw
+  - cscl
+  - educational-technology
+  status: upcoming
+- id: pdc-2026-participatory-design-conference
+  title: PDC 2026 - Participatory Design Conference
+  type: conference
+  date_start: '2026-08-24'
+  date_end: '2026-08-28'
+  location: Aarhus, Denmark
+  url: https://pdc2026.org
+  description: Biennial conference focusing on participatory design methods, co-design, and collaborative design practices.
+  domains:
+  - cscw
+  - participatory-design
+  - co-design
   status: upcoming
 - id: cscw-2026
   title: CSCW 2026
