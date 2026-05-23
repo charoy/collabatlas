@@ -13,9 +13,8 @@ domains:
 - public-policy
 - social-sciences
 collaboration-types:
-- multi-org
-- interdisciplinary
-- community-based
+- distributed
+- transdisciplinary
 scales:
 - multi-org
 - organization
