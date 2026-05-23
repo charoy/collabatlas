@@ -25,6 +25,7 @@ modalities:
 - remote
 maturity: well-documented
 status: published
+resource_type: book
 contributors:
 - collabatlas-bot
 created: '2026-05-22'
