@@ -1,0 +1,39 @@
+id: manhattan-project
+type: case-study
+title: Manhattan Project
+tagline: Massive wartime scientific collaboration that developed the first atomic weapons through unprecedented coordination
+  of researchers, engineers, and military personnel.
+description: The Manhattan Project (1942-1945) was one of the largest scientific collaborations in history, involving over
+  130,000 workers across multiple secret sites in the US, UK, and Canada. The project required unprecedented coordination
+  between scientists, engineers, military personnel, and industrial contractors to solve complex technical challenges under
+  extreme time pressure. It pioneered many modern project management techniques and demonstrated how large-scale scientific
+  collaboration could achieve breakthrough innovations through parallel development tracks, compartmentalized knowledge sharing,
+  and intensive cross-disciplinary coordination.
+domains:
+- manufacturing
+- public-policy
+collaboration-types:
+- interdisciplinary
+scales:
+- multi-org
+modalities:
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-03'
+last_reviewed: '2026-05-03'
+website_url: https://www.atomicarchive.com/history/manhattan-project/
+tags:
+- large-scale-science
+- project-management
+- wartime-collaboration
+- nuclear-physics
+- government-research
+- historical-case
+related_entries:
+- human-genome-project
+- cern-lhc-collaboration
+- nasa-mars-rover-mission-collaboration
+- international-space-station
