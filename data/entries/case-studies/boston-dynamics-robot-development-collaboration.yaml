@@ -1,0 +1,40 @@
+id: boston-dynamics-robot-development-collaboration
+type: case-study
+title: Boston Dynamics Robot Development Collaboration
+tagline: Multi-disciplinary engineering teams collaborating across hardware, software, and AI to develop advanced robotics
+  systems like Atlas and Spot.
+description: Boston Dynamics represents a decades-long collaborative effort combining mechanical engineering, software development,
+  AI research, and manufacturing expertise to create breakthrough robotics technology. Teams work across disciplines using
+  iterative design processes, shared simulation environments, and extensive testing protocols. The collaboration involves
+  both internal cross-functional teams and external partnerships with research institutions, demonstrating how sustained interdisciplinary
+  collaboration can push technological boundaries in robotics.
+domains:
+- manufacturing
+- design
+collaboration-types:
+- interdisciplinary
+- co-creation
+scales:
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-30'
+last_reviewed: '2026-04-30'
+website_url: https://www.bostondynamics.com
+tags:
+- robotics
+- engineering
+- iterative-design
+- cross-functional
+- R&D
+- innovation
+related_entries:
+- design-thinking
+- agile-methodology
+- communities-of-practice
