@@ -1,0 +1,37 @@
+id: cochrane-systematic-reviews
+type: case-study
+title: Cochrane Systematic Reviews
+tagline: Global network of researchers collaboratively producing evidence-based healthcare systematic reviews
+description: Cochrane is an international network of researchers, healthcare professionals, and consumers who collaborate
+  to produce high-quality systematic reviews of healthcare interventions. The organization coordinates distributed teams across
+  multiple countries to conduct rigorous evidence synthesis, involving standardized methodologies, peer review processes,
+  and open collaboration protocols. With over 37,000 contributors worldwide, Cochrane demonstrates large-scale scientific
+  collaboration that directly impacts global healthcare policy and practice.
+domains:
+- healthcare
+collaboration-types:
+- distributed
+- interdisciplinary
+- community-based
+scales:
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-21'
+last_reviewed: '2026-05-21'
+website_url: https://www.cochrane.org
+tags:
+- evidence-based-medicine
+- systematic-reviews
+- global-health
+- scientific-collaboration
+- peer-review
+- healthcare-policy
+related_entries:
+- human-genome-project
+- covid-research-collaborations
+- who-global-health-observatory
