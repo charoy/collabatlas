@@ -1,0 +1,44 @@
+id: tableau
+type: tool
+title: Tableau
+tagline: Data visualization platform enabling collaborative analysis and dashboard sharing across teams and organizations.
+description: Tableau is a leading data visualization and business intelligence platform that enables teams to collaboratively
+  explore, analyze, and share data insights. Multiple users can work together on dashboards, share visualizations, and comment
+  on findings in real-time. The platform supports collaborative data storytelling through interactive dashboards that can
+  be embedded, shared, and discussed across organizations, making complex data accessible to diverse stakeholders.
+domains:
+- business
+- healthcare
+- public-policy
+- social-sciences
+- environmental-science
+collaboration-types:
+- distributed
+- interdisciplinary
+- community-based
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-25'
+last_reviewed: '2026-05-25'
+website_url: https://www.tableau.com
+tags:
+- data-visualization
+- business-intelligence
+- dashboard
+- analytics
+- data-collaboration
+- decision-support
+related_entries:
+- Microsoft Teams
+- Slack
+- Airtable
+- QGIS
