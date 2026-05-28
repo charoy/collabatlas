@@ -1,0 +1,40 @@
+id: crispr-cas9-gene-editing-consortium
+type: case-study
+title: CRISPR-Cas9 Gene Editing Consortium
+tagline: International collaborative effort to develop and refine CRISPR gene editing technology through shared research and
+  open protocols.
+description: The CRISPR-Cas9 consortium represents a global collaborative effort among research institutions, biotechnology
+  companies, and academic labs to advance gene editing technology. Multiple teams across different organizations share research
+  findings, develop standardized protocols, and collectively refine the CRISPR system through coordinated experiments and
+  data sharing. This collaboration has accelerated scientific progress by combining expertise from molecular biology, computational
+  science, and bioengineering disciplines. The open sharing of methodologies and results has enabled rapid advancement in
+  precision medicine and agricultural applications.
+domains:
+- healthcare
+- environmental-science
+collaboration-types:
+- open-source
+- interdisciplinary
+- distributed
+scales:
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-28'
+last_reviewed: '2026-05-28'
+website_url: https://www.broadinstitute.org/what-broad/areas-focus/project-spotlight/questions-and-answers-about-crispr
+tags:
+- gene-editing
+- biotechnology
+- research-collaboration
+- open-science
+- interdisciplinary
+- global-consortium
+related_entries:
+- Human Genome Project
+- COVID-19 Open Science Collaborations
+- Open Science Framework
