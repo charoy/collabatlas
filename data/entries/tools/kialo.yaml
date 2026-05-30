@@ -1,0 +1,43 @@
+id: kialo
+type: tool
+title: Kialo
+tagline: A structured debate platform that helps teams and communities explore complex issues through organized argument mapping
+  and collaborative reasoning.
+description: Kialo is a web-based platform designed for structured argumentation and collaborative debate. Users can create
+  debate trees where arguments are organized hierarchically, with claims supported or challenged by sub-arguments. The platform
+  enables teams to systematically explore different perspectives on complex issues, making it valuable for decision-making
+  processes, policy analysis, and educational discussions where multiple viewpoints need to be considered and evaluated collectively.
+domains:
+- education
+- public-policy
+- business
+collaboration-types:
+- participatory
+- co-creation
+- community-based
+scales:
+- small-team
+- community
+- organization
+modalities:
+- remote
+- hybrid
+maturity: established
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-30'
+last_reviewed: '2026-05-30'
+website_url: https://www.kialo.com
+tags:
+- argumentation
+- debate
+- decision-making
+- reasoning
+- structured-discussion
+- argument-mapping
+related_entries:
+- Mentimeter
+- Google Docs
+- Confluence
+- Deliberative Polling
