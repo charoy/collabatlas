@@ -1,0 +1,39 @@
+id: krita
+type: tool
+title: Krita
+tagline: Open-source digital painting application with collaborative features for artists and creative teams.
+description: Krita is a professional, free and open-source digital painting application designed primarily for concept artists,
+  illustrators, matte and texture artists, and the VFX industry. It supports collaborative workflows through shared brush
+  packs, template sharing, and integration with version control systems. The tool enables creative teams to work together
+  on digital art projects, share custom resources, and maintain consistent artistic styles across collaborative projects.
+domains:
+- arts-culture
+- design
+collaboration-types:
+- open-source
+- co-creation
+- community-based
+scales:
+- small-team
+- community
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-01'
+last_reviewed: '2026-06-01'
+website_url: https://krita.org/
+tags:
+- digital-art
+- open-source
+- creative-collaboration
+- painting
+- design-tools
+- community-driven
+related_entries:
+- Figma
+- Canva
+- QGIS
