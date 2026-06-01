@@ -35,6 +35,19 @@
   - community-informatics
   - social-computing
   status: upcoming
+- id: eics-2026-acm-sigchi-symposium-on-engineering-interactive-computing-systems
+  title: EICS 2026 - ACM SIGCHI Symposium on Engineering Interactive Computing Systems
+  type: conference
+  date_start: '2026-06-24'
+  date_end: '2026-06-27'
+  location: Eindhoven, Netherlands
+  url: https://eics.acm.org/2026/
+  description: Symposium on engineering aspects of interactive systems including collaborative interfaces and multi-user applications.
+  domains:
+  - hci
+  - interactive systems
+  - collaboration
+  status: upcoming
 - id: ecscw-2026
   title: ECSCW 2026
   type: conference
@@ -72,6 +85,19 @@
   - participatory-design
   - co-design
   status: upcoming
+- id: collabtech-2026-international-conference-on-collaboration-technologies
+  title: CollabTech 2026 - International Conference on Collaboration Technologies
+  type: conference
+  date_start: '2026-09-02'
+  date_end: '2026-09-04'
+  location: Kanazawa, Japan
+  url: https://www.collab-tech.org/2026/
+  description: Conference focusing on collaboration technologies, groupware systems, and computer-supported cooperative work.
+  domains:
+  - cscw
+  - groupware
+  - collaboration
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -82,6 +108,20 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: ozchi-2026-australian-conference-on-human-computer-interaction
+  title: OZCHI 2026 - Australian Conference on Human-Computer Interaction
+  type: conference
+  date_start: '2026-12-07'
+  date_end: '2026-12-10'
+  location: Melbourne, Australia
+  url: https://ozchi.org/2026/
+  description: Annual Australian HCI conference covering collaborative technologies, social computing, and human-computer
+    interaction research.
+  domains:
+  - hci
+  - cscw
+  - social computing
   status: upcoming
 - id: group-2027
   title: GROUP 2027
