@@ -1,0 +1,44 @@
+id: consensus-workshop
+type: method
+title: Consensus Workshop
+tagline: Structured group decision-making method that builds agreement through systematic discussion and iterative refinement
+  of options.
+description: Consensus Workshop is a facilitated method for reaching group agreement on complex issues through structured
+  dialogue, option generation, and iterative refinement. Participants work together to identify common ground, address concerns,
+  and modify proposals until all members can accept the final decision. This method emphasizes collaborative problem-solving
+  over voting, ensuring that all voices are heard and that the final outcome has broad support from the group.
+domains:
+- business
+- public-policy
+- social-sciences
+- education
+collaboration-types:
+- participatory
+- community-based
+- co-creation
+scales:
+- small-team
+- community
+- organization
+modalities:
+- in-person
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-02'
+last_reviewed: '2026-06-02'
+website_url: https://www.seedsforchange.org.uk/consensus
+tags:
+- decision-making
+- facilitation
+- consensus
+- group-process
+- participation
+- conflict-resolution
+related_entries:
+- Consensus Decision Making
+- World Cafe
+- Open Space Technology
+- Appreciative Inquiry
