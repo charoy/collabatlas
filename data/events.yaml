@@ -72,6 +72,19 @@
   - participatory-design
   - co-design
   status: upcoming
+- id: criwg-2026-collaboration-and-technology
+  title: CRIWG 2026 - Collaboration and Technology
+  type: conference
+  date_start: '2026-09-14'
+  date_end: '2026-09-16'
+  location: Porto, Portugal
+  url: https://criwg2026.fc.up.pt/
+  description: International conference on collaboration and technology focusing on groupware and collaborative systems.
+  domains:
+  - cscw
+  - groupware
+  - collaborative-technology
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -82,6 +95,32 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: icwsm-2026-international-conference-on-web-and-social-media
+  title: ICWSM 2026 - International Conference on Web and Social Media
+  type: conference
+  date_start: '2026-11-02'
+  date_end: '2026-11-05'
+  location: Atlanta, USA
+  url: https://icwsm.org/2026/
+  description: Conference examining social media platforms and their impact on collaborative online behavior.
+  domains:
+  - social-media
+  - online-collaboration
+  - web-science
+  status: upcoming
+- id: hicss-60-hawaii-international-conference-on-system-sciences
+  title: HICSS-60 - Hawaii International Conference on System Sciences
+  type: conference
+  date_start: '2027-01-07'
+  date_end: '2027-01-10'
+  location: Maui, Hawaii, USA
+  url: https://hicss.hawaii.edu/
+  description: Multidisciplinary conference with strong tracks on collaboration technology and decision support systems.
+  domains:
+  - collaboration-systems
+  - decision-support
+  - information-systems
   status: upcoming
 - id: group-2027
   title: GROUP 2027
