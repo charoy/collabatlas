@@ -1,0 +1,41 @@
+id: the-wisdom-of-crowds-why-the-many-are-smarter-than-the-few
+type: resource
+title: 'The Wisdom of Crowds: Why the Many Are Smarter Than the Few'
+tagline: Foundational book exploring how collective intelligence emerges from group collaboration and decision-making.
+description: James Surowiecki's seminal work examines the conditions under which groups make better decisions than individuals,
+  providing the theoretical foundation for understanding collective intelligence. The book analyzes how diversity, independence,
+  and decentralization enable groups to solve problems, predict outcomes, and innovate more effectively than experts. It offers
+  crucial insights for designing collaborative systems and understanding when and why crowdsourcing and collective decision-making
+  succeed or fail.
+domains:
+- business
+- social-sciences
+- citizen-science
+collaboration-types:
+- crowdsourcing
+- community-based
+- distributed
+scales:
+- community
+- multi-org
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-12'
+last_reviewed: '2026-06-12'
+tags:
+- collective-intelligence
+- decision-making
+- crowdsourcing
+- group-dynamics
+- wisdom-crowds
+- organizational-behavior
+related_entries:
+- Delphi Method
+- Consensus Decision Making
+- Citizen Assembly
+- Collective Impact Framework
+- Communities of Practice
