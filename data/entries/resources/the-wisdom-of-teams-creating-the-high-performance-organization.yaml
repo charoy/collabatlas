@@ -1,0 +1,39 @@
+id: the-wisdom-of-teams-creating-the-high-performance-organization
+type: resource
+title: 'The Wisdom of Teams: Creating the High-Performance Organization'
+tagline: Seminal book on team dynamics and collaborative performance by Katzenbach and Smith
+description: A foundational management text that explores what makes teams effective and how organizations can foster high-performance
+  collaborative environments. The book introduces the discipline of teams framework and distinguishes between working groups
+  and true teams. It provides practical guidance for building collaborative teams across various organizational contexts and
+  has influenced decades of team-based work practices.
+domains:
+- business
+- education
+collaboration-types:
+- interdisciplinary
+- community-based
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-13'
+last_reviewed: '2026-06-13'
+tags:
+- team-dynamics
+- organizational-behavior
+- management
+- performance
+- leadership
+- business-collaboration
+related_entries:
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+- 'Collaborative Intelligence: Using Teams to Solve Hard Problems'
+- Scrum
+- Communities of Practice
