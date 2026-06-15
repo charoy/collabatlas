@@ -1,0 +1,44 @@
+id: phabricator
+type: tool
+title: Phabricator
+tagline: Open source software development collaboration platform with code review, project management, and team communication
+  features.
+description: Phabricator is a comprehensive web-based software development collaboration platform that integrates code review,
+  repository hosting, bug tracking, project management, and team communication tools. Originally developed by Facebook and
+  later open-sourced, it provides a unified environment for software teams to coordinate development activities through features
+  like Differential (code review), Maniphest (task tracking), and Phriction (wiki). The platform supports distributed development
+  workflows and has been widely adopted by both open source projects and enterprise software teams for managing complex collaborative
+  software development processes.
+domains:
+- software-engineering
+collaboration-types:
+- open-source
+- distributed
+- co-creation
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-15'
+last_reviewed: '2026-06-15'
+website_url: https://www.phacility.com/phabricator/
+tags:
+- code-review
+- project-management
+- software-development
+- version-control
+- team-coordination
+- open-source
+related_entries:
+- GitLab
+- GitHub
+- Jupyter Notebook
+- Scrum
+- Agile Methodology
