@@ -72,6 +72,20 @@
   - participatory-design
   - co-design
   status: upcoming
+- id: mobilehci-2026-international-conference-on-human-computer-interaction-with-mobile-devices-and-services
+  title: MobileHCI 2026 - International Conference on Human-Computer Interaction with Mobile Devices and Services
+  type: conference
+  date_start: '2026-09-07'
+  date_end: '2026-09-10'
+  location: Melbourne, Australia
+  url: https://mobilehci.acm.org/2026/
+  description: Conference focused on human-computer interaction aspects of mobile and ubiquitous computing including collaborative
+    mobile applications.
+  domains:
+  - hci
+  - mobile-computing
+  - ubiquitous-computing
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -82,6 +96,33 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: uist-2026-acm-symposium-on-user-interface-software-and-technology
+  title: UIST 2026 - ACM Symposium on User Interface Software and Technology
+  type: conference
+  date_start: '2026-10-11'
+  date_end: '2026-10-14'
+  location: Tokyo, Japan
+  url: https://uist.acm.org/2026/
+  description: Premier venue for innovations in human-computer interfaces and interactive systems technologies.
+  domains:
+  - hci
+  - interface-design
+  - collaborative-systems
+  status: upcoming
+- id: ictd-2026-international-conference-on-information-and-communication-technologies-and-development
+  title: ICTD 2026 - International Conference on Information and Communication Technologies and Development
+  type: conference
+  date_start: '2026-12-06'
+  date_end: '2026-12-09'
+  location: Nairobi, Kenya
+  url: https://ictd.acm.org/2026/
+  description: Conference exploring how information and communication technologies can improve lives in developing regions
+    through collaborative approaches.
+  domains:
+  - ictd
+  - social-computing
+  - collaborative-development
   status: upcoming
 - id: group-2027
   title: GROUP 2027
