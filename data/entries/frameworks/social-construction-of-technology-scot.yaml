@@ -1,0 +1,46 @@
+id: social-construction-of-technology-scot
+type: framework
+title: Social Construction of Technology (SCOT)
+tagline: Framework examining how social groups shape technology development through interpretive flexibility and consensus-building
+  processes.
+description: Social Construction of Technology (SCOT) is a theoretical framework that analyzes how different social groups
+  interpret and influence the development of technology through collaborative processes. The framework emphasizes interpretive
+  flexibility, where technologies can have different meanings for different groups, and closure mechanisms through which consensus
+  emerges. SCOT is particularly valuable for understanding collaborative technology design and adoption, showing how user
+  communities, developers, and stakeholders collectively shape technological outcomes through negotiation and social interaction.
+domains:
+- design
+- software-engineering
+- social-sciences
+- business
+collaboration-types:
+- co-design
+- participatory
+- interdisciplinary
+scales:
+- community
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-03'
+last_reviewed: '2026-06-03'
+tags:
+- technology-studies
+- social-theory
+- user-participation
+- design-process
+- consensus-building
+- interpretive-flexibility
+related_entries:
+- Actor-Network Theory (framework)
+- Participatory Design (method)
+- Socio-Technical Systems Theory (framework)
+- Design Thinking (method)
+- Communities of Practice (framework)
