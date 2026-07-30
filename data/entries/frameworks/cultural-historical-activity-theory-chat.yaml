@@ -1,0 +1,44 @@
+id: cultural-historical-activity-theory-chat
+type: framework
+title: Cultural-Historical Activity Theory (CHAT)
+tagline: Expanded activity theory framework analyzing collaborative work through cultural, historical, and social contexts.
+description: Cultural-Historical Activity Theory (CHAT) extends Activity Theory by emphasizing how collaborative activities
+  are shaped by cultural tools, historical development, and social mediation. It provides a comprehensive framework for understanding
+  how teams and communities engage in collective practices, focusing on contradictions, expansive learning, and the evolution
+  of collaborative systems over time. CHAT is widely used to analyze workplace collaboration, educational partnerships, and
+  community-based initiatives.
+domains:
+- education
+- social-sciences
+- business
+- healthcare
+collaboration-types:
+- community-based
+- interdisciplinary
+- participatory
+scales:
+- small-team
+- organization
+- community
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-17'
+last_reviewed: '2026-05-17'
+tags:
+- activity-theory
+- cultural-mediation
+- collaborative-learning
+- workplace-studies
+- expansive-learning
+- contradictions-analysis
+related_entries:
+- Activity Theory
+- Communities of Practice
+- Legitimate Peripheral Participation
+- Social Learning Theory
