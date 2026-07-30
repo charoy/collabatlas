@@ -1,0 +1,42 @@
+id: chicago-climate-action-plan-collaborative-development
+type: case-study
+title: Chicago Climate Action Plan Collaborative Development
+tagline: Multi-stakeholder participatory planning process engaging citizens, government, and organizations in developing urban
+  climate policy
+description: The Chicago Climate Action Plan represents a comprehensive collaborative effort involving city government, community
+  organizations, businesses, and residents in developing climate adaptation and mitigation strategies. The process utilized
+  multiple engagement methods including public workshops, online platforms, and working groups to gather input from diverse
+  stakeholders. This case demonstrates how large-scale urban policy can be developed through inclusive participatory processes
+  that integrate technical expertise with community knowledge.
+domains:
+- environmental-science
+- urban-planning
+- public-policy
+collaboration-types:
+- participatory
+- community-based
+- interdisciplinary
+scales:
+- community
+- organization
+modalities:
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-11'
+last_reviewed: '2026-06-11'
+website_url: https://www.chicago.gov/city/en/progs/env/climateactionplan.html
+tags:
+- climate-planning
+- urban-policy
+- stakeholder-engagement
+- sustainability
+- public-participation
+- environmental-governance
+related_entries:
+- Barcelona Superblock Program
+- Oslo Fjord City Participatory Urban Planning
+- Citizen Assembly
+- Participatory Design
