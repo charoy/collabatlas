@@ -1,0 +1,46 @@
+id: institutional-analysis-and-development-iad-framework
+type: framework
+title: Institutional Analysis and Development (IAD) Framework
+tagline: Framework for analyzing collective action and governance in collaborative institutions and resource management systems.
+description: The Institutional Analysis and Development (IAD) Framework, developed by Elinor Ostrom and colleagues, provides
+  a systematic approach to understanding how institutions shape collaborative behavior and collective action. It examines
+  the rules, norms, and shared strategies that govern how groups work together to solve common problems, particularly in resource
+  management and public goods provision. The framework has been widely applied to analyze everything from community-based
+  natural resource management to digital commons governance, making it essential for understanding the institutional foundations
+  of successful collaboration.
+domains:
+- environmental-science
+- public-policy
+- social-sciences
+- urban-planning
+collaboration-types:
+- community-based
+- participatory
+- co-production
+- interdisciplinary
+scales:
+- community
+- multi-org
+- organization
+modalities:
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-22'
+last_reviewed: '2026-04-22'
+website_url: https://www.iadfframework.org/
+tags:
+- institutional-design
+- governance
+- collective-action
+- commons
+- policy-analysis
+- resource-management
+related_entries:
+- Social-Ecological Systems Framework
+- Communities of Practice
+- Collective Impact Framework
+- Community-Based Participatory Research
