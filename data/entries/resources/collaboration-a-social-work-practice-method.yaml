@@ -1,0 +1,42 @@
+id: collaboration-a-social-work-practice-method
+type: resource
+title: 'Collaboration: A Social Work Practice Method'
+tagline: Foundational textbook on collaborative practice methods and interprofessional teamwork in social services and community
+  development.
+description: This comprehensive textbook by Beverly Bronson provides theoretical foundations and practical guidance for collaborative
+  practice in social work and human services. It covers interprofessional collaboration, community partnerships, and team-based
+  approaches to addressing complex social problems. The resource emphasizes evidence-based collaborative methods and includes
+  case studies demonstrating successful collaborative interventions in healthcare, education, and community development settings.
+domains:
+- social-sciences
+- healthcare
+- education
+collaboration-types:
+- interdisciplinary
+- community-based
+- participatory
+scales:
+- small-team
+- organization
+- community
+modalities:
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-29'
+last_reviewed: '2026-05-29'
+tags:
+- social-work
+- interprofessional
+- community-development
+- team-based-practice
+- evidence-based
+- human-services
+related_entries:
+- Community-Based Participatory Research (framework)
+- Participatory Action Research Framework (framework)
+- Interdisciplinary
+- Social Learning Theory (framework)
