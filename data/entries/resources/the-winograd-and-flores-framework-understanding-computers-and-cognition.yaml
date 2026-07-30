@@ -1,0 +1,39 @@
+id: the-winograd-and-flores-framework-understanding-computers-and-cognition
+type: resource
+title: 'The Winograd and Flores Framework: Understanding Computers and Cognition'
+tagline: Foundational text on language, communication, and design for collaborative computer systems.
+description: Terry Winograd and Fernando Flores' seminal work established key principles for designing computer systems that
+  support human collaboration and communication. The book introduces concepts of breakdown and transparency in tool use, arguing
+  that effective collaborative technology should become invisible in use while supporting natural human interaction. Their
+  framework has influenced decades of CSCW research and continues to guide the design of collaborative systems that respect
+  human cognition and social practices.
+domains:
+- software-engineering
+- design
+- business
+collaboration-types:
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+modalities:
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-24'
+last_reviewed: '2026-05-24'
+tags:
+- design-theory
+- human-computer-interaction
+- philosophy
+- communication
+- cognitive-science
+- systems-design
+related_entries:
+- 'Understanding Computers and Cognition: A New Foundation for Design.'
+- Computer-Supported Cooperative Work (CSCW)
+- 'Designing Collaborative Systems: A Practical Guide to Ethnography'
