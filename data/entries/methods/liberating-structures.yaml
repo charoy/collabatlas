@@ -1,0 +1,49 @@
+id: liberating-structures
+type: method
+title: Liberating Structures
+tagline: A collection of 33+ facilitation methods that enable inclusive participation and collaborative innovation in groups
+  of any size.
+description: Liberating Structures is a methodology consisting of 33+ simple facilitation techniques designed to unleash collective
+  intelligence and foster meaningful participation in groups. Each structure provides specific microformats for organizing
+  conversations and interactions that enable everyone to contribute, breaking away from conventional meeting formats. The
+  approach emphasizes emergent solutions, distributed leadership, and inclusive engagement across hierarchical boundaries.
+  These methods are widely used in organizational change, community development, and complex problem-solving contexts.
+domains:
+- business
+- education
+- public-policy
+- social-sciences
+- urban-planning
+collaboration-types:
+- participatory
+- co-creation
+- community-based
+- interdisciplinary
+scales:
+- small-team
+- organization
+- community
+- multi-org
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-21'
+last_reviewed: '2026-04-21'
+website_url: https://www.liberatingstructures.com/
+tags:
+- facilitation
+- participation
+- inclusion
+- innovation
+- engagement
+- group-dynamics
+related_entries:
+- Open Space Technology
+- World Cafe
+- Appreciative Inquiry
+- Participatory Design
