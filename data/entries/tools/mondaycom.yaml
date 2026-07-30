@@ -1,0 +1,45 @@
+id: mondaycom
+type: tool
+title: Monday.com
+tagline: A work operating system that enables teams to plan, track, and collaborate on projects with customizable workflows
+  and visual project management.
+description: Monday.com is a cloud-based project management and team collaboration platform that provides customizable boards,
+  timelines, and dashboards for coordinating work across teams. It supports various collaboration patterns including task
+  assignment, progress tracking, file sharing, and real-time communication through comments and notifications. The platform
+  is widely used across industries for managing everything from marketing campaigns to software development projects, offering
+  integrations with numerous third-party tools to create comprehensive collaborative workflows.
+domains:
+- business
+- software-engineering
+- design
+collaboration-types:
+- co-production
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-14'
+last_reviewed: '2026-06-14'
+website_url: https://monday.com
+tags:
+- project-management
+- workflow
+- task-tracking
+- visual-boards
+- team-coordination
+- productivity
+related_entries:
+- Asana
+- Trello
+- Microsoft Teams
+- Slack
+- Basecamp
