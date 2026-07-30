@@ -1,0 +1,46 @@
+id: situated-learning-theory
+type: framework
+title: Situated Learning Theory
+tagline: Framework emphasizing learning through authentic participation in communities of practice and collaborative contexts.
+description: Situated Learning Theory, developed by Jean Lave and Etienne Wenger, posits that learning is fundamentally a
+  social process that occurs through legitimate peripheral participation in communities of practice. The framework emphasizes
+  that knowledge is constructed through collaborative engagement in authentic activities rather than through isolated individual
+  study. This theory has profound implications for understanding how collaboration facilitates knowledge transfer, skill development,
+  and innovation across various domains from education to organizational learning.
+domains:
+- education
+- business
+- software-engineering
+- healthcare
+- manufacturing
+collaboration-types:
+- community-based
+- participatory
+- co-creation
+- interdisciplinary
+scales:
+- community
+- organization
+- small-team
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-13'
+last_reviewed: '2026-05-13'
+tags:
+- learning
+- knowledge-transfer
+- communities-of-practice
+- participation
+- social-learning
+- apprenticeship
+related_entries:
+- Communities of Practice
+- Legitimate Peripheral Participation
+- Social Learning Theory
+- Activity Theory
