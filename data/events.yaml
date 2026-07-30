@@ -72,6 +72,18 @@
   - participatory-design
   - co-design
   status: upcoming
+- id: iwsm-2026-international-workshop-on-social-media
+  title: IWSM 2026 - International Workshop on Social Media
+  type: workshop
+  date_start: '2026-09-15'
+  date_end: '2026-09-16'
+  location: Vienna, Austria
+  url: https://iwsm2026.org
+  description: Workshop focusing on collaborative aspects of social media platforms and community-driven content creation.
+  domains:
+  - cscw
+  - social-computing
+  status: upcoming
 - id: cscw-2026
   title: CSCW 2026
   type: conference
@@ -82,6 +94,18 @@
   description: ACM Conference on Computer-Supported Cooperative Work and Social Computing
   domains:
   - cscw
+  status: upcoming
+- id: criwg-2026-collaboration-and-technology
+  title: CRIWG 2026 - Collaboration and Technology
+  type: conference
+  date_start: '2026-11-18'
+  date_end: '2026-11-20'
+  location: Santiago, Chile
+  url: https://criwg2026.cl
+  description: International conference on collaboration technologies and groupware systems.
+  domains:
+  - cscw
+  - groupware
   status: upcoming
 - id: group-2027
   title: GROUP 2027
@@ -95,6 +119,18 @@
   - cscw
   - collaboration
   - group-work
+  status: upcoming
+- id: winter-school-on-computer-supported-collaborative-learning
+  title: Winter School on Computer-Supported Collaborative Learning
+  type: school
+  date_start: '2027-01-20'
+  date_end: '2027-01-24'
+  location: Innsbruck, Austria
+  url: https://cscl-winterschool.eu/2027
+  description: Doctoral and early-career researchers school on collaborative learning technologies and CSCW methods.
+  domains:
+  - cscw
+  - cscl
   status: upcoming
 - id: interact-2027
   title: INTERACT 2027
