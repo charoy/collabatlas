@@ -1,0 +1,45 @@
+id: the-technology-of-participation-top
+type: resource
+title: The Technology of Participation (ToP)
+tagline: Comprehensive methodology and toolkit for facilitating collaborative group processes and participatory decision-making.
+description: The Technology of Participation (ToP) is a systematic approach developed by the Institute of Cultural Affairs
+  for facilitating group collaboration and participatory processes. It provides structured methods for group discussion, planning,
+  and decision-making that enable diverse stakeholders to work together effectively. ToP methods are widely used in community
+  development, organizational change, and policy-making processes across various sectors. The approach emphasizes inclusive
+  participation, creative thinking, and practical action planning through proven facilitation techniques.
+domains:
+- business
+- public-policy
+- education
+- social-sciences
+collaboration-types:
+- participatory
+- community-based
+- interdisciplinary
+scales:
+- small-team
+- organization
+- community
+modalities:
+- in-person
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-05'
+last_reviewed: '2026-06-05'
+website_url: https://www.ica-international.org/top/
+tags:
+- facilitation
+- participatory-methods
+- group-process
+- community-development
+- decision-making
+- structured-dialogue
+related_entries:
+- Open Space Technology
+- World Cafe
+- Appreciative Inquiry
+- Consensus Decision Making
+- Focus Groups
