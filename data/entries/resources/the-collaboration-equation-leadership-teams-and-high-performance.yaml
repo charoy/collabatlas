@@ -1,0 +1,40 @@
+id: the-collaboration-equation-leadership-teams-and-high-performance
+type: resource
+title: 'The Collaboration Equation: Leadership, Teams, and High Performance'
+tagline: Research-based framework for understanding and optimizing collaborative team performance in organizations.
+description: Written by Jaclyn Kostner, this book presents evidence-based strategies for creating high-performing collaborative
+  teams, particularly in distributed and remote work environments. It provides practical tools for leaders to foster effective
+  collaboration across organizational boundaries and geographic distances. The book combines academic research with real-world
+  case studies to offer actionable insights for improving team dynamics and collaborative outcomes.
+domains:
+- business
+- software-engineering
+collaboration-types:
+- distributed
+- interdisciplinary
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- remote
+- hybrid
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-01'
+last_reviewed: '2026-05-01'
+website_url: https://www.amazon.com/Collaboration-Equation-Leadership-Performance-Organizations/dp/0814408184
+tags:
+- team-performance
+- distributed-teams
+- leadership
+- organizational-behavior
+- remote-work
+- team-dynamics
+related_entries:
+- 'Collaborative Intelligence: Using Teams to Solve Hard Problems'
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+- 'Getting to Yes: Negotiating Agreement Without Giving In'
