@@ -1,0 +1,43 @@
+id: padlet
+type: tool
+title: Padlet
+tagline: Digital canvas platform for collaborative brainstorming, sharing ideas, and building collections together in real-time.
+description: Padlet is a digital collaboration platform that provides virtual walls, boards, and canvases where teams can
+  post, organize, and discuss ideas together. Users can add text, images, videos, links, and documents to shared spaces, making
+  it ideal for brainstorming sessions, project planning, and knowledge sharing. The platform supports real-time collaboration
+  with commenting, reactions, and simultaneous editing capabilities. Widely used in education, business, and community organizing,
+  Padlet enables both synchronous and asynchronous collaboration across distributed teams.
+domains:
+- education
+- business
+- design
+collaboration-types:
+- co-creation
+- participatory
+- distributed
+scales:
+- small-team
+- organization
+- community
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-10'
+last_reviewed: '2026-05-10'
+website_url: https://padlet.com
+tags:
+- visual-collaboration
+- brainstorming
+- knowledge-sharing
+- real-time
+- digital-canvas
+- ideation
+related_entries:
+- Miro
+- Jamboard
+- Canva
+- Brainstorming
