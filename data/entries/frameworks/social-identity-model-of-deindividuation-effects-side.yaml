@@ -1,0 +1,42 @@
+id: social-identity-model-of-deindividuation-effects-side
+type: framework
+title: Social Identity Model of Deindividuation Effects (SIDE)
+tagline: Framework explaining how group identity and anonymity influence collaborative behavior in computer-mediated environments.
+description: The Social Identity Model of Deindividuation Effects (SIDE) explains how anonymity and group salience in computer-mediated
+  communication can either enhance or reduce collaborative effectiveness. The framework demonstrates that when group identity
+  is salient, anonymity can increase adherence to group norms and collaborative behavior, while when personal identity is
+  salient, anonymity may lead to antisocial behavior. SIDE has been extensively applied to understand online collaboration
+  dynamics, virtual team performance, and the design of digital collaborative environments.
+domains:
+- business
+- education
+- social-sciences
+- software-engineering
+collaboration-types:
+- distributed
+- community-based
+- open-source
+scales:
+- small-team
+- organization
+- community
+modalities:
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-06'
+last_reviewed: '2026-06-06'
+tags:
+- anonymity
+- group-identity
+- computer-mediated-communication
+- virtual-teams
+- social-psychology
+- online-behavior
+related_entries:
+- Computer-Supported Cooperative Work (CSCW)
+- Social Learning Theory
+- Distributed Cognition Framework
