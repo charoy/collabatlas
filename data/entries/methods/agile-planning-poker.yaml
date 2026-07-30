@@ -1,0 +1,41 @@
+id: agile-planning-poker
+type: method
+title: Agile Planning Poker
+tagline: Consensus-based estimation technique where team members use cards to anonymously estimate effort or complexity of
+  work items.
+description: Planning Poker is a collaborative estimation method used primarily in agile software development where team members
+  independently estimate the relative size or effort of user stories or tasks using a standardized set of cards (typically
+  Fibonacci sequence). After revealing estimates simultaneously, team members discuss differences and re-estimate until consensus
+  is reached. This method combines the wisdom of crowds with structured discussion to improve estimation accuracy while fostering
+  shared understanding of requirements and reducing anchoring bias in group decision-making.
+domains:
+- software-engineering
+- business
+collaboration-types:
+- co-creation
+- participatory
+scales:
+- small-team
+modalities:
+- in-person
+- remote
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-31'
+last_reviewed: '2026-05-31'
+website_url: https://www.planningpoker.com
+tags:
+- estimation
+- agile
+- consensus
+- decision-making
+- software-development
+- team-planning
+related_entries:
+- Scrum
+- Retrospective
+- Consensus Decision Making
+- Agile Methodology
