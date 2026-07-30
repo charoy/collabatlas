@@ -1,0 +1,43 @@
+id: zoom-whiteboard
+type: tool
+title: Zoom Whiteboard
+tagline: Interactive whiteboarding tool integrated into Zoom for real-time visual collaboration during video meetings
+description: Zoom Whiteboard is a collaborative digital whiteboard platform that enables teams to brainstorm, visualize ideas,
+  and work together in real-time. Participants can simultaneously draw, annotate, add sticky notes, and create diagrams during
+  video meetings or asynchronously. The tool supports various templates for workshops, planning sessions, and creative collaboration,
+  making it particularly valuable for remote and hybrid teams who need visual collaboration capabilities integrated with their
+  video conferencing platform.
+domains:
+- business
+- design
+- education
+- software-engineering
+collaboration-types:
+- co-creation
+- co-design
+- distributed
+scales:
+- small-team
+- organization
+modalities:
+- remote
+- hybrid
+maturity: established
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-04'
+last_reviewed: '2026-05-04'
+website_url: https://explore.zoom.us/en/products/online-whiteboard/
+tags:
+- whiteboard
+- brainstorming
+- visual-collaboration
+- video-conferencing
+- real-time
+- templates
+related_entries:
+- Zoom
+- Miro
+- Jamboard
+- Microsoft Teams
