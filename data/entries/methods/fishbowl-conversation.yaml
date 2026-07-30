@@ -1,0 +1,45 @@
+id: fishbowl-conversation
+type: method
+title: Fishbowl Conversation
+tagline: A structured discussion method where active speakers sit in an inner circle while others observe and can rotate in
+  to participate
+description: Fishbowl conversation is a facilitation technique where a small group of participants sit in an inner circle
+  (the fishbowl) to discuss a topic while others observe from an outer circle. Observers can join the conversation by taking
+  an empty chair in the inner circle, creating dynamic participation that encourages active listening and inclusive dialogue.
+  This method is particularly effective for large group discussions, conflict resolution, and ensuring diverse voices are
+  heard in collaborative settings.
+domains:
+- business
+- education
+- public-policy
+- social-sciences
+collaboration-types:
+- participatory
+- community-based
+- interdisciplinary
+scales:
+- community
+- organization
+- small-team
+modalities:
+- in-person
+- hybrid
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-28'
+last_reviewed: '2026-04-28'
+tags:
+- facilitation
+- dialogue
+- group-discussion
+- inclusive-participation
+- structured-conversation
+- conflict-resolution
+related_entries:
+- Open Space Technology
+- World Cafe
+- Focus Groups
+- Nominal Group Technique
+- Appreciative Inquiry
