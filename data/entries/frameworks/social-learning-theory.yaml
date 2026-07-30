@@ -1,45 +1,45 @@
 id: social-learning-theory
 type: framework
 title: Social Learning Theory
-tagline: Framework explaining how people learn collaboratively through observation, imitation, and social interaction in group
-  settings.
-description: Social Learning Theory, developed by Albert Bandura, provides a framework for understanding how individuals learn
-  and develop skills through social interaction, observation, and collaboration with others. It emphasizes the importance
-  of modeling, social reinforcement, and situated learning in collaborative environments. The theory has been widely applied
-  to understand how teams and communities share knowledge, develop collective expertise, and support collaborative learning
-  processes across various domains.
+tagline: Framework explaining how people learn through observation, imitation, and modeling within collaborative environments.
+description: Social Learning Theory, developed by Albert Bandura, explains how individuals learn new behaviors, skills, and
+  knowledge through observing and interacting with others in their environment. In collaborative contexts, this framework
+  helps understand how team members acquire competencies, adapt to group norms, and develop shared practices through peer
+  observation and feedback. The theory emphasizes the role of social context, modeling, and vicarious learning in skill development,
+  making it particularly relevant for understanding knowledge transfer in teams, communities of practice, and collaborative
+  learning environments.
 domains:
 - education
 - business
+- software-engineering
 - healthcare
-- social-sciences
 collaboration-types:
 - community-based
 - participatory
-- co-creation
+- interdisciplinary
 scales:
 - small-team
-- community
 - organization
+- community
 modalities:
 - in-person
-- hybrid
 - remote
+- hybrid
 maturity: well-documented
 status: published
 contributors:
 - collabatlas-bot
-created: '2026-04-15'
-last_reviewed: '2026-04-15'
+created: '2026-05-27'
+last_reviewed: '2026-05-27'
 tags:
 - learning
-- social-interaction
-- knowledge-sharing
-- behavioral-theory
-- skill-development
-- collective-learning
+- knowledge-transfer
+- social-psychology
+- behavioral-modeling
+- team-development
+- skill-acquisition
 related_entries:
-- communities-of-practice
-- legitimate-peripheral-participation
-- activity-theory
-- social-ecological-systems-framework
+- Communities of Practice
+- Legitimate Peripheral Participation
+- Activity Theory
+- Socio-Technical Systems Theory
