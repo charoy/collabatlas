@@ -1,0 +1,46 @@
+id: the-oxford-handbook-of-group-creativity-and-innovation
+type: resource
+title: The Oxford Handbook of Group Creativity and Innovation
+tagline: Comprehensive academic resource examining creativity and innovation within collaborative groups across multiple disciplines
+  and contexts.
+description: This handbook provides a systematic examination of how groups generate creative solutions and drive innovation
+  through collaborative processes. It covers theoretical frameworks, empirical research, and practical applications across
+  domains from organizational teams to scientific collaborations. The resource synthesizes decades of research on group dynamics,
+  creative processes, and innovation management, offering insights for both researchers and practitioners working with collaborative
+  teams.
+domains:
+- business
+- design
+- social-sciences
+- software-engineering
+collaboration-types:
+- co-creation
+- interdisciplinary
+- participatory
+scales:
+- small-team
+- organization
+- multi-org
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-15'
+last_reviewed: '2026-05-15'
+website_url: https://academic.oup.com/book/25761
+tags:
+- creativity
+- innovation
+- group-dynamics
+- academic-research
+- team-collaboration
+- organizational-behavior
+related_entries:
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization'
+- 'Collaborative Intelligence: Using Teams to Solve Hard Problems'
+- Design Thinking
+- Communities of Practice
