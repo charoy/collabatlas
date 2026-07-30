@@ -1,0 +1,47 @@
+id: knowledge-management-theory
+type: framework
+title: Knowledge Management Theory
+tagline: Framework for understanding how knowledge is created, shared, and utilized within collaborative organizations and
+  communities.
+description: Knowledge Management Theory provides a systematic approach to understanding how organizations and communities
+  create, capture, share, and apply knowledge through collaborative processes. The framework emphasizes the distinction between
+  explicit and tacit knowledge, and how collaboration facilitates knowledge transfer between individuals and groups. It encompasses
+  models like the SECI model (Socialization, Externalization, Combination, Internalization) and has been foundational in designing
+  collaborative systems and practices across various domains.
+domains:
+- business
+- education
+- healthcare
+- software-engineering
+- social-sciences
+collaboration-types:
+- community-based
+- interdisciplinary
+- distributed
+- co-creation
+scales:
+- organization
+- multi-org
+- community
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-04-29'
+last_reviewed: '2026-04-29'
+tags:
+- knowledge-sharing
+- organizational-learning
+- tacit-knowledge
+- explicit-knowledge
+- SECI-model
+- communities-of-practice
+related_entries:
+- communities-of-practice
+- legitimate-peripheral-participation
+- distributed-cognition-framework
+- transactive-memory-systems-tms
