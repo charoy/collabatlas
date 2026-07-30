@@ -1,0 +1,45 @@
+id: kanban
+type: method
+title: Kanban
+tagline: Visual workflow management method using boards, columns, and cards to optimize team collaboration and continuous
+  improvement.
+description: Kanban is a lean project management methodology that visualizes work in progress using boards with columns representing
+  different stages of a workflow. Teams collaborate by moving cards representing work items through these stages, making bottlenecks
+  and dependencies visible to all members. Originally developed for manufacturing, it has been widely adopted in software
+  development and knowledge work to improve team coordination, limit work in progress, and enable continuous delivery through
+  shared visibility and collective ownership of the workflow.
+domains:
+- software-engineering
+- business
+- manufacturing
+collaboration-types:
+- co-production
+- distributed
+- open-source
+scales:
+- small-team
+- organization
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-26'
+last_reviewed: '2026-05-26'
+website_url: https://kanban.university/
+tags:
+- workflow
+- lean
+- visualization
+- continuous-improvement
+- project-management
+- agile
+related_entries:
+- Scrum
+- Agile Methodology
+- Retrospective
+- Trello
+- Asana
