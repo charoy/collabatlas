@@ -1,0 +1,42 @@
+id: slack-canvas
+type: tool
+title: Slack Canvas
+tagline: Digital whiteboard and visual collaboration workspace integrated within Slack for team brainstorming and project
+  planning.
+description: Slack Canvas is a visual collaboration tool that allows teams to create shared digital whiteboards directly within
+  their Slack workspace. Teams can brainstorm ideas, organize thoughts, plan projects, and collaborate visually using sticky
+  notes, drawings, text, and media uploads. The tool integrates seamlessly with Slack's messaging and file-sharing capabilities,
+  making it easy to transition from discussion to visual collaboration without leaving the platform.
+domains:
+- business
+- software-engineering
+- design
+collaboration-types:
+- co-creation
+- distributed
+- open-source
+scales:
+- small-team
+- organization
+modalities:
+- remote
+- hybrid
+maturity: established
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-08'
+last_reviewed: '2026-06-08'
+website_url: https://slack.com/features/canvas
+tags:
+- visual-collaboration
+- whiteboard
+- brainstorming
+- project-planning
+- team-communication
+- integrated-workspace
+related_entries:
+- Slack
+- Miro
+- Jamboard
+- Microsoft Teams
