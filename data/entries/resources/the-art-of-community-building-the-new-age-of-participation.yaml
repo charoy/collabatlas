@@ -1,0 +1,43 @@
+id: the-art-of-community-building-the-new-age-of-participation
+type: resource
+title: 'The Art of Community: Building the New Age of Participation'
+tagline: Comprehensive guide to building and sustaining collaborative online and offline communities.
+description: Written by Jono Bacon, former Ubuntu Community Manager, this book provides practical strategies for creating,
+  growing, and managing collaborative communities. It covers community leadership, engagement strategies, conflict resolution,
+  and governance structures essential for successful collective work. The book draws from open-source software communities
+  but applies broadly to any collaborative endeavor requiring sustained participation and coordination.
+domains:
+- software-engineering
+- business
+- social-sciences
+collaboration-types:
+- community-based
+- open-source
+- participatory
+scales:
+- community
+- multi-org
+- organization
+modalities:
+- hybrid
+- remote
+- in-person
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-08'
+last_reviewed: '2026-05-08'
+website_url: http://www.artofcommunityonline.org
+tags:
+- community-building
+- leadership
+- governance
+- engagement
+- participation
+- management
+related_entries:
+- Communities of Practice
+- Open Source Guide
+- Linux Kernel Development
+- Apache Software Foundation
