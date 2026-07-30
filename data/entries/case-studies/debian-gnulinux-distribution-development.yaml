@@ -1,0 +1,37 @@
+id: debian-gnulinux-distribution-development
+type: case-study
+title: Debian GNU/Linux Distribution Development
+tagline: Volunteer-driven collaborative development of one of the largest free software distributions with over 1000 active
+  maintainers worldwide.
+description: The Debian Project is a global collaboration of over 1000 volunteer developers who collectively maintain one
+  of the most comprehensive GNU/Linux distributions. The project demonstrates large-scale distributed coordination through
+  democratic governance, technical committees, and sophisticated package management systems. Debian's collaborative processes
+  have influenced countless open-source projects and established many best practices for distributed software development.
+domains:
+- software-engineering
+collaboration-types:
+- distributed
+- open-source
+- community-based
+scales:
+- multi-org
+modalities:
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-04'
+last_reviewed: '2026-06-04'
+website_url: https://www.debian.org
+tags:
+- open-source
+- distributed-development
+- package-management
+- governance
+- volunteer-coordination
+- linux
+related_entries:
+- Linux Kernel Development
+- Apache Software Foundation
+- Mozilla Firefox Development
