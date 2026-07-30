@@ -1,0 +1,48 @@
+id: systems-thinking-framework
+type: framework
+title: Systems Thinking Framework
+tagline: A holistic approach to understanding and improving complex collaborative systems through interconnected relationships
+  and feedback loops.
+description: Systems Thinking is a conceptual framework that views collaboration as part of interconnected systems rather
+  than isolated events. It emphasizes understanding relationships, patterns, and feedback loops between people, processes,
+  and structures. This framework helps collaborative teams identify root causes of problems, anticipate unintended consequences,
+  and design more effective interventions by considering the whole system rather than individual components.
+domains:
+- business
+- healthcare
+- education
+- public-policy
+- environmental-science
+- urban-planning
+collaboration-types:
+- interdisciplinary
+- multi-org
+- participatory
+- community-based
+scales:
+- organization
+- multi-org
+- community
+modalities:
+- hybrid
+- in-person
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-06-10'
+last_reviewed: '2026-06-10'
+website_url: https://www.systemsthinking.org/
+tags:
+- systems
+- holistic
+- complexity
+- feedback-loops
+- organizational-learning
+- problem-solving
+related_entries:
+- Social-Ecological Systems Framework
+- Socio-Technical Systems Theory
+- Organizational Learning Theory
+- 'The Fifth Discipline: The Art and Practice of the Learning Organization'
