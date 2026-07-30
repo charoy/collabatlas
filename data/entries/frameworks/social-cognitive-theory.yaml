@@ -1,0 +1,46 @@
+id: social-cognitive-theory
+type: framework
+title: Social Cognitive Theory
+tagline: Framework explaining how people learn and collaborate through observation, modeling, and reciprocal interaction within
+  social environments.
+description: Social Cognitive Theory, developed by Albert Bandura, provides a framework for understanding how individuals
+  learn and develop capabilities through social interaction and collaborative processes. The theory emphasizes reciprocal
+  determinism between behavior, personal factors, and environmental influences, making it particularly relevant for designing
+  collaborative learning environments and team dynamics. It explains how people acquire new behaviors and knowledge through
+  observing others, social modeling, and collective efficacy, which are fundamental to successful collaboration across various
+  domains.
+domains:
+- education
+- healthcare
+- business
+- social-sciences
+collaboration-types:
+- community-based
+- participatory
+- interdisciplinary
+scales:
+- small-team
+- community
+- organization
+modalities:
+- in-person
+- hybrid
+- remote
+maturity: well-documented
+status: published
+contributors:
+- collabatlas-bot
+created: '2026-05-02'
+last_reviewed: '2026-05-02'
+tags:
+- social-learning
+- behavioral-theory
+- collective-efficacy
+- observational-learning
+- team-dynamics
+- social-modeling
+related_entries:
+- Communities of Practice
+- Social-Ecological Systems Framework
+- Participatory Action Research Framework
+- Community-Based Participatory Research
